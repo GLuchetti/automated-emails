@@ -35,6 +35,8 @@ class GongClient:
             params=params,
             timeout=30,
         )
+        if not resp.ok:
+            logger.error("Gong API GET %s → %s: %s", path, resp.status_code, resp.text[:500])
         resp.raise_for_status()
         return resp.json()
 
@@ -45,6 +47,8 @@ class GongClient:
             json=body,
             timeout=30,
         )
+        if not resp.ok:
+            logger.error("Gong API POST %s → %s: %s", path, resp.status_code, resp.text[:500])
         resp.raise_for_status()
         return resp.json()
 
