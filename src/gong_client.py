@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class GongClient:
-    BASE_URL = "https://api.gong.io"
+    BASE_URL = "https://us-62894.api.gong.io"
 
     def __init__(self, access_key: str, secret: str):
         credentials = base64.b64encode(f"{access_key}:{secret}".encode()).decode()
