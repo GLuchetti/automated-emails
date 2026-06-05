@@ -1,6 +1,34 @@
 {
   "runs": [
     {
+      "id": "0d6cac83",
+      "timestamp": "2026-06-05T21:00:55.152332+00:00",
+      "window_start": "2026-06-05T18:55:00+00:00",
+      "window_end": "2026-06-05T21:00:55.152332+00:00",
+      "calls_found": 1,
+      "calls_processed": [
+        {
+          "call_id": "5162680620296115391",
+          "call_name": "SiteZeus <> Victory Lane Proposal",
+          "team": "sales",
+          "rep_name": "mitchg@sitezeus.com",
+          "rep_email": "mitchg@sitezeus.com",
+          "prospect_name": "Dave Barnaby",
+          "prospect_email": "dbarnaby@victorylane.net",
+          "segment": "SMB / Emerging",
+          "email_to": [
+            "mitchg@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to send over a few resources and recap the main areas we covered.</p>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p><strong>Next steps:</strong></p>\n<p>I think the best next step would be to find time to continue our conversation. You can find time through the scheduling link in my signature.</p>\n<p>Best,<br>mitchg@sitezeus.com</p>",
+          "status": "dashboard",
+          "timestamp": "2026-06-05T21:00:58.131066+00:00"
+        }
+      ],
+      "skipped": 0
+    },
+    {
       "id": "7b0fb275",
       "timestamp": "2026-06-05T20:29:15.454721+00:00",
       "window_start": "2026-06-05T18:55:00+00:00",
@@ -46,5 +74,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-05T20:29:24.003622+00:00"
+  "last_updated": "2026-06-05T21:00:58.131332+00:00"
 }
