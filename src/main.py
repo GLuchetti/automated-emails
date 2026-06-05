@@ -6,24 +6,26 @@ Runs on a 15-minute GitHub Actions schedule.
 2. Queries Gong for calls completed since that timestamp.
 3. Routes each call to the Support or Sales workflow based on Gong team.
 4. Sends emails via Outlook SMTP.
-5. Updates the last-run timestamp.
+5. Logs activity and regenerates the HTML dashboard.
+6. Updates the last-run timestamp.
 """
 import json
 import logging
 import os
 import sys
+import uuid
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-# Make sure src/ siblings are importable when running as `python src/main.py`
 sys.path.insert(0, os.path.dirname(__file__))
 
 from email_handler import send_email
 from gong_client import GongClient
 from hubspot_client import HubSpotClient
-from sales_formatter import format_sales_review_email
+from sales_formatter import format_sales_review_email, build_prospect_html
 from support_formatter import format_support_email
 import config
+import dashboard
 
 logging.basicConfig(
     level=logging.INFO,
@@ -40,7 +42,6 @@ STATE_FILE = Path(__file__).parent.parent / "state" / "last_run.json"
 # ------------------------------------------------------------------
 
 def load_last_run() -> datetime:
-    """Return the last-run UTC datetime, defaulting to 25 minutes ago."""
     if STATE_FILE.exists():
         try:
             data = json.loads(STATE_FILE.read_text())
@@ -131,6 +132,7 @@ def process_support_call(
     hubspot: HubSpotClient,
     smtp_user: str,
     smtp_password: str,
+    run_log: dict,
 ) -> None:
     meta = call_data.get("metaData", call_data)
     call_id = meta.get("id", "unknown")
@@ -158,6 +160,14 @@ def process_support_call(
             smtp_user=smtp_user,
             smtp_password=smtp_password,
         )
+        run_log["calls_processed"].append({
+            "call_id": call_id,
+            "call_name": call_name,
+            "team": "support",
+            "status": "no_contact",
+            "error": f"HubSpot contact not found: {primary_email}",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        })
         return
 
     props = contact.get("properties", {})
@@ -166,6 +176,8 @@ def process_support_call(
         or (primary_external.get("name") or "").split()[0]
         or "there"
     )
+    prospect_last_name = props.get("lastname", "")
+    prospect_full_name = f"{prospect_first_name} {prospect_last_name}".strip()
 
     subject, html = format_support_email(
         call_data=call_data,
@@ -185,6 +197,20 @@ def process_support_call(
         subject=subject,
         body_html=html,
     )
+
+    run_log["calls_processed"].append({
+        "call_id": call_id,
+        "call_name": call_name,
+        "team": "support",
+        "prospect_name": prospect_full_name,
+        "prospect_email": primary_email,
+        "email_to": to_emails,
+        "email_cc": cc_emails,
+        "email_subject": subject,
+        "email_html": html,
+        "status": "sent",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    })
     logger.info("Support email sent for call %s → %s", call_id, to_emails)
 
 
@@ -199,6 +225,7 @@ def process_sales_call(
     hubspot: HubSpotClient,
     smtp_user: str,
     smtp_password: str,
+    run_log: dict,
 ) -> None:
     meta = call_data.get("metaData", call_data)
     call_id = meta.get("id", "unknown")
@@ -225,6 +252,16 @@ def process_sales_call(
             smtp_user=smtp_user,
             smtp_password=smtp_password,
         )
+        run_log["calls_processed"].append({
+            "call_id": call_id,
+            "call_name": call_name,
+            "team": "sales",
+            "rep_email": rep_email,
+            "rep_name": config.SALES_REPS.get(rep_email, rep_email),
+            "status": "no_contact",
+            "error": f"HubSpot contact not found: {primary_email}",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        })
         return
 
     props = contact.get("properties", {})
@@ -233,6 +270,8 @@ def process_sales_call(
         or (primary_external.get("name") or "").split()[0]
         or "there"
     )
+    prospect_last_name = props.get("lastname", "")
+    prospect_full_name = f"{prospect_first_name} {prospect_last_name}".strip()
 
     is_enterprise = hubspot.is_enterprise(
         contact,
@@ -242,7 +281,7 @@ def process_sales_call(
 
     rep_name = config.SALES_REPS.get(rep_email, rep_email)
 
-    subject, html = format_sales_review_email(
+    subject, wrapper_html, prospect_preview_html = format_sales_review_email(
         call_data=call_data,
         rep_name=rep_name,
         rep_email=rep_email,
@@ -259,13 +298,28 @@ def process_sales_call(
         to_addresses=[rep_email],
         cc_addresses=[],
         subject=subject,
-        body_html=html,
+        body_html=wrapper_html,
     )
+
+    run_log["calls_processed"].append({
+        "call_id": call_id,
+        "call_name": call_name,
+        "team": "sales",
+        "rep_name": rep_name,
+        "rep_email": rep_email,
+        "prospect_name": prospect_full_name,
+        "prospect_email": primary_email,
+        "segment": "Enterprise" if is_enterprise else "SMB / Emerging",
+        "email_to": [rep_email],
+        "email_cc": [],
+        "email_subject": subject,
+        "email_html": prospect_preview_html,  # Show the prospect-facing draft
+        "status": "sent",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    })
     logger.info(
-        "Sales review email sent for call %s → rep %s (segment: %s)",
-        call_id,
-        rep_email,
-        "Enterprise" if is_enterprise else "SMB/Emerging",
+        "Sales review email sent for call %s → rep %s (%s)",
+        call_id, rep_email, "Enterprise" if is_enterprise else "SMB/Emerging",
     )
 
 
@@ -274,7 +328,6 @@ def process_sales_call(
 # ------------------------------------------------------------------
 
 def main() -> None:
-    # Load credentials from environment (set as GitHub Secrets)
     gong_key = os.environ["GONG_ACCESS_KEY"]
     gong_secret = os.environ["GONG_SECRET"]
     hubspot_token = os.environ["HUBSPOT_TOKEN"]
@@ -289,9 +342,23 @@ def main() -> None:
 
     logger.info("Checking calls from %s → %s", from_dt.isoformat(), to_dt.isoformat())
 
+    # Initialise run log
+    run_log = {
+        "id": str(uuid.uuid4())[:8],
+        "timestamp": to_dt.isoformat(),
+        "window_start": from_dt.isoformat(),
+        "window_end": to_dt.isoformat(),
+        "calls_found": 0,
+        "calls_processed": [],
+        "skipped": 0,
+    }
+
     calls = gong.get_completed_calls(from_dt, to_dt)
+    run_log["calls_found"] = len(calls)
+
     if not calls:
         logger.info("No new calls in window.")
+        dashboard.record_run(run_log)
         save_last_run(to_dt)
         return
 
@@ -303,7 +370,6 @@ def main() -> None:
     )
     user_emails = gong.user_email_map()
 
-    # Batch-fetch extensive data + transcripts
     call_ids = [c.get("id") for c in calls if c.get("id")]
     extensive_list = gong.get_calls_extensive(call_ids)
     extensive_map = {}
@@ -326,22 +392,37 @@ def main() -> None:
 
         if not team:
             logger.info("Call %s: host not in a tracked team — skipping", call_id)
+            run_log["skipped"] += 1
             continue
 
         logger.info("Call %s: routing to %s workflow", call_id, team)
 
         try:
             if team == "support":
-                process_support_call(call_data, gong, hubspot, smtp_user, smtp_password)
+                process_support_call(
+                    call_data, gong, hubspot, smtp_user, smtp_password, run_log
+                )
             elif team == "sales":
                 rep_email = user_emails.get(host_id, "")
                 if not rep_email:
                     logger.warning("Call %s: could not resolve rep email", call_id)
+                    run_log["skipped"] += 1
                     continue
-                process_sales_call(call_data, rep_email, gong, hubspot, smtp_user, smtp_password)
+                process_sales_call(
+                    call_data, rep_email, gong, hubspot, smtp_user, smtp_password, run_log
+                )
         except Exception:
-            logger.exception("Call %s: unhandled error — continuing to next call", call_id)
+            logger.exception("Call %s: unhandled error — continuing", call_id)
+            run_log["calls_processed"].append({
+                "call_id": call_id,
+                "call_name": (call_data.get("metaData") or call_data).get("title", "Unknown"),
+                "team": team,
+                "status": "error",
+                "error": "Unexpected error — check GitHub Actions logs",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            })
 
+    dashboard.record_run(run_log)
     save_last_run(to_dt)
     logger.info("Run complete.")
 

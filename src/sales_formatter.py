@@ -29,6 +29,29 @@ EXCLUDE_HIGHLIGHT_TYPES = {
 NEXT_MEETING_TYPES = {"next_meeting", "follow_up", "follow-up", "upcoming_meeting"}
 
 
+def build_prospect_html(
+    call_data: dict,
+    rep_name: str,
+    prospect_first_name: str,
+    is_enterprise: bool,
+) -> str:
+    """Build just the prospect-facing email body (used for dashboard preview)."""
+    content = call_data.get("content", {})
+    highlights = content.get("highlights", [])
+    trackers = content.get("trackers", [])
+    call_highlights = _extract_highlights(highlights)[:5]
+    tracker_names = [t.get("name", "").lower() for t in trackers if (t.get("count") or 0) > 0]
+    resources = _select_resources(tracker_names, is_enterprise)
+    next_meeting = _detect_next_meeting(highlights)
+    return _build_prospect_html(
+        prospect_first_name=prospect_first_name,
+        rep_name=rep_name,
+        highlights=call_highlights,
+        resources=resources,
+        next_meeting=next_meeting,
+    )
+
+
 def format_sales_review_email(
     call_data: dict,
     rep_name: str,
@@ -37,10 +60,10 @@ def format_sales_review_email(
     prospect_email: str,
     is_enterprise: bool,
     call_name: str,
-) -> Tuple[str, str]:
+) -> Tuple[str, str, str]:
     """
     Build the sales review email sent to the rep.
-    Returns (subject, html_body).
+    Returns (subject, wrapper_html, prospect_preview_html).
     """
     content = call_data.get("content", {})
     highlights = content.get("highlights", [])
@@ -79,7 +102,7 @@ def format_sales_review_email(
     )
 
     subject = f"[REVIEW & SEND] Follow-up draft for {prospect_first_name} — {call_name}"
-    return subject, wrapper_html
+    return subject, wrapper_html, prospect_html
 
 
 # ------------------------------------------------------------------
