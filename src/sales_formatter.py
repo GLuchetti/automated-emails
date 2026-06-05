@@ -60,6 +60,7 @@ def format_sales_review_email(
     prospect_email: str,
     is_enterprise: bool,
     call_name: str,
+    transcript: list = None,
 ) -> Tuple[str, str, str]:
     """
     Build the sales review email sent to the rep.
@@ -72,16 +73,26 @@ def format_sales_review_email(
     # Top 5 call highlights (excluding action items / decisions)
     call_highlights = _extract_highlights(highlights)[:5]
 
+    # If Gong AI returned no highlights, extract key sentences from transcript
+    if not call_highlights and transcript:
+        call_highlights = _extract_from_transcript(transcript, rep_name)[:5]
+
     # Select 3-4 relevant resources + 1 customer story
     tracker_names = [
         t.get("name", "").lower()
         for t in trackers
         if (t.get("count") or 0) > 0
     ]
+    # Also scan transcript for product mentions if trackers are empty
+    if not tracker_names and transcript:
+        tracker_names = _detect_topics_from_transcript(transcript)
+
     resources = _select_resources(tracker_names, is_enterprise)
 
-    # Detect next agreed meeting from highlights
+    # Detect next agreed meeting from highlights or transcript
     next_meeting = _detect_next_meeting(highlights)
+    if not next_meeting and transcript:
+        next_meeting = _detect_next_meeting_from_transcript(transcript)
 
     prospect_html = _build_prospect_html(
         prospect_first_name=prospect_first_name,
@@ -204,6 +215,71 @@ def _build_prospect_html(
 
     parts.append(f"<p>Best,<br>{rep_name}</p>")
     return "\n".join(parts)
+
+
+PRODUCT_KEYWORDS = {
+    "locate": ["locate", "site selection", "forecast", "revenue", "model", "prediction"],
+    "build": ["build", "construction", "milestone", "opening", "timeline", "project"],
+    "sell": ["sell", "franchise", "crm", "pipeline", "candidate", "territory"],
+    "market": ["market", "customer insights", "trade area", "mobile data", "consumer"],
+    "zeus_ai": ["zeus", "ai", "artificial intelligence", "predict", "recommendation"],
+    "white_space": ["white space", "whitespace", "expansion", "growth", "new market"],
+    "sales_impact": ["cannibalization", "impact", "transfer", "overlap"],
+    "poc": ["proof of concept", "poc", "pilot", "trial", "test"],
+    "pricing": ["pricing", "price", "cost", "investment", "contract", "proposal"],
+}
+
+NEXT_MEETING_KEYWORDS = ["next week", "follow up", "follow-up", "schedule", "tuesday",
+                          "wednesday", "thursday", "monday", "friday", "next call",
+                          "next meeting", "demo", "presentation"]
+
+
+def _extract_from_transcript(transcript: list, rep_name: str) -> List[str]:
+    """Extract meaningful sentences from transcript as highlights."""
+    rep_first = rep_name.split()[0].lower() if rep_name else ""
+    highlights = []
+    seen = set()
+
+    for s in transcript:
+        text = (s.get("text") or "").strip()
+        if len(text) < 20 or len(text) > 200:
+            continue
+        tl = text.lower()
+        # Skip small talk and generic openers
+        if any(skip in tl for skip in ["how are you", "happy friday", "nice to meet",
+                                        "how's it going", "sounds good", "absolutely",
+                                        "yeah", "okay", "alright", "perfect"]):
+            continue
+        # Prefer sentences that mention SiteZeus products or business value
+        for group, keywords in PRODUCT_KEYWORDS.items():
+            if any(kw in tl for kw in keywords) and text not in seen:
+                highlights.append(text)
+                seen.add(text)
+                break
+        if len(highlights) >= 5:
+            break
+
+    return highlights
+
+
+def _detect_topics_from_transcript(transcript: list) -> List[str]:
+    """Scan transcript for product/topic mentions to guide resource selection."""
+    topics = set()
+    full_text = " ".join((s.get("text") or "").lower() for s in transcript)
+    for topic, keywords in PRODUCT_KEYWORDS.items():
+        if any(kw in full_text for kw in keywords):
+            topics.add(topic.replace("_", " "))
+    return list(topics)
+
+
+def _detect_next_meeting_from_transcript(transcript: list) -> Optional[str]:
+    """Scan transcript for next meeting references."""
+    for s in reversed(transcript):
+        text = (s.get("text") or "").strip()
+        tl = text.lower()
+        if any(kw in tl for kw in NEXT_MEETING_KEYWORDS) and len(text) < 150:
+            return text
+    return None
 
 
 def _build_rep_wrapper(

@@ -379,7 +379,7 @@ function renderCall(call, runId, idx) {{
               <div class="email-preview-subject">${{call.email_subject || 'Email'}}</div>
               ${{call.email_to ? `<div style="margin-top:3px">To: ${{call.email_to.join(', ')}}${{call.email_cc && call.email_cc.length ? ' &nbsp;|&nbsp; CC: ' + call.email_cc.join(', ') : ''}}</div>` : ''}}
             </div>
-            <button onclick="copyEmailDraft('draft-text-${{runId}}-${{idx}}')" style="padding:5px 12px;background:#1a1a2e;color:white;border:none;border-radius:5px;font-size:12px;cursor:pointer;white-space:nowrap;">&#128203; Copy Email</button>
+            <button onclick="copyEmailDraft('draft-text-${{runId}}-${{idx}}', this)" style="padding:5px 12px;background:#1a1a2e;color:white;border:none;border-radius:5px;font-size:12px;cursor:pointer;white-space:nowrap;transition:background 0.2s;">&#128203; Copy Email</button>
           </div>
         </div>
         <div class="email-preview-body" id="draft-text-${{runId}}-${{idx}}">${{call.email_html}}</div>
@@ -450,17 +450,28 @@ function renderRun(run, idx) {{
     </div>`;
 }}
 
-function copyEmailDraft(elementId) {{
+function copyEmailDraft(elementId, btn) {{
   const el = document.getElementById(elementId);
   if (!el) return;
+  const html = el.innerHTML;
   const text = el.innerText || el.textContent;
-  navigator.clipboard.writeText(text).then(() => {{
-    const btn = event.target;
-    const original = btn.innerHTML;
-    btn.innerHTML = '&#10003; Copied!';
+  const original = btn.innerHTML;
+  const confirm = () => {{
+    btn.innerHTML = '&#10003; Copied with links!';
     btn.style.background = '#166534';
-    setTimeout(() => {{ btn.innerHTML = original; btn.style.background = '#1a1a2e'; }}, 2000);
-  }});
+    setTimeout(() => {{ btn.innerHTML = original; btn.style.background = '#1a1a2e'; }}, 2500);
+  }};
+  try {{
+    const item = new ClipboardItem({{
+      'text/html': new Blob([html], {{type: 'text/html'}}),
+      'text/plain': new Blob([text], {{type: 'text/plain'}})
+    }});
+    navigator.clipboard.write([item]).then(confirm).catch(() => {{
+      navigator.clipboard.writeText(text).then(confirm);
+    }});
+  }} catch(e) {{
+    navigator.clipboard.writeText(text).then(confirm);
+  }}
 }}
 
 function toggleRun(bodyId, chevronId) {{

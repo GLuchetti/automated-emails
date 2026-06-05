@@ -224,6 +224,7 @@ def process_sales_call(
     gong: GongClient,
     hubspot: HubSpotClient,
     run_log: dict,
+    transcript: list = None,
 ) -> None:
     meta = call_data.get("metaData", call_data)
     call_id = meta.get("id", "unknown")
@@ -287,6 +288,7 @@ def process_sales_call(
         prospect_email=primary_email,
         is_enterprise=is_enterprise,
         call_name=call_name,
+        transcript=transcript,
     )
 
     # Sales drafts are delivered via the dashboard — no email send needed.
@@ -401,7 +403,8 @@ def main() -> None:
                     run_log["skipped"] += 1
                     continue
                 process_sales_call(
-                    call_data, rep_email, gong, hubspot, run_log
+                    call_data, rep_email, gong, hubspot, run_log,
+                    transcript=transcripts.get(call_id, [])
                 )
         except Exception:
             logger.exception("Call %s: unhandled error — continuing", call_id)
