@@ -196,6 +196,7 @@ def _build_html(log: dict) -> str:
       padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;
     }}
     .badge-sent {{ background: #f0fdf4; color: #166534; }}
+    .badge-dashboard {{ background: #eff6ff; color: #1d4ed8; }}
     .badge-error {{ background: #fef2f2; color: #991b1b; }}
     .badge-no-contact {{ background: #fffbeb; color: #92400e; }}
 
@@ -323,7 +324,7 @@ function fmtTime(iso) {{
 }}
 
 function statusBadge(status) {{
-  const map = {{ sent: ['badge-sent','Sent'], error: ['badge-error','Error'], no_contact: ['badge-no-contact','No Contact'] }};
+  const map = {{ sent: ['badge-sent','Sent'], dashboard: ['badge-dashboard','Draft Ready'], error: ['badge-error','Error'], no_contact: ['badge-no-contact','No Contact'] }};
   const [cls, label] = map[status] || ['badge-gray', status];
   return `<span class="status-badge ${{cls}}">${{label}}</span>`;
 }}

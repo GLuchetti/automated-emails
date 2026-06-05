@@ -223,8 +223,6 @@ def process_sales_call(
     rep_email: str,
     gong: GongClient,
     hubspot: HubSpotClient,
-    smtp_user: str,
-    smtp_password: str,
     run_log: dict,
 ) -> None:
     meta = call_data.get("metaData", call_data)
@@ -291,16 +289,7 @@ def process_sales_call(
         call_name=call_name,
     )
 
-    send_email(
-        smtp_user=smtp_user,
-        smtp_password=smtp_password,
-        from_address=config.SUPPORT_FROM_EMAIL,
-        to_addresses=[rep_email],
-        cc_addresses=[],
-        subject=subject,
-        body_html=wrapper_html,
-    )
-
+    # Sales drafts are delivered via the dashboard — no email send needed.
     run_log["calls_processed"].append({
         "call_id": call_id,
         "call_name": call_name,
@@ -313,12 +302,12 @@ def process_sales_call(
         "email_to": [rep_email],
         "email_cc": [],
         "email_subject": subject,
-        "email_html": prospect_preview_html,  # Show the prospect-facing draft
-        "status": "sent",
+        "email_html": prospect_preview_html,
+        "status": "dashboard",
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
     logger.info(
-        "Sales review email sent for call %s → rep %s (%s)",
+        "Sales draft logged to dashboard for call %s → rep %s (%s)",
         call_id, rep_email, "Enterprise" if is_enterprise else "SMB/Emerging",
     )
 
@@ -332,13 +321,8 @@ def main() -> None:
     gong_secret = os.environ["GONG_SECRET"]
     hubspot_token = os.environ["HUBSPOT_TOKEN"]
 
-    # Sales emails (rep review drafts) use a separate sender account
-    # Set SALES_EMAIL + SALES_APP_PASSWORD in GitHub Secrets
-    # Falls back to SUPPORT_EMAIL if not set
-    sales_smtp_user = os.environ.get("SALES_EMAIL") or os.environ.get("SUPPORT_EMAIL", "")
-    sales_smtp_password = os.environ.get("SALES_APP_PASSWORD") or os.environ.get("SUPPORT_APP_PASSWORD", "")
-
-    # Support emails use the support account
+    # Support emails use the support SMTP account.
+    # Sales drafts are delivered via the dashboard only — no SMTP needed.
     smtp_user = os.environ.get("SUPPORT_EMAIL", "")
     smtp_password = os.environ.get("SUPPORT_APP_PASSWORD", "")
 
@@ -417,7 +401,7 @@ def main() -> None:
                     run_log["skipped"] += 1
                     continue
                 process_sales_call(
-                    call_data, rep_email, gong, hubspot, sales_smtp_user, sales_smtp_password, run_log
+                    call_data, rep_email, gong, hubspot, run_log
                 )
         except Exception:
             logger.exception("Call %s: unhandled error — continuing", call_id)
