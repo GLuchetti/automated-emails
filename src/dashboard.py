@@ -374,10 +374,15 @@ function renderCall(call, runId, idx) {{
       <button class="email-toggle-btn" onclick="toggleEmailPreview(this, '${{previewId}}')">&#9993; View Email Draft</button>
       <div class="email-preview" id="${{previewId}}">
         <div class="email-preview-header">
-          <div class="email-preview-subject">${{call.email_subject || 'Email'}}</div>
-          ${{call.email_to ? `<div style="margin-top:3px">To: ${{call.email_to.join(', ')}}${{call.email_cc && call.email_cc.length ? ' &nbsp;|&nbsp; CC: ' + call.email_cc.join(', ') : ''}}</div>` : ''}}
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <div>
+              <div class="email-preview-subject">${{call.email_subject || 'Email'}}</div>
+              ${{call.email_to ? `<div style="margin-top:3px">To: ${{call.email_to.join(', ')}}${{call.email_cc && call.email_cc.length ? ' &nbsp;|&nbsp; CC: ' + call.email_cc.join(', ') : ''}}</div>` : ''}}
+            </div>
+            <button onclick="copyEmailDraft('draft-text-${{runId}}-${{idx}}')" style="padding:5px 12px;background:#1a1a2e;color:white;border:none;border-radius:5px;font-size:12px;cursor:pointer;white-space:nowrap;">&#128203; Copy Email</button>
+          </div>
         </div>
-        <div class="email-preview-body">${{call.email_html}}</div>
+        <div class="email-preview-body" id="draft-text-${{runId}}-${{idx}}">${{call.email_html}}</div>
       </div>`;
   }}
 
@@ -443,6 +448,19 @@ function renderRun(run, idx) {{
       </div>
       <div class="run-body" id="${{bodyId}}">${{callsHtml}}</div>
     </div>`;
+}}
+
+function copyEmailDraft(elementId) {{
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {{
+    const btn = event.target;
+    const original = btn.innerHTML;
+    btn.innerHTML = '&#10003; Copied!';
+    btn.style.background = '#166534';
+    setTimeout(() => {{ btn.innerHTML = original; btn.style.background = '#1a1a2e'; }}, 2000);
+  }});
 }}
 
 function toggleRun(bodyId, chevronId) {{
