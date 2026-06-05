@@ -46,66 +46,66 @@ SITEZEUS_DOMAIN = "sitezeus.com"
 ENTERPRISE_RESOURCES = [
     {
         "name": "White Space Analysis",
-        "url": "https://sitezeus.com/white-space-analysis",
-        "topics": ["white space", "whitespace", "gap analysis", "untapped"],
+        "url": "https://sitezeus.com/products/site-selection-software",
+        "topics": ["white space", "whitespace", "gap analysis", "untapped", "growth opportunity"],
     },
     {
         "name": "Sales Forecasting",
-        "url": "https://sitezeus.com/sales-forecasting",
-        "topics": ["forecast", "sales forecast", "revenue forecast", "projection"],
+        "url": "https://sitezeus.com/products/site-selection-software",
+        "topics": ["forecast", "sales forecast", "revenue forecast", "projection", "predict"],
     },
     {
         "name": "Sales Impact",
-        "url": "https://sitezeus.com/sales-impact",
-        "topics": ["sales impact", "roi", "revenue impact", "performance"],
+        "url": "https://sitezeus.com/products/site-selection-software",
+        "topics": ["sales impact", "cannibalization", "roi", "revenue impact", "performance"],
     },
     {
-        "name": "SiteZeus Market",
-        "url": "https://sitezeus.com/market",
-        "topics": ["market", "competitive", "trade area", "competition", "competitor"],
+        "name": "Customer Insights",
+        "url": "https://sitezeus.com/products/customer-insights-platform",
+        "topics": ["market", "customer insights", "trade area", "mobile data", "competition", "competitor"],
     },
     {
         "name": "Zeus AI",
-        "url": "https://sitezeus.com/zeus-ai",
+        "url": "https://sitezeus.com/products/site-selection-software",
         "topics": ["zeus ai", "zeus", "ai", "artificial intelligence", "predictive", "machine learning"],
     },
     {
-        "name": "Build",
-        "url": "https://sitezeus.com/build",
-        "topics": ["build", "site selection", "new location", "expansion", "open", "growth"],
+        "name": "SiteZeus Build",
+        "url": "https://sitezeus.com/products/construction-management-software",
+        "topics": ["build", "construction", "unit opening", "new location", "expansion", "open", "growth"],
     },
     {
-        "name": "Sell",
-        "url": "https://sitezeus.com/sell",
-        "topics": ["sell", "disposition", "portfolio optimization", "close", "underperform"],
+        "name": "SiteZeus Sell",
+        "url": "https://sitezeus.com/products/franchise-crm",
+        "topics": ["sell", "franchise crm", "pipeline", "franchise sales", "disposition", "portfolio"],
     },
     {
         "name": "Proof of Concept",
-        "url": "https://sitezeus.com/proof-of-concept",
+        "url": "https://sitezeus.com/schedule-a-demo",
         "topics": ["poc", "proof of concept", "pilot", "test", "trial"],
     },
 ]
 
 SMB_EMERGING_RESOURCES = [
     {
-        "name": "What is SiteZeus Emerging",
-        "url": "https://sitezeus.com/emerging",
-        "topics": ["emerging", "small business", "franchise", "growing", "startup"],
+        "name": "SiteZeus Locate",
+        "url": "https://sitezeus.com/products/site-selection-software",
+        "topics": ["emerging", "site selection", "small business", "franchise", "growing", "startup", "locate"],
     },
     {
-        "name": "Build",
-        "url": "https://sitezeus.com/build",
-        "topics": ["build", "site selection", "new location", "expansion", "open", "growth"],
+        "name": "SiteZeus Build",
+        "url": "https://sitezeus.com/products/construction-management-software",
+        "topics": ["build", "construction", "unit opening", "new location", "expansion", "open", "growth"],
     },
     {
-        "name": "Sell",
-        "url": "https://sitezeus.com/sell",
-        "topics": ["sell", "disposition", "portfolio", "close", "underperform"],
+        "name": "SiteZeus Sell",
+        "url": "https://sitezeus.com/products/franchise-crm",
+        "topics": ["sell", "franchise crm", "pipeline", "franchise sales", "disposition", "portfolio"],
     },
     {
-        "name": "SiteZeus Market",
-        "url": "https://sitezeus.com/market",
-        "topics": ["market", "competitive", "trade area", "competition", "competitor"],
+        "name": "Customer Insights",
+        "url": "https://sitezeus.com/products/customer-insights-platform",
+        "topics": ["market", "customer insights", "trade area", "mobile data", "competition", "competitor"],
     },
 ]
 
