@@ -360,7 +360,7 @@ function toggleEmailPreview(btn, previewId) {{
 // -------------------------------------------------------
 function renderCall(call, runId, idx) {{
   const previewId = `preview-${{runId}}-${{idx}}`;
-  const hasSentEmail = call.status === 'sent' && call.email_html;
+  const hasSentEmail = (call.status === 'sent' || call.status === 'dashboard') && call.email_html;
 
   const recipients = [];
   if (call.rep_name) recipients.push(`Rep: ${{call.rep_name}}`);

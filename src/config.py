@@ -17,7 +17,7 @@ SUPPORT_MANAGER_NAME = "Olivia Bolton"
 SALES_REPS = {
     "emma.keeney@sitezeus.com": "Emma Keeney",
     "lucas.boney@sitezeus.com": "Lucas Boney",
-    "mitchell.gunderson@sitezeus.com": "Mitchell Gunderson",
+    "mitchg@sitezeus.com": "Mitchell Gunderson",
     "william.morgan@sitezeus.com": "William Morgan",
 }
 
