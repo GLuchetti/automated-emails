@@ -331,8 +331,16 @@ def main() -> None:
     gong_key = os.environ["GONG_ACCESS_KEY"]
     gong_secret = os.environ["GONG_SECRET"]
     hubspot_token = os.environ["HUBSPOT_TOKEN"]
-    smtp_user = os.environ["SUPPORT_EMAIL"]
-    smtp_password = os.environ["SUPPORT_APP_PASSWORD"]
+
+    # Sales emails (rep review drafts) use a separate sender account
+    # Set SALES_EMAIL + SALES_APP_PASSWORD in GitHub Secrets
+    # Falls back to SUPPORT_EMAIL if not set
+    sales_smtp_user = os.environ.get("SALES_EMAIL") or os.environ.get("SUPPORT_EMAIL", "")
+    sales_smtp_password = os.environ.get("SALES_APP_PASSWORD") or os.environ.get("SUPPORT_APP_PASSWORD", "")
+
+    # Support emails use the support account
+    smtp_user = os.environ.get("SUPPORT_EMAIL", "")
+    smtp_password = os.environ.get("SUPPORT_APP_PASSWORD", "")
 
     gong = GongClient(gong_key, gong_secret)
     hubspot = HubSpotClient(hubspot_token)
@@ -409,7 +417,7 @@ def main() -> None:
                     run_log["skipped"] += 1
                     continue
                 process_sales_call(
-                    call_data, rep_email, gong, hubspot, smtp_user, smtp_password, run_log
+                    call_data, rep_email, gong, hubspot, sales_smtp_user, sales_smtp_password, run_log
                 )
         except Exception:
             logger.exception("Call %s: unhandled error — continuing", call_id)
