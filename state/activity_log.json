@@ -1,6 +1,24 @@
 {
   "runs": [
     {
+      "id": "7b0fb275",
+      "timestamp": "2026-06-05T20:29:15.454721+00:00",
+      "window_start": "2026-06-05T18:55:00+00:00",
+      "window_end": "2026-06-05T20:29:15.454721+00:00",
+      "calls_found": 1,
+      "calls_processed": [
+        {
+          "call_id": "5162680620296115391",
+          "call_name": "SiteZeus <> Victory Lane Proposal",
+          "team": "sales",
+          "status": "error",
+          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "timestamp": "2026-06-05T20:29:24.003511+00:00"
+        }
+      ],
+      "skipped": 0
+    },
+    {
       "id": "bd66d03b",
       "timestamp": "2026-06-05T19:54:35.751964+00:00",
       "window_start": "2026-06-05T19:24:08.167918+00:00",
@@ -28,5 +46,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-05T19:54:36.046595+00:00"
+  "last_updated": "2026-06-05T20:29:24.003622+00:00"
 }
