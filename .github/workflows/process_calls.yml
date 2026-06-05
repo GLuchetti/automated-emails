@@ -1,0 +1,46 @@
+name: Process Gong Calls
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # Every 15 minutes
+  workflow_dispatch:           # Manual trigger (for testing)
+
+permissions:
+  contents: write              # Required to commit the updated state/last_run.json
+
+jobs:
+  process-calls:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run call processor
+        env:
+          GONG_ACCESS_KEY: ${{ secrets.GONG_ACCESS_KEY }}
+          GONG_SECRET: ${{ secrets.GONG_SECRET }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          SUPPORT_EMAIL: ${{ secrets.SUPPORT_EMAIL }}
+          SUPPORT_APP_PASSWORD: ${{ secrets.SUPPORT_APP_PASSWORD }}
+        run: |
+          cd src
+          python main.py
+
+      - name: Commit updated state
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add state/last_run.json
+          git diff --staged --quiet || git commit -m "chore: update last_run state [skip ci]"
+          git push || true
