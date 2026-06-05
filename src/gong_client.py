@@ -35,6 +35,18 @@ class GongClient:
             params=params,
             timeout=30,
         )
+        # Gong returns 404 with "No calls found" when the result set is empty.
+        # Treat this as an empty response rather than a real error.
+        if resp.status_code == 404:
+            try:
+                body = resp.json()
+                errors = body.get("errors", [])
+                if any("no calls found" in e.lower() for e in errors):
+                    logger.info("Gong returned 404 (no calls in window) — treating as empty.")
+                    return {}
+            except Exception:
+                pass
+            logger.error("Gong API GET %s → 404: %s", path, resp.text[:500])
         if not resp.ok:
             logger.error("Gong API GET %s → %s: %s", path, resp.status_code, resp.text[:500])
         resp.raise_for_status()
