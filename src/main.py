@@ -366,6 +366,7 @@ def main() -> None:
 
     call_ids = [c.get("id") for c in calls if c.get("id")]
     extensive_list = gong.get_calls_extensive(call_ids)
+    transcripts = gong.get_transcripts(call_ids)
     extensive_map = {}
     for ec in extensive_list:
         cid = (ec.get("metaData") or ec).get("id")
