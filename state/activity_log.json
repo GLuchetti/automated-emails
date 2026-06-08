@@ -1,6 +1,24 @@
 {
   "runs": [
     {
+      "id": "2ede6560",
+      "timestamp": "2026-06-08T17:35:14.245590+00:00",
+      "window_start": "2026-06-08T14:16:19.789350+00:00",
+      "window_end": "2026-06-08T17:35:14.245590+00:00",
+      "calls_found": 3,
+      "calls_processed": [
+        {
+          "call_id": "6732216051392258384",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Luiza Weber and Aaron Bergland",
+          "team": "support",
+          "status": "error",
+          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "timestamp": "2026-06-08T17:35:23.771974+00:00"
+        }
+      ],
+      "skipped": 2
+    },
+    {
       "id": "6b292e94",
       "timestamp": "2026-06-08T14:16:19.789350+00:00",
       "window_start": "2026-06-05T18:55:00+00:00",
@@ -465,5 +483,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-08T14:16:23.015852+00:00"
+  "last_updated": "2026-06-08T17:35:23.772457+00:00"
 }
