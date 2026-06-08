@@ -94,12 +94,23 @@ def format_sales_review_email(
     if not next_meeting and transcript:
         next_meeting = _detect_next_meeting_from_transcript(transcript)
 
+    # Extract next steps / action items separately
+    next_steps = [
+        (h.get("text") or "").strip()
+        for h in highlights
+        if h.get("type", "").lower() in ("action_item", "action item", "next_step", "next step")
+        and (h.get("text") or "").strip()
+    ]
+    if not next_steps and transcript:
+        next_steps = _extract_action_items_from_transcript(transcript)[:5]
+
     prospect_html = _build_prospect_html(
         prospect_first_name=prospect_first_name,
         rep_name=rep_name,
         highlights=call_highlights,
         resources=resources,
         next_meeting=next_meeting,
+        next_steps=next_steps,
     )
 
     segment_label = "Enterprise" if is_enterprise else "SMB / Emerging"
@@ -184,17 +195,31 @@ def _build_prospect_html(
     highlights: List[str],
     resources: List[dict],
     next_meeting: Optional[str],
+    next_steps: List[str] = None,
 ) -> str:
     parts = []
     parts.append(f"<p>Hi {prospect_first_name},</p>")
     parts.append(
         "<p>Thank you for taking the time to connect with me today. "
-        "I wanted to send over a few resources and recap the main areas we covered.</p>"
+        "I wanted to follow up with a quick recap of what we covered.</p>"
     )
 
     if highlights:
-        parts.append("<p><strong>Quick highlights on SiteZeus:</strong></p>")
+        parts.append("<p><strong>What we discussed:</strong></p>")
         parts.append(_bullet_list(highlights))
+
+    if next_steps:
+        parts.append("<p><strong>Next steps:</strong></p>")
+        parts.append(_bullet_list(next_steps))
+    elif next_meeting:
+        parts.append("<p><strong>Next steps:</strong></p>")
+        parts.append(f"<p>{next_meeting}</p>")
+    else:
+        parts.append("<p><strong>Next steps:</strong></p>")
+        parts.append(
+            "<p>I'll be in touch soon. Feel free to reach out with any questions in the meantime. "
+            "You can find time through the scheduling link in my signature.</p>"
+        )
 
     if resources:
         parts.append("<p><strong>Resources:</strong></p>")
@@ -203,15 +228,6 @@ def _build_prospect_html(
             for r in resources
         ]
         parts.append(_bullet_list(resource_items))
-
-    parts.append("<p><strong>Next steps:</strong></p>")
-    if next_meeting:
-        parts.append(f"<p>Looking forward to continuing the conversation on {next_meeting}.</p>")
-    else:
-        parts.append(
-            "<p>I think the best next step would be to find time to continue our conversation. "
-            "You can find time through the scheduling link in my signature.</p>"
-        )
 
     parts.append(f"<p>Best,<br>{rep_name}</p>")
     return "\n".join(parts)
@@ -270,6 +286,27 @@ def _detect_topics_from_transcript(transcript: list) -> List[str]:
         if any(kw in full_text for kw in keywords):
             topics.add(topic.replace("_", " "))
     return list(topics)
+
+
+def _extract_action_items_from_transcript(transcript: list) -> List[str]:
+    """Extract action items — sentences where someone commits to doing something."""
+    action_phrases = [
+        "i will", "i'll", "we will", "we'll", "i'm going to",
+        "will send", "will follow", "will check", "will get back",
+        "will discuss", "will review", "will share", "will reach out",
+        "will connect", "by end of", "by next week", "by friday",
+        "going to send", "going to follow"
+    ]
+    items = []
+    seen = set()
+    for s in transcript:
+        text = (s.get("text") or "").strip()
+        tl = text.lower()
+        if 15 < len(text) < 200 and any(p in tl for p in action_phrases):
+            if text not in seen:
+                items.append(text)
+                seen.add(text)
+    return items
 
 
 def _detect_next_meeting_from_transcript(transcript: list) -> Optional[str]:

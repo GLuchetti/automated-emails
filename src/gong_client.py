@@ -101,13 +101,22 @@ class GongClient:
                         "highlights": True,
                         "keyPoints": True,
                         "actions": True,
+                        "structure": True,
+                        "topics": True,
+                        "brief": True,
+                        "outline": True,
                     },
                     "parties": True,
                 }
             },
         }
         data = self._post("/v2/calls/extensive", body)
-        return data.get("calls", [])
+        calls = data.get("calls", [])
+        # Log available content fields for debugging
+        for c in calls:
+            content_keys = list((c.get("content") or {}).keys())
+            logger.info("Gong content fields available: %s", content_keys)
+        return calls
 
     def get_transcripts(self, call_ids: list) -> dict:
         """
