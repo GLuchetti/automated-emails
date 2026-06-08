@@ -1,6 +1,24 @@
 {
   "runs": [
     {
+      "id": "3fd2b120",
+      "timestamp": "2026-06-08T21:52:05.190163+00:00",
+      "window_start": "2026-06-08T19:52:54.228271+00:00",
+      "window_end": "2026-06-08T21:52:05.190163+00:00",
+      "calls_found": 2,
+      "calls_processed": [
+        {
+          "call_id": "6428885496503349329",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Jeff Good and Aaron Bergland",
+          "team": "support",
+          "status": "error",
+          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "timestamp": "2026-06-08T21:52:12.838938+00:00"
+        }
+      ],
+      "skipped": 1
+    },
+    {
       "id": "4810f8f8",
       "timestamp": "2026-06-08T19:52:54.228271+00:00",
       "window_start": "2026-06-08T17:56:32.387232+00:00",
@@ -607,5 +625,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-08T19:53:03.106358+00:00"
+  "last_updated": "2026-06-08T21:52:12.839520+00:00"
 }
