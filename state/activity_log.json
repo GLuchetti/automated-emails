@@ -1,6 +1,34 @@
 {
   "runs": [
     {
+      "id": "ff649526",
+      "timestamp": "2026-06-10T21:36:13.021804+00:00",
+      "window_start": "2026-06-10T19:15:33.907008+00:00",
+      "window_end": "2026-06-10T21:36:13.021804+00:00",
+      "calls_found": 1,
+      "calls_processed": [
+        {
+          "call_id": "8033115768743714838",
+          "call_name": "SiteZeus Discussion <> Ciccio RG",
+          "team": "sales",
+          "rep_name": "wmorgan@sitezeus.com",
+          "rep_email": "wmorgan@sitezeus.com",
+          "prospect_name": "Tyler Azzarelli",
+          "prospect_email": "tylera@cicciorg.com",
+          "segment": "SMB / Emerging",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler \u2014 SiteZeus Discussion <> Ciccio RG",
+          "email_html": "<p>Hi Tyler,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Tyler from Ciccio Restaurant Group, discussed SiteZeus's modular platform for site selection and market analysis, highlighting its \"Locate\" and \"Customer Insights/Market\" modules. Tyler expressed interest in the cannibalization analysis and white space identification capabilities, particularly for identifying new market opportunities and optimizing store placement. They concluded by discussing pricing and contract terms, with Tyler indicating a preference for a one-year agreement due to current cost management priorities, while Will emphasized the value of longer-term partnerships for growing brands.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>And then we'll provide you with that executive summary to go and have conversations for equity.</li><li>So like we'll make the initial scorecard, which is, hey, this is what we found out and what we'd recommend.</li><li>And we'll help you.</li><li>So like right now, I'm doing my site evaluation, we'll give you an index and then a grade.</li><li>Hey, I'll help you out.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
+          "status": "dashboard",
+          "timestamp": "2026-06-10T21:36:15.440874+00:00"
+        }
+      ],
+      "skipped": 0
+    },
+    {
       "id": "fd2b9613",
       "timestamp": "2026-06-10T19:15:33.907008+00:00",
       "window_start": "2026-06-10T16:26:50.146058+00:00",
@@ -844,5 +872,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-10T19:15:43.475159+00:00"
+  "last_updated": "2026-06-10T21:36:15.441412+00:00"
 }
