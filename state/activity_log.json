@@ -1,6 +1,24 @@
 {
   "runs": [
     {
+      "id": "fd2b9613",
+      "timestamp": "2026-06-10T19:15:33.907008+00:00",
+      "window_start": "2026-06-10T16:26:50.146058+00:00",
+      "window_end": "2026-06-10T19:15:33.907008+00:00",
+      "calls_found": 1,
+      "calls_processed": [
+        {
+          "call_id": "2390702883987727721",
+          "call_name": "SiteZeus Locate #1 Training - Rural King - Brayden Goodrich",
+          "team": "support",
+          "status": "no_contact",
+          "error": "HubSpot contact not found: bgoodrich@ruralking.com",
+          "timestamp": "2026-06-10T19:15:43.474774+00:00"
+        }
+      ],
+      "skipped": 0
+    },
+    {
       "id": "985b1656",
       "timestamp": "2026-06-10T16:26:50.146058+00:00",
       "window_start": "2026-06-10T12:33:46.498880+00:00",
@@ -826,5 +844,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-10T16:26:53.221109+00:00"
+  "last_updated": "2026-06-10T19:15:43.475159+00:00"
 }
