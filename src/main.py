@@ -188,15 +188,25 @@ def process_support_call(
     to_emails = [p["emailAddress"] for p in external]
     cc_emails = [p["emailAddress"] for p in internal_parties]
 
-    send_email(
-        smtp_user=smtp_user,
-        smtp_password=smtp_password,
-        from_address=config.SUPPORT_FROM_EMAIL,
-        to_addresses=to_emails,
-        cc_addresses=cc_emails,
-        subject=subject,
-        body_html=html,
-    )
+    # Attempt SMTP send; fall back to dashboard if credentials missing or send fails.
+    email_sent = False
+    if smtp_user and smtp_password:
+        try:
+            send_email(
+                smtp_user=smtp_user,
+                smtp_password=smtp_password,
+                from_address=config.SUPPORT_FROM_EMAIL,
+                to_addresses=to_emails,
+                cc_addresses=cc_emails,
+                subject=subject,
+                body_html=html,
+            )
+            email_sent = True
+            logger.info("Support email sent for call %s → %s", call_id, to_emails)
+        except Exception as smtp_err:
+            logger.warning("Call %s: SMTP send failed (%s) — logging to dashboard", call_id, smtp_err)
+    else:
+        logger.info("Call %s: no SMTP credentials — logging support draft to dashboard", call_id)
 
     run_log["calls_processed"].append({
         "call_id": call_id,
@@ -208,10 +218,9 @@ def process_support_call(
         "email_cc": cc_emails,
         "email_subject": subject,
         "email_html": html,
-        "status": "sent",
+        "status": "sent" if email_sent else "dashboard",
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
-    logger.info("Support email sent for call %s → %s", call_id, to_emails)
 
 
 # ------------------------------------------------------------------
@@ -329,7 +338,7 @@ def main() -> None:
     smtp_password = os.environ.get("SUPPORT_APP_PASSWORD", "")
 
     gong = GongClient(gong_key, gong_secret)
-    hubspot = HubSpotClient(hubspot_token)
+    hubspot = HubSpotClient(hubSpot_token)
 
     from_dt = load_last_run()
     to_dt = datetime.now(timezone.utc)
