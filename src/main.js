@@ -266,10 +266,12 @@ async function main() {
     // Team map
     const teamMap = await gong.buildTeamMap(config.SALES_MANAGER_NAME, config.SUPPORT_MANAGER_NAME);
     const userEmailMap = await gong.userEmailMap();
-    console.info(`[Main] Team map — sales: ${Object.keys(teamMap.sales || {}).length}, support: ${Object.keys(teamMap.support || {}).length}`);
+    const salesCount = Object.values(teamMap).filter(v => v === "sales").length;
+    const supportCount = Object.values(teamMap).filter(v => v === "support").length;
+    console.info(`[Main] Team map — sales: ${salesCount}, support: ${supportCount}`);
 
     // Fetch calls
-    const calls = await gong.getCompletedCalls(windowStart.toISOString(), windowEnd.toISOString());
+    const calls = await gong.getCompletedCalls(windowStart, windowEnd);
     console.info(`[Main] Calls found: ${calls.length}`);
 
     if (!calls.length) {
@@ -300,8 +302,8 @@ async function main() {
       const hostUserId = call.primaryUserId || call.ownerId || "";
       const hostEmail  = (userEmailMap[hostUserId] || "").toLowerCase();
 
-      const isSales   = teamMap.sales?.[hostUserId]   || teamMap.sales?.[hostEmail];
-      const isSupport = teamMap.support?.[hostUserId] || teamMap.support?.[hostEmail];
+      const isSales = teamMap[hostUserId] === "sales" || (hostEmail && teamMap[hostEmail] === "sales");
+      const isSupport = teamMap[hostUserId] === "support" || (hostEmail && teamMap[hostEmail] === "support");
 
       console.info(`[Main] Processing call ${callId} — team: ${isSales ? "sales" : isSupport ? "support" : "unknown"} — "${callName}"`);
 
