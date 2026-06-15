@@ -1,0 +1,19 @@
+{
+  "name": "gong-email-automation",
+  "version": "1.0.0",
+  "description": "SiteZeus Gong call email automation — routes Gong calls to sales or support email pipelines.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
