@@ -1,6 +1,14 @@
 {
   "runs": [
     {
+      "id": "run-1781557758169",
+      "timestamp": "2026-06-15T21:09:18.169Z",
+      "window_start": "2026-06-15T00:00:00.000Z",
+      "window_end": "2026-06-15T21:09:18.169Z",
+      "calls_processed": [],
+      "fatal_error": "fromDt.toISOString is not a function"
+    },
+    {
       "id": "53706907",
       "timestamp": "2026-06-11T16:05:12.164301+00:00",
       "window_start": "2026-06-05T11:00:00+00:00",
@@ -12,7 +20,7 @@
           "call_name": "SiteZeus POC Review <> CSL Plasma",
           "team": "sales",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:19.634728+00:00"
         },
         {
@@ -36,7 +44,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler \u2014 SiteZeus Introduction <> Ciccio RG",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus Introduction <> Ciccio RG",
           "email_html": "<p>Hi Tyler,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Tyler from Ciccio Restaurant Group, discussed SiteZeus's capabilities for market analysis and white space identification to support Ciccio's expansion plans for their \"Fresh Kitchen\" concept. Tyler expressed an urgent need for analytics to understand market potential and identify successful locations, particularly within Florida, to inform discussions with investment partners. They explored SiteZeus's data segmentation, geofencing, and predictive modeling for site selection and cannibalization analysis, with a follow-up call scheduled to review pricing and product examples.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I'll say four because that's what I want.</li><li>So we'd have to get you a login and then we can do that on like the second call and then from there we'll go and do start doing the analysis.</li><li>I'll see what kind of again, I think it's a low percentage of our sales, but it probably is going to skew younger and more.</li><li>But we can dive into that and I'll pull this up after the afternoon and then we can see if there's anything you'd want to remove or add in.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:26.334627+00:00"
@@ -54,7 +62,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for John \u2014 SiteZeus Demo <> Driven Brands",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for John — SiteZeus Demo <> Driven Brands",
           "email_html": "<p>Hi John,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with John from Driven Brands Inc., discussed SiteZeus's location intelligence platform and its potential to address Driven Brands' current challenges with their existing system, Calibrate. The conversation highlighted SiteZeus's advanced capabilities in predictive modeling, white space analysis, and AI-driven insights, which could significantly improve Driven Brands' site selection and expansion strategies, particularly for brands like Take 5. They agreed to a proof of concept to demonstrate these capabilities and explore a potential partnership.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>We're with, okay, I'll give you the whole story, right?</li><li>Our marketing team decided that like if we use calibrate, we'll be able to get more openings, right?</li><li>We'll have a proof of concept model set up in 36 hours to review with you all.</li><li>First thing I'll call out is everything is modulized.</li><li>What I call customer insights is sitezeus market and that's all and we'll dive into that a little bit because they go hand in hand.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:26.540274+00:00"
@@ -72,7 +80,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Kris \u2014 Quick SiteZeus Sync",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kris — Quick SiteZeus Sync",
           "email_html": "<p>Hi Kris,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with CFE from Batteries Plus, discussed the delivery of a presentation deck and the value of SiteZeus's new initiative for franchise development and sales. CFE plans to present the initiative as a fait accompli to his team, highlighting its benefits for territory creation and franchisee upsells, and requested a list of SiteZeus's major clients for peer validation. They also confirmed a split payment arrangement for billing and agreed to await legal review before proceeding with the contract.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I've got a quick I'll send over a loom that walks through the new presentation templates as well if you'd like to show it.</li><li>So if there's interest there, I'll share that.</li><li>I'll send that right now.</li><li>I'm going to send it off to legal this week.</li><li>We'll take that split payment that'll get Peter a little bit less angst in his life around capital.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:26.720115+00:00"
@@ -90,7 +98,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Abdul \u2014 Candy Cloud Contract Discussion",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Abdul — Candy Cloud Contract Discussion",
           "email_html": "<p>Hi Abdul,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch and Ian from SiteZeus, along with Abdul from Candy Cloud Franchising, discussed Candy Cloud's interest in SiteZeus's product despite an existing contract, with Abdul prioritizing a phased rollout starting with location services in December or January. They explored pricing options, with Abdul seeking a tiered structure and flexible payment for the first year and a half, and agreed to reconvene after Thanksgiving to finalize a proposal for the full suite of location services. The conversation highlighted Candy Cloud's growth phase and their need for robust data to support expansion and franchisee support.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>And that's why we wanted to kind of look at a start date of sometime December January and then we'll kind of get situated with buxton, and our only hindrance was on the pricing.</li><li>So just a I'll plant that seed in your head there.</li><li>And I think that's what we will harness it.</li><li>So I'll leave that with you guys.</li><li>That was the only reason I said we'll do both of them together?</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:26.937941+00:00"
@@ -108,8 +116,8 @@
             "lboney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Sunny \u2014 SiteZeus Proposal Review",
-          "email_html": "<p>Hi Sunny,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Lucas from SiteZeus, along with Sunny from Ez Stops, discussed SiteZeus's capabilities in modeling competitor site selection strategies and presented pricing for their Locate Platform. Sunny expressed interest in a pilot program for the new Ez Stops brand, and Lucas agreed to explore a one-year commitment at the proposed annual price, with payment terms to be confirmed. They are working towards an agreement, with Lucas to follow up after discussing options with his CRO.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>go ahead and send me that paper for now and I'll look at the property.</li><li>I was able to connect, internally, put together a kind of a high level proposal\u2026 that I'll review.</li><li>I'll go ahead and share my screen.</li><li>So we'll take well.</li><li>Program where we're I'm seeing how I'm going to integrate this into my decision making process.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Sunny — SiteZeus Proposal Review",
+          "email_html": "<p>Hi Sunny,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Lucas from SiteZeus, along with Sunny from Ez Stops, discussed SiteZeus's capabilities in modeling competitor site selection strategies and presented pricing for their Locate Platform. Sunny expressed interest in a pilot program for the new Ez Stops brand, and Lucas agreed to explore a one-year commitment at the proposed annual price, with payment terms to be confirmed. They are working towards an agreement, with Lucas to follow up after discussing options with his CRO.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>go ahead and send me that paper for now and I'll look at the property.</li><li>I was able to connect, internally, put together a kind of a high level proposal… that I'll review.</li><li>I'll go ahead and share my screen.</li><li>So we'll take well.</li><li>Program where we're I'm seeing how I'm going to integrate this into my decision making process.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:27.098911+00:00"
         },
@@ -118,7 +126,7 @@
           "call_name": "SZ | Penn",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:32.900870+00:00"
         },
         {
@@ -134,7 +142,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch and Ian from SiteZeus, along with David from Victory Lane Quick Oil Change Inc., discussed SiteZeus's platform for customer insights, competitor benchmarking, and site selection, which David believes could have positively influenced two of his company's recent location decisions. David expressed significant interest but needs to discuss affordability with his team, and they agreed to follow up by the end of the following week. The SiteZeus team confirmed full implementation and support, with onboarding taking four to six weeks.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I will, I will take whatever we talk about and I'll catch you guys up on Monday and then we'll go from there.</li><li>But what I will do is I'll have this discussion with the folks on Monday and I actually take that back.</li><li>But we will have the discussion and I'll give you feedback one way or the other.</li><li>I'm going to get ready for one more, I have before I can go home for the weekend here.</li><li>But, are you going to send this to me so I can show it to him?</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:33.107818+00:00"
@@ -152,7 +160,7 @@
             "lboney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Brad \u2014 SiteZeus <> Neighborly Meeting",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Brad — SiteZeus <> Neighborly Meeting",
           "email_html": "<p>Hi Brad,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Sean, Ian and Lucas from SiteZeus, along with Neighborly Brands team members, discussed the analysis of Mr. Rooter's territory performance, identifying key demographic drivers for revenue and highlighting discrepancies in current data reporting that necessitate further investigation and refinement of the territory modeling. The team aims to develop a more accurate territory formula by addressing data quality issues and outlier performance to optimize future franchise growth.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I'll double check it's.</li><li>So we'll just give him a minute or two.</li><li>We're doing essentially a second analysis that we'll be presenting today.</li><li>So today we'll be walking through the portfolio driven territory formula for mr reuter as well as spending some time hopping back in.</li><li>I'm going to hand it over to Sean.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">White Space Analysis</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:33.363513+00:00"
@@ -162,7 +170,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Luiza Weber and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:39.387864+00:00"
         },
         {
@@ -170,7 +178,7 @@
           "call_name": "SiteZeus Intro <> Personal Physicians",
           "team": "sales",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:39.576120+00:00"
         },
         {
@@ -186,7 +194,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler \u2014 SiteZeus Discussion <> Ciccio RG",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus Discussion <> Ciccio RG",
           "email_html": "<p>Hi Tyler,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Tyler from Ciccio Restaurant Group, discussed SiteZeus's modular platform for site selection and market analysis, highlighting its \"Locate\" and \"Customer Insights/Market\" modules. Tyler expressed interest in the cannibalization analysis and white space identification capabilities, particularly for identifying new market opportunities and optimizing store placement. They concluded by discussing pricing and contract terms, with Tyler indicating a preference for a one-year agreement due to current cost management priorities, while Will emphasized the value of longer-term partnerships for growing brands.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>And then we'll provide you with that executive summary to go and have conversations for equity.</li><li>So like we'll make the initial scorecard, which is, hey, this is what we found out and what we'd recommend.</li><li>And we'll help you.</li><li>So like right now, I'm doing my site evaluation, we'll give you an index and then a grade.</li><li>Hey, I'll help you out.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:05:39.997446+00:00"
@@ -196,7 +204,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Justin Riat and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:49.898285+00:00"
         },
         {
@@ -204,7 +212,7 @@
           "call_name": "Model Review & PFS-SiteZeus Monthly Sync",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:05:55.794895+00:00"
         },
         {
@@ -228,8 +236,8 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Jim \u2014 SiteZeus Discussion <> AVG",
-          "email_html": "<p>Hi Jim,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Jim from American Veterinary Group, discussed the current status of SiteZeus's site selection tool and its potential adoption by AVG. While AVG acknowledges SiteZeus's advancements, particularly in operational data and forecasting, they are hesitant to switch from their current tool, Buxton, due to existing infrastructure projects and a desire to assess current implementations. Both parties agreed to further explore SiteZeus's enhanced functionalities and potential pricing adjustments, with Jim committing to provide an update by the end of the week.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>She's like at this point, she's pushing more to just have like a party but we'll see.</li><li>And one, so I'll remember it always because it'll be on my birthday, and then the other is, so we can, when we're talking to people be able to say that, yeah, it's for a birthday party.</li><li>And my guess is that we will probably end up circling back with you guys around the same time next year and saying, okay, you were right.</li><li>So that's one thing I'm going to circle back with him since we last spoke.</li><li>So now when you run a forecast\u2026 we'll give you that projection.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Jim — SiteZeus Discussion <> AVG",
+          "email_html": "<p>Hi Jim,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Jim from American Veterinary Group, discussed the current status of SiteZeus's site selection tool and its potential adoption by AVG. While AVG acknowledges SiteZeus's advancements, particularly in operational data and forecasting, they are hesitant to switch from their current tool, Buxton, due to existing infrastructure projects and a desire to assess current implementations. Both parties agreed to further explore SiteZeus's enhanced functionalities and potential pricing adjustments, with Jim committing to provide an update by the end of the week.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>She's like at this point, she's pushing more to just have like a party but we'll see.</li><li>And one, so I'll remember it always because it'll be on my birthday, and then the other is, so we can, when we're talking to people be able to say that, yeah, it's for a birthday party.</li><li>And my guess is that we will probably end up circling back with you guys around the same time next year and saying, okay, you were right.</li><li>So that's one thing I'm going to circle back with him since we last spoke.</li><li>So now when you run a forecast… we'll give you that projection.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:02.035449+00:00"
         },
@@ -246,7 +254,7 @@
             "ekeeney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Kyle \u2014 SiteZeus Locate Demo <> Neko Health",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kyle — SiteZeus Locate Demo <> Neko Health",
           "email_html": "<p>Hi Kyle,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Emma from SiteZeus, along with Cindy, Kyle and Kwan from Neko Health, discussed SiteZeus's platform for site selection and market analysis. Neko Health, planning U.S. expansion with 11 secured leases, is seeking detailed demographic and customer insights to identify successful location patterns. SiteZeus presented their Locate and Customer Insights platforms, highlighting capabilities in white space analysis, customer segmentation using credit card data, and site scoring, with pricing for a three-year agreement at $28,800 annually for five users.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>Juan, I'll let you take it away, sure.</li><li>Which of them are similar to the sites that, you know, we will see are performing later this year.</li><li>So I'll show you kind of some insights into that too in the demo.</li><li>No, I mean, I'm sure we'll have questions throughout so we can get.</li><li>Then I'll hop over the platform and we can look at the specific variables we're going through as well.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>ekeeney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:02.315557+00:00"
@@ -256,7 +264,7 @@
           "call_name": "SZ | 60 minute call - Kathleen McKay and Alan May",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:08.413622+00:00"
         },
         {
@@ -264,7 +272,7 @@
           "call_name": "SZ | 30 minute call - Jenny Rachford and Alan May",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:14.082062+00:00"
         },
         {
@@ -280,7 +288,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Amit \u2014 SiteZeus Locate <> Secret Burger Kitchen",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Amit — SiteZeus Locate <> Secret Burger Kitchen",
           "email_html": "<p>Hi Amit,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch from SiteZeus, along with Amit from Secret Burger Kitchen, discussed SiteZeus's platform for site selection and expansion strategy. Amit expressed strong interest in SiteZeus's ability to provide tailored data and proactive insights, which he believes will significantly simplify his current site evaluation process and support Secret Burger Kitchen's growth plans. They tentatively scheduled a follow-up meeting to further explore the platform and a potential proposal.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I was just leaving a doctor's appointment and so I'll be back in my house in like two minutes.</li><li>I'll see you in a second.</li><li>said, don't go to the gym for three days and we'll see what happens and I'll come back, yeah.</li><li>So I'll get what they have.</li><li>I'll get what I have, and that's how I'll assess our sites based on the scorecard that I developed.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:14.262377+00:00"
@@ -298,7 +306,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Carl \u2014 SiteZeus Locate <> Crust Pizza",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Carl — SiteZeus Locate <> Crust Pizza",
           "email_html": "<p>Hi Carl,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch from SiteZeus, along with Carl from Crust Pizza, discussed Crust Pizza's current real estate expansion process, which involves master and local brokers, and technology like Placer AI. Mitch presented SiteZeus's platform as a more granular and brand-specific solution for site selection, analyzing customer data and market traits to identify optimal locations, and Carl expressed interest in a future demo. While Carl is satisfied with their current methods, he acknowledged the potential benefits of SiteZeus for future growth and scaling.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>Just, yeah, really lay it down and I'll go from there.</li><li>Yeah, I'll definitely do that.</li><li>I'll show you in a second.</li><li>Then we'll geofence, all your stores, take your customer data into account.</li><li>And we'll build out that scorecard.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:14.702683+00:00"
@@ -324,7 +332,7 @@
             "ekeeney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Keith \u2014 SiteZeus Discussion",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Keith — SiteZeus Discussion",
           "email_html": "<p>Hi Keith,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Emma from SiteZeus, along with Keith from All Paws Pet Wash, discussed All Paws' need for enhanced analytics to assess site viability and perform cost-benefit analyses for land revenue share and lease costs. Keith highlighted their unique business model of pet wash kiosks and their current reliance on internal systems for site determination, seeking SiteZeus's capabilities to understand location value and identify high-potential markets. They agreed to schedule a 45-60 minute demo for Thursday at 12:00 PM Central to explore SiteZeus's AI predictive model and customer segmentation features.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>So we'll go through like a whole learning process.</li><li>I'll look forward to doing that.</li><li>Then I will send that over and I'll just send you a few other kind of links about sitezeus and then looking forward to connecting on Thursday.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>ekeeney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:21.001870+00:00"
@@ -334,7 +342,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Jeff Good and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:26.703808+00:00"
         },
         {
@@ -350,7 +358,7 @@
             "ekeeney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Kristina \u2014 SiteZeus Intro <> Lola Hospitality",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kristina — SiteZeus Intro <> Lola Hospitality",
           "email_html": "<p>Hi Kristina,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Emma from SiteZeus, along with Kristina from Lola Hospitality, discussed Lola's need for better guest data to inform site selection, particularly after a recent underperforming location. While SiteZeus offers robust site selection tools and can analyze mobile data to infer customer behavior, Kristina felt their current focus on guest segmentation was not a primary strength of SiteZeus, leading them to postpone further discussion until Lola Hospitality has more developed guest data capabilities.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>So it's a no brainer, we'll you know, build up this massive restaurant and we'll do well.</li><li>So I'll go through that.</li><li>We will, if you don't have that, we will run the mobile data on your existing sites and learn based around that.</li><li>Like I mentioned, we'll build you out that white space analysis.</li><li>We'll rank specific states, specific dmas based around if you want to look at drive times or concentric rings, specific spacing too.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>ekeeney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:26.927254+00:00"
@@ -368,7 +376,7 @@
             "lboney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Sunny \u2014 SiteZeus Meeting",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Sunny — SiteZeus Meeting",
           "email_html": "<p>Hi Sunny,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Lucas from SiteZeus, along with Sunny from Ez Stops, discussed SiteZeus's platform for site selection and market analysis, highlighting its ability to integrate diverse data sets for predictive modeling and explainable decision-making. The conversation focused on how SiteZeus can empower brands to independently evaluate markets, identify optimal locations, and understand customer behavior, even for new brands without existing portfolios. They concluded by agreeing to a follow-up call to discuss pricing and implementation details for Sunny's specific needs.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I was excited to reconnect like we talked about last time we'll walk through the sitezeus platform today.</li><li>I'll walk through as we go through this presentation.</li><li>But there's still some benefits that the AI will provide you.</li><li>We have a full AI chat integration that almost acts as an agent within the platform that I'll showcase today.</li><li>I'll touch on that as well.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:27.085614+00:00"
@@ -378,7 +386,7 @@
           "call_name": "SZ | 60 minute call - Tamara  Cunningham and Alan May",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:32.741590+00:00"
         },
         {
@@ -386,7 +394,7 @@
           "call_name": "SiteZeus | Whitespace Review - Aaron - Ria Goel and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:38.632250+00:00"
         },
         {
@@ -394,7 +402,7 @@
           "call_name": "Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:44.372803+00:00"
         },
         {
@@ -410,7 +418,7 @@
             "ekeeney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Ryan \u2014 SiteZeus <> Opening Edge Quick Connect",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Ryan — SiteZeus <> Opening Edge Quick Connect",
           "email_html": "<p>Hi Ryan,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Emma from SiteZeus, along with Ryan from Opening Edge Solutions, discussed the pricing and features for United Defense Tactical (UDT), a company experiencing \"sticker shock\" from initial adjusted pricing. They focused on UDT's critical needs for territory mapping and control, and explored potential price adjustments by removing less critical features like credit card spend analysis, with a three-year term offering the most aggressive discount.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I'll see about and what like what are kind of the specific things?</li><li>I'm going to be the wizard oz.</li><li>I'll take the admin, I'll probably have three to four viewers.</li><li>Yeah, I'll get back to you.</li><li>I'll do a few number crunching and then I'll get back to you about if we can go kind of lower than that and maybe remove at least that credit card spend data set and what that looks like.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>ekeeney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:44.701288+00:00"
@@ -428,7 +436,7 @@
             "lboney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Jeremy \u2014 SiteZeus <> Kindercare Meeting",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Jeremy — SiteZeus <> Kindercare Meeting",
           "email_html": "<p>Hi Jeremy,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Lucas from SiteZeus, along with Jeremy from KinderCare Learning Center, discussed KinderCare's current market planning and opportunity evaluation processes, highlighting their need for a comprehensive, enterprise-level geospatial platform beyond just site selection. SiteZeus presented its AI-driven platform, emphasizing its customization, self-service capabilities, and advanced modeling for forecasting and portfolio optimization, which aligns with KinderCare's upcoming RFP process for a new vendor in late 2027. The conversation also touched upon data integration, cannibalization analysis, and the importance of explainable AI models for KinderCare's specific business needs.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>But we'll like prioritize, you know, stuff like that.</li><li>I'll touch on each of those as we go through this.</li><li>I'll touch on that.</li><li>I'll touch on that more when we get in.</li><li>We'll even show you when we run a forecast, we'll show you in platform.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">White Space Analysis</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-11T16:06:44.877644+00:00"
@@ -438,7 +446,7 @@
           "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-11T16:06:50.677192+00:00"
         }
       ],
@@ -509,7 +517,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler \u2014 SiteZeus Discussion <> Ciccio RG",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus Discussion <> Ciccio RG",
           "email_html": "<p>Hi Tyler,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Tyler from Ciccio Restaurant Group, discussed SiteZeus's modular platform for site selection and market analysis, highlighting its \"Locate\" and \"Customer Insights/Market\" modules. Tyler expressed interest in the cannibalization analysis and white space identification capabilities, particularly for identifying new market opportunities and optimizing store placement. They concluded by discussing pricing and contract terms, with Tyler indicating a preference for a one-year agreement due to current cost management priorities, while Will emphasized the value of longer-term partnerships for growing brands.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>And then we'll provide you with that executive summary to go and have conversations for equity.</li><li>So like we'll make the initial scorecard, which is, hey, this is what we found out and what we'd recommend.</li><li>And we'll help you.</li><li>So like right now, I'm doing my site evaluation, we'll give you an index and then a grade.</li><li>Hey, I'll help you out.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-10T21:36:15.440874+00:00"
@@ -555,7 +563,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler \u2014 SiteZeus Introduction <> Ciccio RG",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus Introduction <> Ciccio RG",
           "email_html": "<p>Hi Tyler,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Tyler Azzarelli from cicciorg.com, discussed SiteZeus's capabilities in market analysis and white space identification to support Ciccio Restaurant Group's expansion plans for their \"Fresh Kitchen\" concept. The conversation focused on Tyler's immediate need for market analytics to identify successful locations and potential new markets, particularly within Florida, to support investment discussions. SiteZeus presented its advanced segmentation and data-driven approach to growth, with a proposed tiered system for identifying high-potential sites and a discussion around pricing for their SaaS platform.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I'll say four because that's what I want.</li><li>So we'd have to get you a login and then we can do that on like the second call and then from there we'll go and do start doing the analysis.</li><li>I'll see what kind of again, I think it's a low percentage of our sales, but it probably is going to skew younger and more.</li><li>But we can dive into that and I'll pull this up after the afternoon and then we can see if there's anything you'd want to remove or add in.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-10T16:26:53.220649+00:00"
@@ -637,7 +645,7 @@
             "ekeeney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Kristina \u2014 SiteZeus Intro <> Lola Hospitality",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kristina — SiteZeus Intro <> Lola Hospitality",
           "email_html": "<p>Hi Kristina,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Emma from SiteZeus, along with Kristina from Lola Hospitality, discussed Lola's need for better guest data to inform site selection, particularly after a recent underperforming location. While SiteZeus offers robust site selection tools and can analyze mobile data to infer customer behavior, Kristina felt their current focus on guest segmentation was not a primary strength of SiteZeus, leading them to postpone further discussion until Lola Hospitality has more developed guest data capabilities.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>So it's a no brainer, we'll you know, build up this massive restaurant and we'll do well.</li><li>So I'll go through that.</li><li>We will, if you don't have that, we will run the mobile data on your existing sites and learn based around that.</li><li>Like I mentioned, we'll build you out that white space analysis.</li><li>We'll rank specific states, specific dmas based around if you want to look at drive times or concentric rings, specific spacing too.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>ekeeney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-09T19:35:23.074408+00:00"
@@ -665,7 +673,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Abdul \u2014 Candy Cloud Contract Discussion",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Abdul — Candy Cloud Contract Discussion",
           "email_html": "<p>Hi Abdul,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch and Ian from SiteZeus, along with Abdul from Candy Cloud Franchising, discussed Candy Cloud's interest in SiteZeus's product despite an existing contract, with Abdul prioritizing a phased rollout starting with location services in December or January. They explored pricing options, with Abdul seeking a tiered structure and flexible payment for the first year and a half, and agreed to reconvene after Thanksgiving to finalize a proposal for the full suite of location services. The conversation highlighted Candy Cloud's growth phase and their need for robust data to support expansion and franchisee support.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>And that's why we wanted to kind of look at a start date of sometime December January and then we'll kind of get situated with buxton, and our only hindrance was on the pricing.</li><li>So just a I'll plant that seed in your head there.</li><li>And I think that's what we will harness it.</li><li>So I'll leave that with you guys.</li><li>That was the only reason I said we'll do both of them together?</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-09T17:28:05.651040+00:00"
@@ -683,7 +691,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for John \u2014 SiteZeus Demo <> Driven Brands",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for John — SiteZeus Demo <> Driven Brands",
           "email_html": "<p>Hi John,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with John from Driven Brands Inc., discussed SiteZeus's location intelligence platform and its potential to address Driven Brands' current challenges with their existing system, Calibrate. The conversation highlighted SiteZeus's advanced capabilities in predictive modeling, white space analysis, and AI-driven insights, which could significantly improve Driven Brands' site selection and expansion strategies, particularly for brands like Take 5. They agreed to a proof of concept to demonstrate these capabilities and explore a potential partnership.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>We're with, okay, I'll give you the whole story, right?</li><li>Our marketing team decided that like if we use calibrate, we'll be able to get more openings, right?</li><li>We'll have a proof of concept model set up in 36 hours to review with you all.</li><li>First thing I'll call out is everything is modulized.</li><li>What I call customer insights is sitezeus market and that's all and we'll dive into that a little bit because they go hand in hand.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">White Space Analysis</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-09T17:28:05.919095+00:00"
@@ -748,7 +756,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Jeff Good and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-08T21:52:12.838938+00:00"
         }
       ],
@@ -766,7 +774,7 @@
           "call_name": "SZ | 30 minute call - Jenny Rachford and Alan May",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-08T19:53:02.961406+00:00"
         },
         {
@@ -782,7 +790,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Amit \u2014 SiteZeus Locate <> Secret Burger Kitchen",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Amit — SiteZeus Locate <> Secret Burger Kitchen",
           "email_html": "<p>Hi Amit,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch from SiteZeus, along with Amit from Secret Burger Kitchen, discussed SiteZeus's platform for site selection and expansion strategy. Amit expressed strong interest in SiteZeus's ability to provide tailored data and proactive insights, which he believes will significantly simplify his current site evaluation process and support Secret Burger Kitchen's growth plans. They tentatively scheduled a follow-up meeting to further explore the platform and a potential proposal.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I was just leaving a doctor's appointment and so I'll be back in my house in like two minutes.</li><li>I'll see you in a second.</li><li>said, don't go to the gym for three days and we'll see what happens and I'll come back, yeah.</li><li>So I'll get what they have.</li><li>I'll get what I have, and that's how I'll assess our sites based on the scorecard that I developed.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-08T19:53:03.105932+00:00"
@@ -810,7 +818,7 @@
             "wmorgan@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Kris \u2014 Quick SiteZeus Sync",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kris — Quick SiteZeus Sync",
           "email_html": "<p>Hi Kris,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with CFE from Batteries Plus, discussed the delivery of a presentation deck and the value of SiteZeus's new initiative for franchise development and sales. CFE plans to present the initiative as a fait accompli to his team, highlighting its benefits for territory creation and franchisee upsells, and requested a list of SiteZeus's major clients for peer validation. They also confirmed a split payment arrangement for billing and agreed to await legal review before proceeding with the contract.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I've got a quick I'll send over a loom that walks through the new presentation templates as well if you'd like to show it.</li><li>So if there's interest there, I'll share that.</li><li>I'll send that right now.</li><li>I'm going to send it off to legal this week.</li><li>We'll take that split payment that'll get Peter a little bit less angst in his life around capital.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>wmorgan@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-08T17:56:35.490329+00:00"
@@ -828,7 +836,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Mitch and Ian from SiteZeus, along with David from Victory Lane Quick Oil Change Inc., discussed SiteZeus's platform for customer insights, competitor benchmarking, and site selection, which David believes could have positively influenced two of his company's recent location decisions. David expressed significant interest but needs to discuss affordability with his team, and they agreed to follow up by the end of the following week. The SiteZeus team confirmed full implementation and support, with onboarding taking four to six weeks.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I will, I will take whatever we talk about and I'll catch you guys up on Monday and then we'll go from there.</li><li>But what I will do is I'll have this discussion with the folks on Monday and I actually take that back.</li><li>But we will have the discussion and I'll give you feedback one way or the other.</li><li>I'm going to get ready for one more, I have before I can go home for the weekend here.</li><li>But, are you going to send this to me so I can show it to him?</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-08T17:56:35.712420+00:00"
@@ -846,7 +854,7 @@
             "lboney@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Brad \u2014 SiteZeus <> Neighborly Meeting",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Brad — SiteZeus <> Neighborly Meeting",
           "email_html": "<p>Hi Brad,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Sean, Ian and Lucas from SiteZeus, along with Neighborly Brands team members, discussed the analysis of Mr. Rooter's territory performance, identifying key demographic drivers for revenue and highlighting discrepancies in current data reporting that necessitate further investigation and refinement of the territory modeling. The team aims to develop a more accurate territory formula by addressing data quality issues and outlier performance to optimize future franchise growth.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>I'll double check it's.</li><li>So we'll just give him a minute or two.</li><li>We're doing essentially a second analysis that we'll be presenting today.</li><li>So today we'll be walking through the portfolio driven territory formula for mr reuter as well as spending some time hopping back in.</li><li>I'm going to hand it over to Sean.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Sales Forecasting</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI</a></li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">White Space Analysis</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>lboney@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-08T17:56:35.903983+00:00"
@@ -856,7 +864,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Luiza Weber and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-08T17:56:42.072462+00:00"
         },
         {
@@ -872,7 +880,7 @@
           "call_name": "Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-08T17:56:54.117135+00:00"
         }
       ],
@@ -890,7 +898,7 @@
           "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Luiza Weber and Aaron Bergland",
           "team": "support",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-08T17:35:23.771974+00:00"
         }
       ],
@@ -916,7 +924,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of what we covered.</p>\n<p><strong>What we discussed:</strong></p>\n<ul><li>Run through this proposal.</li><li>So sitezeus locate that's.</li><li>But for you guys, it would be most useful when looking into competitors in a given market.</li><li>You can either see the raw visit data or we can benchmark that against their portfolio and say, hey, this is the fifth most popular take five oil change et cetera.</li><li>We're able to segment everybody back to that household level that we're then using in the customer insights portion, and also to identify the true trade area of a market.</li></ul>\n<p><strong>Next steps:</strong></p>\n<ul><li>I will, I will take whatever we talk about and I'll catch you guys up on Monday and then we'll go from there.</li><li>But what I will do is I'll have this discussion with the folks on Monday and I actually take that back.</li><li>But we will have the discussion and I'll give you feedback one way or the other.</li><li>I'm going to get ready for one more, I have before I can go home for the weekend here.</li><li>But, are you going to send this to me so I can show it to him?</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-08T14:16:23.015534+00:00"
@@ -1205,7 +1213,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to send over a few resources and recap the main areas we covered.</p>\n<p><strong>Quick highlights on SiteZeus:</strong></p>\n<ul><li>Run through this proposal.</li><li>So sitezeus locate that's.</li><li>But for you guys, it would be most useful when looking into competitors in a given market.</li><li>You can either see the raw visit data or we can benchmark that against their portfolio and say, hey, this is the fifth most popular take five oil change et cetera.</li><li>We're able to segment everybody back to that household level that we're then using in the customer insights portion, and also to identify the true trade area of a market.</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p><strong>Next steps:</strong></p>\n<p>Looking forward to continuing the conversation on Well, looking forward to hearing from you next week..</p>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-05T21:29:18.067708+00:00"
@@ -1225,7 +1233,7 @@
           "call_name": "SiteZeus <> Victory Lane Proposal",
           "team": "sales",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-05T21:22:13.753902+00:00"
         }
       ],
@@ -1251,7 +1259,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to send over a few resources and recap the main areas we covered.</p>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p><strong>Next steps:</strong></p>\n<p>I think the best next step would be to find time to continue our conversation. You can find time through the scheduling link in my signature.</p>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-05T21:08:41.360457+00:00"
@@ -1279,7 +1287,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to send over a few resources and recap the main areas we covered.</p>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p><strong>Next steps:</strong></p>\n<p>I think the best next step would be to find time to continue our conversation. You can find time through the scheduling link in my signature.</p>\n<p>Best,<br>Mitchell Gunderson</p>",
           "status": "dashboard",
           "timestamp": "2026-06-05T21:04:09.915042+00:00"
@@ -1307,7 +1315,7 @@
             "mitchg@sitezeus.com"
           ],
           "email_cc": [],
-          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave \u2014 SiteZeus <> Victory Lane Proposal",
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Dave — SiteZeus <> Victory Lane Proposal",
           "email_html": "<p>Hi Dave,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to send over a few resources and recap the main areas we covered.</p>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build</a></li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell</a></li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p><strong>Next steps:</strong></p>\n<p>I think the best next step would be to find time to continue our conversation. You can find time through the scheduling link in my signature.</p>\n<p>Best,<br>mitchg@sitezeus.com</p>",
           "status": "dashboard",
           "timestamp": "2026-06-05T21:00:58.131066+00:00"
@@ -1327,7 +1335,7 @@
           "call_name": "SiteZeus <> Victory Lane Proposal",
           "team": "sales",
           "status": "error",
-          "error": "Unexpected error \u2014 check GitHub Actions logs",
+          "error": "Unexpected error — check GitHub Actions logs",
           "timestamp": "2026-06-05T20:29:24.003511+00:00"
         }
       ],
@@ -1361,5 +1369,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-11T16:06:50.677727+00:00"
+  "last_updated": "2026-06-15T21:09:19.917Z"
 }
