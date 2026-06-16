@@ -1,10 +1,4 @@
 // main.js — Entry point for the Gong call email automation.
-//
-// 1. Reads last_run.json to determine the processing window.
-// 2. Fetches completed Gong calls since that window.
-// 3. For each call, routes to the sales or support pipeline.
-// 4. Appends results to the activity log and regenerates the dashboard.
-// 5. Commits updated state files back to GitHub.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
@@ -12,8 +6,9 @@ import { fileURLToPath } from "url";
 
 import { GongClient } from "./gongClient.js";
 import { HubSpotClient } from "./hubspotClient.js";
+import { sendEmail } from "./emailHandler.js";
 import { formatSalesReviewEmail } from "./salesFormatter.js";
-import { formatSupportEmail } from "./supportFormatter.js";
+import { formatSupportReviewEmail } from "./supportFormatter.js";
 import { recordRun } from "./dashboard.js";
 import * as config from "./config.js";
 
@@ -22,20 +17,13 @@ const ROOT = join(__dirname, "..");
 const LAST_RUN_FILE = join(ROOT, "state", "last_run.json");
 const STATE_DIR = join(ROOT, "state");
 
-// ------------------------------------------------------------------
-// State management
-// ------------------------------------------------------------------
-
 function loadLastRun() {
   if (existsSync(LAST_RUN_FILE)) {
     try {
       const data = JSON.parse(readFileSync(LAST_RUN_FILE, "utf-8"));
       if (data.last_run) return new Date(data.last_run);
-    } catch {
-      // fall through
-    }
+    } catch { /* fall through */ }
   }
-  // Default: 24 hours ago
   const dt = new Date();
   dt.setHours(dt.getHours() - 24);
   return dt;
@@ -46,13 +34,6 @@ function saveLastRun(dt) {
   writeFileSync(LAST_RUN_FILE, JSON.stringify({ last_run: dt.toISOString() }, null, 2), "utf-8");
 }
 
-// ------------------------------------------------------------------
-// Call processing helpers
-// ------------------------------------------------------------------
-
-/**
- * Fetch prospect info from transcript participants (non-SiteZeus attendees).
- */
 function extractProspectFromCall(callData) {
   const parties = callData.parties || [];
   const external = parties.find(
@@ -65,10 +46,14 @@ function extractProspectFromCall(callData) {
   return { email, name, firstName };
 }
 
-/**
- * Process a single Sales call.
- */
-async function processSalesCall({ callId, callName, callData, transcript, teamMap, hs, runLog }) {
+function extractInternalParty(callData) {
+  const parties = callData.parties || [];
+  return parties.find(
+    p => p.affiliation === "internal" || ((p.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN))
+  ) || null;
+}
+
+async function processSalesCall({ callId, callName, callData, transcript, teamMap, hs, smtp, runLog }) {
   const prospect = extractProspectFromCall(callData);
   if (!prospect.email) {
     console.info(`[Sales] Call ${callId}: no external prospect email — skipping`);
@@ -80,7 +65,6 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     return;
   }
 
-  // HubSpot contact lookup
   let isEnterprise = false;
   let repEmail = null;
   const hContact = await hs.findContactByEmail(prospect.email);
@@ -90,22 +74,17 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     if (ownerId) repEmail = await hs.getOwnerEmail(ownerId);
   }
 
-  // Identify the rep from the call parties (internal attendee)
-  const parties = callData.parties || [];
-  const repParty = parties.find(
-    p => p.affiliation === "internal" || ((p.emailAddress || "").includes(config.SITEZEUS_DOMAIN))
-  );
+  const repParty = extractInternalParty(callData);
   const repPartyEmail = (repParty?.emailAddress || "").toLowerCase().trim() || null;
   repEmail = repEmail || repPartyEmail;
+  const repName = (repParty?.name || "").trim() || repEmail || "Sales Rep";
 
-  const repName = (repParty?.name || "").trim() ||
-    Object.values(config.SALES_REPS).find((_, i) => Object.keys(config.SALES_REPS)[i] === repEmail) ||
-    repEmail || "Sales Rep";
+  // Try to get prospect company from HubSpot
+  const prospectCompany = hContact?.properties?.company || null;
 
   const segment = isEnterprise ? "Enterprise" : "SMB";
   console.info(`[Sales] Call ${callId}: prospect=${prospect.email}, rep=${repEmail}, segment=${segment}`);
 
-  // Log available AI content fields
   const content = callData.content || {};
   const availableFields = ["trackers","topics","brief","outline","highlights","keyPoints"].filter(f => content[f]);
   console.info(`[Gong] Content fields available: ${availableFields.join(", ")}`);
@@ -118,11 +97,26 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     const { subject, wrapperHtml } = await formatSalesReviewEmail({
       callData, repName, repEmail: repEmail || "",
       prospectFirstName: prospect.firstName, prospectEmail: prospect.email,
-      isEnterprise, callName, transcript,
+      prospectCompany, isEnterprise, callName, transcript,
     });
     emailHtml = wrapperHtml;
     emailSubject = subject;
-    // Dashboard only — no SMTP sending
+
+    if (smtp.user && smtp.password && repEmail) {
+      try {
+        await sendEmail({
+          smtpUser: smtp.user, smtpPassword: smtp.password,
+          fromAddress: `SiteZeus Automation <${smtp.user}>`,
+          toAddresses: [repEmail], ccAddresses: [],
+          subject, bodyHtml: wrapperHtml,
+        });
+        status = "sent";
+        console.info(`[Sales] Email sent to rep ${repEmail} for call ${callId}`);
+      } catch (smtpErr) {
+        console.warn(`[Sales] SMTP failed for call ${callId} (${smtpErr.message}) — falling back to dashboard`);
+        status = "dashboard";
+      }
+    }
   } catch (err) {
     console.error(`[Sales] Format error for call ${callId}:`, err.message);
     status = "error";
@@ -139,10 +133,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
   });
 }
 
-/**
- * Process a single Support call.
- */
-async function processSupportCall({ callId, callName, callData, transcript, runLog }) {
+async function processSupportCall({ callId, callName, callData, transcript, smtp, runLog }) {
   const parties = callData.parties || [];
   const external = parties.filter(
     p => p.affiliation !== "internal" && !((p.emailAddress || "").includes(config.SITEZEUS_DOMAIN))
@@ -152,11 +143,9 @@ async function processSupportCall({ callId, callName, callData, transcript, runL
     .map(p => (p.emailAddress || "").toLowerCase().trim())
     .filter(Boolean);
 
-  const ccEmails = [config.INTERNAL_NOTIFICATION_EMAIL].filter(Boolean);
-
   const prospect = external[0] || {};
   const prospectName = (prospect.name || "").trim();
-  const prospectFirstName = prospectName ? prospectName.split(" ")[0] : "there";
+  const clientFirstName = prospectName ? prospectName.split(" ")[0] : "there";
   const primaryEmail = (prospect.emailAddress || "").toLowerCase().trim() || null;
 
   if (!primaryEmail) {
@@ -169,17 +158,44 @@ async function processSupportCall({ callId, callName, callData, transcript, runL
     return;
   }
 
-  console.info(`[Support] Call ${callId}: prospect=${primaryEmail}, transcript sentences=${transcript?.length ?? 0}`);
+  const csmParty = extractInternalParty(callData);
+  const csmName = (csmParty?.name || "SiteZeus Team").trim();
+  const csmEmail = (csmParty?.emailAddress || config.SUPPORT_FROM_EMAIL || "").toLowerCase().trim();
+
+  const ccEmails = [config.INTERNAL_NOTIFICATION_EMAIL].filter(Boolean);
+
+  console.info(`[Support] Call ${callId}: client=${primaryEmail}, csm=${csmEmail}, transcript sentences=${transcript?.length ?? 0}`);
 
   let emailHtml = null;
   let emailSubject = null;
   let status = "dashboard";
 
   try {
-    const { subject, html } = await formatSupportEmail(callData, prospectFirstName, callName, transcript);
-    emailHtml = html;
+    const { subject, wrapperHtml } = await formatSupportReviewEmail({
+      callData, csmName, csmEmail,
+      clientFirstName, clientEmail: primaryEmail,
+      callName, transcript,
+    });
+    emailHtml = wrapperHtml;
     emailSubject = subject;
-    // Dashboard only — no SMTP sending
+
+    if (smtp.user && smtp.password) {
+      try {
+        await sendEmail({
+          smtpUser: smtp.user, smtpPassword: smtp.password,
+          fromAddress: config.SUPPORT_FROM_EMAIL,
+          toAddresses: toEmails, ccAddresses: ccEmails,
+          subject, bodyHtml: wrapperHtml,
+        });
+        status = "sent";
+        console.info(`[Support] Email sent for call ${callId} → ${toEmails}`);
+      } catch (smtpErr) {
+        console.warn(`[Support] SMTP failed for call ${callId} (${smtpErr.message}) — falling back to dashboard`);
+        status = "dashboard";
+      }
+    } else {
+      console.info(`[Support] Call ${callId}: no SMTP credentials — logging draft to dashboard`);
+    }
   } catch (err) {
     console.error(`[Support] Format error for call ${callId}:`, err.message);
     status = "error";
@@ -194,19 +210,16 @@ async function processSupportCall({ callId, callName, callData, transcript, runL
   });
 }
 
-// ------------------------------------------------------------------
-// Main
-// ------------------------------------------------------------------
-
 async function main() {
   const runStart = new Date();
   console.info("=".repeat(60));
   console.info(`[Main] Run started: ${runStart.toISOString()}`);
 
-  // Environment
   const gongAccessKey = process.env.GONG_ACCESS_KEY;
   const gongSecret = process.env.GONG_SECRET;
   const hubspotToken = process.env.HUBSPOT_TOKEN;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
 
   if (!gongAccessKey || !gongSecret) {
     console.error("[Main] GONG_ACCESS_KEY and GONG_SECRET are required. Aborting.");
@@ -215,11 +228,12 @@ async function main() {
 
   const gong = new GongClient(gongAccessKey, gongSecret);
   const hs = hubspotToken ? new HubSpotClient(hubspotToken) : null;
+  const smtp = { user: smtpUser, password: smtpPassword };
 
   if (!hs) console.warn("[Main] No HUBSPOT_TOKEN — enterprise classification disabled.");
-  if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — emails will use Gong AI content fallback.");
+  if (!smtp.user || !smtp.password) console.warn("[Main] No SMTP credentials — emails will go to dashboard only.");
+  if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — AI extraction disabled.");
 
-  // Window
   const windowStart = loadLastRun();
   const windowEnd = runStart;
   console.info(`[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()}`);
@@ -233,14 +247,12 @@ async function main() {
   };
 
   try {
-    // Team map
     const teamMap = await gong.buildTeamMap(config.SALES_MANAGER_NAME, config.SUPPORT_MANAGER_NAME);
     const userEmailMap = await gong.userEmailMap();
     const salesCount = Object.values(teamMap).filter(v => v === "sales").length;
     const supportCount = Object.values(teamMap).filter(v => v === "support").length;
     console.info(`[Main] Team map — sales: ${salesCount}, support: ${supportCount}`);
 
-    // Fetch calls
     const calls = await gong.getCompletedCalls(windowStart, windowEnd);
     console.info(`[Main] Calls found: ${calls.length}`);
 
@@ -252,8 +264,6 @@ async function main() {
     }
 
     const callIds = calls.map(c => c.id);
-
-    // Fetch extensive data + transcripts
     const [extensive, transcriptsMap] = await Promise.all([
       gong.getCallsExtensive(callIds),
       gong.getTranscripts(callIds),
@@ -261,14 +271,12 @@ async function main() {
 
     const extensiveMap = Object.fromEntries((extensive || []).map(c => [c.metaData?.id || c.id, c]));
 
-    // Process each call
     for (const call of calls) {
       const callId = call.id;
       const callName = call.title || call.name || callId;
       const callData = extensiveMap[callId] || {};
       const transcript = transcriptsMap[callId] || [];
 
-      // Determine team by host user ID
       const hostUserId = call.primaryUserId || call.ownerId || "";
       const hostEmail = (userEmailMap[hostUserId] || "").toLowerCase();
 
@@ -278,9 +286,13 @@ async function main() {
       console.info(`[Main] Processing call ${callId} — team: ${isSales ? "sales" : isSupport ? "support" : "unknown"} — "${callName}"`);
 
       if (isSales) {
-        await processSalesCall({ callId, callName, callData, transcript, teamMap, hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false }, runLog });
+        await processSalesCall({
+          callId, callName, callData, transcript, teamMap,
+          hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false },
+          smtp, runLog,
+        });
       } else if (isSupport) {
-        await processSupportCall({ callId, callName, callData, transcript, runLog });
+        await processSupportCall({ callId, callName, callData, transcript, smtp, runLog });
       } else {
         console.info(`[Main] Call ${callId}: host ${hostEmail || hostUserId} not in a tracked team — skipping`);
       }
@@ -290,7 +302,6 @@ async function main() {
     runLog.fatal_error = err.message;
   }
 
-  // Persist state
   saveLastRun(windowEnd);
   recordRun(runLog);
 
