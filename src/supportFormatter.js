@@ -76,7 +76,7 @@ async function extractActionsFromTranscript(transcriptText, prospectFirstName) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `You are summarizing a customer support call for a follow-up email. Extract action items in a positive, outcome-focused way. Do NOT mention problems, errors, or negative experiences — focus on what will be done, not what went wrong.
+  const prompt = `You are writing a follow-up call summary email on behalf of the SiteZeus team member who hosted this support call. Write in FIRST PERSON as if the SiteZeus rep is writing directly to ${prospectFirstName}.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
@@ -90,10 +90,10 @@ Return ONLY valid JSON in this exact format (no markdown, no extra text):
 }
 
 Rules:
-- sitezeusActions: things the SiteZeus team committed to do (e.g. "Send updated model link")
-- clientActions: things ${prospectFirstName} committed to do — use format "${prospectFirstName} to [action]" (e.g. "${prospectFirstName} to review the model and provide feedback")
-- keyDecisions: major agreements or decisions made on the call
-- nextMilestone: the next concrete deliverable or meeting (empty string if none clear)
+- sitezeusActions: commitments from the SiteZeus team — write in FIRST PERSON: "I will..." or "We will..." — NEVER use a name in third person. Examples: "I will send over the updated model link", "We will adjust the drive-time settings and re-run the analysis"
+- clientActions: things ${prospectFirstName} committed to do — use format "${prospectFirstName} to [action]". Examples: "${prospectFirstName} to review the new model and provide feedback", "${prospectFirstName} to confirm site addresses before the next session"
+- keyDecisions: major agreements or decisions made together — write as "We agreed..." or "We decided..."
+- nextMilestone: the next scheduled meeting or key deliverable — write as "Our next step is..." or "We have a follow-up scheduled for..."
 - ALL items must be positive and forward-looking — no mention of issues, bugs, errors, or problems
 - Keep each bullet under 15 words
 - Return empty arrays/string if no clear items exist for a field`;
