@@ -45,13 +45,13 @@ ${transcriptText.slice(0, 12000)}
 
 Return ONLY this exact JSON — no markdown, no explanation:
 {
-  "callSummary": "2-3 sentences. Start with 'we discussed [company name]'s [topic].' then 'We explored how SiteZeus's [specific product/capability] could support [their goal] by [specific details from the call].' Write as the rep — use 'we' for SiteZeus. Use the actual company name (${companyRef}). Reference specific things from the call (concepts, locations, markets, goals mentioned). Example: \"we discussed The Rabbit Group's expansion plans for three concepts. We explored how SiteZeus's location intelligence could support their growth by analyzing demographic data and identifying optimal sites.\"",
+  "callSummary": "2-3 sentences written as the SiteZeus rep using only 'we', 'our', 'I' — NEVER use any person's name (not Will, not Alan, not any SiteZeus employee name). Start with 'we discussed [company name]'s [topic].' then 'We explored how SiteZeus's [specific product/capability] could support [their goal] by [specific details from the call].' Use the actual company name (${companyRef}). Reference specific things from the call (concepts, locations, markets, goals). Example: \"We discussed The Rabbit Group's expansion plans for three restaurant concepts. We explored how SiteZeus's location intelligence could support their growth by identifying optimal sites and analyzing consumer behavior.\"",
   "scheduledMeeting": "If a specific follow-up call, demo, or meeting was booked, one sentence (e.g. 'Demo scheduled for Thursday at 2pm'). Empty string if nothing booked.",
   "resourceTopics": ["topic1", "topic2", "topic3"]
 }
 
 Rules:
-- callSummary: past tense recap. Mention the actual company/concepts discussed. Use specific SiteZeus product names if mentioned (Locate, Build, Sell, Zeus AI, Customer Insights). Do NOT use generic phrases like 'your needs' — be specific to the call.
+- callSummary: past tense recap. NEVER use any SiteZeus employee's name (no "Will", "Alan", or any internal person). Only use "we", "our", "I". Mention the actual prospect company/concepts. Use specific SiteZeus product names if relevant (Locate, Build, Sell, Zeus AI, Customer Insights). Be specific to the call — no generic filler.
 - scheduledMeeting: ONLY for explicitly booked meetings. Empty string otherwise.
 - resourceTopics: 3-5 tags. Examples: "site selection", "franchise expansion", "consumer data", "revenue forecasting", "construction management", "market intelligence"`;
 
