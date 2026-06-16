@@ -116,7 +116,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
   let status = "dashboard";
 
   try {
-    const { subject, wrapperHtml } = formatSalesReviewEmail({
+    const { subject, wrapperHtml } = await formatSalesReviewEmail({
       callData, repName, repEmail: repEmail || "",
       prospectFirstName: prospect.firstName, prospectEmail: prospect.email,
       isEnterprise, callName, transcript,
