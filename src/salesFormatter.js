@@ -28,7 +28,7 @@ function buildTranscriptText(transcript, parties) {
       (party.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN || "sitezeus.com");
     speakerMap[id] = isInternal
       ? (party.name || "Rep").split(" ")[0]
-      : ((party.name || "Prospect").split(" ")[0]);
+      : (party.name || "Prospect").split(" ")[0];
   }
   const utterances = [];
   let current = null;
@@ -53,28 +53,26 @@ function detectTopicsFromText(text) {
   return [...topics];
 }
 
-async function extractSalesContentFromTranscript(transcriptText, prospectFirstName, repName) {
+async function extractSalesContentFromTranscript(transcriptText, prospectFirstName, prospectCompany) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `Read this sales call transcript and extract structured information for a follow-up email.
+  const prompt = `Read this sales call transcript and extract information for a follow-up email written by the SiteZeus rep (we ARE SiteZeus).
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
 Return ONLY this exact JSON — no markdown, no explanation:
 {
-  "prospectSituation": "one phrase describing what ${prospectFirstName} is focused on or trying to accomplish (positive framing, e.g. 'expanding your restaurant concepts into new markets')",
-  "sitezeusFit": "one sentence on how SiteZeus specifically helps with that (e.g. 'SiteZeus gives you AI-powered location scoring and consumer data to identify the best sites for each concept')",
-  "scheduledMeeting": "ONLY if a specific follow-up call or demo was booked — describe it (e.g. 'Demo scheduled for next week'). If nothing was scheduled, return empty string.",
+  "callSummary": "1-2 sentences summarizing what was discussed, written from our perspective as SiteZeus. Reference the prospect's business and what we discussed helping them with. Example: 'As discussed, ${prospectCompany || prospectFirstName} is expanding into new markets and we walked through how our site selection and revenue forecasting tools can support that growth.' Use 'we' and 'our' for SiteZeus — never say 'SiteZeus' in third person.",
+  "scheduledMeeting": "If a specific follow-up call, demo, or meeting was booked, describe it in one sentence (e.g. 'We have a demo scheduled for next week'). If nothing was scheduled, return empty string.",
   "resourceTopics": ["topic1", "topic2", "topic3"]
 }
 
 Rules:
-- prospectSituation: describe their goal/ambition, NOT a problem. Phrase it as what they ARE doing, not what they are struggling with.
-- sitezeusFit: one sentence only. Be specific to what was discussed, not generic.
-- scheduledMeeting: this is ONLY for an explicitly booked next call/demo/meeting. Do NOT put company background, expansion plans, or anything else here. If no meeting was booked, return "".
-- resourceTopics: 3-5 tags for topics ${prospectFirstName} showed genuine interest in. Examples: "site selection", "franchise expansion", "consumer data", "revenue forecasting", "construction management".`;
+- callSummary: Start with 'As discussed' or 'It was great connecting'. Use 'we', 'our', 'I' — never 'SiteZeus did' or 'SiteZeus offers'. Mention the prospect's actual business context and what SiteZeus capabilities are relevant. Keep it conversational, not a pitch.
+- scheduledMeeting: ONLY for an explicitly booked next call/demo. Do NOT put company background or notes here. Empty string if nothing was scheduled.
+- resourceTopics: 3-5 short tags for topics the prospect engaged with. Examples: "site selection", "franchise expansion", "consumer data", "revenue forecasting", "construction timeline".`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -109,16 +107,13 @@ Rules:
 function extractFallbackContent(callData) {
   const content = callData.content || {};
   const brief = typeof content.brief === "string" ? content.brief.trim() : null;
-  const keyPoints = (content.keyPoints || [])
-    .map(kp => (typeof kp === "string" ? kp : kp?.text || kp?.title || ""))
-    .map(t => t.trim()).filter(Boolean).slice(0, 4);
   const nextSteps = (content.actions || [])
     .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
     .map(t => t.trim()).filter(Boolean).slice(0, 4);
   const highlights = content.highlights || [];
   const NEXT_MEETING_TYPES = new Set(["next_meeting", "follow_up", "follow-up", "upcoming_meeting"]);
   const nextMeeting = highlights.find(h => NEXT_MEETING_TYPES.has((h.type || "").toLowerCase()))?.text?.trim() || "";
-  return { summary: brief, keyPoints, nextSteps, nextMeeting };
+  return { summary: brief, nextSteps, nextMeeting };
 }
 
 function selectResources(topics, isEnterprise) {
@@ -141,26 +136,18 @@ function selectResources(topics, isEnterprise) {
   return selected;
 }
 
-export async function formatSalesReviewEmail({ callData, repName, repEmail, prospectFirstName, prospectEmail, isEnterprise, callName, transcript = [] }) {
+export async function formatSalesReviewEmail({ callData, repName, repEmail, prospectFirstName, prospectEmail, prospectCompany, isEnterprise, callName, transcript = [] }) {
   const parties = callData.parties || [];
   const content = callData.content || {};
   const transcriptText = buildTranscriptText(transcript, parties);
   console.info(`[Sales] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  const aiContent = await extractSalesContentFromTranscript(transcriptText, prospectFirstName, repName);
+  const aiContent = await extractSalesContentFromTranscript(transcriptText, prospectFirstName, prospectCompany);
 
   let summary, nextSteps, nextMeeting, resourceTopics = [];
 
   if (aiContent) {
-    // Build first-person summary from structured pieces
-    const situation = aiContent.prospectSituation?.trim();
-    const fit = aiContent.sitezeusFit?.trim();
-    if (situation && fit) {
-      summary = `It was great connecting today — it sounds like you're focused on ${situation}. ${fit}`;
-    } else if (situation) {
-      summary = `It was great connecting today — it sounds like you're focused on ${situation}. We'd love to show you exactly how SiteZeus can support that.`;
-    }
-    // Next step: only the scheduled meeting (or a generic scheduling line)
+    summary = aiContent.callSummary?.trim() || null;
     const scheduled = aiContent.scheduledMeeting?.trim();
     nextSteps = scheduled ? [scheduled] : [];
     nextMeeting = "";
@@ -194,20 +181,20 @@ function bulletList(items) {
 function buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nextMeeting, resources }) {
   const parts = [
     `<p>Hi ${prospectFirstName},</p>`,
-    `<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of our conversation.</p>`,
+    `<p>Great connecting with you today!</p>`,
   ];
-  if (summary) parts.push(`<p><strong>What we discussed:</strong></p>`, `<p>${summary}</p>`);
+  if (summary) parts.push(`<p>${summary}</p>`);
   if (nextSteps.length) {
     parts.push(`<p><strong>Next steps:</strong></p>`, bulletList(nextSteps));
   } else if (nextMeeting) {
     parts.push(`<p><strong>Next steps:</strong></p>`, `<p>${nextMeeting}</p>`);
   } else {
-    parts.push(`<p><strong>Next steps:</strong></p>`, `<p>I'll be in touch soon — feel free to find time on my calendar through the link in my signature.</p>`);
+    parts.push(`<p>I'll follow up soon — feel free to grab time on my calendar through the link in my signature.</p>`);
   }
   if (resources.length) {
-    parts.push(`<p><strong>Resources:</strong></p>`, bulletList(resources.map(r => `<a href="${r.url}" style="color:#1a73e8;">${r.name}</a>`)));
+    parts.push(`<p><strong>A few resources that may be helpful:</strong></p>`, bulletList(resources.map(r => `<a href="${r.url}" style="color:#1a73e8;">${r.name}</a>`)));
   }
-  parts.push(`<p>Best,<br>${repName}</p>`);
+  parts.push(`<p>Talk soon,<br>${repName}</p>`);
   return parts.join("\n");
 }
 
