@@ -34,7 +34,7 @@ async function extractActionsFromTranscript(transcriptText, clientFirstName) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `Read this support call transcript and extract ONLY future commitments and action items.
+  const prompt = `Read this support call transcript and extract ONLY explicit future commitments — things promised to happen AFTER the call ends.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
@@ -43,22 +43,23 @@ Return ONLY this exact JSON — no markdown, no explanation:
 {
   "ourCommitments": ["commitment1", "commitment2"],
   "clientActions": ["action1", "action2"],
-  "nextMilestone": "one sentence describing the agreed next milestone, or empty string"
+  "nextMilestone": "one sentence describing the agreed next step, or empty string"
 }
 
-Rules for ourCommitments:
-- Include ONLY things SiteZeus explicitly agreed to do after this call
-- Write each item starting with "We will..." or "I will..." (first person)
-- Do NOT describe anything that happened during the call (no "We showed", "We walked through", "We demonstrated", "We discussed")
-- If nothing was explicitly committed, return []
+CRITICAL RULES for ourCommitments:
+- Include ONLY things explicitly promised to happen AFTER this call: "I'll send you...", "We'll follow up...", "I'll look into that and get back to you", "I'll schedule that for next week"
+- SKIP anything that was done DURING the call: walkthroughs, demos, training, features shown, things explained, questions answered
+- If something was demonstrated or shown on the call, it does NOT belong here
+- Write each item starting with "We will..." or "I will..."
+- If no future commitments were made, return []
 
-Rules for clientActions:
-- Include ONLY things ${clientFirstName} explicitly agreed to do
+CRITICAL RULES for clientActions:
+- Include ONLY things ${clientFirstName} explicitly agreed to do after the call
 - Write each item starting with "${clientFirstName} will..."
 - If nothing was committed, return []
 
-Rules for nextMilestone:
-- One sentence describing the agreed next step or meeting, or "" if none`;
+CRITICAL RULES for nextMilestone:
+- One sentence for an agreed future meeting or deadline, or empty string if none`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -110,7 +111,7 @@ export async function formatSupportReviewEmail({ callData, csmName, csmEmail, cl
     const gongActions = (content.actions || [])
       .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
       .map(t => t.trim()).filter(Boolean);
-    sitezeusActions = gongActions.filter(a => /\b(we|i|sitezeus)\b/i.test(a));
+    sitezeusActions = gongActions.filter(a => /\b(we will|i will|we'll|i'll)\b/i.test(a));
     clientActions = gongActions.filter(a => !sitezeusActions.includes(a));
     nextMilestone = "";
   }
@@ -128,19 +129,21 @@ function bulletList(items) {
 function buildClientHtml({ clientFirstName, csmName, sitezeusActions, clientActions, nextMilestone }) {
   const parts = [
     `<p>Hi ${clientFirstName},</p>`,
-    `<p>Thank you for connecting with us today. Here's a quick recap of what we'll be doing next:</p>`,
+    `<p>Thanks for your time today — here's a quick summary of what's next coming out of our call:</p>`,
   ];
   if (sitezeusActions.length) {
-    parts.push(`<p><strong>What we're doing for you:</strong></p>`, bulletList(sitezeusActions));
+    parts.push(`<p><strong>On our end:</strong></p>`, bulletList(sitezeusActions));
   }
   if (clientActions.length) {
-    parts.push(`<p><strong>Action items for your team:</strong></p>`, bulletList(clientActions));
+    parts.push(`<p><strong>On your end:</strong></p>`, bulletList(clientActions));
   }
   if (nextMilestone) {
-    parts.push(`<p><strong>Next milestone:</strong></p>`, `<p>${nextMilestone}</p>`);
+    parts.push(`<p><strong>Next:</strong> ${nextMilestone}</p>`);
   }
-  parts.push(`<p>Please don't hesitate to reach out if you have any questions in the meantime.</p>`);
-  parts.push(`<p>Best,<br>${csmName}<br>SiteZeus Customer Success</p>`);
+  if (!sitezeusActions.length && !clientActions.length && !nextMilestone) {
+    parts.push(`<p>No specific action items came out of today's call, but please don't hesitate to reach out if anything comes up.</p>`);
+  }
+  parts.push(`<p>Talk soon,<br>${csmName}<br>SiteZeus Customer Success</p>`);
   return parts.join("\n");
 }
 
