@@ -94,24 +94,31 @@ async function extractSalesContentFromTranscript(transcriptText, prospectFirstNa
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `You are helping a SiteZeus sales rep write a follow-up email to a prospect after a discovery or demo call. Extract the key content from the transcript in a warm, professional tone.
+  const prompt = `You are helping a SiteZeus sales rep write a follow-up email after a discovery or demo call. Your job is to extract SYNTHESIZED, PROFESSIONAL content — NOT raw transcript quotes.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
 Return ONLY valid JSON in this exact format (no markdown, no extra text):
 {
-  "summary": "2-3 sentence summary of what was discussed on the call, written as if ${repName} is speaking to ${prospectFirstName}",
-  "nextSteps": ["next step 1", "next step 2", "next step 3"],
-  "nextMeeting": "brief description of any scheduled follow-up call or meeting, empty string if none"
+  "summary": "2-3 sentence summary of what was discussed, written warmly as if ${repName} is writing to ${prospectFirstName}",
+  "nextSteps": ["action item 1", "action item 2"],
+  "nextMeeting": "brief description of scheduled follow-up, or empty string"
 }
 
-Rules:
-- summary: conversational recap of topics covered — what SiteZeus does and how it applies to ${prospectFirstName}'s business
-- nextSteps: 2-4 concrete follow-up actions (rep commitments and/or prospect asks), keep each under 15 words
-- nextMeeting: if a next call/demo/meeting was scheduled or mentioned, describe it briefly; otherwise empty string
-- Write everything from the rep's perspective, as if ${repName} is writing to ${prospectFirstName}
-- Keep tone warm and professional`;
+CRITICAL RULES for nextSteps:
+- These must be SYNTHESIZED action items, NEVER copy-pasted transcript sentences
+- Each must describe a concrete commitment or follow-up action (who will do what)
+- Write in professional language, not casual conversation
+- Examples of GOOD next steps: "${repName} to send demo recording", "Scheduling follow-up demo for next week", "${prospectFirstName} to share current unit count data"
+- Examples of BAD next steps (never do this): copying any sentence directly from the transcript, using "I" as first word, quoting what someone said
+- Maximum 4 next steps, each under 12 words
+- If there are no clear action items, return an empty array []
+
+Rules for summary:
+- Conversational recap of topics — what SiteZeus offers and how it fits ${prospectFirstName}'s needs
+- Written from ${repName}'s perspective
+- 2-3 sentences max`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
