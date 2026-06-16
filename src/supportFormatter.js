@@ -1,226 +1,233 @@
-// supportFormatter.js — Formats the Support post-call summary email.
+// supportFormatter.js — Formats support call follow-up email using transcript + AI.
+//
+// Uses Gong transcript utterances to extract per-participant action items via
+// Anthropic claude-haiku. Falls back to keyPoints if ANTHROPIC_API_KEY is absent.
 //
 // Template:
-// Hi {First Name},
-// Below is a summary of the action items discussed during {Call Name}.
-//
-// SiteZeus Team
-// * {Action Item}, {Due Date}
-// {Participant Name}
-// * {Action Item}, {Due Date}
-// Key Decisions
-// * {Decision}
-// Next Milestone:
-// * {Milestone}, {Date}
-// Best, SiteZeus Support Team
+//   Hi {First Name},
+//   Below is a summary of our call today...
+//   SiteZeus Team
+//   * {action}
+//   {Client First Name}
+//   * {action}
+//   Key Decisions
+//   * {decision}
+//   Next Milestone
+//   {milestone}
+//   Best, SiteZeus Support Team
 
-const SITEZEUS_DOMAIN = "sitezeus.com";
+import * as config from "./config.js";
 
-// All highlight types Gong might use for action items
-const ACTION_ITEM_TYPES = new Set([
-  "action_item", "action item", "action",
-  "next_step", "next step", "next steps",
-  "task", "todo", "follow_up", "follow-up", "follow up",
-  "deliverable", "commitment",
-]);
+const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
+const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
 
-const DECISION_TYPES = new Set([
-  "decision", "key_decision", "key decision",
-  "agreement", "conclusion", "resolution",
-]);
-
-const MILESTONE_TYPES = new Set([
-  "next_meeting", "next meeting", "milestone",
-  "follow_up", "follow-up", "upcoming", "checkpoint",
-  "deadline", "schedule",
-]);
-
-// Patterns that indicate problem/failure framing — strip these from client emails.
-// We surface outcomes and actions, not internal issues.
-const NEGATIVE_PATTERNS = [
-  /\b(acknowledged?|admit(ted)?)\s+that\b/i,
-  /\b(issues?|problems?|errors?|bugs?|incorrect(ly)?|wrong|fail(ed|ure)?|broken)\b/i,
-  /\b(couldn'?t|wasn'?t|weren'?t|didn'?t|hasn'?t|haven'?t)\b/i,
-];
+// ------------------------------------------------------------------
+// Transcript helpers
+// ------------------------------------------------------------------
 
 /**
- * Returns false if text contains problem/negative framing that shouldn't
- * appear in a client-facing email.
+ * Build a readable transcript string from flat sentences.
+ * Groups consecutive utterances by the same speaker and maps
+ * speakerId → human name using callData.parties.
  */
-function isClientSafe(text) {
-  if (!text) return false;
-  for (const pattern of NEGATIVE_PATTERNS) {
-    if (pattern.test(text)) return false;
+function buildTranscriptText(transcript, parties) {
+  if (!transcript?.length) return "";
+
+  // speakerId → display name
+  const speakerMap = {};
+  for (const party of (parties || [])) {
+    const id = party.speakerId || party.userId || party.id;
+    if (!id) continue;
+    const isInternal =
+      party.affiliation === "internal" ||
+      (party.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN || "sitezeus.com");
+    speakerMap[id] = isInternal
+      ? "SiteZeus"
+      : ((party.name || "Client").split(" ")[0]);
   }
-  return true;
+
+  // Group consecutive sentences by speaker into utterances
+  const utterances = [];
+  let current = null;
+  for (const s of transcript) {
+    if (!s.text?.trim()) continue;
+    const name = speakerMap[s.speakerId] || "Speaker";
+    if (!current || current.name !== name) {
+      current = { name, texts: [] };
+      utterances.push(current);
+    }
+    current.texts.push(s.text.trim());
+  }
+
+  return utterances
+    .map(u => `${u.name}: ${u.texts.join(" ")}`)
+    .join("\n");
 }
 
+// ------------------------------------------------------------------
+// AI extraction
+// ------------------------------------------------------------------
+
 /**
- * Try to use a keyPoint as an action item.
- * Only keeps items that are outcome/action-focused and client-safe.
+ * Call Anthropic to extract structured action items from the transcript.
+ * Returns null on failure (triggers keyPoints fallback).
  */
-function keyPointAsAction(text) {
-  const t = (text || "").trim();
-  if (!t) return null;
-  if (!isClientSafe(t)) return null;
-  // Prefer items that look like forward-looking actions
-  if (/\bto\s+[a-z]+\b/i.test(t) || /\bwill\s+[a-z]+\b/i.test(t)) return t;
-  // Exclude past-tense narrative summaries
-  if (/^[A-Z][a-z]+\s+(acknowledged|said|noted|mentioned|explained|showed|demonstrated)/i.test(t)) return null;
-  return t;
+async function extractActionsFromTranscript(transcriptText, prospectFirstName) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey || !transcriptText) return null;
+
+  const prompt = `You are summarizing a customer support call for a follow-up email. Extract action items in a positive, outcome-focused way. Do NOT mention problems, errors, or negative experiences — focus on what will be done, not what went wrong.
+
+Transcript:
+${transcriptText.slice(0, 12000)}
+
+Return ONLY valid JSON in this exact format (no markdown, no extra text):
+{
+  "sitezeusActions": ["action 1", "action 2"],
+  "clientActions": ["action 1", "action 2"],
+  "keyDecisions": ["decision 1"],
+  "nextMilestone": "one sentence describing the next concrete step or deliverable"
 }
 
+Rules:
+- sitezeusActions: things the SiteZeus team committed to do (e.g. "Send updated model link")
+- clientActions: things ${prospectFirstName} committed to do — use format "${prospectFirstName} to [action]" (e.g. "${prospectFirstName} to review the model and provide feedback")
+- keyDecisions: major agreements or decisions made on the call
+- nextMilestone: the next concrete deliverable or meeting (empty string if none clear)
+- ALL items must be positive and forward-looking — no mention of issues, bugs, errors, or problems
+- Keep each bullet under 15 words
+- Return empty arrays/string if no clear items exist for a field`;
+
+  try {
+    const res = await fetch(ANTHROPIC_API_URL, {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model: ANTHROPIC_MODEL,
+        max_tokens: 1024,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.warn(`[Support] Anthropic API error ${res.status}: ${errText.slice(0, 200)}`);
+      return null;
+    }
+
+    const data = await res.json();
+    const text = (data.content?.[0]?.text || "").trim();
+
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.warn("[Support] Anthropic response had no JSON:", text.slice(0, 200));
+      return null;
+    }
+
+    return JSON.parse(jsonMatch[0]);
+  } catch (err) {
+    console.warn(`[Support] AI extraction failed: ${err.message}`);
+    return null;
+  }
+}
+
+// ------------------------------------------------------------------
+// Fallback (no API key or AI failure)
+// ------------------------------------------------------------------
+
+function extractFallbackActions(callData, prospectFirstName) {
+  const content = callData.content || {};
+  const points = (content.keyPoints || [])
+    .map(kp => (typeof kp === "string" ? kp : kp?.text || kp?.title || ""))
+    .map(t => t.trim())
+    .filter(Boolean);
+
+  return {
+    sitezeusActions: points.slice(0, 3),
+    clientActions: points.slice(3, 5).map(p => `${prospectFirstName} to ${p.toLowerCase()}`),
+    keyDecisions: [],
+    nextMilestone: "",
+  };
+}
+
+// ------------------------------------------------------------------
+// Public API
+// ------------------------------------------------------------------
+
 /**
- * Build the support summary email.
- * @param {object} callData  — full Gong extensive call object
- * @param {string} prospectFirstName
- * @param {string} callName
+ * Format the support follow-up email from transcript + AI.
  * @returns {{ subject: string, html: string }}
  */
-export function formatSupportEmail(callData, prospectFirstName, callName) {
-  const parties   = callData.parties  || [];
-  const content   = callData.content  || {};
-  const highlights = content.highlights || [];
-  const keyPoints  = content.keyPoints  || [];
-  const outline    = content.outline    || [];
+export async function formatSupportEmail(callData, prospectFirstName, callName, transcript = []) {
+  const parties = callData.parties || [];
 
-  // Speaker ID → party info
-  const speakerMap = Object.fromEntries(
-    parties.filter(p => p.speakerId).map(p => [p.speakerId, p])
-  );
+  // Build readable transcript
+  const transcriptText = buildTranscriptText(transcript, parties);
+  console.info(`[Support] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  const sitezeusActions = [];
-  const clientActions   = {};   // { participantName: [items] }
-
-  // ── 1. Structured actions from Gong ────────────────────────────
-  let structuredActions = content.actions || [];
-
-  // ── 2. Highlights with action types ────────────────────────────
-  if (!structuredActions.length) {
-    structuredActions = highlights
-      .filter(h => ACTION_ITEM_TYPES.has((h.type || "").toLowerCase().trim()))
-      .map(h => ({ text: h.text, speakerId: h.speakerId || "", dueDate: "" }));
+  // Extract actions — AI first, fall back to keyPoints
+  let extracted = await extractActionsFromTranscript(transcriptText, prospectFirstName);
+  if (!extracted) {
+    console.info("[Support] Falling back to keyPoints for action extraction");
+    extracted = extractFallbackActions(callData, prospectFirstName);
   }
 
-  // ── 3. Outline "Action Items" / "Next Steps" sections ──────────
-  if (!structuredActions.length) {
-    for (const section of outline) {
-      const title = (section.section || section.title || "").toLowerCase();
-      if (title.includes("action") || title.includes("next step") || title.includes("task")) {
-        for (const item of (section.items || [])) {
-          const text = (item.text || item).trim();
-          if (text) structuredActions.push({ text, speakerId: item.speakerId || "", dueDate: "" });
-        }
-      }
-    }
-  }
+  const { sitezeusActions, clientActions, keyDecisions, nextMilestone } = extracted;
 
-  // Attribute structured actions to SiteZeus vs client.
-  // Items with no speakerId default to SiteZeus Team (we own unattributed items).
-  for (const action of structuredActions) {
-    const text = (action.text || "").trim();
-    if (!text || !isClientSafe(text)) continue;
-    const speakerId = action.speakerId || action.assignee?.speakerId || "";
-    const party     = speakerMap[speakerId] || {};
-    const due       = (action.dueDate || "").trim();
-    const item      = due ? `${text}, ${due}` : text;
+  const subject = `SiteZeus Call Summary — ${callName}`;
+  const html = buildSupportHtml({ prospectFirstName, sitezeusActions, clientActions, keyDecisions, nextMilestone });
 
-    // No speakerId = unattributed → default to SiteZeus Team
-    if (!speakerId || isSiteZeus(party)) {
-      sitezeusActions.push(item);
-    } else {
-      const name = (party.name || "").trim() || prospectFirstName;
-      (clientActions[name] = clientActions[name] || []).push(item);
-    }
-  }
-
-  // ── 4. Fallback: keyPoints filtered for positive action language ─
-  if (!sitezeusActions.length && !Object.keys(clientActions).length) {
-    for (const kp of keyPoints) {
-      const action = keyPointAsAction(kp.text || "");
-      if (action) sitezeusActions.push(action);
-    }
-  }
-
-  // ── Key Decisions (highlights only — never keyPoints) ──────────
-  const decisions = [];
-  for (const h of highlights) {
-    if (DECISION_TYPES.has((h.type || "").toLowerCase().trim())) {
-      const text = (h.text || "").trim();
-      if (text && isClientSafe(text) && !decisions.includes(text)) decisions.push(text);
-    }
-  }
-
-  // ── Next Milestone ─────────────────────────────────────────────
-  const nextMilestones = [];
-  for (const h of highlights) {
-    if (MILESTONE_TYPES.has((h.type || "").toLowerCase().trim())) {
-      const text = (h.text || "").trim();
-      if (text && !nextMilestones.includes(text)) nextMilestones.push(text);
-    }
-  }
-  // Fallback: keyPoints mentioning upcoming meetings / schedule
-  if (!nextMilestones.length) {
-    for (const kp of keyPoints) {
-      const text = (kp.text || "").trim();
-      if (
-        /\b(next\s+(meeting|call|step|week|month)|follow[\s-]up|schedule(d)?|upcoming)\b/i.test(text) &&
-        isClientSafe(text)
-      ) {
-        nextMilestones.push(text);
-        break;
-      }
-    }
-  }
-
-  const html = buildSupportHtml({
-    prospectFirstName, callName,
-    sitezeusActions, clientActions,
-    decisions, nextMilestones,
-  });
-
-  return { subject: `Action Items & Next Steps — ${callName}`, html };
+  return { subject, html };
 }
 
-// ─────────────────────────────────────────────────────────────────
-// Helpers
-// ─────────────────────────────────────────────────────────────────
+// ------------------------------------------------------------------
+// HTML builder
+// ------------------------------------------------------------------
 
-function isSiteZeus(party) {
-  const email       = (party.emailAddress || "").toLowerCase();
-  const affiliation = (party.affiliation  || "").toLowerCase();
-  return email.includes(SITEZEUS_DOMAIN) || affiliation === "internal";
+function li(items) {
+  return items.map(i => `<li>${i}</li>`).join("");
 }
 
-function bulletList(items) {
-  return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
-}
-
-function buildSupportHtml({ prospectFirstName, callName, sitezeusActions, clientActions, decisions, nextMilestones }) {
+function buildSupportHtml({ prospectFirstName, sitezeusActions, clientActions, keyDecisions, nextMilestone }) {
+  const s = (arr) => arr?.length > 0;
   const parts = [
-    `<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;line-height:1.6;max-width:680px;">`,
+    `<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:640px;line-height:1.6;">`,
     `<p>Hi ${prospectFirstName},</p>`,
-    `<p>Below is a summary of the action items discussed during <strong>${callName}</strong>.</p>`,
+    `<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>`,
+
+    // SiteZeus Team section
+    `<p><strong>SiteZeus Team</strong></p>`,
+    `<ul>${s(sitezeusActions) ? li(sitezeusActions) : "<li>Follow up on next steps discussed on the call</li>"}</ul>`,
+
+    // Client section
+    `<p><strong>${prospectFirstName}</strong></p>`,
+    `<ul>${s(clientActions) ? li(clientActions) : "<li>Review materials shared during the call</li>"}</ul>`,
   ];
 
-  if (sitezeusActions.length) {
-    parts.push("<p><strong>SiteZeus Team</strong></p>", bulletList(sitezeusActions));
+  // Key Decisions
+  if (s(keyDecisions)) {
+    parts.push(
+      `<p><strong>Key Decisions</strong></p>`,
+      `<ul>${li(keyDecisions)}</ul>`
+    );
   }
 
-  for (const [name, items] of Object.entries(clientActions)) {
-    if (items.length) {
-      parts.push(`<p><strong>${name}</strong></p>`, bulletList(items));
-    }
+  // Next Milestone
+  if (nextMilestone) {
+    parts.push(
+      `<p><strong>Next Milestone</strong></p>`,
+      `<p>${nextMilestone}</p>`
+    );
   }
 
-  if (decisions.length) {
-    parts.push("<p><strong>Key Decisions</strong></p>", bulletList(decisions));
-  }
+  parts.push(
+    `<p>Best,<br>SiteZeus Support Team</p>`,
+    `</div>`
+  );
 
-  if (nextMilestones.length) {
-    parts.push("<p><strong>Next Milestone:</strong></p>", bulletList(nextMilestones));
-  }
-
-  parts.push("<p>Best,<br><strong>SiteZeus Support Team</strong></p>", "</div>");
   return parts.join("\n");
 }
