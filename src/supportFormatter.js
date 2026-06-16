@@ -30,36 +30,32 @@ function buildTranscriptText(transcript, parties) {
   return utterances.map(u => `${u.name}: ${u.texts.join(" ")}`).join("\n");
 }
 
-async function extractActionsFromTranscript(transcriptText, clientFirstName) {
+async function extractActionItems(transcriptText) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `Read this support call transcript and extract ONLY explicit future commitments — things promised to happen AFTER the call ends.
+  const prompt = `Read this support call transcript and extract ONLY explicit future commitments — things promised to happen AFTER this call ends.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
 Return ONLY this exact JSON — no markdown, no explanation:
 {
-  "ourCommitments": ["commitment1", "commitment2"],
-  "clientActions": ["action1", "action2"],
-  "nextMilestone": "one sentence describing the agreed next step, or empty string"
+  "actionItems": [
+    { "topic": "Short Topic Label", "note": "brief description of what will happen" }
+  ],
+  "nextMilestone": "one sentence for any agreed next meeting or deadline, or empty string"
 }
 
-CRITICAL RULES for ourCommitments:
-- Include ONLY things explicitly promised to happen AFTER this call: "I'll send you...", "We'll follow up...", "I'll look into that and get back to you", "I'll schedule that for next week"
-- SKIP anything that was done DURING the call: walkthroughs, demos, training, features shown, things explained, questions answered
-- If something was demonstrated or shown on the call, it does NOT belong here
-- Write each item starting with "We will..." or "I will..."
-- If no future commitments were made, return []
-
-CRITICAL RULES for clientActions:
-- Include ONLY things ${clientFirstName} explicitly agreed to do after the call
-- Write each item starting with "${clientFirstName} will..."
+Rules for actionItems:
+- Each item needs a SHORT topic label (2-5 words, title case, e.g. "Mobile Data Priority", "Report Delivery", "Follow-Up Call")
+- The note describes what will happen — it does NOT need to start with "I will" or "We will". Write it naturally, like: "mobile data not yet been pulled but would be prioritized this week" or "custom report will be sent by end of week"
+- ONLY include things explicitly committed to happen AFTER the call
+- SKIP anything demonstrated, shown, walked through, or discussed during the call
 - If nothing was committed, return []
 
-CRITICAL RULES for nextMilestone:
-- One sentence for an agreed future meeting or deadline, or empty string if none`;
+Rules for nextMilestone:
+- One sentence for an agreed future meeting or deadline, or empty string`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -76,14 +72,11 @@ CRITICAL RULES for nextMilestone:
         messages: [{ role: "user", content: prompt }],
       }),
     });
-    if (!res.ok) {
-      console.warn(`[Support] Anthropic API error ${res.status}: ${(await res.text()).slice(0, 200)}`);
-      return null;
-    }
+    if (!res.ok) { console.warn(`[Support] API error ${res.status}`); return null; }
     const data = await res.json();
     const text = (data.content?.[0]?.text || "").trim();
     const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) { console.warn("[Support] No JSON in response:", text.slice(0, 200)); return null; }
+    if (!jsonMatch) { console.warn("[Support] No JSON:", text.slice(0, 200)); return null; }
     return JSON.parse(jsonMatch[0]);
   } catch (err) {
     console.warn(`[Support] AI extraction failed: ${err.message}`);
@@ -97,53 +90,50 @@ export async function formatSupportReviewEmail({ callData, csmName, csmEmail, cl
   const transcriptText = buildTranscriptText(transcript, parties);
   console.info(`[Support] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  const aiContent = await extractActionsFromTranscript(transcriptText, clientFirstName);
+  const aiContent = await extractActionItems(transcriptText);
 
-  let sitezeusActions, clientActions, nextMilestone;
+  let actionItems = [];
+  let nextMilestone = "";
 
   if (aiContent) {
-    sitezeusActions = (aiContent.ourCommitments || []).filter(Boolean);
-    clientActions = (aiContent.clientActions || []).filter(Boolean);
+    actionItems = (aiContent.actionItems || []).filter(i => i.topic && i.note);
     nextMilestone = aiContent.nextMilestone?.trim() || "";
-    console.info(`[Support] AI extracted: ${sitezeusActions.length} our commitments, ${clientActions.length} client actions`);
+    console.info(`[Support] AI extracted ${actionItems.length} action items`);
   } else {
-    console.info("[Support] Falling back to Gong AI content fields");
+    // Gong fallback — use raw action strings
     const gongActions = (content.actions || [])
       .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
       .map(t => t.trim()).filter(Boolean);
-    sitezeusActions = gongActions.filter(a => /\b(we will|i will|we'll|i'll)\b/i.test(a));
-    clientActions = gongActions.filter(a => !sitezeusActions.includes(a));
-    nextMilestone = "";
+    actionItems = gongActions.map(note => ({ topic: "Follow-up Item", note }));
   }
 
-  const supportHtml = buildClientHtml({ clientFirstName, csmName, sitezeusActions, clientActions, nextMilestone });
+  const supportHtml = buildClientHtml({ clientFirstName, csmName, actionItems, nextMilestone });
   const wrapperHtml = buildCsmWrapper({ csmEmail, clientFirstName, clientEmail, callName, supportHtml });
   const subject = `[REVIEW & SEND] Support follow-up for ${clientFirstName} — ${callName}`;
   return { subject, wrapperHtml, supportHtml };
 }
 
-function bulletList(items) {
-  return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
-}
-
-function buildClientHtml({ clientFirstName, csmName, sitezeusActions, clientActions, nextMilestone }) {
+function buildClientHtml({ clientFirstName, csmName, actionItems, nextMilestone }) {
   const parts = [
     `<p>Hi ${clientFirstName},</p>`,
-    `<p>Thanks for your time today — here's a quick summary of what's next coming out of our call:</p>`,
+    `<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>`,
+    `<p>SiteZeus Team</p>`,
   ];
-  if (sitezeusActions.length) {
-    parts.push(`<p><strong>On our end:</strong></p>`, bulletList(sitezeusActions));
+
+  if (actionItems.length) {
+    const bullets = actionItems
+      .map(i => `<li><strong>${i.topic}:</strong> ${i.note}</li>`)
+      .join("");
+    parts.push(`<ul>${bullets}</ul>`);
+  } else {
+    parts.push(`<p>No specific action items came out of today's call — we'll be in touch if anything comes up.</p>`);
   }
-  if (clientActions.length) {
-    parts.push(`<p><strong>On your end:</strong></p>`, bulletList(clientActions));
-  }
+
   if (nextMilestone) {
-    parts.push(`<p><strong>Next:</strong> ${nextMilestone}</p>`);
+    parts.push(`<p>${nextMilestone}</p>`);
   }
-  if (!sitezeusActions.length && !clientActions.length && !nextMilestone) {
-    parts.push(`<p>No specific action items came out of today's call, but please don't hesitate to reach out if anything comes up.</p>`);
-  }
-  parts.push(`<p>Talk soon,<br>${csmName}<br>SiteZeus Customer Success</p>`);
+
+  parts.push(`<p>Best,<br>SiteZeus Support Team</p>`);
   return parts.join("\n");
 }
 
@@ -152,11 +142,10 @@ function buildCsmWrapper({ csmEmail, clientFirstName, clientEmail, callName, sup
 <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;">
 <div style="background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;">
 <strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>
-This is a draft support follow-up for <strong>${clientFirstName}</strong>
-(<a href="mailto:${clientEmail}">${clientEmail}</a>).<br>
+Draft support follow-up for <strong>${clientFirstName}</strong> (<a href="mailto:${clientEmail}">${clientEmail}</a>).<br>
 <strong>Call:</strong> ${callName}<br><br>
-Review the draft below. Edit as needed, then send it from your own account (<strong>${csmEmail}</strong>).<br>
-<em>Do not reply to this message — it was sent automatically.</em>
+Review below, edit as needed, then send from <strong>${csmEmail}</strong>.<br>
+<em>Do not reply — generated automatically.</em>
 </div>
 <hr style="border:none;border-top:1px solid #ddd;margin:0 0 20px 0;">
 <div style="border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;">
