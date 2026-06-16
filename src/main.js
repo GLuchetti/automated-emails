@@ -12,7 +12,6 @@ import { fileURLToPath } from "url";
 
 import { GongClient } from "./gongClient.js";
 import { HubSpotClient } from "./hubspotClient.js";
-import { sendEmail } from "./emailHandler.js";
 import { formatSalesReviewEmail } from "./salesFormatter.js";
 import { formatSupportEmail } from "./supportFormatter.js";
 import { recordRun } from "./dashboard.js";
@@ -69,7 +68,7 @@ function extractProspectFromCall(callData) {
 /**
  * Process a single Sales call.
  */
-async function processSalesCall({ callId, callName, callData, transcript, teamMap, hs, smtp, runLog }) {
+async function processSalesCall({ callId, callName, callData, transcript, teamMap, hs, runLog }) {
   const prospect = extractProspectFromCall(callData);
   if (!prospect.email) {
     console.info(`[Sales] Call ${callId}: no external prospect email — skipping`);
@@ -123,23 +122,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     });
     emailHtml = wrapperHtml;
     emailSubject = subject;
-
-    // Sales emails always go to the rep for review — attempt SMTP if configured
-    if (smtp.user && smtp.password && repEmail) {
-      try {
-        await sendEmail({
-          smtpUser: smtp.user, smtpPassword: smtp.password,
-          fromAddress: `SiteZeus Automation <${smtp.user}>`,
-          toAddresses: [repEmail], ccAddresses: [],
-          subject, bodyHtml: wrapperHtml,
-        });
-        status = "sent";
-        console.info(`[Sales] Email sent to rep ${repEmail} for call ${callId}`);
-      } catch (smtpErr) {
-        console.warn(`[Sales] SMTP failed for call ${callId} (${smtpErr.message}) — falling back to dashboard`);
-        status = "dashboard";
-      }
-    }
+    // Dashboard only — no SMTP sending
   } catch (err) {
     console.error(`[Sales] Format error for call ${callId}:`, err.message);
     status = "error";
@@ -159,7 +142,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
 /**
  * Process a single Support call.
  */
-async function processSupportCall({ callId, callName, callData, transcript, smtp, runLog }) {
+async function processSupportCall({ callId, callName, callData, transcript, runLog }) {
   const parties = callData.parties || [];
   const external = parties.filter(
     p => p.affiliation !== "internal" && !((p.emailAddress || "").includes(config.SITEZEUS_DOMAIN))
@@ -196,24 +179,7 @@ async function processSupportCall({ callId, callName, callData, transcript, smtp
     const { subject, html } = await formatSupportEmail(callData, prospectFirstName, callName, transcript);
     emailHtml = html;
     emailSubject = subject;
-
-    if (smtp.user && smtp.password) {
-      try {
-        await sendEmail({
-          smtpUser: smtp.user, smtpPassword: smtp.password,
-          fromAddress: config.SUPPORT_FROM_EMAIL,
-          toAddresses: toEmails, ccAddresses: ccEmails,
-          subject, bodyHtml: html,
-        });
-        status = "sent";
-        console.info(`[Support] Email sent for call ${callId} → ${toEmails}`);
-      } catch (smtpErr) {
-        console.warn(`[Support] SMTP failed for call ${callId} (${smtpErr.message}) — falling back to dashboard`);
-        status = "dashboard";
-      }
-    } else {
-      console.info(`[Support] Call ${callId}: no SMTP credentials — logging draft to dashboard`);
-    }
+    // Dashboard only — no SMTP sending
   } catch (err) {
     console.error(`[Support] Format error for call ${callId}:`, err.message);
     status = "error";
@@ -241,8 +207,6 @@ async function main() {
   const gongAccessKey = process.env.GONG_ACCESS_KEY;
   const gongSecret = process.env.GONG_SECRET;
   const hubspotToken = process.env.HUBSPOT_TOKEN;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPassword = process.env.SMTP_PASSWORD;
 
   if (!gongAccessKey || !gongSecret) {
     console.error("[Main] GONG_ACCESS_KEY and GONG_SECRET are required. Aborting.");
@@ -251,11 +215,9 @@ async function main() {
 
   const gong = new GongClient(gongAccessKey, gongSecret);
   const hs = hubspotToken ? new HubSpotClient(hubspotToken) : null;
-  const smtp = { user: smtpUser, password: smtpPassword };
 
   if (!hs) console.warn("[Main] No HUBSPOT_TOKEN — enterprise classification disabled.");
-  if (!smtp.user || !smtp.password) console.warn("[Main] No SMTP credentials — emails will go to dashboard only.");
-  if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — support emails will use keyPoints fallback.");
+  if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — emails will use Gong AI content fallback.");
 
   // Window
   const windowStart = loadLastRun();
@@ -316,9 +278,9 @@ async function main() {
       console.info(`[Main] Processing call ${callId} — team: ${isSales ? "sales" : isSupport ? "support" : "unknown"} — "${callName}"`);
 
       if (isSales) {
-        await processSalesCall({ callId, callName, callData, transcript, teamMap, hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false }, smtp, runLog });
+        await processSalesCall({ callId, callName, callData, transcript, teamMap, hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false }, runLog });
       } else if (isSupport) {
-        await processSupportCall({ callId, callName, callData, transcript, smtp, runLog });
+        await processSupportCall({ callId, callName, callData, transcript, runLog });
       } else {
         console.info(`[Main] Call ${callId}: host ${hostEmail || hostUserId} not in a tracked team — skipping`);
       }
