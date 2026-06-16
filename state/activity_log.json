@@ -1,6 +1,75 @@
 {
   "runs": [
     {
+      "id": "run-1781623127423",
+      "timestamp": "2026-06-16T15:18:47.423Z",
+      "window_start": "2026-06-15T16:00:00.000Z",
+      "window_end": "2026-06-16T15:18:47.423Z",
+      "calls_processed": [
+        {
+          "call_id": "2995050958731747019",
+          "call_name": "SZ | 60 minute call - Blaine Salem and Alan May",
+          "team": "support",
+          "prospect_name": "Blaine Salem",
+          "prospect_email": "blaine.salem@tacala.com",
+          "email_to": [
+            "blaine.salem@tacala.com",
+            "mike.gray@tacala.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "SiteZeus Call Summary — SZ | 60 minute call - Blaine Salem and Alan May",
+          "email_html": "<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:640px;line-height:1.6;\">\n<p>Hi Blaine,</p>\n<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>\n<p><strong>SiteZeus Team</strong></p>\n<ul><li>Mobile Data Priority: Alan from SiteZeus informed Tacala that mobile data for their Taco Bell locations had not yet been pulled but would be prioritized this week.</li><li>Preliminary Call: Despite the mobile data not being ready, Alan suggested proceeding with the call for a preliminary overview, expecting it to be shorter than planned.</li><li>Data Pull Demonstration: Alan demonstrated the process of manually adjusting site pins to rooftops and requesting mobile data within the SiteZeus Locate platform.</li></ul>\n<p><strong>Blaine</strong></p>\n<ul><li>Blaine to sitezeus market overview: alan guided tacala through accessing sitezeus market, filtering data by project (taco bell/sevenbrew), and interpreting the available mobile data.</li><li>Blaine to customer segment analysis: alan explained how to deep dive into customer segments, detailing their demographic profiles, interests, and spending habits, using \"small town\" as a primary example.</li></ul>\n<p>Best,<br>SiteZeus Support Team</p>\n</div>",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T15:18:48.872Z"
+        },
+        {
+          "call_id": "4501457932544822614",
+          "call_name": "SiteZeus <> The Dirty Rabbit Group",
+          "team": "sales",
+          "prospect_name": "Juan Posada",
+          "prospect_email": "j.posada@therabbitgroup.us",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Juan — SiteZeus <> The Dirty Rabbit Group",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nThis is a draft follow-up email for <strong>Juan</strong>\n(<a href=\"mailto:j.posada@therabbitgroup.us\">j.posada@therabbitgroup.us</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp;\n<strong>Call:</strong> SiteZeus <> The Dirty Rabbit Group<br><br>\nReview the draft below. Edit as needed, then send it to the prospect from\nyour own email account (<strong>wmorgan@sitezeus.com</strong>).<br>\n<em>Do not reply to this message — it was sent automatically.</em>\n</div>\n\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">\nSuggested subject: <strong>SiteZeus Resources &amp; Next Steps</strong>\n</p>\n\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Juan,</p>\n<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of our conversation.</p>\n<p><strong>What we discussed:</strong></p>\n<p>Will from SiteZeus, along with Juan and Luis from The Rabbit Group, discussed The Rabbit Group's expansion plans for their three concepts: \"The Dirty Rabbit,\" \"Tacos,\" and \"Salad Especial.\" They explored how SiteZeus's location intelligence and market planning software could support their growth by analyzing demographic data, consumer behavior, and identifying optimal locations, with a tailored demo scheduled for the following week. The conversation also touched upon The Rabbit Group's existing data collection methods and SiteZeus's approach to leveraging this data for strategic decision-making.</p>\n<p><strong>Next steps:</strong></p>\n<ul><li>Company Profile: The client is a restaurant group with seven diverse concepts, actively planning to grow several of them.</li><li>Key Expansion Concepts: They are looking to expand \"The Dirty Rabbit\" (a bar), \"Tacos Atarantados\" (a Taqueria), and \"Sala de Especho\" (a Latino-targeted sing-along concept).</li></ul>\n<p><strong>Resources:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build — Construction Management</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Best,<br>Will Morgan</p>\n</div>\n\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T15:18:49.145Z"
+        },
+        {
+          "call_id": "4363043437679942715",
+          "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-16T15:18:49.146Z"
+        },
+        {
+          "call_id": "8934107884379299587",
+          "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+          "team": "support",
+          "prospect_name": "Tyler Azzarelli",
+          "prospect_email": "tylera@cicciorg.com",
+          "email_to": [
+            "tylera@cicciorg.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "SiteZeus Call Summary — Daily Sync - SiteZeus | Fresh Kitchen",
+          "email_html": "<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:640px;line-height:1.6;\">\n<p>Hi Tyler,</p>\n<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>\n<p><strong>SiteZeus Team</strong></p>\n<ul><li>Company Praise: Aaron commends Tyler's company for its strategic growth, building a solid foundation before rapid expansion, and having a unique competitive pull in the market.</li><li>Customer Data Analysis: SiteZeus obtained 90,000 customer records, representing 25% of the uploaded data, which Tyler believes is skewed towards digital customers.</li><li>Demographic Insights: The \"blue-collar suburbs\" segment was an unexpected but confirmed demographic, aligning with the diverse customer mix observed in Fresh Kitchen restaurants.</li></ul>\n<p><strong>Tyler</strong></p>\n<ul><li>Tyler to data discrepancies: \"educated urbanites\" and \"young professionals\" appeared low in the uploaded customer data but significantly higher in mobile data, indicating a potential missed segment in the initial upload.</li><li>Tyler to index interpretation: aaron clarifies that the \"index\" indicates the likelihood of a demographic group becoming a customer, with an index of 2.01x meaning they are two times more likely.</li></ul>\n<p>Best,<br>SiteZeus Support Team</p>\n</div>",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T15:18:49.146Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781622529328",
       "timestamp": "2026-06-16T15:08:49.328Z",
       "window_start": "2026-06-15T00:00:00.000Z",
@@ -1830,5 +1899,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-16T15:08:53.206Z"
+  "last_updated": "2026-06-16T15:18:49.148Z"
 }
