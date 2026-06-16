@@ -101,30 +101,35 @@ ${transcriptText.slice(0, 12000)}
 
 Return ONLY valid JSON in this exact format (no markdown, no extra text):
 {
-  "summary": "2-3 sentence warm recap written by ${repName} to ${prospectFirstName}",
+  "summary": "2-3 sentence warm recap",
   "nextSteps": ["next step 1"],
   "nextMeeting": "scheduled follow-up description, or empty string",
   "resourceTopics": ["topic1", "topic2", "topic3"]
 }
 
 Rules for summary:
-- Frame as: (1) validation of ${prospectFirstName}'s situation or goals, phrased positively — NOT as problems but as ambitions or opportunities, then (2) how SiteZeus specifically addresses those
-- Example: "It was great connecting today — it sounds like you're focused on [their goal/situation]. SiteZeus [specific value prop that addresses it]. [One more connecting sentence about their specific context]."
-- Written warmly in first person from ${repName}'s voice
-- 2-3 sentences max, NO generic filler like "Thank you for your time"
+- Write FROM ${repName} TO ${prospectFirstName} — this is ${repName} speaking, so NEVER use ${repName}'s name or any name in third person.
+- BAD: "${repName}, along with ${prospectFirstName}... discussed..." — this is third person, NEVER do this.
+- BAD: "During our call, Will and Juan talked about..." — still third person, NEVER do this.
+- GOOD: Start with a warm direct opener like "It was great connecting today" or "Really enjoyed our conversation" — then address ${prospectFirstName}'s goals directly.
+- Frame as: (1) validation of ${prospectFirstName}'s situation or goals, phrased positively — as ambitions or opportunities, NOT problems, then (2) how SiteZeus specifically addresses those.
+- Example: "It was great connecting today — it sounds like you're focused on [their goal/situation]. SiteZeus [specific value prop that addresses it]. [One connecting sentence about their specific context]."
+- 2-3 sentences max. NO generic filler like "Thank you for your time."
 
 CRITICAL RULES for nextSteps:
-- Focus ONLY on the next call or meeting: if a demo/follow-up was scheduled, state it with the date/time; if not, include a single line about scheduling one
-- Maximum 2 items. These are NOT task lists — they are about what happens next in the conversation
-- NEVER copy-paste any sentence from the transcript
-- NEVER use "I" as the first word
-- Examples of GOOD next steps: "Demo scheduled for [date]", "Let's find a time to walk through [specific feature] together", "${repName} to send over the demo recording"
-- If truly no next steps exist, return []
+- This field is ONLY for the next scheduled call, demo, or meeting — NOTHING ELSE.
+- If a demo or follow-up was booked: state it concisely, e.g. "Demo scheduled for next week" or "Follow-up call booked for [date/time if mentioned]".
+- If nothing was scheduled: ONE item only — e.g. "Let's find a time to walk through SiteZeus together".
+- Maximum 2 items TOTAL.
+- BAD next steps (never do this): company profile notes, background on their business, expansion plans, task lists, anything that is NOT about the next meeting/call.
+- NEVER copy-paste any sentence from the transcript.
+- NEVER start with "I".
+- If truly no next steps exist, return [].
 
 Rules for resourceTopics:
-- List 3-5 short topic tags representing what ${prospectFirstName} showed genuine interest in during this call
-- Examples: "site selection", "franchise expansion", "consumer data", "new market entry", "construction management", "white space analysis", "revenue forecasting"
-- These will be used to select relevant resources and content to share`;
+- List 3-5 short topic tags representing what ${prospectFirstName} showed genuine interest in during this call.
+- Examples: "site selection", "franchise expansion", "consumer data", "new market entry", "construction management", "white space analysis", "revenue forecasting".
+- These will be used to select relevant resources and content to share.`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
