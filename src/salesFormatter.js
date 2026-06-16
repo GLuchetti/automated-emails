@@ -94,31 +94,37 @@ async function extractSalesContentFromTranscript(transcriptText, prospectFirstNa
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `You are helping a SiteZeus sales rep write a follow-up email after a discovery or demo call. Your job is to extract SYNTHESIZED, PROFESSIONAL content — NOT raw transcript quotes.
+  const prompt = `You are helping a SiteZeus sales rep write a warm, prospect-facing follow-up email. Write as if ${repName} is speaking directly to ${prospectFirstName}.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
 Return ONLY valid JSON in this exact format (no markdown, no extra text):
 {
-  "summary": "2-3 sentence summary of what was discussed, written warmly as if ${repName} is writing to ${prospectFirstName}",
-  "nextSteps": ["action item 1", "action item 2"],
-  "nextMeeting": "brief description of scheduled follow-up, or empty string"
+  "summary": "2-3 sentence warm recap written by ${repName} to ${prospectFirstName}",
+  "nextSteps": ["next step 1"],
+  "nextMeeting": "scheduled follow-up description, or empty string",
+  "resourceTopics": ["topic1", "topic2", "topic3"]
 }
 
-CRITICAL RULES for nextSteps:
-- These must be SYNTHESIZED action items, NEVER copy-pasted transcript sentences
-- Each must describe a concrete commitment or follow-up action (who will do what)
-- Write in professional language, not casual conversation
-- Examples of GOOD next steps: "${repName} to send demo recording", "Scheduling follow-up demo for next week", "${prospectFirstName} to share current unit count data"
-- Examples of BAD next steps (never do this): copying any sentence directly from the transcript, using "I" as first word, quoting what someone said
-- Maximum 4 next steps, each under 12 words
-- If there are no clear action items, return an empty array []
-
 Rules for summary:
-- Conversational recap of topics — what SiteZeus offers and how it fits ${prospectFirstName}'s needs
-- Written from ${repName}'s perspective
-- 2-3 sentences max`;
+- Frame as: (1) validation of ${prospectFirstName}'s situation or goals, phrased positively — NOT as problems but as ambitions or opportunities, then (2) how SiteZeus specifically addresses those
+- Example: "It was great connecting today — it sounds like you're focused on [their goal/situation]. SiteZeus [specific value prop that addresses it]. [One more connecting sentence about their specific context]."
+- Written warmly in first person from ${repName}'s voice
+- 2-3 sentences max, NO generic filler like "Thank you for your time"
+
+CRITICAL RULES for nextSteps:
+- Focus ONLY on the next call or meeting: if a demo/follow-up was scheduled, state it with the date/time; if not, include a single line about scheduling one
+- Maximum 2 items. These are NOT task lists — they are about what happens next in the conversation
+- NEVER copy-paste any sentence from the transcript
+- NEVER use "I" as the first word
+- Examples of GOOD next steps: "Demo scheduled for [date]", "Let's find a time to walk through [specific feature] together", "${repName} to send over the demo recording"
+- If truly no next steps exist, return []
+
+Rules for resourceTopics:
+- List 3-5 short topic tags representing what ${prospectFirstName} showed genuine interest in during this call
+- Examples: "site selection", "franchise expansion", "consumer data", "new market entry", "construction management", "white space analysis", "revenue forecasting"
+- These will be used to select relevant resources and content to share`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -164,6 +170,7 @@ Rules for summary:
 function extractFallbackContent(callData) {
   const content = callData.content || {};
 
+  // Summary: brief > key points
   const brief = typeof content.brief === "string" ? content.brief.trim() : null;
   const keyPoints = (content.keyPoints || [])
     .map(kp => (typeof kp === "string" ? kp : kp?.text || kp?.title || ""))
@@ -171,12 +178,14 @@ function extractFallbackContent(callData) {
     .filter(Boolean)
     .slice(0, 4);
 
+  // Next steps: Gong actions
   const nextSteps = (content.actions || [])
     .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
     .map(t => t.trim())
     .filter(Boolean)
     .slice(0, 4);
 
+  // Next meeting from highlights
   const highlights = content.highlights || [];
   const NEXT_MEETING_TYPES = new Set(["next_meeting", "follow_up", "follow-up", "upcoming_meeting"]);
   const nextMeeting = highlights.find(h => NEXT_MEETING_TYPES.has((h.type || "").toLowerCase()))?.text?.trim() || "";
@@ -205,6 +214,7 @@ function selectResources(topics, isEnterprise) {
       }
     }
   }
+  // Fill up to 4 from pool
   for (const resource of pool) {
     if (selected.length >= 4) break;
     if (!selectedNames.has(resource.name)) {
@@ -237,30 +247,37 @@ export async function formatSalesReviewEmail({ callData, repName, repEmail, pros
 
   let summary, nextSteps, nextMeeting;
 
+  let resourceTopics = [];
+
   if (aiContent) {
     summary = aiContent.summary || null;
     nextSteps = aiContent.nextSteps || [];
     nextMeeting = aiContent.nextMeeting || "";
+    resourceTopics = aiContent.resourceTopics || [];
   } else {
     console.info("[Sales] Falling back to Gong AI content fields");
     const fallback = extractFallbackContent(callData);
     summary = fallback.summary;
     nextSteps = fallback.nextSteps;
     nextMeeting = fallback.nextMeeting;
+
+    // If no next steps from Gong either, use key points
     if (!nextSteps.length) nextSteps = fallback.keyPoints.slice(2);
   }
 
-  // Resources — from trackers, then transcript topic detection
-  const trackers = content.trackers || [];
-  let trackerNames = trackers
-    .filter(t => (t.count || 0) > 0)
-    .map(t => (t.name || "").toLowerCase());
-
-  if (!trackerNames.length && transcriptText) {
-    trackerNames = detectTopicsFromText(transcriptText);
+  // Resources — AI topics first, then Gong trackers, then transcript keyword detection
+  if (!resourceTopics.length) {
+    const trackers = content.trackers || [];
+    resourceTopics = trackers
+      .filter(t => (t.count || 0) > 0)
+      .map(t => (t.name || "").toLowerCase());
   }
 
-  const resources = selectResources(trackerNames, isEnterprise);
+  if (!resourceTopics.length && transcriptText) {
+    resourceTopics = detectTopicsFromText(transcriptText);
+  }
+
+  const resources = selectResources(resourceTopics, isEnterprise);
 
   const prospectHtml = buildProspectHtml({
     prospectFirstName, repName,
@@ -291,10 +308,12 @@ function buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nex
     `<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of our conversation.</p>`,
   ];
 
+  // What we discussed
   if (summary) {
     parts.push(`<p><strong>What we discussed:</strong></p>`, `<p>${summary}</p>`);
   }
 
+  // Next steps
   if (nextSteps.length) {
     parts.push(`<p><strong>Next steps:</strong></p>`, bulletList(nextSteps));
   } else if (nextMeeting) {
@@ -306,6 +325,7 @@ function buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nex
     );
   }
 
+  // Resources
   if (resources.length) {
     parts.push(
       `<p><strong>Resources:</strong></p>`,
