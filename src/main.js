@@ -106,6 +106,11 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
   const segment = isEnterprise ? "Enterprise" : "SMB";
   console.info(`[Sales] Call ${callId}: prospect=${prospect.email}, rep=${repEmail}, segment=${segment}`);
 
+  // Log available AI content fields
+  const content = callData.content || {};
+  const availableFields = ["trackers","topics","brief","outline","highlights","keyPoints"].filter(f => content[f]);
+  console.info(`[Gong] Content fields available: ${availableFields.join(", ")}`);
+
   let emailHtml = null;
   let emailSubject = null;
   let status = "dashboard";
@@ -154,7 +159,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
 /**
  * Process a single Support call.
  */
-async function processSupportCall({ callId, callName, callData, smtp, runLog }) {
+async function processSupportCall({ callId, callName, callData, transcript, smtp, runLog }) {
   const parties = callData.parties || [];
   const external = parties.filter(
     p => p.affiliation !== "internal" && !((p.emailAddress || "").includes(config.SITEZEUS_DOMAIN))
@@ -181,12 +186,14 @@ async function processSupportCall({ callId, callName, callData, smtp, runLog }) 
     return;
   }
 
+  console.info(`[Support] Call ${callId}: prospect=${primaryEmail}, transcript sentences=${transcript?.length ?? 0}`);
+
   let emailHtml = null;
   let emailSubject = null;
   let status = "dashboard";
 
   try {
-    const { subject, html } = formatSupportEmail(callData, prospectFirstName, callName);
+    const { subject, html } = await formatSupportEmail(callData, prospectFirstName, callName, transcript);
     emailHtml = html;
     emailSubject = subject;
 
@@ -232,10 +239,10 @@ async function main() {
 
   // Environment
   const gongAccessKey = process.env.GONG_ACCESS_KEY;
-  const gongSecret    = process.env.GONG_SECRET;
-  const hubspotToken  = process.env.HUBSPOT_TOKEN;
-  const smtpUser      = process.env.SMTP_USER;
-  const smtpPassword  = process.env.SMTP_PASSWORD;
+  const gongSecret = process.env.GONG_SECRET;
+  const hubspotToken = process.env.HUBSPOT_TOKEN;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
 
   if (!gongAccessKey || !gongSecret) {
     console.error("[Main] GONG_ACCESS_KEY and GONG_SECRET are required. Aborting.");
@@ -243,15 +250,16 @@ async function main() {
   }
 
   const gong = new GongClient(gongAccessKey, gongSecret);
-  const hs   = hubspotToken ? new HubSpotClient(hubspotToken) : null;
-  const smtp  = { user: smtpUser, password: smtpPassword };
+  const hs = hubspotToken ? new HubSpotClient(hubspotToken) : null;
+  const smtp = { user: smtpUser, password: smtpPassword };
 
   if (!hs) console.warn("[Main] No HUBSPOT_TOKEN — enterprise classification disabled.");
   if (!smtp.user || !smtp.password) console.warn("[Main] No SMTP credentials — emails will go to dashboard only.");
+  if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — support emails will use keyPoints fallback.");
 
   // Window
   const windowStart = loadLastRun();
-  const windowEnd   = runStart;
+  const windowEnd = runStart;
   console.info(`[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()}`);
 
   const runLog = {
@@ -293,14 +301,14 @@ async function main() {
 
     // Process each call
     for (const call of calls) {
-      const callId   = call.id;
+      const callId = call.id;
       const callName = call.title || call.name || callId;
       const callData = extensiveMap[callId] || {};
       const transcript = transcriptsMap[callId] || [];
 
       // Determine team by host user ID
       const hostUserId = call.primaryUserId || call.ownerId || "";
-      const hostEmail  = (userEmailMap[hostUserId] || "").toLowerCase();
+      const hostEmail = (userEmailMap[hostUserId] || "").toLowerCase();
 
       const isSales = teamMap[hostUserId] === "sales" || (hostEmail && teamMap[hostEmail] === "sales");
       const isSupport = teamMap[hostUserId] === "support" || (hostEmail && teamMap[hostEmail] === "support");
@@ -310,7 +318,7 @@ async function main() {
       if (isSales) {
         await processSalesCall({ callId, callName, callData, transcript, teamMap, hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false }, smtp, runLog });
       } else if (isSupport) {
-        await processSupportCall({ callId, callName, callData, smtp, runLog });
+        await processSupportCall({ callId, callName, callData, transcript, smtp, runLog });
       } else {
         console.info(`[Main] Call ${callId}: host ${hostEmail || hostUserId} not in a tracked team — skipping`);
       }
