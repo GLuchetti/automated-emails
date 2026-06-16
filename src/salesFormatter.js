@@ -1,16 +1,4 @@
 // salesFormatter.js — Formats the Sales follow-up email for rep review.
-//
-// Uses Gong transcript + Anthropic AI to build a prospect-facing draft the rep
-// reviews and sends from their own account. Sent to the rep via the dashboard.
-//
-// Subject: [REVIEW & SEND] Follow-up draft for {First Name} — {Call Name}
-// Prospect draft:
-//   Hi {First Name},
-//   Thank you for taking the time to connect...
-//   What we discussed: ... (AI summary from transcript)
-//   Next steps: ... (AI extracted from transcript)
-//   Resources: ... (from trackers/topics)
-//   Best, {Rep Name}
 
 import * as config from "./config.js";
 
@@ -29,16 +17,8 @@ const PRODUCT_KEYWORDS = {
   pricing: ["pricing", "price", "cost", "investment", "contract", "proposal"],
 };
 
-// ------------------------------------------------------------------
-// Transcript helpers
-// ------------------------------------------------------------------
-
-/**
- * Build readable transcript text from flat sentences, mapping speakerId → name.
- */
 function buildTranscriptText(transcript, parties) {
   if (!transcript?.length) return "";
-
   const speakerMap = {};
   for (const party of (parties || [])) {
     const id = party.speakerId || party.userId || party.id;
@@ -50,7 +30,6 @@ function buildTranscriptText(transcript, parties) {
       ? (party.name || "Rep").split(" ")[0]
       : ((party.name || "Prospect").split(" ")[0]);
   }
-
   const utterances = [];
   let current = null;
   for (const s of transcript) {
@@ -62,74 +41,40 @@ function buildTranscriptText(transcript, parties) {
     }
     current.texts.push(s.text.trim());
   }
-
-  return utterances
-    .map(u => `${u.name}: ${u.texts.join(" ")}`)
-    .join("\n");
+  return utterances.map(u => `${u.name}: ${u.texts.join(" ")}`).join("\n");
 }
 
-/**
- * Detect product topics from transcript text for resource selection.
- */
 function detectTopicsFromText(text) {
   const lower = text.toLowerCase();
   const topics = new Set();
   for (const [topic, keywords] of Object.entries(PRODUCT_KEYWORDS)) {
-    if (keywords.some(kw => lower.includes(kw))) {
-      topics.add(topic.replace("_", " "));
-    }
+    if (keywords.some(kw => lower.includes(kw))) topics.add(topic.replace("_", " "));
   }
   return [...topics];
 }
 
-// ------------------------------------------------------------------
-// AI extraction
-// ------------------------------------------------------------------
-
-/**
- * Call Anthropic to extract "what we discussed" summary and next steps from transcript.
- * Returns null on failure.
- */
 async function extractSalesContentFromTranscript(transcriptText, prospectFirstName, repName) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `You are helping a SiteZeus sales rep write a warm, prospect-facing follow-up email. Write as if ${repName} is speaking directly to ${prospectFirstName}.
+  const prompt = `Read this sales call transcript and extract structured information for a follow-up email.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
-Return ONLY valid JSON in this exact format (no markdown, no extra text):
+Return ONLY this exact JSON — no markdown, no explanation:
 {
-  "summary": "2-3 sentence warm recap",
-  "nextSteps": ["next step 1"],
-  "nextMeeting": "scheduled follow-up description, or empty string",
+  "prospectSituation": "one phrase describing what ${prospectFirstName} is focused on or trying to accomplish (positive framing, e.g. 'expanding your restaurant concepts into new markets')",
+  "sitezeusFit": "one sentence on how SiteZeus specifically helps with that (e.g. 'SiteZeus gives you AI-powered location scoring and consumer data to identify the best sites for each concept')",
+  "scheduledMeeting": "ONLY if a specific follow-up call or demo was booked — describe it (e.g. 'Demo scheduled for next week'). If nothing was scheduled, return empty string.",
   "resourceTopics": ["topic1", "topic2", "topic3"]
 }
 
-Rules for summary:
-- Write FROM ${repName} TO ${prospectFirstName} — this is ${repName} speaking, so NEVER use ${repName}'s name or any name in third person.
-- BAD: "${repName}, along with ${prospectFirstName}... discussed..." — this is third person, NEVER do this.
-- BAD: "During our call, Will and Juan talked about..." — still third person, NEVER do this.
-- GOOD: Start with a warm direct opener like "It was great connecting today" or "Really enjoyed our conversation" — then address ${prospectFirstName}'s goals directly.
-- Frame as: (1) validation of ${prospectFirstName}'s situation or goals, phrased positively — as ambitions or opportunities, NOT problems, then (2) how SiteZeus specifically addresses those.
-- Example: "It was great connecting today — it sounds like you're focused on [their goal/situation]. SiteZeus [specific value prop that addresses it]. [One connecting sentence about their specific context]."
-- 2-3 sentences max. NO generic filler like "Thank you for your time."
-
-CRITICAL RULES for nextSteps:
-- This field is ONLY for the next scheduled call, demo, or meeting — NOTHING ELSE.
-- If a demo or follow-up was booked: state it concisely, e.g. "Demo scheduled for next week" or "Follow-up call booked for [date/time if mentioned]".
-- If nothing was scheduled: ONE item only — e.g. "Let's find a time to walk through SiteZeus together".
-- Maximum 2 items TOTAL.
-- BAD next steps (never do this): company profile notes, background on their business, expansion plans, task lists, anything that is NOT about the next meeting/call.
-- NEVER copy-paste any sentence from the transcript.
-- NEVER start with "I".
-- If truly no next steps exist, return [].
-
-Rules for resourceTopics:
-- List 3-5 short topic tags representing what ${prospectFirstName} showed genuine interest in during this call.
-- Examples: "site selection", "franchise expansion", "consumer data", "new market entry", "construction management", "white space analysis", "revenue forecasting".
-- These will be used to select relevant resources and content to share.`;
+Rules:
+- prospectSituation: describe their goal/ambition, NOT a problem. Phrase it as what they ARE doing, not what they are struggling with.
+- sitezeusFit: one sentence only. Be specific to what was discussed, not generic.
+- scheduledMeeting: this is ONLY for an explicitly booked next call/demo/meeting. Do NOT put company background, expansion plans, or anything else here. If no meeting was booked, return "".
+- resourceTopics: 3-5 tags for topics ${prospectFirstName} showed genuine interest in. Examples: "site selection", "franchise expansion", "consumer data", "revenue forecasting", "construction management".`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -141,26 +86,19 @@ Rules for resourceTopics:
       },
       body: JSON.stringify({
         model: ANTHROPIC_MODEL,
-        max_tokens: 1024,
+        max_tokens: 512,
+        temperature: 0,
         messages: [{ role: "user", content: prompt }],
       }),
     });
-
     if (!res.ok) {
-      const errText = await res.text();
-      console.warn(`[Sales] Anthropic API error ${res.status}: ${errText.slice(0, 200)}`);
+      console.warn(`[Sales] Anthropic API error ${res.status}: ${(await res.text()).slice(0, 200)}`);
       return null;
     }
-
     const data = await res.json();
     const text = (data.content?.[0]?.text || "").trim();
-
     const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.warn("[Sales] Anthropic response had no JSON:", text.slice(0, 200));
-      return null;
-    }
-
+    if (!jsonMatch) { console.warn("[Sales] No JSON in response:", text.slice(0, 200)); return null; }
     return JSON.parse(jsonMatch[0]);
   } catch (err) {
     console.warn(`[Sales] AI extraction failed: ${err.message}`);
@@ -168,96 +106,64 @@ Rules for resourceTopics:
   }
 }
 
-// ------------------------------------------------------------------
-// Fallback (no API key or AI failure)
-// ------------------------------------------------------------------
-
 function extractFallbackContent(callData) {
   const content = callData.content || {};
-
-  // Summary: brief > key points
   const brief = typeof content.brief === "string" ? content.brief.trim() : null;
   const keyPoints = (content.keyPoints || [])
     .map(kp => (typeof kp === "string" ? kp : kp?.text || kp?.title || ""))
-    .map(t => t.trim())
-    .filter(Boolean)
-    .slice(0, 4);
-
-  // Next steps: Gong actions
+    .map(t => t.trim()).filter(Boolean).slice(0, 4);
   const nextSteps = (content.actions || [])
     .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
-    .map(t => t.trim())
-    .filter(Boolean)
-    .slice(0, 4);
-
-  // Next meeting from highlights
+    .map(t => t.trim()).filter(Boolean).slice(0, 4);
   const highlights = content.highlights || [];
   const NEXT_MEETING_TYPES = new Set(["next_meeting", "follow_up", "follow-up", "upcoming_meeting"]);
   const nextMeeting = highlights.find(h => NEXT_MEETING_TYPES.has((h.type || "").toLowerCase()))?.text?.trim() || "";
-
   return { summary: brief, keyPoints, nextSteps, nextMeeting };
 }
-
-// ------------------------------------------------------------------
-// Resource selection
-// ------------------------------------------------------------------
 
 function selectResources(topics, isEnterprise) {
   const pool = isEnterprise ? config.ENTERPRISE_RESOURCES : config.SMB_EMERGING_RESOURCES;
   const selected = [];
   const selectedNames = new Set();
-
   for (const resource of pool) {
     if (selected.length >= 4) break;
     for (const topic of resource.topics || []) {
       if (topics.some(t => t.includes(topic) || topic.includes(t))) {
-        if (!selectedNames.has(resource.name)) {
-          selected.push(resource);
-          selectedNames.add(resource.name);
-          break;
-        }
+        if (!selectedNames.has(resource.name)) { selected.push(resource); selectedNames.add(resource.name); break; }
       }
     }
   }
-  // Fill up to 4 from pool
   for (const resource of pool) {
     if (selected.length >= 4) break;
-    if (!selectedNames.has(resource.name)) {
-      selected.push(resource);
-      selectedNames.add(resource.name);
-    }
+    if (!selectedNames.has(resource.name)) { selected.push(resource); selectedNames.add(resource.name); }
   }
   selected.push({ name: "Customer Stories", url: config.CUSTOMER_STORIES_URL });
   return selected;
 }
 
-// ------------------------------------------------------------------
-// Public API
-// ------------------------------------------------------------------
-
-/**
- * Build the full sales review email (rep wrapper + prospect draft).
- * @returns {{ subject: string, wrapperHtml: string, prospectHtml: string }}
- */
 export async function formatSalesReviewEmail({ callData, repName, repEmail, prospectFirstName, prospectEmail, isEnterprise, callName, transcript = [] }) {
   const parties = callData.parties || [];
   const content = callData.content || {};
-
-  // Build transcript text
   const transcriptText = buildTranscriptText(transcript, parties);
   console.info(`[Sales] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  // AI extraction
-  let aiContent = await extractSalesContentFromTranscript(transcriptText, prospectFirstName, repName);
+  const aiContent = await extractSalesContentFromTranscript(transcriptText, prospectFirstName, repName);
 
-  let summary, nextSteps, nextMeeting;
-
-  let resourceTopics = [];
+  let summary, nextSteps, nextMeeting, resourceTopics = [];
 
   if (aiContent) {
-    summary = aiContent.summary || null;
-    nextSteps = aiContent.nextSteps || [];
-    nextMeeting = aiContent.nextMeeting || "";
+    // Build first-person summary from structured pieces
+    const situation = aiContent.prospectSituation?.trim();
+    const fit = aiContent.sitezeusFit?.trim();
+    if (situation && fit) {
+      summary = `It was great connecting today — it sounds like you're focused on ${situation}. ${fit}`;
+    } else if (situation) {
+      summary = `It was great connecting today — it sounds like you're focused on ${situation}. We'd love to show you exactly how SiteZeus can support that.`;
+    }
+    // Next step: only the scheduled meeting (or a generic scheduling line)
+    const scheduled = aiContent.scheduledMeeting?.trim();
+    nextSteps = scheduled ? [scheduled] : [];
+    nextMeeting = "";
     resourceTopics = aiContent.resourceTopics || [];
   } else {
     console.info("[Sales] Falling back to Gong AI content fields");
@@ -265,43 +171,21 @@ export async function formatSalesReviewEmail({ callData, repName, repEmail, pros
     summary = fallback.summary;
     nextSteps = fallback.nextSteps;
     nextMeeting = fallback.nextMeeting;
-
-    // If no next steps from Gong either, use key points
-    if (!nextSteps.length) nextSteps = fallback.keyPoints.slice(2);
   }
 
-  // Resources — AI topics first, then Gong trackers, then transcript keyword detection
   if (!resourceTopics.length) {
     const trackers = content.trackers || [];
-    resourceTopics = trackers
-      .filter(t => (t.count || 0) > 0)
-      .map(t => (t.name || "").toLowerCase());
+    resourceTopics = trackers.filter(t => (t.count || 0) > 0).map(t => (t.name || "").toLowerCase());
   }
-
-  if (!resourceTopics.length && transcriptText) {
-    resourceTopics = detectTopicsFromText(transcriptText);
-  }
+  if (!resourceTopics.length && transcriptText) resourceTopics = detectTopicsFromText(transcriptText);
 
   const resources = selectResources(resourceTopics, isEnterprise);
-
-  const prospectHtml = buildProspectHtml({
-    prospectFirstName, repName,
-    summary,
-    nextSteps,
-    nextMeeting,
-    resources,
-  });
-
+  const prospectHtml = buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nextMeeting, resources });
   const segmentLabel = isEnterprise ? "Enterprise" : "SMB / Emerging";
   const wrapperHtml = buildRepWrapper({ repEmail, prospectFirstName, prospectEmail, segmentLabel, callName, prospectHtml });
   const subject = `[REVIEW & SEND] Follow-up draft for ${prospectFirstName} — ${callName}`;
-
   return { subject, wrapperHtml, prospectHtml };
 }
-
-// ------------------------------------------------------------------
-// HTML builders
-// ------------------------------------------------------------------
 
 function bulletList(items) {
   return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
@@ -312,32 +196,17 @@ function buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nex
     `<p>Hi ${prospectFirstName},</p>`,
     `<p>Thank you for taking the time to connect with me today. I wanted to follow up with a quick recap of our conversation.</p>`,
   ];
-
-  // What we discussed
-  if (summary) {
-    parts.push(`<p><strong>What we discussed:</strong></p>`, `<p>${summary}</p>`);
-  }
-
-  // Next steps
+  if (summary) parts.push(`<p><strong>What we discussed:</strong></p>`, `<p>${summary}</p>`);
   if (nextSteps.length) {
     parts.push(`<p><strong>Next steps:</strong></p>`, bulletList(nextSteps));
   } else if (nextMeeting) {
     parts.push(`<p><strong>Next steps:</strong></p>`, `<p>${nextMeeting}</p>`);
   } else {
-    parts.push(
-      `<p><strong>Next steps:</strong></p>`,
-      `<p>I'll be in touch soon. Feel free to reach out with any questions — you can also find time through the scheduling link in my signature.</p>`
-    );
+    parts.push(`<p><strong>Next steps:</strong></p>`, `<p>I'll be in touch soon — feel free to find time on my calendar through the link in my signature.</p>`);
   }
-
-  // Resources
   if (resources.length) {
-    parts.push(
-      `<p><strong>Resources:</strong></p>`,
-      bulletList(resources.map(r => `<a href="${r.url}" style="color:#1a73e8;">${r.name}</a>`))
-    );
+    parts.push(`<p><strong>Resources:</strong></p>`, bulletList(resources.map(r => `<a href="${r.url}" style="color:#1a73e8;">${r.name}</a>`)));
   }
-
   parts.push(`<p>Best,<br>${repName}</p>`);
   return parts.join("\n");
 }
@@ -345,28 +214,20 @@ function buildProspectHtml({ prospectFirstName, repName, summary, nextSteps, nex
 function buildRepWrapper({ repEmail, prospectFirstName, prospectEmail, segmentLabel, callName, prospectHtml }) {
   return `
 <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;">
-
 <div style="background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;">
 <strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>
 This is a draft follow-up email for <strong>${prospectFirstName}</strong>
 (<a href="mailto:${prospectEmail}">${prospectEmail}</a>).<br>
 <strong>Segment:</strong> ${segmentLabel} &nbsp;|&nbsp;
 <strong>Call:</strong> ${callName}<br><br>
-Review the draft below. Edit as needed, then send it to the prospect from
-your own email account (<strong>${repEmail}</strong>).<br>
+Review the draft below. Edit as needed, then send it from your own account (<strong>${repEmail}</strong>).<br>
 <em>Do not reply to this message — it was sent automatically.</em>
 </div>
-
 <hr style="border:none;border-top:1px solid #ddd;margin:0 0 20px 0;">
-
-<p style="color:#888;font-size:12px;margin-bottom:4px;">
-Suggested subject: <strong>SiteZeus Resources &amp; Next Steps</strong>
-</p>
-
+<p style="color:#888;font-size:12px;margin-bottom:4px;">Suggested subject: <strong>SiteZeus Resources &amp; Next Steps</strong></p>
 <div style="border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;">
 ${prospectHtml}
 </div>
-
 </div>
 `;
 }
