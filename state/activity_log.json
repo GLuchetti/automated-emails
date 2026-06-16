@@ -1,6 +1,75 @@
 {
   "runs": [
     {
+      "id": "run-1781632664371",
+      "timestamp": "2026-06-16T17:57:44.371Z",
+      "window_start": "2026-06-15T16:00:00.000Z",
+      "window_end": "2026-06-16T17:57:44.371Z",
+      "calls_processed": [
+        {
+          "call_id": "2995050958731747019",
+          "call_name": "SZ | 60 minute call - Blaine Salem and Alan May",
+          "team": "support",
+          "prospect_name": "Blaine Salem",
+          "prospect_email": "blaine.salem@tacala.com",
+          "email_to": [
+            "blaine.salem@tacala.com",
+            "mike.gray@tacala.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Blaine — SZ | 60 minute call - Blaine Salem and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nThis is a draft support follow-up for <strong>Blaine</strong>\n(<a href=\"mailto:blaine.salem@tacala.com\">blaine.salem@tacala.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Blaine Salem and Alan May<br><br>\nReview the draft below. Edit as needed, then send it from your own account (<strong>amay@sitezeus.com</strong>).<br>\n<em>Do not reply to this message — it was sent automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Blaine,</p>\n<p>Thanks for your time today — here's a quick summary of what's next coming out of our call:</p>\n<p>No specific action items came out of today's call, but please don't hesitate to reach out if anything comes up.</p>\n<p>Talk soon,<br>Alan May<br>SiteZeus Customer Success</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T17:57:46.739Z"
+        },
+        {
+          "call_id": "4501457932544822614",
+          "call_name": "SiteZeus <> The Dirty Rabbit Group",
+          "team": "sales",
+          "prospect_name": "Juan Posada",
+          "prospect_email": "j.posada@therabbitgroup.us",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Juan — SiteZeus <> The Dirty Rabbit Group",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nThis is a draft follow-up email for <strong>Juan</strong>\n(<a href=\"mailto:j.posada@therabbitgroup.us\">j.posada@therabbitgroup.us</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp;\n<strong>Call:</strong> SiteZeus <> The Dirty Rabbit Group<br><br>\nReview the draft below. Edit as needed, then send it from your own account (<strong>wmorgan@sitezeus.com</strong>).<br>\n<em>Do not reply to this message — it was sent automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>SiteZeus Resources &amp; Next Steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Juan,</p>\n<p>Great connecting with you today!</p>\n<p>Will from SiteZeus, along with Juan and Luis from The Rabbit Group, discussed The Rabbit Group's expansion plans for their three concepts: \"The Dirty Rabbit,\" \"Tacos,\" and \"Salad Especial.\" They explored how SiteZeus's location intelligence and market planning software could support their growth by analyzing demographic data, consumer behavior, and identifying optimal locations, with a tailored demo scheduled for the following week. The conversation also touched upon The Rabbit Group's existing data collection methods and SiteZeus's approach to leveraging this data for strategic decision-making.</p>\n<p>I'll follow up soon — feel free to grab time on my calendar through the link in my signature.</p>\n<p><strong>A few resources that may be helpful:</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a></li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a></li><li><a href=\"https://sitezeus.com/products/construction-management-software\" style=\"color:#1a73e8;\">SiteZeus Build — Construction Management</a></li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a></li></ul>\n<p>Talk soon,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T17:57:47.090Z"
+        },
+        {
+          "call_id": "4363043437679942715",
+          "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-16T17:57:47.090Z"
+        },
+        {
+          "call_id": "8934107884379299587",
+          "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+          "team": "support",
+          "prospect_name": "Tyler Azzarelli",
+          "prospect_email": "tylera@cicciorg.com",
+          "email_to": [
+            "tylera@cicciorg.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Tyler — Daily Sync - SiteZeus | Fresh Kitchen",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nThis is a draft support follow-up for <strong>Tyler</strong>\n(<a href=\"mailto:tylera@cicciorg.com\">tylera@cicciorg.com</a>).<br>\n<strong>Call:</strong> Daily Sync - SiteZeus | Fresh Kitchen<br><br>\nReview the draft below. Edit as needed, then send it from your own account (<strong>abergland@sitezeus.com</strong>).<br>\n<em>Do not reply to this message — it was sent automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Thanks for your time today — here's a quick summary of what's next coming out of our call:</p>\n<p>No specific action items came out of today's call, but please don't hesitate to reach out if anything comes up.</p>\n<p>Talk soon,<br>Aaron Bergland<br>SiteZeus Customer Success</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T17:57:47.090Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781625694629",
       "timestamp": "2026-06-16T16:01:34.629Z",
       "window_start": "2026-06-15T16:00:00.000Z",
@@ -1968,5 +2037,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-16T16:01:37.285Z"
+  "last_updated": "2026-06-16T17:57:47.093Z"
 }
