@@ -24,71 +24,83 @@ export const SUPPORT_FROM_EMAIL = "support@sitezeus.com";
 export const INTERNAL_NOTIFICATION_EMAIL = "support@sitezeus.com";
 export const SITEZEUS_DOMAIN = "sitezeus.com";
 
-// Resource links — topics[] matched against Gong tracker names (lowercase)
-export const ENTERPRISE_RESOURCES = [
+// ------------------------------------------------------------------
+// Resources — matched against AI-extracted topics from the transcript.
+// Each entry has topics[] for keyword matching (lowercase).
+// Resources are intelligently selected per call based on what the
+// prospect showed genuine interest in.
+// ------------------------------------------------------------------
+
+// Core product pages
+const PRODUCT_RESOURCES = [
   {
-    name: "White Space Analysis",
+    name: "SiteZeus Locate — Site Selection",
     url: "https://sitezeus.com/products/site-selection-software",
-    topics: ["white space", "whitespace", "gap analysis", "untapped", "growth opportunity"],
+    topics: ["site selection", "locate", "forecast", "revenue forecast", "location scoring", "predict", "ai score"],
   },
   {
-    name: "Sales Forecasting",
-    url: "https://sitezeus.com/products/site-selection-software",
-    topics: ["forecast", "sales forecast", "revenue forecast", "projection", "predict"],
-  },
-  {
-    name: "Sales Impact",
-    url: "https://sitezeus.com/products/site-selection-software",
-    topics: ["sales impact", "cannibalization", "roi", "revenue impact", "performance"],
-  },
-  {
-    name: "Customer Insights",
+    name: "Customer Insights — Market Intelligence",
     url: "https://sitezeus.com/products/customer-insights-platform",
-    topics: ["market", "customer insights", "trade area", "mobile data", "competition", "competitor"],
+    topics: ["customer insights", "market", "trade area", "mobile data", "consumer", "demographics", "competition", "competitor"],
   },
   {
-    name: "Zeus AI",
-    url: "https://sitezeus.com/products/site-selection-software",
-    topics: ["zeus ai", "zeus", "ai", "artificial intelligence", "predictive", "machine learning"],
-  },
-  {
-    name: "SiteZeus Build",
+    name: "SiteZeus Build — Construction Management",
     url: "https://sitezeus.com/products/construction-management-software",
-    topics: ["build", "construction", "unit opening", "new location", "expansion", "open", "growth"],
+    topics: ["build", "construction", "construction management", "unit opening", "new location", "buildout", "milestone", "timeline", "project management"],
   },
   {
-    name: "SiteZeus Sell",
+    name: "SiteZeus Sell — Franchise CRM",
     url: "https://sitezeus.com/products/franchise-crm",
-    topics: ["sell", "franchise crm", "pipeline", "franchise sales", "disposition", "portfolio"],
+    topics: ["sell", "franchise crm", "pipeline", "franchise sales", "candidate", "territory", "disposition", "portfolio"],
   },
   {
-    name: "Proof of Concept",
-    url: "https://sitezeus.com/schedule-a-demo",
-    topics: ["poc", "proof of concept", "pilot", "test", "trial"],
+    name: "Zeus AI — Predictive Intelligence",
+    url: "https://sitezeus.com/products/site-selection-software",
+    topics: ["zeus ai", "zeus", "ai", "artificial intelligence", "predictive", "machine learning", "recommendation"],
   },
 ];
 
-export const SMB_EMERGING_RESOURCES = [
+// Content resources — blogs, webinars, client stories by topic
+const CONTENT_RESOURCES = [
   {
-    name: "SiteZeus Locate",
-    url: "https://sitezeus.com/products/site-selection-software",
-    topics: ["emerging", "site selection", "small business", "franchise", "growing", "startup", "locate"],
+    name: "White Space Analysis Guide",
+    url: "https://sitezeus.com/blog/white-space-analysis",
+    topics: ["white space", "whitespace", "gap analysis", "untapped market", "expansion opportunity", "growth opportunity", "new market entry"],
   },
   {
-    name: "SiteZeus Build",
-    url: "https://sitezeus.com/products/construction-management-software",
-    topics: ["build", "construction", "unit opening", "new location", "expansion", "open", "growth"],
+    name: "Restaurant Expansion Planning",
+    url: "https://sitezeus.com/blog/restaurant-expansion-planning",
+    topics: ["restaurant expansion", "expansion planning", "franchise expansion", "expanding", "growth strategy", "franchise growth"],
   },
   {
-    name: "SiteZeus Sell",
-    url: "https://sitezeus.com/products/franchise-crm",
-    topics: ["sell", "franchise crm", "pipeline", "franchise sales", "disposition", "portfolio"],
+    name: "Site Selection Checklist",
+    url: "https://sitezeus.com/blog/site-selection-checklist",
+    topics: ["site selection checklist", "evaluating locations", "location criteria", "site criteria", "site evaluation"],
   },
   {
-    name: "Customer Insights",
-    url: "https://sitezeus.com/products/customer-insights-platform",
-    topics: ["market", "customer insights", "trade area", "mobile data", "competition", "competitor"],
+    name: "Sales Impact & Cannibalization",
+    url: "https://sitezeus.com/blog/cannibalization-analysis",
+    topics: ["sales impact", "cannibalization", "overlap", "transfer", "roi", "impact analysis", "proximity"],
+  },
+  {
+    name: "Franchise Growth Webinar",
+    url: "https://sitezeus.com/webinars",
+    topics: ["franchise", "franchise system", "franchisee", "franchisor", "franchise development", "multi-unit"],
+  },
+  {
+    name: "Customer Stories",
+    url: "https://sitezeus.com/customer-stories",
+    topics: ["case study", "results", "success", "customer story", "client story", "proof", "roi"],
+  },
+  {
+    name: "Proof of Concept / Demo",
+    url: "https://sitezeus.com/schedule-a-demo",
+    topics: ["poc", "proof of concept", "pilot", "trial", "test", "demo", "sandbox"],
   },
 ];
+
+// Combined pool for resource selection
+export const ENTERPRISE_RESOURCES = [...PRODUCT_RESOURCES, ...CONTENT_RESOURCES];
+export const SMB_EMERGING_RESOURCES = [...PRODUCT_RESOURCES, ...CONTENT_RESOURCES];
 
 export const CUSTOMER_STORIES_URL = "https://sitezeus.com/customer-stories";
