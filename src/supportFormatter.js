@@ -39,7 +39,7 @@ const MILESTONE_TYPES = new Set([
 // We surface outcomes and actions, not internal issues.
 const NEGATIVE_PATTERNS = [
   /\b(acknowledged?|admit(ted)?)\s+that\b/i,
-  /\b(issue|problem|error|bug|incorrect(ly)?|wrong|fail(ed|ure)?|broken)\b/i,
+  /\b(issues?|problems?|errors?|bugs?|incorrect(ly)?|wrong|fail(ed|ure)?|broken)\b/i,
   /\b(couldn'?t|wasn'?t|weren'?t|didn'?t|hasn'?t|haven'?t)\b/i,
 ];
 
@@ -62,13 +62,12 @@ function isClientSafe(text) {
 function keyPointAsAction(text) {
   const t = (text || "").trim();
   if (!t) return null;
-  // Must be client-safe
   if (!isClientSafe(t)) return null;
-  // Prefer items that look like forward-looking actions (contain "to [verb]" or "will [verb]")
+  // Prefer items that look like forward-looking actions
   if (/\bto\s+[a-z]+\b/i.test(t) || /\bwill\s+[a-z]+\b/i.test(t)) return t;
-  // Also keep items that don't describe problems and don't start with past-tense verbs
-  if (!/^(Alan|the team|SiteZeus|Tacala)\s+(acknowledged|said|noted|mentioned|explained|showed|demonstrated)/i.test(t)) return t;
-  return null;
+  // Exclude past-tense narrative summaries
+  if (/^[A-Z][a-z]+\s+(acknowledged|said|noted|mentioned|explained|showed|demonstrated)/i.test(t)) return null;
+  return t;
 }
 
 /**
@@ -116,7 +115,8 @@ export function formatSupportEmail(callData, prospectFirstName, callName) {
     }
   }
 
-  // Attribute structured actions to SiteZeus vs client
+  // Attribute structured actions to SiteZeus vs client.
+  // Items with no speakerId default to SiteZeus Team (we own unattributed items).
   for (const action of structuredActions) {
     const text = (action.text || "").trim();
     if (!text || !isClientSafe(text)) continue;
@@ -124,7 +124,9 @@ export function formatSupportEmail(callData, prospectFirstName, callName) {
     const party     = speakerMap[speakerId] || {};
     const due       = (action.dueDate || "").trim();
     const item      = due ? `${text}, ${due}` : text;
-    if (isSiteZeus(party)) {
+
+    // No speakerId = unattributed → default to SiteZeus Team
+    if (!speakerId || isSiteZeus(party)) {
       sitezeusActions.push(item);
     } else {
       const name = (party.name || "").trim() || prospectFirstName;
