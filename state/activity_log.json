@@ -1,6 +1,31 @@
 {
   "runs": [
     {
+      "id": "run-1781648104875",
+      "timestamp": "2026-06-16T22:15:04.875Z",
+      "window_start": "2026-06-16T19:51:23.822Z",
+      "window_end": "2026-06-16T22:15:04.875Z",
+      "calls_processed": [
+        {
+          "call_id": "3269334199234037209",
+          "call_name": "SZ | 60 minute call - Coleman Welch and Alan May",
+          "team": "support",
+          "prospect_name": "Cwelch",
+          "prospect_email": "cwelch@321zips.com",
+          "email_to": [
+            "cwelch@321zips.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Cwelch — SZ | 60 minute call - Coleman Welch and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Cwelch</strong> (<a href=\"mailto:cwelch@321zips.com\">cwelch@321zips.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Coleman Welch and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Cwelch,</p>\n<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>\n<p>SiteZeus Team</p>\n<p>No specific action items came out of today's call — we'll be in touch if anything comes up.</p>\n<p>Best,<br>SiteZeus Support Team</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-16T22:15:07.641Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781639483822",
       "timestamp": "2026-06-16T19:51:23.822Z",
       "window_start": "2026-06-16T19:01:49.859Z",
@@ -2218,5 +2243,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-16T19:51:24.674Z"
+  "last_updated": "2026-06-16T22:15:07.643Z"
 }
