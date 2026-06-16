@@ -1,39 +1,12 @@
-// supportFormatter.js — Formats support call follow-up email using transcript + AI.
-//
-// Uses Gong transcript utterances to extract per-participant action items via
-// Anthropic claude-haiku. Falls back to keyPoints if ANTHROPIC_API_KEY is absent.
-//
-// Template:
-//   Hi {First Name},
-//   Below is a summary of our call today...
-//   SiteZeus Team
-//   * {action}
-//   {Client First Name}
-//   * {action}
-//   Key Decisions
-//   * {decision}
-//   Next Milestone
-//   {milestone}
-//   Best, SiteZeus Support Team
+// supportFormatter.js — Formats the Support follow-up email for CSM review.
 
 import * as config from "./config.js";
 
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
 
-// ------------------------------------------------------------------
-// Transcript helpers
-// ------------------------------------------------------------------
-
-/**
- * Build a readable transcript string from flat sentences.
- * Groups consecutive utterances by the same speaker and maps
- * speakerId → human name using callData.parties.
- */
 function buildTranscriptText(transcript, parties) {
   if (!transcript?.length) return "";
-
-  // speakerId → display name
   const speakerMap = {};
   for (const party of (parties || [])) {
     const id = party.speakerId || party.userId || party.id;
@@ -41,12 +14,8 @@ function buildTranscriptText(transcript, parties) {
     const isInternal =
       party.affiliation === "internal" ||
       (party.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN || "sitezeus.com");
-    speakerMap[id] = isInternal
-      ? "SiteZeus"
-      : ((party.name || "Client").split(" ")[0]);
+    speakerMap[id] = isInternal ? "SiteZeus" : (party.name || "Client").split(" ")[0];
   }
-
-  // Group consecutive sentences by speaker into utterances
   const utterances = [];
   let current = null;
   for (const s of transcript) {
@@ -58,68 +27,38 @@ function buildTranscriptText(transcript, parties) {
     }
     current.texts.push(s.text.trim());
   }
-
-  return utterances
-    .map(u => `${u.name}: ${u.texts.join(" ")}`)
-    .join("\n");
+  return utterances.map(u => `${u.name}: ${u.texts.join(" ")}`).join("\n");
 }
 
-// ------------------------------------------------------------------
-// AI extraction
-// ------------------------------------------------------------------
-
-/**
- * Call Anthropic to extract structured action items from the transcript.
- * Returns null on failure (triggers keyPoints fallback).
- */
-async function extractActionsFromTranscript(transcriptText, prospectFirstName) {
+async function extractActionsFromTranscript(transcriptText, clientFirstName) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const prompt = `You are writing a follow-up call summary email on behalf of the SiteZeus team member who hosted this support call. Write in FIRST PERSON as if the SiteZeus rep is writing directly to ${prospectFirstName}.
+  const prompt = `Read this support call transcript and extract ONLY future commitments and action items.
 
 Transcript:
 ${transcriptText.slice(0, 12000)}
 
-Return ONLY valid JSON in this exact format (no markdown, no extra text):
+Return ONLY this exact JSON — no markdown, no explanation:
 {
-  "sitezeusActions": ["action 1", "action 2"],
-  "clientActions": ["action 1", "action 2"],
-  "keyDecisions": ["decision 1"],
-  "nextMilestone": "one sentence describing the next concrete step or deliverable"
+  "ourCommitments": ["commitment1", "commitment2"],
+  "clientActions": ["action1", "action2"],
+  "nextMilestone": "one sentence describing the agreed next milestone, or empty string"
 }
 
-CRITICAL: This is NOT a call summary or recap. You are extracting ONLY explicit forward-looking commitments — things people will do AFTER this call. If something happened DURING the call (a demo, a walkthrough, an explanation), it is NOT an action item.
-
-Rules for sitezeusActions:
-- ONLY commitments the SiteZeus team made about what they will do AFTER this call
-- Write in FIRST PERSON: "I will..." or "We will..." — NEVER use a person's name (no "Alan will...", no "the rep demonstrated...")
-- BAD (describing what happened): "Alan demonstrated how to pull mobile data during the call."
-- BAD (third person): "The SiteZeus team will prioritize the data pull."
-- GOOD (first person, forward-looking): "I will pull the Tacala mobile data and share it by end of week."
-- GOOD: "We will send over the updated model link after adjusting the drive-time settings."
-- If no clear SiteZeus commitments were made, return []
+Rules for ourCommitments:
+- Include ONLY things SiteZeus explicitly agreed to do after this call
+- Write each item starting with "We will..." or "I will..." (first person)
+- Do NOT describe anything that happened during the call (no "We showed", "We walked through", "We demonstrated", "We discussed")
+- If nothing was explicitly committed, return []
 
 Rules for clientActions:
-- ONLY things ${prospectFirstName} explicitly committed to do AFTER this call
-- Format: "${prospectFirstName} to [specific action]"
-- BAD (describing what happened): "${prospectFirstName} to market overview: the rep guided them through the platform."
-- GOOD: "${prospectFirstName} to send over their target site list by Thursday."
-- GOOD: "${prospectFirstName} to review the updated model and provide feedback."
-- If no clear client commitments were made, return []
-
-Rules for keyDecisions:
-- Major agreements or decisions made together — write as "We agreed..." or "We decided..."
-- If none, return []
+- Include ONLY things ${clientFirstName} explicitly agreed to do
+- Write each item starting with "${clientFirstName} will..."
+- If nothing was committed, return []
 
 Rules for nextMilestone:
-- The next scheduled meeting or key deliverable — write as "Our next step is..." or "We have a follow-up scheduled for..."
-- If nothing scheduled, return ""
-
-Rules for ALL fields:
-- ALL items must be positive and forward-looking — no mention of issues, bugs, errors, or problems
-- Keep each bullet under 15 words
-- Never use a team member's name in third person`;
+- One sentence describing the agreed next step or meeting, or "" if none`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -131,26 +70,19 @@ Rules for ALL fields:
       },
       body: JSON.stringify({
         model: ANTHROPIC_MODEL,
-        max_tokens: 1024,
+        max_tokens: 512,
+        temperature: 0,
         messages: [{ role: "user", content: prompt }],
       }),
     });
-
     if (!res.ok) {
-      const errText = await res.text();
-      console.warn(`[Support] Anthropic API error ${res.status}: ${errText.slice(0, 200)}`);
+      console.warn(`[Support] Anthropic API error ${res.status}: ${(await res.text()).slice(0, 200)}`);
       return null;
     }
-
     const data = await res.json();
     const text = (data.content?.[0]?.text || "").trim();
-
     const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.warn("[Support] Anthropic response had no JSON:", text.slice(0, 200));
-      return null;
-    }
-
+    if (!jsonMatch) { console.warn("[Support] No JSON in response:", text.slice(0, 200)); return null; }
     return JSON.parse(jsonMatch[0]);
   } catch (err) {
     console.warn(`[Support] AI extraction failed: ${err.message}`);
@@ -158,99 +90,75 @@ Rules for ALL fields:
   }
 }
 
-// ------------------------------------------------------------------
-// Fallback (no API key or AI failure)
-// ------------------------------------------------------------------
-
-function extractFallbackActions(callData, prospectFirstName) {
-  const content = callData.content || {};
-  const points = (content.keyPoints || [])
-    .map(kp => (typeof kp === "string" ? kp : kp?.text || kp?.title || ""))
-    .map(t => t.trim())
-    .filter(Boolean);
-
-  return {
-    sitezeusActions: points.slice(0, 3),
-    clientActions: points.slice(3, 5).map(p => `${prospectFirstName} to ${p.toLowerCase()}`),
-    keyDecisions: [],
-    nextMilestone: "",
-  };
-}
-
-// ------------------------------------------------------------------
-// Public API
-// ------------------------------------------------------------------
-
-/**
- * Format the support follow-up email from transcript + AI.
- * @returns {{ subject: string, html: string }}
- */
-export async function formatSupportEmail(callData, prospectFirstName, callName, transcript = []) {
+export async function formatSupportReviewEmail({ callData, csmName, csmEmail, clientFirstName, clientEmail, callName, transcript = [] }) {
   const parties = callData.parties || [];
-
-  // Build readable transcript
+  const content = callData.content || {};
   const transcriptText = buildTranscriptText(transcript, parties);
   console.info(`[Support] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  // Extract actions — AI first, fall back to keyPoints
-  let extracted = await extractActionsFromTranscript(transcriptText, prospectFirstName);
-  if (!extracted) {
-    console.info("[Support] Falling back to keyPoints for action extraction");
-    extracted = extractFallbackActions(callData, prospectFirstName);
+  const aiContent = await extractActionsFromTranscript(transcriptText, clientFirstName);
+
+  let sitezeusActions, clientActions, nextMilestone;
+
+  if (aiContent) {
+    sitezeusActions = (aiContent.ourCommitments || []).filter(Boolean);
+    clientActions = (aiContent.clientActions || []).filter(Boolean);
+    nextMilestone = aiContent.nextMilestone?.trim() || "";
+    console.info(`[Support] AI extracted: ${sitezeusActions.length} our commitments, ${clientActions.length} client actions`);
+  } else {
+    console.info("[Support] Falling back to Gong AI content fields");
+    const gongActions = (content.actions || [])
+      .map(a => (typeof a === "string" ? a : a?.text || a?.description || ""))
+      .map(t => t.trim()).filter(Boolean);
+    sitezeusActions = gongActions.filter(a => /\b(we|i|sitezeus)\b/i.test(a));
+    clientActions = gongActions.filter(a => !sitezeusActions.includes(a));
+    nextMilestone = "";
   }
 
-  const { sitezeusActions, clientActions, keyDecisions, nextMilestone } = extracted;
-
-  const subject = `SiteZeus Call Summary — ${callName}`;
-  const html = buildSupportHtml({ prospectFirstName, sitezeusActions, clientActions, keyDecisions, nextMilestone });
-
-  return { subject, html };
+  const supportHtml = buildClientHtml({ clientFirstName, csmName, sitezeusActions, clientActions, nextMilestone });
+  const wrapperHtml = buildCsmWrapper({ csmEmail, clientFirstName, clientEmail, callName, supportHtml });
+  const subject = `[REVIEW & SEND] Support follow-up for ${clientFirstName} — ${callName}`;
+  return { subject, wrapperHtml, supportHtml };
 }
 
-// ------------------------------------------------------------------
-// HTML builder
-// ------------------------------------------------------------------
-
-function li(items) {
-  return items.map(i => `<li>${i}</li>`).join("");
+function bulletList(items) {
+  return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
 }
 
-function buildSupportHtml({ prospectFirstName, sitezeusActions, clientActions, keyDecisions, nextMilestone }) {
-  const s = (arr) => arr?.length > 0;
+function buildClientHtml({ clientFirstName, csmName, sitezeusActions, clientActions, nextMilestone }) {
   const parts = [
-    `<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:640px;line-height:1.6;">`,
-    `<p>Hi ${prospectFirstName},</p>`,
-    `<p>Below is a summary of our call today. Please don't hesitate to reach out with any questions!</p>`,
-
-    // SiteZeus Team section
-    `<p><strong>SiteZeus Team</strong></p>`,
-    `<ul>${s(sitezeusActions) ? li(sitezeusActions) : "<li>Follow up on next steps discussed on the call</li>"}</ul>`,
-
-    // Client section
-    `<p><strong>${prospectFirstName}</strong></p>`,
-    `<ul>${s(clientActions) ? li(clientActions) : "<li>Review materials shared during the call</li>"}</ul>`,
+    `<p>Hi ${clientFirstName},</p>`,
+    `<p>Thank you for connecting with us today. Here's a quick recap of what we'll be doing next:</p>`,
   ];
-
-  // Key Decisions
-  if (s(keyDecisions)) {
-    parts.push(
-      `<p><strong>Key Decisions</strong></p>`,
-      `<ul>${li(keyDecisions)}</ul>`
-    );
+  if (sitezeusActions.length) {
+    parts.push(`<p><strong>What we're doing for you:</strong></p>`, bulletList(sitezeusActions));
   }
-
-  // Next Milestone
+  if (clientActions.length) {
+    parts.push(`<p><strong>Action items for your team:</strong></p>`, bulletList(clientActions));
+  }
   if (nextMilestone) {
-    parts.push(
-      `<p><strong>Next Milestone</strong></p>`,
-      `<p>${nextMilestone}</p>`
-    );
+    parts.push(`<p><strong>Next milestone:</strong></p>`, `<p>${nextMilestone}</p>`);
   }
-
-  parts.push(
-    `<p>Best,<br>SiteZeus Support Team</p>`,
-    `</div>`
-  );
-
+  parts.push(`<p>Please don't hesitate to reach out if you have any questions in the meantime.</p>`);
+  parts.push(`<p>Best,<br>${csmName}<br>SiteZeus Customer Success</p>`);
   return parts.join("\n");
+}
+
+function buildCsmWrapper({ csmEmail, clientFirstName, clientEmail, callName, supportHtml }) {
+  return `
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;">
+<div style="background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;">
+<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>
+This is a draft support follow-up for <strong>${clientFirstName}</strong>
+(<a href="mailto:${clientEmail}">${clientEmail}</a>).<br>
+<strong>Call:</strong> ${callName}<br><br>
+Review the draft below. Edit as needed, then send it from your own account (<strong>${csmEmail}</strong>).<br>
+<em>Do not reply to this message — it was sent automatically.</em>
+</div>
+<hr style="border:none;border-top:1px solid #ddd;margin:0 0 20px 0;">
+<div style="border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;">
+${supportHtml}
+</div>
+</div>
+`;
 }
