@@ -89,14 +89,37 @@ Return ONLY valid JSON in this exact format (no markdown, no extra text):
   "nextMilestone": "one sentence describing the next concrete step or deliverable"
 }
 
-Rules:
-- sitezeusActions: commitments from the SiteZeus team — write in FIRST PERSON: "I will..." or "We will..." — NEVER use a name in third person. Examples: "I will send over the updated model link", "We will adjust the drive-time settings and re-run the analysis"
-- clientActions: things ${prospectFirstName} committed to do — use format "${prospectFirstName} to [action]". Examples: "${prospectFirstName} to review the new model and provide feedback", "${prospectFirstName} to confirm site addresses before the next session"
-- keyDecisions: major agreements or decisions made together — write as "We agreed..." or "We decided..."
-- nextMilestone: the next scheduled meeting or key deliverable — write as "Our next step is..." or "We have a follow-up scheduled for..."
+CRITICAL: This is NOT a call summary or recap. You are extracting ONLY explicit forward-looking commitments — things people will do AFTER this call. If something happened DURING the call (a demo, a walkthrough, an explanation), it is NOT an action item.
+
+Rules for sitezeusActions:
+- ONLY commitments the SiteZeus team made about what they will do AFTER this call
+- Write in FIRST PERSON: "I will..." or "We will..." — NEVER use a person's name (no "Alan will...", no "the rep demonstrated...")
+- BAD (describing what happened): "Alan demonstrated how to pull mobile data during the call."
+- BAD (third person): "The SiteZeus team will prioritize the data pull."
+- GOOD (first person, forward-looking): "I will pull the Tacala mobile data and share it by end of week."
+- GOOD: "We will send over the updated model link after adjusting the drive-time settings."
+- If no clear SiteZeus commitments were made, return []
+
+Rules for clientActions:
+- ONLY things ${prospectFirstName} explicitly committed to do AFTER this call
+- Format: "${prospectFirstName} to [specific action]"
+- BAD (describing what happened): "${prospectFirstName} to market overview: the rep guided them through the platform."
+- GOOD: "${prospectFirstName} to send over their target site list by Thursday."
+- GOOD: "${prospectFirstName} to review the updated model and provide feedback."
+- If no clear client commitments were made, return []
+
+Rules for keyDecisions:
+- Major agreements or decisions made together — write as "We agreed..." or "We decided..."
+- If none, return []
+
+Rules for nextMilestone:
+- The next scheduled meeting or key deliverable — write as "Our next step is..." or "We have a follow-up scheduled for..."
+- If nothing scheduled, return ""
+
+Rules for ALL fields:
 - ALL items must be positive and forward-looking — no mention of issues, bugs, errors, or problems
 - Keep each bullet under 15 words
-- Return empty arrays/string if no clear items exist for a field`;
+- Never use a team member's name in third person`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
