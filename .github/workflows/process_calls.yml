@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/15 * * * *" # Every 15 minutes
   workflow_dispatch: # Manual trigger
+    inputs:
+      backfill_since:
+        description: "Backfill: reprocess all calls since this date (YYYY-MM-DD). Leave blank for a normal run."
+        required: false
+        default: ""
 
 permissions:
   contents: write # Required to commit updated state/last_run.json
@@ -35,6 +40,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BACKFILL_SINCE: ${{ github.event.inputs.backfill_since }}
         run: node src/main.js
 
       - name: Commit updated state and dashboard

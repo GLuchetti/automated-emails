@@ -241,13 +241,24 @@ async function main() {
     console.info("[Main] SEND_EMAILS is off — every draft is logged to the dashboard for manual review (nothing is auto-sent).");
   }
 
-  // Scan a wide lookback window so calls whose transcripts weren't ready on a
-  // previous run get another chance. The processed-calls store (not the
-  // window) is what guarantees we never email the same call twice.
+  // Backfill mode: set BACKFILL_SINCE=YYYY-MM-DD to reprocess every call since
+  // that date, ignoring the processed-calls store (regenerates drafts on the
+  // dashboard). Normal mode scans a wide lookback window so calls whose
+  // transcripts weren't ready before get another chance; the processed-calls
+  // store (not the window) is what guarantees a call is never emailed twice.
+  const backfillSince = process.env.BACKFILL_SINCE ? new Date(process.env.BACKFILL_SINCE) : null;
+  const isBackfill = backfillSince && !Number.isNaN(backfillSince.getTime());
+
   const windowEnd = runStart;
-  const windowStart = new Date(runStart.getTime() - config.LOOKBACK_HOURS * 60 * 60 * 1000);
+  const windowStart = isBackfill
+    ? backfillSince
+    : new Date(runStart.getTime() - config.LOOKBACK_HOURS * 60 * 60 * 1000);
   const processed = loadProcessed();
-  console.info(`[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()} (lookback ${config.LOOKBACK_HOURS}h)`);
+  console.info(
+    isBackfill
+      ? `[Main] BACKFILL since ${windowStart.toISOString()} → ${windowEnd.toISOString()} (reprocessing all calls in range)`
+      : `[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()} (lookback ${config.LOOKBACK_HOURS}h)`
+  );
 
   const runLog = {
     id: `run-${runStart.getTime()}`,
@@ -267,8 +278,8 @@ async function main() {
     const calls = await gong.getCompletedCalls(windowStart, windowEnd);
     console.info(`[Main] Calls found in window: ${calls.length}`);
 
-    const pending = calls.filter(c => !isProcessed(processed, c.id));
-    console.info(`[Main] Already emailed: ${calls.length - pending.length} | to evaluate: ${pending.length}`);
+    const pending = isBackfill ? calls : calls.filter(c => !isProcessed(processed, c.id));
+    console.info(`[Main] Already handled: ${calls.length - pending.length} | to evaluate: ${pending.length}${isBackfill ? " (backfill — store ignored)" : ""}`);
 
     if (!pending.length) {
       console.info("[Main] Nothing new to process — done.");
