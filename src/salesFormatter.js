@@ -1,9 +1,21 @@
 // salesFormatter.js — Formats the Sales follow-up email for rep review.
+//
+// Claude reads the call transcript and writes a short, human-sounding
+// follow-up from the perspective of the SiteZeus rep who led the call.
+// Resources are selected from the curated catalog in config.js (the script
+// has no live web access) and given a call-specific reason.
 
 import * as config from "./config.js";
 
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
-const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
+const ANTHROPIC_MODEL = "claude-sonnet-4-6";
+
+function escapeHtml(s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
 
 function buildTranscriptText(transcript, parties) {
   if (!transcript?.length) return "";
@@ -14,9 +26,8 @@ function buildTranscriptText(transcript, parties) {
     const isInternal =
       party.affiliation === "internal" ||
       (party.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN || "sitezeus.com");
-    speakerMap[id] = isInternal
-      ? (party.name || "Rep").split(" ")[0]
-      : (party.name || "Prospect").split(" ")[0];
+    const first = (party.name || (isInternal ? "Rep" : "Prospect")).split(" ")[0];
+    speakerMap[id] = isInternal ? `${first} (SiteZeus)` : `${first} (Prospect)`;
   }
   const utterances = [];
   let current = null;
@@ -32,28 +43,70 @@ function buildTranscriptText(transcript, parties) {
   return utterances.map(u => `${u.name}: ${u.texts.join(" ")}`).join("\n");
 }
 
-async function extractSalesContent(transcriptText, prospectFirstName, prospectCompany) {
+// Pick the SiteZeus participant who spoke the most — they led the call and
+// the follow-up should appear to come from them.
+function primaryInternalSpeaker(transcript, parties) {
+  const internalNames = {};
+  for (const p of (parties || [])) {
+    const id = p.speakerId || p.userId || p.id;
+    if (!id) continue;
+    const isInternal =
+      p.affiliation === "internal" ||
+      (p.emailAddress || "").toLowerCase().includes(config.SITEZEUS_DOMAIN || "sitezeus.com");
+    if (isInternal && p.name) internalNames[id] = p.name.trim();
+  }
+  const words = {};
+  for (const s of (transcript || [])) {
+    if (!internalNames[s.speakerId] || !s.text) continue;
+    words[s.speakerId] = (words[s.speakerId] || 0) + s.text.trim().split(/\s+/).length;
+  }
+  let bestId = null, best = -1;
+  for (const [id, n] of Object.entries(words)) if (n > best) { best = n; bestId = id; }
+  if (!bestId) return null;
+  const name = internalNames[bestId];
+  return { name, firstName: name.split(" ")[0] };
+}
+
+// Unique resource catalog the model may choose from.
+function resourceCatalog() {
+  const seen = new Set();
+  const list = [];
+  for (const r of config.ENTERPRISE_RESOURCES) {
+    if (seen.has(r.name)) continue;
+    seen.add(r.name);
+    list.push(r);
+  }
+  return list;
+}
+
+async function extractSalesContent({ transcriptText, prospectFirstName, prospectCompany, senderName }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !transcriptText) return null;
 
-  const companyRef = prospectCompany || prospectFirstName + "'s company";
+  const companyRef = prospectCompany || `${prospectFirstName}'s company`;
+  const catalog = resourceCatalog();
+  const catalogText = catalog.map(r => `- ${r.name} — topics: ${(r.topics || []).join(", ")}`).join("\n");
 
-  const prompt = `Read this sales call transcript and extract structured content for a follow-up email.
+  const prompt = `You are ${senderName}, a SiteZeus sales rep who was on this call with ${prospectFirstName} from ${companyRef}. Write a short, human follow-up email that you could send with little or no editing. It must sound like a real person who attended the meeting — not an AI, not meeting notes, not a transcript summary.
 
 Transcript:
-${transcriptText.slice(0, 12000)}
+${transcriptText.slice(0, 14000)}
 
-Return ONLY this exact JSON — no markdown, no explanation:
+Return ONLY this JSON — no markdown, no commentary:
 {
-  "callSummary": "2-3 sentences written as the SiteZeus rep using only 'we', 'our', 'I' — NEVER use any person's name (not Will, not Alan, not any SiteZeus employee name). Start with 'we discussed [company name]'s [topic].' then 'We explored how SiteZeus's [specific product/capability] could support [their goal] by [specific details from the call].' Use the actual company name (${companyRef}). Reference specific things from the call (concepts, locations, markets, goals). Example: \"We discussed The Rabbit Group's expansion plans for three restaurant concepts. We explored how SiteZeus's location intelligence could support their growth by identifying optimal sites and analyzing consumer behavior.\"",
-  "scheduledMeeting": "If a specific follow-up call, demo, or meeting was booked, one sentence (e.g. 'Demo scheduled for Thursday at 2pm'). Empty string if nothing booked.",
-  "resourceTopics": ["topic1", "topic2", "topic3"]
+  "body": "1-2 short paragraphs (separate with a blank line). Connect the prospect's goal -> the challenge they described -> how SiteZeus helps. Write in first person ('I', 'we', 'our team') and second person ('you', 'your'). Reference specific things from THIS call. Frame challenges positively (e.g. 'you shared that your team is looking for a more efficient way to...'). No buzzwords, no overselling, no invented capabilities.",
+  "nextSteps": ["Each explicitly agreed next step, with date/time if it was stated, e.g. 'Demo scheduled for July 18 at 2:00 PM ET'"],
+  "resources": [ { "name": "EXACT name from the list below", "reason": "one short sentence tying it to something specific discussed on this call" } ]
 }
 
+Available resources (choose 0-5, only the genuinely relevant ones; if none fit, return []):
+${catalogText}
+
 Rules:
-- callSummary: past tense recap. NEVER use any SiteZeus employee's name (no "Will", "Alan", or any internal person). Only use "we", "our", "I". Mention the actual prospect company/concepts. Use specific SiteZeus product names if relevant (Locate, Build, Sell, Zeus AI, Customer Insights). Be specific to the call — no generic filler.
-- scheduledMeeting: ONLY for explicitly booked meetings. Empty string otherwise.
-- resourceTopics: 3-5 tags. Examples: "site selection", "franchise expansion", "consumer data", "revenue forecasting", "construction management", "market intelligence"`;
+- body: max ~150 words, outcome-focused, never restate the whole call, never invent anything.
+- nextSteps: ONLY steps explicitly discussed. Empty array if none. Never invent.
+- resources: pick from the list by EXACT name only. Each needs a personalized, call-specific reason. Never recommend generic content.
+- Keep the whole thing under 250 words. Do not mention features that were not discussed.`;
 
   try {
     const res = await fetch(ANTHROPIC_API_URL, {
@@ -65,8 +118,8 @@ Rules:
       },
       body: JSON.stringify({
         model: ANTHROPIC_MODEL,
-        max_tokens: 600,
-        temperature: 0,
+        max_tokens: 900,
+        temperature: 0.5,
         messages: [{ role: "user", content: prompt }],
       }),
     });
@@ -82,23 +135,38 @@ Rules:
   }
 }
 
-function selectResources(topics, isEnterprise) {
+// Map AI-selected resource names back to catalog URLs, dropping any the model
+// invented. Returns [{ name, url, reason }].
+function resolveResources(aiResources) {
+  const urlByName = {};
+  for (const r of resourceCatalog()) urlByName[r.name.toLowerCase()] = r.url;
+  const out = [];
+  const seen = new Set();
+  for (const r of (aiResources || [])) {
+    const url = urlByName[(r.name || "").toLowerCase()];
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    out.push({ name: r.name, url, reason: (r.reason || "").trim() });
+    if (out.length >= 5) break;
+  }
+  return out;
+}
+
+// Fallback resource selection by topic keyword (used when AI is unavailable).
+function selectResourcesByTopic(topics, isEnterprise) {
   const pool = isEnterprise ? config.ENTERPRISE_RESOURCES : config.SMB_EMERGING_RESOURCES;
   const selected = [];
-  const selectedNames = new Set();
+  const seen = new Set();
   for (const resource of pool) {
-    if (selected.length >= 4) break;
+    if (selected.length >= 3) break;
     for (const topic of resource.topics || []) {
-      if (topics.some(t => t.includes(topic) || topic.includes(t))) {
-        if (!selectedNames.has(resource.name)) { selected.push(resource); selectedNames.add(resource.name); break; }
+      if (topics.some(t => t.includes(topic) || topic.includes(t)) && !seen.has(resource.name)) {
+        selected.push({ name: resource.name, url: resource.url, reason: "" });
+        seen.add(resource.name);
+        break;
       }
     }
   }
-  for (const resource of pool) {
-    if (selected.length >= 4) break;
-    if (!selectedNames.has(resource.name)) { selected.push(resource); selectedNames.add(resource.name); }
-  }
-  selected.push({ name: "Customer Stories", url: config.CUSTOMER_STORIES_URL });
   return selected;
 }
 
@@ -108,57 +176,64 @@ export async function formatSalesReviewEmail({ callData, repName, repEmail, pros
   const transcriptText = buildTranscriptText(transcript, parties);
   console.info(`[Sales] Transcript: ${transcript.length} sentences, ${transcriptText.length} chars`);
 
-  const aiContent = await extractSalesContent(transcriptText, prospectFirstName, prospectCompany);
+  const primary = primaryInternalSpeaker(transcript, parties);
+  const senderName = primary?.name || repName || "the SiteZeus team";
 
-  let callSummary = null;
-  let scheduledMeeting = "";
-  let resourceTopics = [];
+  const aiContent = await extractSalesContent({ transcriptText, prospectFirstName, prospectCompany, senderName });
+
+  let body = null;
+  let nextSteps = [];
+  let resources = [];
 
   if (aiContent) {
-    callSummary = aiContent.callSummary?.trim() || null;
-    scheduledMeeting = aiContent.scheduledMeeting?.trim() || "";
-    resourceTopics = aiContent.resourceTopics || [];
+    body = (aiContent.body || "").trim() || null;
+    nextSteps = Array.isArray(aiContent.nextSteps) ? aiContent.nextSteps.map(s => String(s).trim()).filter(Boolean) : [];
+    resources = resolveResources(aiContent.resources);
   } else {
     // Gong fallback
-    const brief = typeof content.brief === "string" ? content.brief.trim() : null;
-    callSummary = brief;
+    body = typeof content.brief === "string" ? content.brief.trim() : null;
     const highlights = content.highlights || [];
     const NEXT_MEETING_TYPES = new Set(["next_meeting", "follow_up", "follow-up", "upcoming_meeting"]);
-    scheduledMeeting = highlights.find(h => NEXT_MEETING_TYPES.has((h.type || "").toLowerCase()))?.text?.trim() || "";
+    const meeting = highlights.find(h => NEXT_MEETING_TYPES.has((h.type || "").toLowerCase()))?.text?.trim();
+    if (meeting) nextSteps = [meeting];
     const trackers = content.trackers || [];
-    resourceTopics = trackers.filter(t => (t.count || 0) > 0).map(t => (t.name || "").toLowerCase());
+    const topics = trackers.filter(t => (t.count || 0) > 0).map(t => (t.name || "").toLowerCase());
+    resources = selectResourcesByTopic(topics, isEnterprise);
   }
 
-  const resources = selectResources(resourceTopics, isEnterprise);
-  const prospectHtml = buildProspectHtml({ prospectFirstName, repName, callSummary, scheduledMeeting, resources });
+  const prospectHtml = buildProspectHtml({ prospectFirstName, senderName, body, nextSteps, resources });
   const segmentLabel = isEnterprise ? "Enterprise" : "SMB / Emerging";
   const wrapperHtml = buildRepWrapper({ repEmail, prospectFirstName, prospectEmail, segmentLabel, callName, prospectHtml });
   const subject = `[REVIEW & SEND] Follow-up draft for ${prospectFirstName} — ${callName}`;
   return { subject, wrapperHtml, prospectHtml };
 }
 
-function buildProspectHtml({ prospectFirstName, repName, callSummary, scheduledMeeting, resources }) {
+function buildProspectHtml({ prospectFirstName, senderName, body, nextSteps, resources }) {
   const parts = [
-    `<p>Hi ${prospectFirstName},</p>`,
-    `<p>Great connecting with you today!</p>`,
+    `<p>Hi ${escapeHtml(prospectFirstName)},</p>`,
+    `<p>Thank you for hopping on the call today.</p>`,
   ];
 
-  if (callSummary) {
-    parts.push(`<p><strong>Call Summary:</strong> ${callSummary}</p>`);
+  if (body) {
+    for (const para of body.split(/\n{2,}/).map(p => p.trim()).filter(Boolean)) {
+      parts.push(`<p>${escapeHtml(para)}</p>`);
+    }
   }
 
-  if (scheduledMeeting) {
-    parts.push(`<p><strong>Next Steps:</strong> ${scheduledMeeting}</p>`);
-  } else {
-    parts.push(`<p><strong>Next Steps:</strong> I'll follow up soon to find a time that works — feel free to grab time on my calendar through the link in my signature.</p>`);
+  if (nextSteps.length) {
+    parts.push(`<p><strong>Next Steps</strong></p>`);
+    parts.push(`<ul>${nextSteps.map(s => `<li>${escapeHtml(s)}</li>`).join("")}</ul>`);
   }
 
   if (resources.length) {
-    parts.push(`<p><strong>A few resources that may be helpful:</strong></p>`);
-    parts.push(`<ul>${resources.map(r => `<li><a href="${r.url}" style="color:#1a73e8;">${r.name}</a></li>`).join("")}</ul>`);
+    parts.push(`<p><strong>Relevant Resources</strong></p>`);
+    parts.push(`<ul>${resources.map(r => {
+      const link = `<a href="${escapeHtml(r.url)}" style="color:#1a73e8;">${escapeHtml(r.name)}</a>`;
+      return r.reason ? `<li>${link} — ${escapeHtml(r.reason)}</li>` : `<li>${link}</li>`;
+    }).join("")}</ul>`);
   }
 
-  parts.push(`<p>Talk soon,<br>${repName}</p>`);
+  parts.push(`<p>Thanks,<br>${escapeHtml(senderName)}</p>`);
   return parts.join("\n");
 }
 
@@ -167,9 +242,9 @@ function buildRepWrapper({ repEmail, prospectFirstName, prospectEmail, segmentLa
 <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;">
 <div style="background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;">
 <strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>
-Draft follow-up for <strong>${prospectFirstName}</strong> (<a href="mailto:${prospectEmail}">${prospectEmail}</a>).<br>
-<strong>Segment:</strong> ${segmentLabel} &nbsp;|&nbsp; <strong>Call:</strong> ${callName}<br><br>
-Review below, edit as needed, then send from <strong>${repEmail}</strong>.<br>
+Draft follow-up for <strong>${escapeHtml(prospectFirstName)}</strong> (<a href="mailto:${escapeHtml(prospectEmail)}">${escapeHtml(prospectEmail)}</a>).<br>
+<strong>Segment:</strong> ${escapeHtml(segmentLabel)} &nbsp;|&nbsp; <strong>Call:</strong> ${escapeHtml(callName)}<br><br>
+Review below, edit as needed, then send from <strong>${escapeHtml(repEmail)}</strong>.<br>
 <em>Do not reply to this message — it was generated automatically.</em>
 </div>
 <hr style="border:none;border-top:1px solid #ddd;margin:0 0 20px 0;">
