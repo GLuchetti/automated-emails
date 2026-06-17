@@ -101,7 +101,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     emailHtml = wrapperHtml;
     emailSubject = subject;
 
-    if (smtp.user && smtp.password && repEmail) {
+    if (config.SEND_EMAILS && smtp.user && smtp.password && repEmail) {
       try {
         await sendEmail({
           smtpUser: smtp.user, smtpPassword: smtp.password,
@@ -115,6 +115,8 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
         console.warn(`[Sales] SMTP failed for call ${callId} (${smtpErr.message}) — falling back to dashboard`);
         status = "dashboard";
       }
+    } else {
+      console.info(`[Sales] Call ${callId}: draft logged to dashboard (auto-send is off)`);
     }
   } catch (err) {
     console.error(`[Sales] Format error for call ${callId}:`, err.message);
@@ -179,7 +181,7 @@ async function processSupportCall({ callId, callName, callData, transcript, smtp
     emailHtml = wrapperHtml;
     emailSubject = subject;
 
-    if (smtp.user && smtp.password) {
+    if (config.SEND_EMAILS && smtp.user && smtp.password) {
       try {
         await sendEmail({
           smtpUser: smtp.user, smtpPassword: smtp.password,
@@ -194,7 +196,7 @@ async function processSupportCall({ callId, callName, callData, transcript, smtp
         status = "dashboard";
       }
     } else {
-      console.info(`[Support] Call ${callId}: no SMTP credentials — logging draft to dashboard`);
+      console.info(`[Support] Call ${callId}: draft logged to dashboard (auto-send is off)`);
     }
   } catch (err) {
     console.error(`[Support] Format error for call ${callId}:`, err.message);
@@ -232,8 +234,12 @@ async function main() {
   const smtp = { user: smtpUser, password: smtpPassword };
 
   if (!hs) console.warn("[Main] No HUBSPOT_TOKEN — enterprise classification disabled.");
-  if (!smtp.user || !smtp.password) console.warn("[Main] No SMTP credentials — emails will go to dashboard only.");
   if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — AI extraction disabled.");
+  if (config.SEND_EMAILS) {
+    if (!smtp.user || !smtp.password) console.warn("[Main] SEND_EMAILS is on but no SMTP credentials — drafts will go to dashboard only.");
+  } else {
+    console.info("[Main] SEND_EMAILS is off — every draft is logged to the dashboard for manual review (nothing is auto-sent).");
+  }
 
   // Scan a wide lookback window so calls whose transcripts weren't ready on a
   // previous run get another chance. The processed-calls store (not the

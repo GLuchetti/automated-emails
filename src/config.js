@@ -31,6 +31,12 @@ export const ENTERPRISE_THRESHOLD = 50; // >= 50 units → Enterprise
 export const LOOKBACK_HOURS = 8;          // how far back each run scans for calls
 export const TRANSCRIPT_CUTOFF_HOURS = 6; // give up waiting → send on fallback
 
+// Email delivery
+// When false, NO email is ever sent automatically — every generated draft is
+// logged to the dashboard for a human to review and send manually. Flip to
+// true (and set the SMTP_USER / SMTP_PASSWORD secrets) to re-enable auto-send.
+export const SEND_EMAILS = false;
+
 // Email addresses
 export const SUPPORT_FROM_EMAIL = "support@sitezeus.com";
 export const INTERNAL_NOTIFICATION_EMAIL = "support@sitezeus.com";

@@ -1,8 +1,10 @@
 # SiteZeus Gong → Email Automation
 
-Automatically sends post-call summary emails after Gong calls end.
-- **Support calls** → sends an action-items summary draft for CSM review.
-- **Sales calls** → sends a formatted follow-up draft to the rep for review before they send to the prospect.
+Generates post-call follow-up email drafts after Gong calls end and posts them to a review dashboard. **Nothing is sent automatically** — a human reviews each draft on the dashboard and sends it manually.
+- **Support calls** → an action-items summary draft for CSM review.
+- **Sales calls** → a formatted follow-up draft for the rep to review and send to the prospect.
+
+> Auto-send is controlled by `SEND_EMAILS` in [`src/config.js`](src/config.js) (currently **off**). While off, the SMTP secrets are not needed.
 
 Runs on **Node.js 20** via GitHub Actions every 15 minutes. No middleware, no new platforms — just GitHub, Gong, HubSpot, Anthropic, and Outlook SMTP.
 
@@ -16,7 +18,7 @@ A live status dashboard is published via GitHub Pages from `docs/index.html`:
 The workflow [`.github/workflows/process_calls.yml`](.github/workflows/process_calls.yml) does:
 
 1. `npm ci` — install dependencies
-2. `node src/main.js` — pull recent Gong calls, route them, and send/draft emails
+2. `node src/main.js` — pull recent Gong calls, route them, and write follow-up drafts to the dashboard
 3. Commits `state/last_run.json`, `state/activity_log.json`, and the regenerated `docs/index.html` back to `main`
 
 ```
