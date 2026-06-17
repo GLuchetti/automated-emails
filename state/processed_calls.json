@@ -312,7 +312,25 @@
       "team": "sales",
       "call_name": "SiteZeus Locate <> Millies",
       "processedAt": "2026-06-17T18:09:02.348Z"
+    },
+    "3357718381464005470": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Wing It North (Wing Stop Franchisee)",
+      "processedAt": "2026-06-17T21:24:50.815Z"
+    },
+    "1591327061083236836": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 30 minute call - Paul Terry and Alan May",
+      "processedAt": "2026-06-17T21:25:03.135Z"
+    },
+    "3952722419737484668": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> Watershed Car Wash",
+      "processedAt": "2026-06-17T21:25:13.156Z"
     }
   },
-  "last_updated": "2026-06-17T19:14:22.386Z"
+  "last_updated": "2026-06-17T21:24:38.250Z"
 }

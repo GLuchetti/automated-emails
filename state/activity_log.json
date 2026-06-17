@@ -1,6 +1,68 @@
 {
   "runs": [
     {
+      "id": "run-1781731478250",
+      "timestamp": "2026-06-17T21:24:38.250Z",
+      "window_start": "2026-06-17T13:24:38.250Z",
+      "window_end": "2026-06-17T21:24:38.250Z",
+      "calls_processed": [
+        {
+          "call_id": "3357718381464005470",
+          "call_name": "SiteZeus <> Wing It North (Wing Stop Franchisee)",
+          "team": "sales",
+          "prospect_name": "Ryan Lapointe",
+          "prospect_email": "ryan@themagicconcepts.com",
+          "rep_name": "Ayden Benton",
+          "rep_email": "abenton@sitezeus.com",
+          "email_to": [
+            "abenton@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Ryan — SiteZeus <> Wing It North (Wing Stop Franchisee)",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Ryan</strong> (<a href=\"mailto:ryan@themagicconcepts.com\">ryan@themagicconcepts.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Wing It North (Wing Stop Franchisee)<br><br>\nReview below, edit as needed, then send from <strong>abenton@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Ryan,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of growing from roughly 80 to 200 Wingstop locations and the core challenge standing in the way: because your business runs at roughly 60% third-party delivery, traditional white space and impact models don't fully capture whether a new site will cannibalize an existing one or open up genuinely new demand.</p>\n<p>Our impact analysis uses mobile data to track customer behavior across existing locations and model transfer risk at potential new sites — and while we do capture some third-party delivery traffic through that mobile data, I want to be straightforward with you: we don't have a dedicated DSP radius tool, and neither does anyone else right now given how tightly Uber Eats and DoorDash guard that routing data. That said, if your team ever wants to see how our impact and forecasting models perform against your existing predictive model in a market like Detroit or Long Island, I'm happy to set up a deeper demo.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Ryan's primary concern was understanding delivery-driven cannibalization when opening stores in dense markets like Queens and Long Island — this speaks directly to that challenge.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Ryan is already using mobile data and Placer; this shows how SiteZeus's mobile data sourcing compares and how it informs trade area analysis in dense, delivery-heavy markets.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T21:24:50.815Z"
+        },
+        {
+          "call_id": "1591327061083236836",
+          "call_name": "SZ | 30 minute call - Paul Terry and Alan May",
+          "team": "support",
+          "prospect_name": "Paul Terry",
+          "prospect_email": "pterry@originalmattress.com",
+          "email_to": [
+            "pterry@originalmattress.com",
+            "gtrzcinski@originalmattress.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Paul — SZ | 30 minute call - Paul Terry and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Paul</strong> (<a href=\"mailto:pterry@originalmattress.com\">pterry@originalmattress.com</a>).<br>\n<strong>Call:</strong> SZ | 30 minute call - Paul Terry and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Paul,</p>\n<p>Below is a summary of the action items discussed during SZ | 30 minute call - Paul Terry and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Paul and Greg confirmed they're staying on — good momentum and growing comfort with the scorecard and whitespace data.</li><li>Identified and resolved the psychographic data gap: the AGS Feb 26 project in SiteZeus has the persona/segmentation data needed for the scorecard export.</li><li>Scorecard structure agreed: two separate 100-point scores (demographic and segmentation) rather than a blended 200-point total — spreadsheet logic updated live on the call.</li><li>Eden Prairie (MN) flagged as a strong site (100 on segmentation score); cannibalization discussion tabled for a future conversation.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Send Paul and Greg the updated scorecard spreadsheet with demographics weighted at 25/25/25/25 as a starting point and segmentation section separated out cleanly.</li><li>Ensure the AGS Feb 26 project is the working project going forward so psychographic/persona data exports correctly.</li><li>Plan to rebuild the active model and pull updated persona live data as part of a mid-year revenue update (roughly 1-2 months out).</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Paul Terry, Greg Trzcinski)</strong></p>\n<ul><li>Review the updated scorecard and finalize the demographic variable weightings (household net worth, quality of life, white-collar index, owner-occupied housing units).</li><li>Check out the new platform (app.sitezeus) using the AGS Feb 26 project to explore the in-platform scorecard scoring on pins.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Scorecard will be structured as two independent 100-point scores — one demographic, one segmentation — rather than a single blended score.</li><li>Demographic variables confirmed: quality of life index, average household net worth, white-collar in combination, and owner-occupied housing units.</li><li>Model rebuild will be deferred and bundled with a mid-year revenue update to avoid disrupting the current well-performing model.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T21:25:03.135Z"
+        },
+        {
+          "call_id": "3952722419737484668",
+          "call_name": "SiteZeus Locate <> Watershed Car Wash",
+          "team": "sales",
+          "prospect_name": "Scott Oxman",
+          "prospect_email": "scott.oxman@watershedcarwash.com",
+          "rep_name": "Mitch Gunderson",
+          "rep_email": "mitchg@sitezeus.com",
+          "email_to": [
+            "mitchg@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Scott — SiteZeus Locate <> Watershed Car Wash",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Scott</strong> (<a href=\"mailto:scott.oxman@watershedcarwash.com\">scott.oxman@watershedcarwash.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Watershed Car Wash<br><br>\nReview below, edit as needed, then send from <strong>mitchg@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Scott,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>You shared that Watershed is targeting two new openings this year with three to four per year going forward, focused on secondary and tertiary markets across Texas, Oklahoma, and neighboring states — largely because of the competitive pressure Quick Quack and Club Car Wash are creating in the major MSAs. The priority question your private equity partners keep raising is what tool you're using for white space, and you mentioned Placer AI fell short there.</p>\n<p>Our white space analysis is built exactly for what you described — scoring thousands of addresses across your target states, filtering out anything below an 85, and surfacing the underserved cities and corridors where Watershed has the strongest opportunity. We'd layer in foot traffic data on competitors like Quick Quack to show you where they're performing best and where the gaps are. I'll send over a few resources below that are relevant to where you are in the process.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Scott's primary use case is identifying underserved secondary markets across a four-to-five state region before committing to new sites.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — We discussed geofencing Watershed locations and using mobile and credit card data to profile customers and benchmark competitor foot traffic like Quick Quack.</li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a> — Scott mentioned needing better answers for private equity — a relevant client result could help support that internal conversation.</li></ul>\n<p>Thanks,<br>Mitch Gunderson</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T21:25:13.156Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781719608369",
       "timestamp": "2026-06-17T18:06:48.369Z",
       "window_start": "2026-06-15T00:00:00.000Z",
@@ -269,5 +331,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-17T18:11:07.484Z"
+  "last_updated": "2026-06-17T21:25:13.158Z"
 }
