@@ -6,9 +6,7 @@
 // has no live web access) and given a call-specific reason.
 
 import * as config from "./config.js";
-
-const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
-const ANTHROPIC_MODEL = "claude-sonnet-4-6";
+import { extractJson } from "./anthropic.js";
 
 function escapeHtml(s) {
   return String(s || "")
@@ -80,8 +78,7 @@ function resourceCatalog() {
 }
 
 async function extractSalesContent({ transcriptText, prospectFirstName, prospectCompany, senderName }) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey || !transcriptText) return null;
+  if (!transcriptText) return null;
 
   const companyRef = prospectCompany || `${prospectFirstName}'s company`;
   const catalog = resourceCatalog();
@@ -108,31 +105,7 @@ Rules:
 - resources: pick from the list by EXACT name only. Each needs a personalized, call-specific reason. Never recommend generic content.
 - Keep the whole thing under 250 words. Do not mention features that were not discussed.`;
 
-  try {
-    const res = await fetch(ANTHROPIC_API_URL, {
-      method: "POST",
-      headers: {
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: ANTHROPIC_MODEL,
-        max_tokens: 900,
-        temperature: 0.5,
-        messages: [{ role: "user", content: prompt }],
-      }),
-    });
-    if (!res.ok) { console.warn(`[Sales] API error ${res.status}`); return null; }
-    const data = await res.json();
-    const text = (data.content?.[0]?.text || "").trim();
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) { console.warn("[Sales] No JSON in response:", text.slice(0, 200)); return null; }
-    return JSON.parse(jsonMatch[0]);
-  } catch (err) {
-    console.warn(`[Sales] AI extraction failed: ${err.message}`);
-    return null;
-  }
+  return extractJson({ prompt, maxTokens: 900, temperature: 0.5, label: "Sales" });
 }
 
 // Map AI-selected resource names back to catalog URLs, dropping any the model

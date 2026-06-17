@@ -6,9 +6,7 @@
 // who led the call.
 
 import * as config from "./config.js";
-
-const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
-const ANTHROPIC_MODEL = "claude-sonnet-4-6";
+import { extractJson } from "./anthropic.js";
 
 function escapeHtml(s) {
   return String(s || "")
@@ -79,8 +77,7 @@ function participantRoster(parties) {
 }
 
 async function extractSupportContent({ transcriptText, roster, senderName }) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey || !transcriptText) return null;
+  if (!transcriptText) return null;
 
   const rosterText = `SiteZeus team: ${roster.internal.join(", ") || "(unknown)"}\nCustomer team: ${roster.external.join(", ") || "(unknown)"}`;
 
@@ -109,31 +106,7 @@ Rules:
 - nextMilestone: only if a future meeting/deadline was agreed. Empty string otherwise.
 - Never invent action items, decisions, owners, or dates. Keep the whole email under 300 words.`;
 
-  try {
-    const res = await fetch(ANTHROPIC_API_URL, {
-      method: "POST",
-      headers: {
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: ANTHROPIC_MODEL,
-        max_tokens: 900,
-        temperature: 0.4,
-        messages: [{ role: "user", content: prompt }],
-      }),
-    });
-    if (!res.ok) { console.warn(`[Support] API error ${res.status}`); return null; }
-    const data = await res.json();
-    const text = (data.content?.[0]?.text || "").trim();
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) { console.warn("[Support] No JSON:", text.slice(0, 200)); return null; }
-    return JSON.parse(jsonMatch[0]);
-  } catch (err) {
-    console.warn(`[Support] AI extraction failed: ${err.message}`);
-    return null;
-  }
+  return extractJson({ prompt, maxTokens: 900, temperature: 0.4, label: "Support" });
 }
 
 export async function formatSupportReviewEmail({ callData, csmName, csmEmail, clientFirstName, clientEmail, callName, transcript = [] }) {
