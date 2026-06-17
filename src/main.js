@@ -282,10 +282,9 @@ async function main() {
     console.info(`[Main] Already handled: ${calls.length - pending.length} | to evaluate: ${pending.length}${isBackfill ? " (backfill — store ignored)" : ""}`);
 
     if (!pending.length) {
-      console.info("[Main] Nothing new to process — done.");
+      console.info("[Main] Nothing new to process — done (dashboard unchanged).");
       saveLastRun(windowEnd);
       saveProcessed(processed, runStart);
-      recordRun(runLog);
       return;
     }
 
@@ -352,7 +351,8 @@ async function main() {
 
   saveLastRun(windowEnd);
   saveProcessed(processed, runStart);
-  recordRun(runLog);
+  if (runLog.calls_processed.length) recordRun(runLog);
+  else console.info("[Main] No calls in this run — dashboard unchanged.");
 
   const counts = runLog.calls_processed.reduce((acc, c) => {
     acc[c.status] = (acc[c.status] || 0) + 1;
