@@ -4,49 +4,49 @@
       "status": "dashboard",
       "team": "support",
       "call_name": "SZ | 60 minute call - Coleman Welch and Alan May",
-      "processedAt": "2026-06-16T22:15:07.641Z"
+      "processedAt": "2026-06-17T16:39:36.578Z"
     },
     "2995050958731747019": {
       "status": "dashboard",
       "team": "support",
       "call_name": "SZ | 60 minute call - Blaine Salem and Alan May",
-      "processedAt": "2026-06-16T19:01:52.492Z"
+      "processedAt": "2026-06-17T16:39:55.415Z"
     },
     "4501457932544822614": {
       "status": "dashboard",
       "team": "sales",
       "call_name": "SiteZeus <> The Dirty Rabbit Group",
-      "processedAt": "2026-06-16T19:01:52.802Z"
+      "processedAt": "2026-06-17T16:39:47.007Z"
     },
     "4363043437679942715": {
       "status": "no_contact",
       "team": "support",
       "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
-      "processedAt": "2026-06-16T19:01:52.802Z"
+      "processedAt": "2026-06-17T16:40:05.016Z"
     },
     "8934107884379299587": {
       "status": "dashboard",
       "team": "support",
       "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
-      "processedAt": "2026-06-16T19:01:52.802Z"
+      "processedAt": "2026-06-17T16:40:05.187Z"
     },
     "2702924297772586887": {
       "status": "dashboard",
       "team": "sales",
       "call_name": "SiteZeus Discussion <> CSL Plasma",
-      "processedAt": "2026-06-16T19:01:53.349Z"
+      "processedAt": "2026-06-17T16:40:05.985Z"
     },
     "1567582440526623903": {
       "status": "dashboard",
       "team": "sales",
       "call_name": "SiteZeus Locate <> Legends",
-      "processedAt": "2026-06-16T15:08:52.725Z"
+      "processedAt": "2026-06-17T16:40:06.386Z"
     },
     "7034743607773554787": {
       "status": "dashboard",
       "team": "sales",
       "call_name": "SiteZeus Introduction <> Ajay Kale",
-      "processedAt": "2026-06-16T15:08:53.204Z"
+      "processedAt": "2026-06-17T16:40:06.984Z"
     },
     "91944493934285245": {
       "status": "error",
@@ -245,7 +245,50 @@
       "team": "support",
       "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
       "processedAt": "2026-06-11T16:06:50.677192+00:00"
+    },
+    "4359977417167717378": {
+      "status": "skipped_untracked",
+      "call_name": "Azira - SiteZeus Business Review",
+      "processedAt": "2026-06-17T16:39:12.964Z"
+    },
+    "737349702716444399": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Demo <> CSCS",
+      "processedAt": "2026-06-17T16:39:25.078Z"
+    },
+    "6230388798743054648": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | 30 Minutes - Andy Nauli and Sean Ryan",
+      "processedAt": "2026-06-17T16:39:47.007Z"
+    },
+    "2694796835025559201": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+      "processedAt": "2026-06-17T16:40:05.016Z"
+    },
+    "2287194055141551045": {
+      "status": "skipped_untracked",
+      "call_name": "Pizza Hut - SZ | Weekly",
+      "processedAt": "2026-06-17T16:40:05.985Z"
+    },
+    "5416766811805114499": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | 30 Minutes - Trevor Brown and Sean Ryan",
+      "processedAt": "2026-06-17T16:40:06.984Z"
+    },
+    "1049832838890458528": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Demo <> Kiddie Academy",
+      "processedAt": "2026-06-17T16:40:07.884Z"
+    },
+    "2335130009533157028": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | 30 Minutes - Claire van Staden and Sean Ryan",
+      "processedAt": "2026-06-17T16:40:07.884Z"
     }
   },
-  "last_updated": "2026-06-17T14:24:27.118Z"
+  "last_updated": "2026-06-17T16:39:10.962Z"
 }
