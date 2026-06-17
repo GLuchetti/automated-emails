@@ -1,6 +1,36 @@
 {
   "runs": [
     {
+      "id": "run-1781737159330",
+      "timestamp": "2026-06-17T22:59:19.330Z",
+      "window_start": "2026-06-17T14:59:19.330Z",
+      "window_end": "2026-06-17T22:59:19.330Z",
+      "calls_processed": [
+        {
+          "call_id": "5446044170591182014",
+          "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
+          "team": "support",
+          "prospect_name": "DeMao Del",
+          "prospect_email": "del@demaoretail.com",
+          "email_to": [
+            "del@demaoretail.com",
+            "lmandolajr@gmail.com",
+            "krissy@demaoretail.com",
+            "jriat@parlordoughnuts.com",
+            "jriat@parlordoughnuts.com",
+            "luke@franchiseperformancegroup.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for DeMao — Model Review - SiteZeus | Parlor Doughnuts",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>DeMao</strong> (<a href=\"mailto:del@demaoretail.com\">del@demaoretail.com</a>).<br>\n<strong>Call:</strong> Model Review - SiteZeus | Parlor Doughnuts<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi DeMao,</p>\n<p>Below is a summary of the action items discussed during Model Review - SiteZeus | Parlor Doughnuts.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Final Parlor Donuts model is live — 37% of sites forecast in the exact right bucket, 44% just one bucket off, which is strong model performance.</li><li>Key drivers identified: population growth (2010–2024), ultra-wealthy family segment, daytime population, and proximity to grocery/big box anchors (not QSR-specific).</li><li>Walked through a live Utah site (Holiday, UT) — current forecast is ~$800K AUV as a freestanding location with drive-through, 20 indoor seats, and 8 outdoor seats.</li><li>Team is now unblocked to run consideration site forecasts independently using the active 'Parlor Donuts 62026' project.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Rename model from 'new' to 'active' and delete test projects so the team is working from the correct project going forward.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Justin Riat)</strong></p>\n<ul><li>Log into SiteZeus, navigate to the active Parlor Donuts project, and begin running forecasts on consideration sites including the Holiday, UT address.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Final model is approved and active — no further model revisions planned.</li><li>Site attributes to use when forecasting: drive-through (yes/no), indoor seating count, and outdoor seating count are the most impactful inputs beyond location.</li><li>Panera Bread proximity is a proxy for large retail hub density, not a direct competitor signal — confirmed by Del's example of a well-performing Parlor next to a Panera with limited surrounding retail.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T22:59:33.128Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781731478250",
       "timestamp": "2026-06-17T21:24:38.250Z",
       "window_start": "2026-06-17T13:24:38.250Z",
@@ -331,5 +361,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-17T21:25:13.158Z"
+  "last_updated": "2026-06-17T22:59:33.129Z"
 }
