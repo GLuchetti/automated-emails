@@ -15,6 +15,22 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;");
 }
 
+// The template already opens with "Hi {name}," + "Thank you for hopping on the
+// call today." Strip any leading greeting/pleasantry the model adds anyway, so
+// the body starts with the recap rather than a second hello.
+function stripLeadingGreeting(body) {
+  if (!body) return body;
+  let text = body.trimStart();
+  const GREETING_RE = /^(hi|hey|hello|dear)\b[^.!?\n]*[.!?\n]+\s*/i;
+  const PLEASANTRY_RE = /^[^.!?\n]*\b(really enjoyed|enjoyed (the |our )?(call|conversation|chat|connecting|meeting)|great (catching up|to (connect|chat|meet|speak)|connecting|meeting|chatting|speaking)|glad we (got to )?(connect|chat|met|spoke|connected|talked)|good (talking|speaking|connecting)|thanks (so much )?for|thank you (so much )?for|appreciate you|nice (to )?(meet|chat|connect|speak))\b[^.!?\n]*[.!?]+\s*/i;
+  for (let i = 0; i < 2; i++) {
+    if (GREETING_RE.test(text)) { text = text.replace(GREETING_RE, ""); continue; }
+    if (PLEASANTRY_RE.test(text)) { text = text.replace(PLEASANTRY_RE, ""); continue; }
+    break;
+  }
+  return text.trim() || body.trim(); // never return empty
+}
+
 function buildTranscriptText(transcript, parties) {
   if (!transcript?.length) return "";
   const speakerMap = {};
@@ -84,14 +100,14 @@ async function extractSalesContent({ transcriptText, prospectFirstName, prospect
   const catalog = resourceCatalog();
   const catalogText = catalog.map(r => `- ${r.name} — topics: ${(r.topics || []).join(", ")}`).join("\n");
 
-  const prompt = `You are ${senderName}, a SiteZeus sales rep who was on this call with ${prospectFirstName} from ${companyRef}. Write a short, human follow-up email that you could send with little or no editing. It must sound like a real person who attended the meeting — not an AI, not meeting notes, not a transcript summary.
+  const prompt = `You are ${senderName}, a SiteZeus sales rep who was on this call with ${prospectFirstName} from ${companyRef}. You are drafting the BODY of a short, human follow-up email. The email is ALREADY opened for you with a greeting line ("Hi ${prospectFirstName},") and a second line ("Thank you for hopping on the call today.") — your text comes immediately AFTER those two lines.
 
 Transcript:
 ${transcriptText.slice(0, 14000)}
 
 Return ONLY this JSON — no markdown, no commentary:
 {
-  "body": "1-2 short paragraphs (separate with a blank line). Connect the prospect's goal -> the challenge they described -> how SiteZeus helps. Write in first person ('I', 'we', 'our team') and second person ('you', 'your'). Reference specific things from THIS call. Frame challenges positively (e.g. 'you shared that your team is looking for a more efficient way to...'). No buzzwords, no overselling, no invented capabilities.",
+  "body": "The greeting and thank-you line are ALREADY written — your body must NOT include any greeting, must NOT thank them for their time, and must NOT address them by name or say things like 'great catching up' / 'really enjoyed the conversation'. Start the FIRST sentence directly with the recap: e.g. 'We discussed your goal of...' or 'You shared that your team is looking for a more efficient way to...'. 1-2 short paragraphs (separate with a blank line) connecting the prospect's goal -> the challenge they described -> how SiteZeus helps. First person ('I', 'we', 'our team'), second person ('you', 'your'). Reference specific things from THIS call. Frame challenges positively. No buzzwords, no overselling, no invented capabilities.",
   "nextSteps": ["Each explicitly agreed next step, with date/time if it was stated, e.g. 'Demo scheduled for July 18 at 2:00 PM ET'"],
   "resources": [ { "name": "EXACT name from the list below", "reason": "one short sentence tying it to something specific discussed on this call" } ]
 }
@@ -159,7 +175,7 @@ export async function formatSalesReviewEmail({ callData, repName, repEmail, pros
   let resources = [];
 
   if (aiContent) {
-    body = (aiContent.body || "").trim() || null;
+    body = stripLeadingGreeting((aiContent.body || "").trim()) || null;
     nextSteps = Array.isArray(aiContent.nextSteps) ? aiContent.nextSteps.map(s => String(s).trim()).filter(Boolean) : [];
     resources = resolveResources(aiContent.resources);
   } else {
