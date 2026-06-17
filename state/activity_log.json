@@ -1,6 +1,217 @@
 {
   "runs": [
     {
+      "id": "run-1781714677779",
+      "timestamp": "2026-06-17T16:44:37.779Z",
+      "window_start": "2026-06-15T00:00:00.000Z",
+      "window_end": "2026-06-17T16:44:37.779Z",
+      "calls_processed": [
+        {
+          "call_id": "737349702716444399",
+          "call_name": "SiteZeus Demo <> CSCS",
+          "team": "sales",
+          "prospect_name": "Mike Leikam",
+          "prospect_email": "mike.leikam@cscscoop.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Mike — SiteZeus Demo <> CSCS",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Mike</strong> (<a href=\"mailto:mike.leikam@cscscoop.com\">mike.leikam@cscscoop.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Demo &lt;&gt; CSCS<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Mike,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Mike and Melanie, really enjoyed the conversation today. The dual brand development committee situation David is chairing makes a lot of sense as a starting point — having franchisees able to log in, run a cannibalization report, and walk into a conversation with Dine with actual data behind them is exactly what our impact model is built for. The 93% accuracy on transfer estimates and the fact that our president has served as an expert witness in franchise disputes should give the co-op some real confidence there.</p>\n<p>On the data question you raised — good news is the cannibalization piece doesn't require franchisees to share sales figures. The percentage-based transfer output works independently, so that's not a blocker to getting started. I'll put together pricing for both a cannibalization-focused starting point and a version that layers in the broader location intelligence, so you have both options in front of you.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Will to send pricing for two options: (1) cannibalization/impact-only starting point and (2) full Locate module with location intelligence add-on</li><li>Will to outline a go-live plan based on today's feedback</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Directly supports the dual brand dispute use case Mike described — franchisees needing data to respond when Dine sends development letters.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Relevant given the co-op structure and franchisee adoption angle Mike and Melanie are trying to build out through CSCS.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:44:55.310Z"
+        },
+        {
+          "call_id": "3269334199234037209",
+          "call_name": "SZ | 60 minute call - Coleman Welch and Alan May",
+          "team": "support",
+          "prospect_name": "Cwelch",
+          "prospect_email": "cwelch@321zips.com",
+          "email_to": [
+            "cwelch@321zips.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Cwelch — SZ | 60 minute call - Coleman Welch and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Cwelch</strong> (<a href=\"mailto:cwelch@321zips.com\">cwelch@321zips.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Coleman Welch and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Cwelch,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Coleman Welch and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Aligned on what the board needs — a concise, high-level one-pager explaining how SiteZeus drives sales forecasts and cannibalization estimates, not a deep technical dive.</li><li>Identified the model accuracy issues — missing stores and stale site attribute data — and agreed on a clean path to rebuild with just the high-signal variables (months open, store type).</li><li>Confirmed that franchisee name and agreement type have negligible signal in the current model, so those won't be prioritized in the rebuild.</li><li>Discussed protected radius variance (2–5 miles depending on franchise agreement) as context for how the model's default 5-mile ring was set.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Send Cwelch a concise one-pager (or short deck) summarizing how the SiteZeus AI model works and what drives the forecasts — suitable for board presentation. Deliver by end of day tomorrow.</li><li>Include a separate snapshot of current model accuracy and top attributes so Mike can decide whether to incorporate it.</li><li>Rebuild the model using only high-signal attributes (months open, store type), dropping low-signal variables. Will proceed once months open data is received.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Cwelch)</strong></p>\n<ul><li>Pull and send months open data for all store locations (requires CRM export and reconciliation — flagged as the priority).</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Model rebuild will exclude low-signal attributes (franchisee name, agreement type, ingress/egress, review scores, etc.) and retain only months open and store type.</li><li>Only mature locations will be included in the model since the forecast requires a full year of sales data.</li><li>Board-facing materials should stay high-level — methodology overview and key data inputs only, not granular accuracy stats.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Alan to deliver board one-pager and model accuracy snapshot by end of day tomorrow, ahead of the Thursday board meeting.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:45:16.190Z"
+        },
+        {
+          "call_id": "4501457932544822614",
+          "call_name": "SiteZeus <> The Dirty Rabbit Group",
+          "team": "sales",
+          "prospect_name": "Juan Posada",
+          "prospect_email": "j.posada@therabbitgroup.us",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Juan — SiteZeus <> The Dirty Rabbit Group",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Juan</strong> (<a href=\"mailto:j.posada@therabbitgroup.us\">j.posada@therabbitgroup.us</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; The Dirty Rabbit Group<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Juan,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Juan, Luis — really enjoyed the conversation today. The way you described growing each concept from the inside out — starting in South Florida and expanding outward as the brand builds recognition — is exactly the kind of phased approach where having the right data early makes a big difference. Whether it's finding the right outdoor/indoor setup for Dirty Rabbit, identifying dense Latino communities with the right income profile for Sala de Especho, or mapping fast-casual opportunities for Tacos Atarantados, each brand has its own criteria and we'd want to treat them that way.</p>\n<p>Since your customer data lives separately across concepts and there's no unified loyalty program, we'll work with what you have per brand and build from there. I'll get a proper demo on the calendar so we can show you exactly how the scoring and white space analysis would look for your specific expansion markets. Looking forward to it.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Schedule a tailored demo — no date/time confirmed on the call, follow up to lock in a time</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Luis specifically mentioned wanting to identify the best-fit markets for each concept as they expand outward from South Florida.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — The team needs to understand Latino community density and income profiles to evaluate markets for Sala de Especho and Tacos Atarantados.</li><li><a href=\"https://sitezeus.com/blog/restaurant-expansion-planning\" style=\"color:#1a73e8;\">Restaurant Expansion Planning</a> — With three concepts targeting different growth timelines — 1/year for Dirty Rabbit, 10-15 for Tacos, 10 for Sala de Especho — a structured expansion planning framework is directly relevant.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:45:27.767Z"
+        },
+        {
+          "call_id": "2995050958731747019",
+          "call_name": "SZ | 60 minute call - Blaine Salem and Alan May",
+          "team": "support",
+          "prospect_name": "Blaine Salem",
+          "prospect_email": "blaine.salem@tacala.com",
+          "email_to": [
+            "blaine.salem@tacala.com",
+            "mike.gray@tacala.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Blaine — SZ | 60 minute call - Blaine Salem and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Blaine</strong> (<a href=\"mailto:blaine.salem@tacala.com\">blaine.salem@tacala.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Blaine Salem and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Blaine,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Blaine Salem and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through the full SiteZeus Locate workflow for correcting site pins and requesting mobile data — Williamsburg pin location issue was identified and corrected live.</li><li>Covered SiteZeus Market end-to-end: filtering by project, analyzing mobile data samples, and interpreting psychographic segments (index, base, raw visits).</li><li>Eastridge is currently the only Taco Bell location with mobile data pulled — remaining locations are pending.</li><li>Mobile data for all Taco Bell locations is the immediate priority; Seven Brew to follow.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Pull mobile data for all Taco Bell locations this week — confirmed as top priority.</li><li>Pull mobile data for Seven Brew locations after Taco Bell is complete.</li><li>Correct site pin locations across the project (Williamsburg was the example flagged; others likely need review too).</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Decided to proceed with today's call using preliminary data rather than reschedule, with a plan to circle back once mobile data is fully pulled.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Team to reconnect once mobile data for all Taco Bell locations has been pulled, expected within the week.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:45:35.956Z"
+        },
+        {
+          "call_id": "2694796835025559201",
+          "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+          "team": "support",
+          "prospect_name": "Tyler McRae",
+          "prospect_email": "tyler.mcrae@srsre.com",
+          "email_to": [
+            "tyler.mcrae@srsre.com",
+            "tylera@cicciorg.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Tyler — Daily Sync - SiteZeus | Fresh Kitchen",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Tyler</strong> (<a href=\"mailto:tyler.mcrae@srsre.com\">tyler.mcrae@srsre.com</a>).<br>\n<strong>Call:</strong> Daily Sync - SiteZeus | Fresh Kitchen<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Below is a summary of the action items discussed during Daily Sync - SiteZeus | Fresh Kitchen.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through the scorecard together with Tyler Azzarelli (broker) for the first time — good alignment on how the scoring methodology works and what it's measuring.</li><li>Identified that the current customer profile segments cover ~42% of trade area population on average, and the 50% benchmark we set is intentionally aggressive — average stores are scoring around 84 as a result.</li><li>Miami stood out as an outlier: low customer profile score (16%), over-indexing on City Hopefuls (lower income), and structural site issues (parking, visibility) — all consistent with it being the lowest 2025 performer.</li><li>Agreed that adding Sunset Boomers and/or Suburban Boomers to the segment mix could get portfolio coverage closer to that 50% benchmark and better reflect the full customer base.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Evaluate adding Sunset Boomers and Suburban Boomers to the scorecard segments and show how that shifts scores across the portfolio.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>The 50% household threshold for a perfect segment score is intentionally aggressive — the team acknowledged this may need to be relaxed to better reflect actual average store performance.</li><li>Sunset Boomers and Suburban Boomers are being considered for inclusion in the scorecard to improve population coverage and scoring accuracy.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Daily huddle cadence is ongoing — next session will review the updated scorecard with boomer segments added.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:45:47.480Z"
+        },
+        {
+          "call_id": "738749656775014325",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Matt  Turner and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Matt Turner",
+          "prospect_email": "mturner@plazastreetpartners.com",
+          "email_to": [
+            "mturner@plazastreetpartners.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Matt — 30 Minute Meeting - Aaron | SiteZeus  - Matt  Turner and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Matt</strong> (<a href=\"mailto:mturner@plazastreetpartners.com\">mturner@plazastreetpartners.com</a>).<br>\n<strong>Call:</strong> 30 Minute Meeting - Aaron | SiteZeus  - Matt  Turner and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Matt,</p>\n<p>Below is a summary of the action items discussed during 30 Minute Meeting - Aaron | SiteZeus  - Matt  Turner and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Matt walked Aaron through his top 20 seed points spreadsheet and explained his prioritization logic — green sites (6) are highest priority, yellow (5) are secondary, red are deprioritized due to close PFLC proximity.</li><li>Agreed approach: run worst-case cannibalization scores only (not every nearby store) for each priority site, outputting the impacting store address + worst % impact into Matt's existing tracker.</li><li>Aaron committed to running these on Impact V2 / Zeus AI and delivering results before Matt's 4 PM CT meeting with Jeff.</li><li>Zeus AI training for Matt and Jeff is planned for the next couple of weeks — Aaron will proactively reach out when ready.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Matt Turner)</strong></p>\n<ul><li>Send Aaron the spreadsheet with green/yellow sites color-coded and any directional notes — today, ASAP.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Run Impact V2 cannibalization studies for the 6 green priority sites (and yellow if time allows), returning worst-case impacting store address + cannibalization % — by 3 PM CT today.</li><li>Populate results into Matt's tracker spreadsheet on the right-hand columns (score per site on column L, worst % on column N).</li><li>Reach out to Matt and Jeff within ~2 weeks to schedule a formal Zeus AI platform training.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Only the worst-case cannibalization score (single store, not combined) will be reported per seed point for today's deliverable.</li><li>Impact V2 on Zeus AI will be used going forward — Impact V1 is being retired.</li><li>Zeus AI training will be held off until platform refinements are complete, estimated ~2 weeks out.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Aaron to deliver cannibalization results by 3 PM CT today ahead of Matt's 4 PM CT meeting with Jeff.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:46:00.424Z"
+        },
+        {
+          "call_id": "4363043437679942715",
+          "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-17T16:46:00.424Z"
+        },
+        {
+          "call_id": "8934107884379299587",
+          "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+          "team": "support",
+          "prospect_name": "Tyler Azzarelli",
+          "prospect_email": "tylera@cicciorg.com",
+          "email_to": [
+            "tylera@cicciorg.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Tyler — Daily Sync - SiteZeus | Fresh Kitchen",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Tyler</strong> (<a href=\"mailto:tylera@cicciorg.com\">tylera@cicciorg.com</a>).<br>\n<strong>Call:</strong> Daily Sync - SiteZeus | Fresh Kitchen<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Below is a summary of the action items discussed during Daily Sync - SiteZeus | Fresh Kitchen.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Reviewed Fresh Kitchen's customer profile using 90K uploaded records — strong indexing on Upper Suburban Diverse Families (2x likelihood) and Blue Collar Suburbs, with Educated Urbanites flagged as likely underrepresented due to digital-only data skew.</li><li>Compared Fresh Kitchen's profile against Cava and Panera as proxies, confirming a broadly attractive and diverse customer base that supports expansion into major markets.</li><li>Agreed that the scorecard will weight customer profile data and demographic data at 50/50, reflecting Fresh Kitchen's balanced lunch/dinner split.</li><li>Identified an opportunity to run store-level customer profile uploads to enable more granular market analysis by location.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Schedule and conduct full platform training session with the broader Fresh Kitchen team after the current white space analysis is complete.</li><li>Re-run customer profile upload segmented by store (using the 'most frequent store' variable already in the data) to enable location-level analysis.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Scorecard will be weighted 50% customer profile data and 50% demographic data to reflect the lunch/dinner balance across Fresh Kitchen locations.</li><li>Educated Urbanites will be kept in the customer profile despite low showing in uploaded data, as mobile data and market logic support their relevance for expansion markets.</li><li>Sunset Boomers will be excluded from the profile for now but flagged as a potential market share opportunity to revisit once the team is trained.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Full team training session to be scheduled after white space analysis is delivered, with Friday 6/19 (Juneteenth) noted as an office closure affecting the current timeline.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:46:38.792Z"
+        },
+        {
+          "call_id": "2702924297772586887",
+          "call_name": "SiteZeus Discussion <> CSL Plasma",
+          "team": "sales",
+          "prospect_name": "Keith.Bycholski",
+          "prospect_email": "keith.bycholski@cslplasma.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Keith.Bycholski — SiteZeus Discussion <> CSL Plasma",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Keith.Bycholski</strong> (<a href=\"mailto:keith.bycholski@cslplasma.com\">keith.bycholski@cslplasma.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Discussion &lt;&gt; CSL Plasma<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Keith.Bycholski,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Keith, John — great catching up today. Really appreciate you both making time, and Keith, glad you jumped on.</p>\n<p>A lot of what you walked through today — moving beyond a single volume model toward something that factors in labor costs, local cost of living, and rent — is exactly the kind of multi-dimensional view we've helped other clients build out. The interpretability piece you raised is something we take seriously too, and I think the scorecard approach we talked about gives your committee the explainability they need without sacrificing depth. I'll get you that example report so you can see how it's laid out in practice. Happy to also clarify the power user question around uploading new model types — I'll confirm that with our team and get back to you.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Will to send an example presentation/report template referenced during the call</li><li>Will to confirm with internal team whether analysts or only power users can upload new model types (e.g., labor cost model)</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly relevant to the predictive model discussion, multiple scorecard views, and the interpretability requirements Keith raised for the approval committee.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Cannibalization analysis was specifically mentioned as part of the mobile data and contextual data package included in the pricing walkthrough.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Customer segmentation and mobile path-of-purchase data were both included in the scope Will walked through today.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:46:51.106Z"
+        },
+        {
+          "call_id": "1567582440526623903",
+          "call_name": "SiteZeus Locate <> Legends",
+          "team": "sales",
+          "prospect_name": "Juan Manuel Cardenas",
+          "prospect_email": "jmcardenas@legendsglobal.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Juan — SiteZeus Locate <> Legends",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Juan</strong> (<a href=\"mailto:jmcardenas@legendsglobal.com\">jmcardenas@legendsglobal.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Legends<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Juan,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Hey Juan, great meeting you today even if it was a quick one! Totally understand — you've already done a ton of research and your need is clear: Placer.ai-style foot traffic insights, but for your European venues. Unfortunately that's just not something we can deliver right now since we're US and Canada only.</p>\n<p>That said, I did want to follow up on the two names I mentioned in case they're helpful as you keep evaluating options. Azira (A-Z-I-R-A) is actually the mobile data partner we use here at SiteZeus — I believe they do have European coverage, so worth a direct conversation with them. You mentioned you've already talked to Dataplore, so you're ahead of the game there. Hope one of those ends up being the right fit for what you're building. Wishing you luck with the search!</p>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:47:08.769Z"
+        },
+        {
+          "call_id": "7034743607773554787",
+          "call_name": "SiteZeus Introduction <> Ajay Kale",
+          "team": "sales",
+          "prospect_name": "Ajay Kale",
+          "prospect_email": "kaleajay@gmail.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Ajay — SiteZeus Introduction <> Ajay Kale",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Ajay</strong> (<a href=\"mailto:kaleajay@gmail.com\">kaleajay@gmail.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Introduction &lt;&gt; Ajay Kale<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Ajay,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Ajay, really glad we connected this morning — even with the Monday morning timing mix-up. It was helpful to hear what you're building with Unity Partners and the specific concepts you're exploring in the Nashville market, particularly around Indian restaurants downtown and coffee shops in the newer suburbs.</p>\n<p>I want to be straight with you like I was on the call: where SiteZeus adds the most value is when we're working directly with the brand that's opening locations, since we need access to their customer and performance data to do the analysis right. As you start locking in those first partnerships — whether it's the restaurant or coffee shop side — I'd love to re-engage and walk through what a solution would actually look like for that specific concept. I'll keep you posted if anything changes on the subscription side as well.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — We talked specifically about using mobile data to understand where customers come from and who they are — directly relevant to evaluating downtown Nashville for an Indian restaurant concept.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Ajay asked about identifying underserved areas for both Indian restaurants downtown and coffee shops in Nashville suburbs — this maps directly to that gap analysis conversation.</li><li><a href=\"https://sitezeus.com/blog/site-selection-checklist\" style=\"color:#1a73e8;\">Site Selection Checklist</a> — Helpful starting point as Ajay begins advising friends and family on evaluating specific locations before a full SiteZeus engagement makes sense.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:47:20.819Z"
+        },
+        {
+          "call_id": "1049832838890458528",
+          "call_name": "SiteZeus Demo <> Kiddie Academy",
+          "team": "sales",
+          "prospect_name": "Amy Williams",
+          "prospect_email": "awilliams@kiddieacademy.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Amy — SiteZeus Demo <> Kiddie Academy",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Amy</strong> (<a href=\"mailto:awilliams@kiddieacademy.com\">awilliams@kiddieacademy.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Demo &lt;&gt; Kiddie Academy<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Amy,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>Amy and Debbie, really glad we got to connect today and dig into what you're actually looking for. You shared that Buxton is shifting its focus away from the kind of site evaluation work your team relies on, so it makes sense to start exploring what else is out there before 2027 gets here.</p>\n<p>Based on what you walked me through — the franchisee demographic reports, the FTE-style scoring that accounts for child count and competitor seats, cannibalization analysis using your customer enrollment data, and that site similarity piece Debbie mentioned — I think our predictive model is a strong fit. We'd build it around your existing academy performance data (child counts, open dates, square footage) and your customer lists, so the scoring is grounded in what's actually working for Kiddie Academy, not just generic benchmarks. Happy to loop in your marketing team separately once you've had a chance to check in with them.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Debbie to connect with the marketing team to identify any additional reporting needs before a follow-up conversation</li><li>Emma to send follow-up resources on the predictive model and customer insights platform</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly covers the predictive scoring and FTE-style site evaluation model Debbie described wanting to return to.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Debbie specifically mentioned using enrollment data to identify sites that could cannibalize existing academies.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Covers the customer segmentation and cross-shopping visibility your marketing team currently uses Buxton for.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — You mentioned looking at both infill opportunities and new states like New Jersey where finding viable sites is getting harder.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-17T16:48:01.465Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781714350962",
       "timestamp": "2026-06-17T16:39:10.962Z",
       "window_start": "2026-06-15T00:00:00.000Z",
@@ -2465,5 +2676,5 @@
       "skipped": 0
     }
   ],
-  "last_updated": "2026-06-17T16:40:07.886Z"
+  "last_updated": "2026-06-17T16:48:01.468Z"
 }
