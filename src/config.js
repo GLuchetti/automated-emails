@@ -19,6 +19,18 @@ export const SALES_REPS = {
 export const ENTERPRISE_UNIT_COUNT_PROPERTY = "unit_count";
 export const ENTERPRISE_THRESHOLD = 50; // >= 50 units → Enterprise
 
+// ------------------------------------------------------------------
+// Transcript-timing safety
+// Gong needs time to transcribe a call after it ends. Each run scans
+// back LOOKBACK_HOURS and only emails a call once its transcript is
+// actually available. A call whose transcript still hasn't appeared
+// after TRANSCRIPT_CUTOFF_HOURS is sent on the Gong-summary fallback
+// so it can never wait forever. Already-emailed calls are tracked in
+// state/processed_calls.json so they are never sent twice.
+// ------------------------------------------------------------------
+export const LOOKBACK_HOURS = 8;          // how far back each run scans for calls
+export const TRANSCRIPT_CUTOFF_HOURS = 6; // give up waiting → send on fallback
+
 // Email addresses
 export const SUPPORT_FROM_EMAIL = "support@sitezeus.com";
 export const INTERNAL_NOTIFICATION_EMAIL = "support@sitezeus.com";

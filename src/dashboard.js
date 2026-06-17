@@ -366,8 +366,10 @@ const RUNS = ${runsJson};
 function renderStats() {
   const bar = document.getElementById('stats-bar');
   let totalRuns = RUNS.length, totalCalls = 0, totalSent = 0, totalDraft = 0, totalErrors = 0;
+  let totalWaiting = 0;
   RUNS.forEach(r => {
     (r.calls_processed || []).forEach(c => {
+      if (c.status === 'waiting') { totalWaiting++; return; } // not processed yet
       totalCalls++;
       if (c.status === 'sent') totalSent++;
       else if (c.status === 'dashboard') totalDraft++;
@@ -375,11 +377,12 @@ function renderStats() {
     });
   });
   const stats = [
-    { value: totalRuns,   label: 'Total Runs' },
-    { value: totalCalls,  label: 'Calls Processed' },
-    { value: totalSent,   label: 'Emails Sent' },
-    { value: totalDraft,  label: 'Drafts Ready' },
-    { value: totalErrors, label: 'Errors' },
+    { value: totalRuns,    label: 'Total Runs' },
+    { value: totalCalls,   label: 'Calls Processed' },
+    { value: totalSent,    label: 'Emails Sent' },
+    { value: totalDraft,   label: 'Drafts Ready' },
+    { value: totalWaiting, label: 'Awaiting Transcript' },
+    { value: totalErrors,  label: 'Errors' },
   ];
   bar.innerHTML = stats.map(s =>
     \`<div class="stat"><div class="stat-value">\${s.value}</div><div class="stat-label">\${s.label}</div></div>\`
@@ -405,6 +408,7 @@ function statusBadge(status) {
     dashboard:   ['badge-dashboard',  'Draft Ready'],
     error:       ['badge-error',      'Error'],
     no_contact:  ['badge-no-contact', 'No Contact'],
+    waiting:     ['badge-no-contact', 'Awaiting Transcript'],
   };
   const [cls, label] = map[status] || ['badge-gray', status];
   return \`<span class="status-badge \${cls}">\${label}</span>\`;

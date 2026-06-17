@@ -1,6 +1,6 @@
 // main.js — Entry point for the Gong call email automation.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -10,6 +10,7 @@ import { sendEmail } from "./emailHandler.js";
 import { formatSalesReviewEmail } from "./salesFormatter.js";
 import { formatSupportReviewEmail } from "./supportFormatter.js";
 import { recordRun } from "./dashboard.js";
+import { loadProcessed, isProcessed, markProcessed, saveProcessed } from "./processedStore.js";
 import * as config from "./config.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -17,21 +18,19 @@ const ROOT = join(__dirname, "..");
 const LAST_RUN_FILE = join(ROOT, "state", "last_run.json");
 const STATE_DIR = join(ROOT, "state");
 
-function loadLastRun() {
-  if (existsSync(LAST_RUN_FILE)) {
-    try {
-      const data = JSON.parse(readFileSync(LAST_RUN_FILE, "utf-8"));
-      if (data.last_run) return new Date(data.last_run);
-    } catch { /* fall through */ }
-  }
-  const dt = new Date();
-  dt.setHours(dt.getHours() - 24);
-  return dt;
-}
-
 function saveLastRun(dt) {
   mkdirSync(STATE_DIR, { recursive: true });
   writeFileSync(LAST_RUN_FILE, JSON.stringify({ last_run: dt.toISOString() }, null, 2), "utf-8");
+}
+
+// Hours since a call ended (start + duration). Returns Infinity if the call
+// has no usable timestamp, so such a call is treated as "old enough" to
+// process rather than deferred forever.
+function callAgeHours(call, now) {
+  const started = call.started ? Date.parse(call.started) : NaN;
+  if (Number.isNaN(started)) return Infinity;
+  const end = started + (Number(call.duration) || 0) * 1000;
+  return (now.getTime() - end) / (1000 * 60 * 60);
 }
 
 function extractProspectFromCall(callData) {
@@ -62,7 +61,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
       status: "no_contact", error: "No external prospect found",
       timestamp: new Date().toISOString(),
     });
-    return;
+    return "no_contact";
   }
 
   let isEnterprise = false;
@@ -131,6 +130,7 @@ async function processSalesCall({ callId, callName, callData, transcript, teamMa
     email_html: emailHtml, segment, status,
     timestamp: new Date().toISOString(),
   });
+  return status;
 }
 
 async function processSupportCall({ callId, callName, callData, transcript, smtp, runLog }) {
@@ -155,7 +155,7 @@ async function processSupportCall({ callId, callName, callData, transcript, smtp
       status: "no_contact", error: "No external attendees found",
       timestamp: new Date().toISOString(),
     });
-    return;
+    return "no_contact";
   }
 
   const csmParty = extractInternalParty(callData);
@@ -208,6 +208,7 @@ async function processSupportCall({ callId, callName, callData, transcript, smtp
     email_subject: emailSubject, email_html: emailHtml, status,
     timestamp: new Date().toISOString(),
   });
+  return status;
 }
 
 async function main() {
@@ -234,9 +235,13 @@ async function main() {
   if (!smtp.user || !smtp.password) console.warn("[Main] No SMTP credentials — emails will go to dashboard only.");
   if (!process.env.ANTHROPIC_API_KEY) console.warn("[Main] No ANTHROPIC_API_KEY — AI extraction disabled.");
 
-  const windowStart = loadLastRun();
+  // Scan a wide lookback window so calls whose transcripts weren't ready on a
+  // previous run get another chance. The processed-calls store (not the
+  // window) is what guarantees we never email the same call twice.
   const windowEnd = runStart;
-  console.info(`[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()}`);
+  const windowStart = new Date(runStart.getTime() - config.LOOKBACK_HOURS * 60 * 60 * 1000);
+  const processed = loadProcessed();
+  console.info(`[Main] Window: ${windowStart.toISOString()} → ${windowEnd.toISOString()} (lookback ${config.LOOKBACK_HOURS}h)`);
 
   const runLog = {
     id: `run-${runStart.getTime()}`,
@@ -254,16 +259,20 @@ async function main() {
     console.info(`[Main] Team map — sales: ${salesCount}, support: ${supportCount}`);
 
     const calls = await gong.getCompletedCalls(windowStart, windowEnd);
-    console.info(`[Main] Calls found: ${calls.length}`);
+    console.info(`[Main] Calls found in window: ${calls.length}`);
 
-    if (!calls.length) {
-      console.info("[Main] No new calls — done.");
+    const pending = calls.filter(c => !isProcessed(processed, c.id));
+    console.info(`[Main] Already emailed: ${calls.length - pending.length} | to evaluate: ${pending.length}`);
+
+    if (!pending.length) {
+      console.info("[Main] Nothing new to process — done.");
       saveLastRun(windowEnd);
+      saveProcessed(processed, runStart);
       recordRun(runLog);
       return;
     }
 
-    const callIds = calls.map(c => c.id);
+    const callIds = pending.map(c => c.id);
     const [extensive, transcriptsMap] = await Promise.all([
       gong.getCallsExtensive(callIds),
       gong.getTranscripts(callIds),
@@ -271,7 +280,7 @@ async function main() {
 
     const extensiveMap = Object.fromEntries((extensive || []).map(c => [c.metaData?.id || c.id, c]));
 
-    for (const call of calls) {
+    for (const call of pending) {
       const callId = call.id;
       const callName = call.title || call.name || callId;
       const callData = extensiveMap[callId] || {};
@@ -283,19 +292,41 @@ async function main() {
       const isSales = teamMap[hostUserId] === "sales" || (hostEmail && teamMap[hostEmail] === "sales");
       const isSupport = teamMap[hostUserId] === "support" || (hostEmail && teamMap[hostEmail] === "support");
 
-      console.info(`[Main] Processing call ${callId} — team: ${isSales ? "sales" : isSupport ? "support" : "unknown"} — "${callName}"`);
-
-      if (isSales) {
-        await processSalesCall({
-          callId, callName, callData, transcript, teamMap,
-          hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false },
-          smtp, runLog,
-        });
-      } else if (isSupport) {
-        await processSupportCall({ callId, callName, callData, transcript, smtp, runLog });
-      } else {
-        console.info(`[Main] Call ${callId}: host ${hostEmail || hostUserId} not in a tracked team — skipping`);
+      if (!isSales && !isSupport) {
+        console.info(`[Main] Call ${callId}: host ${hostEmail || hostUserId} not in a tracked team — marking skipped`);
+        markProcessed(processed, callId, { status: "skipped_untracked", call_name: callName });
+        continue;
       }
+
+      const team = isSales ? "sales" : "support";
+
+      // Transcript-readiness gate — wait for Gong to finish transcribing.
+      const ageHours = callAgeHours(call, runStart);
+      if (!transcript.length && ageHours < config.TRANSCRIPT_CUTOFF_HOURS) {
+        console.info(`[Main] Call ${callId} (${team}): transcript not ready (call ended ${ageHours.toFixed(1)}h ago) — deferring to a later run`);
+        runLog.calls_processed.push({
+          call_id: callId, call_name: callName, team,
+          status: "waiting",
+          error: `Waiting on Gong transcript (${ageHours.toFixed(1)}h since call) — will retry`,
+          timestamp: new Date().toISOString(),
+        });
+        continue; // do NOT mark processed — it gets another chance next run
+      }
+      if (!transcript.length) {
+        console.warn(`[Main] Call ${callId} (${team}): transcript still missing after ${ageHours.toFixed(1)}h (cutoff ${config.TRANSCRIPT_CUTOFF_HOURS}h) — sending on Gong fallback`);
+      }
+
+      console.info(`[Main] Processing call ${callId} — team: ${team} — "${callName}"`);
+
+      const status = isSales
+        ? await processSalesCall({
+            callId, callName, callData, transcript, teamMap,
+            hs: hs || { findContactByEmail: async () => null, getOwnerEmail: async () => null, isEnterprise: () => false },
+            smtp, runLog,
+          })
+        : await processSupportCall({ callId, callName, callData, transcript, smtp, runLog });
+
+      markProcessed(processed, callId, { status, team, call_name: callName });
     }
   } catch (err) {
     console.error("[Main] Fatal error:", err.message, err.stack);
@@ -303,6 +334,7 @@ async function main() {
   }
 
   saveLastRun(windowEnd);
+  saveProcessed(processed, runStart);
   recordRun(runLog);
 
   const counts = runLog.calls_processed.reduce((acc, c) => {
