@@ -79,7 +79,14 @@ Open [`src/config.js`](src/config.js) and confirm:
 
 ## How State Works
 
-After each run, the script writes `state/last_run.json` with the current UTC timestamp and commits it back. The next run picks up from that timestamp, so no call is processed twice. If the state file is missing (first run), it defaults to ~25 minutes ago.
+Gong needs time to transcribe a call after it ends, so the workflow waits for the transcript instead of emailing immediately:
+
+- Each run scans a **lookback window** of the last `LOOKBACK_HOURS` (default 8h), not just since the last run.
+- A call is only emailed once its **transcript is actually available**. If it isn't ready yet, the call is **deferred and retried** on later runs (shown as *Awaiting Transcript* on the dashboard).
+- If a transcript still hasn't appeared after `TRANSCRIPT_CUTOFF_HOURS` (default 6h), the call is sent on the Gong-summary fallback so it never waits forever.
+- Every emailed call ID is recorded in `state/processed_calls.json` so **no call is ever emailed twice** (this, not the time window, is the dedupe guarantee). Entries are pruned after 7 days.
+
+Both `LOOKBACK_HOURS` and `TRANSCRIPT_CUTOFF_HOURS` live in [`src/config.js`](src/config.js). `state/last_run.json` is still written each run for reference but no longer gates which calls are processed.
 
 ---
 
