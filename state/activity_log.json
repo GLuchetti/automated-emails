@@ -1,6 +1,57 @@
 {
   "runs": [
     {
+      "id": "run-1781800733190",
+      "timestamp": "2026-06-18T16:38:53.190Z",
+      "window_start": "2026-06-18T08:38:53.190Z",
+      "window_end": "2026-06-18T16:38:53.190Z",
+      "calls_processed": [
+        {
+          "call_id": "6387876221681181721",
+          "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-18T16:38:54.971Z"
+        },
+        {
+          "call_id": "2438852173087200753",
+          "call_name": "SiteZeus <> Southpaw",
+          "team": "sales",
+          "prospect_name": "Daniel Pellissier",
+          "prospect_email": "dan@southpaw.co",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Daniel — SiteZeus <> Southpaw",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Daniel</strong> (<a href=\"mailto:dan@southpaw.co\">dan@southpaw.co</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Southpaw<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Daniel,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>You shared that Zach spoke highly of SiteZeus — specifically around ease of use and model accuracy — which is exactly the kind of validation that matters when evaluating a platform at your scale. With 188 Taco Bell locations and continued growth through acquisitions, having a reliable forecasting tool in your corner makes a lot of sense.</p>\n<p>Once you connect with your CFO next week, I'd love to hear where things land. As I mentioned, once we have your data, we can turn a proof of concept around in just a few days — so an early July delivery is very realistic if you decide to move forward.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Daniel to connect with his CFO next week to discuss moving forward with a proof of concept</li><li>Daniel to reach back out to Emma after that conversation to confirm next steps</li><li>If approved, SiteZeus to deliver proof of concept by early July</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — You and Daniel specifically discussed the $5,000 POC structure and a potential early July timeline, so this resource can help set clear expectations for what the engagement includes.</li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a> — Since Zach's reference carried real weight for Daniel, a customer story from a comparable multi-unit operator could reinforce that confidence when he presents to his CFO.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T16:39:06.563Z"
+        },
+        {
+          "call_id": "7746757143878303592",
+          "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
+          "team": "support",
+          "prospect_name": "Karen Garrett",
+          "prospect_email": "karen.garrett@tierraencantada.com",
+          "email_to": [
+            "karen.garrett@tierraencantada.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Karen — Karen & Aaron | SiteZeus Training - Recurring",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Karen</strong> (<a href=\"mailto:karen.garrett@tierraencantada.com\">karen.garrett@tierraencantada.com</a>).<br>\n<strong>Call:</strong> Karen &amp; Aaron | SiteZeus Training - Recurring<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Karen,</p>\n<p>Below is a summary of the action items discussed during Karen &amp; Aaron | SiteZeus Training - Recurring.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Karen successfully used SiteZeus data in franchisee calls and it's boosting her credibility with prospects — the tool is clearly landing well in the field.</li><li>Walked through the Colorado/Boulder market together for an upcoming Discovery Day prospect; identified strong site options and discussed territory sizing strategy.</li><li>Resolved a UI issue where an accidentally drawn shape was overlaying a territory, and confirmed how to layer competitors for market saturation review.</li><li>Aligned on a best practice: redefine protected territories after a franchisee selects and signs on a specific site, rather than locking borders during the search phase.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Follow up with analyst immediately after the call to get the missing Freehold, NJ site (90+ score) re-added to the platform.</li><li>Continue sourcing addresses for foreign language elementary schools to add as a competitor layer — targeting Spanish immersion specifically, with a fallback to broader foreign language designation.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Protected territories should be finalized and redrawn after a franchisee selects their specific site, not during the initial search area phase.</li><li>Spanish immersion daycares are the primary competitor set to track; general daycares (e.g., Learning Experience, Tierra Encantada) are not considered direct competitors for scoring purposes.</li><li>Foreign language elementary schools will be added as a competitor layer labeled 'foreign language elementary' rather than 'Spanish elementary' due to sourcing limitations, given that ~80% of those schools offer Spanish immersion anyway.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T16:39:18.401Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781737159330",
       "timestamp": "2026-06-17T22:59:19.330Z",
       "window_start": "2026-06-17T14:59:19.330Z",
@@ -361,5 +412,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-17T22:59:33.129Z"
+  "last_updated": "2026-06-18T16:39:18.403Z"
 }
