@@ -1,6 +1,109 @@
 {
   "runs": [
     {
+      "id": "run-1781818188814",
+      "timestamp": "2026-06-18T21:29:48.814Z",
+      "window_start": "2026-06-18T13:29:48.814Z",
+      "window_end": "2026-06-18T21:29:48.814Z",
+      "calls_processed": [
+        {
+          "call_id": "5743255467593970072",
+          "call_name": "SZ | Tint World Scorecard Setup",
+          "team": "support",
+          "prospect_name": "Kevin Murray",
+          "prospect_email": "kevin.murray@tintworld.com",
+          "email_to": [
+            "kevin.murray@tintworld.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Kevin — SZ | Tint World Scorecard Setup",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Kevin</strong> (<a href=\"mailto:kevin.murray@tintworld.com\">kevin.murray@tintworld.com</a>).<br>\n<strong>Call:</strong> SZ | Tint World Scorecard Setup<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Kevin,</p>\n<p>Below is a summary of the action items discussed during SZ | Tint World Scorecard Setup.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Clarified that the 'location score' and 'visibility score' in the model are internal Tint World ratings (1–5) provided historically — not a SiteZeus-generated metric.</li><li>Walked Kevin through how adjusting site attributes (location score, visibility score, location type) directly impacts the revenue forecast, which he found immediately useful for evaluating new sites.</li><li>Introduced the new scorecard feature in app.sitezeus.com — demoed building criteria using network-average population and median household income against Kevin's portfolio.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Kevin Murray)</strong></p>\n<ul><li>Research internal documentation on how the existing location score and visibility score were originally defined/calculated.</li><li>Evaluate whether additional site-specific variables (ingress/egress, signage, parking, traffic count) should be collected and provided to SiteZeus to enrich the model.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Kevin will default to 'average' for the franchisee selection attribute since nearly all sites he evaluates are for new franchisees.</li><li>Kevin will keep 'months open' at average to reflect mature store performance rather than a specific ramp period.</li><li>Location score is understood to capture real estate/site quality (visibility, access, signage) — demographics are handled separately by the model itself.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T21:30:00.038Z"
+        },
+        {
+          "call_id": "2174875610380442857",
+          "call_name": "SiteZeus Training - Aaron - Jc Mendez and Aaron Bergland",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-18T21:30:00.039Z"
+        },
+        {
+          "call_id": "6466195674084160040",
+          "call_name": "SiteZeus Discussion <> Magnolia",
+          "team": "sales",
+          "prospect_name": "Kade Mackey",
+          "prospect_email": "kmackey@magnoliasoapandbath.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kade — SiteZeus Discussion <> Magnolia",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Kade</strong> (<a href=\"mailto:kmackey@magnoliasoapandbath.com\">kmackey@magnoliasoapandbath.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Discussion &lt;&gt; Magnolia<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Kade,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of finding a platform that meets Magnolia Soap and Bath where you are right now — 55 units, plenty of open territory, and a team that needs clarity over complexity. You were candid that Buxton felt like too much cost for too little value, and that your concern with any analytics-heavy platform is whether the insights will actually land with your team day to day.</p>\n<p>What I want to make sure comes through in the proposal is that we can keep this simple to start — a clean scorecard built around your key drivers, a white space view of where you should be hunting, and shareable reports your franchisees can actually use. We grow the toolset as Magnolia grows. I'll get the proposal over to you and include the Atlas webinar so you can see the updated interface on your own time.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Will to send a formal proposal tailored to Magnolia's current stage and needs</li><li>Will to send the SiteZeus Atlas webinar recording for Kade to review the updated interface</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Kade specifically asked about territory mapping and identifying open markets — this directly supports that conversation.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Kade is balancing franchisee-facing tools with internal reporting, and this speaks to how franchise brands scale their site selection process.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T21:30:10.069Z"
+        },
+        {
+          "call_id": "8093649031661587000",
+          "call_name": "SiteZeus Proof of Concept Review x Central Pro Supply",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-18T21:30:10.069Z"
+        },
+        {
+          "call_id": "4912180415199853072",
+          "call_name": "Whitespace Kickoff - SiteZeus | Iron 24",
+          "team": "support",
+          "prospect_name": "Nick Good",
+          "prospect_email": "nick@iron24.com",
+          "email_to": [
+            "nick@iron24.com",
+            "matt@iron24.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Nick — Whitespace Kickoff - SiteZeus | Iron 24",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Nick</strong> (<a href=\"mailto:nick@iron24.com\">nick@iron24.com</a>).<br>\n<strong>Call:</strong> Whitespace Kickoff - SiteZeus | Iron 24<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Nick,</p>\n<p>Below is a summary of the action items discussed during Whitespace Kickoff - SiteZeus | Iron 24.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Nick walked through the Chattanooga site live in SiteZeus — saved it as a consideration site and got comfortable navigating the platform again.</li><li>Aaron previewed scorecard framework built around Iron XXIV's existing portfolio: total pop, median income, personal care expenditure, cost of living, quality of life index, and key customer profiles (wealthy suburban families, rural average income, blue collar, etc.).</li><li>Identified that trade area draw is roughly 10 minutes / 3–5 miles, which is worth revisiting against the current 50-mile spacing rule — good conversation to loop Matt into.</li><li>New business development hire is focused on southern expansion (Texas, Tennessee, Florida) — scorecard timing lines up well to support that effort.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Build and deliver a site scorecard for Iron XXIV within the next week, incorporating demographic metrics and customer profile weights based on current portfolio performance.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Nick Good)</strong></p>\n<ul><li>Connect Aaron with Matt Arceneaux to discuss site selection strategy (outskirt vs. urban markets) and the 50-mile spacing rule in context of actual trade area data.</li><li>Provide member count data (and ideally a high/low performer split) so Aaron can weight scorecard metrics accurately.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Scorecard will prioritize total population over daytime population, given that Iron XXIV's primary gym-goers are evening visitors and seniors who live near the location.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Aaron to deliver the Iron XXIV scorecard within approximately one week.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T21:30:20.616Z"
+        },
+        {
+          "call_id": "2656779725101681817",
+          "call_name": "SiteZeus Locate <> Primer",
+          "team": "sales",
+          "prospect_name": "Sam",
+          "prospect_email": "sam@withprimer.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Sam — SiteZeus Locate <> Primer",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Sam</strong> (<a href=\"mailto:sam@withprimer.com\">sam@withprimer.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Primer<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Sam,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your team's goal of building a location-scoring framework that can predict enrollment potential — essentially identifying which markets and sites look like your top-performing campuses versus the ones that haven't worked. You were candid that at 18 open locations, a fully predictive model carries real limitations, and I appreciated that directness — it aligns exactly with how we think about it too.</p>\n<p>Rather than overpromising on a statistical model at your current scale, our recommended starting point would be a deep collaborative analysis of your existing portfolio to surface what's actually driving enrollment — demographics, competitive landscape, family psychographics, and school-density patterns. That becomes the foundation for a scorecard that grades new opportunities and supports Sam's team in understanding whether a market can actually be activated through targeted marketing. We'd grow the model's predictive power as your footprint scales.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Follow-up call with Sam and Dan included — date/time not confirmed on this call, to be scheduled</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly supports the location-scoring and enrollment-potential framework Justin, Sam, and Dan described needing for GM-level site decisions.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Sam specifically called out needing clean competitive school data and understanding family demographics before launching marketing in a new market.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Dan described wanting to evaluate which states and markets have viable untapped opportunity before committing to a location.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-18T21:30:31.084Z"
+        },
+        {
+          "call_id": "6261600678665413566",
+          "call_name": "SiteZeus Discussion <> Majors MGMT",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-18T21:30:31.084Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781800733190",
       "timestamp": "2026-06-18T16:38:53.190Z",
       "window_start": "2026-06-18T08:38:53.190Z",
@@ -412,5 +515,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-18T16:39:18.403Z"
+  "last_updated": "2026-06-18T21:30:31.086Z"
 }

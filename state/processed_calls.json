@@ -166,7 +166,59 @@
       "status": "skipped_untracked",
       "call_name": "SiteZeus | Minnie Bird - Development Timeline Review",
       "processedAt": "2026-06-18T16:39:18.401Z"
+    },
+    "5743255467593970072": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | Tint World Scorecard Setup",
+      "processedAt": "2026-06-18T21:30:00.039Z"
+    },
+    "2174875610380442857": {
+      "status": "no_contact",
+      "team": "support",
+      "call_name": "SiteZeus Training - Aaron - Jc Mendez and Aaron Bergland",
+      "processedAt": "2026-06-18T21:30:00.039Z"
+    },
+    "6466195674084160040": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Discussion <> Magnolia",
+      "processedAt": "2026-06-18T21:30:10.069Z"
+    },
+    "8093649031661587000": {
+      "status": "no_contact",
+      "team": "sales",
+      "call_name": "SiteZeus Proof of Concept Review x Central Pro Supply",
+      "processedAt": "2026-06-18T21:30:10.069Z"
+    },
+    "4912180415199853072": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "Whitespace Kickoff - SiteZeus | Iron 24",
+      "processedAt": "2026-06-18T21:30:20.616Z"
+    },
+    "1223208715125276780": {
+      "status": "skipped_untracked",
+      "call_name": "Chicken Salad Chick - Market Training",
+      "processedAt": "2026-06-18T21:30:20.616Z"
+    },
+    "2656779725101681817": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> Primer",
+      "processedAt": "2026-06-18T21:30:31.084Z"
+    },
+    "1241511064921923811": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | NY Butcher Shoppe Implementation - Development Timeline Review",
+      "processedAt": "2026-06-18T21:30:31.084Z"
+    },
+    "6261600678665413566": {
+      "status": "no_contact",
+      "team": "sales",
+      "call_name": "SiteZeus Discussion <> Majors MGMT",
+      "processedAt": "2026-06-18T21:30:31.084Z"
     }
   },
-  "last_updated": "2026-06-18T19:11:25.818Z"
+  "last_updated": "2026-06-18T21:29:48.814Z"
 }
