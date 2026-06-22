@@ -1,6 +1,38 @@
 {
   "runs": [
     {
+      "id": "run-1782157730793",
+      "timestamp": "2026-06-22T19:48:50.793Z",
+      "window_start": "2026-06-22T11:48:50.793Z",
+      "window_end": "2026-06-22T19:48:50.793Z",
+      "calls_processed": [
+        {
+          "call_id": "5346526480954004977",
+          "call_name": "SiteZeus Demo <> The Dirty Rabbit Group",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-22T19:48:52.597Z"
+        },
+        {
+          "call_id": "4232671524616482282",
+          "call_name": "Bi-Weekly Recuring Meeting: Parlor Doughnuts | SiteZeus | DeMao Retail",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-22T19:48:52.597Z"
+        },
+        {
+          "call_id": "6280703274386959844",
+          "call_name": "SiteZeus Proposal Review <> Central Pro Supply",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-22T19:48:52.597Z"
+        }
+      ]
+    },
+    {
       "id": "run-1781818188814",
       "timestamp": "2026-06-18T21:29:48.814Z",
       "window_start": "2026-06-18T13:29:48.814Z",
@@ -515,5 +547,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-18T21:30:31.086Z"
+  "last_updated": "2026-06-22T19:48:52.598Z"
 }
