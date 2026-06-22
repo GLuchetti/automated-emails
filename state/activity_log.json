@@ -1,6 +1,32 @@
 {
   "runs": [
     {
+      "id": "run-1782165959076",
+      "timestamp": "2026-06-22T22:05:59.076Z",
+      "window_start": "2026-06-22T14:05:59.076Z",
+      "window_end": "2026-06-22T22:05:59.076Z",
+      "calls_processed": [
+        {
+          "call_id": "2261854876592015543",
+          "call_name": "SiteZeus Demo <> Driven Brands",
+          "team": "sales",
+          "prospect_name": "Jorge Planta",
+          "prospect_email": "jorge.planta@drivenbrands.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Jorge — SiteZeus Demo <> Driven Brands",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Jorge</strong> (<a href=\"mailto:jorge.planta@drivenbrands.com\">jorge.planta@drivenbrands.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Demo &lt;&gt; Driven Brands<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Jorge,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your need to build accurate, market-aware models across several Driven Brands concepts — particularly Take Five, Maaco, and Midas — while also supporting territory management and area protection for brands like CARSTAR and Fix Auto. You made a great point about how a national-level model can misfire when market density varies as dramatically as Dallas versus Detroit, and that's exactly the kind of regionality we build into our modeling at the core rather than as an afterthought.</p>\n<p>On the territory side, we covered how we can layer in area developer boundaries, franchisee protected zones, and business development hit lists — all in one place. I'd love to move forward with a proof of concept so you can see the model accuracy firsthand before making any decisions. I'll follow up with the NDA so we can get the data exchange started.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>SiteZeus to send over NDA to initiate the proof of concept data exchange</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Jorge responded positively to the 36-hour POC offer — this resource can walk him through exactly what to expect from the process before data is exchanged.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Cannibalization analysis was called out as an out-of-the-box capability relevant to Take Five and Maaco site decisions.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Market planning and white space were flagged as high priorities for identifying where Driven Brands should expand next across their portfolio.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-22T22:06:12.726Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782157730793",
       "timestamp": "2026-06-22T19:48:50.793Z",
       "window_start": "2026-06-22T11:48:50.793Z",
@@ -547,5 +573,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-22T19:48:52.598Z"
+  "last_updated": "2026-06-22T22:06:12.728Z"
 }
