@@ -1,6 +1,102 @@
 {
   "runs": [
     {
+      "id": "run-1782245965834",
+      "timestamp": "2026-06-23T20:19:25.834Z",
+      "window_start": "2026-06-23T12:19:25.834Z",
+      "window_end": "2026-06-23T20:19:25.834Z",
+      "calls_processed": [
+        {
+          "call_id": "6758966379849830982",
+          "call_name": "Quick Quack | SZ Bi weekly Sync",
+          "team": "support",
+          "prospect_name": "Josh Stoeltzing",
+          "prospect_email": "jstoeltzing@dontdrivedirty.com",
+          "email_to": [
+            "jstoeltzing@dontdrivedirty.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Josh — Quick Quack | SZ Bi weekly Sync",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Josh</strong> (<a href=\"mailto:jstoeltzing@dontdrivedirty.com\">jstoeltzing@dontdrivedirty.com</a>).<br>\n<strong>Call:</strong> Quick Quack | SZ Bi weekly Sync<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Josh,</p>\n<p>Below is a summary of the action items discussed during Quick Quack | SZ Bi weekly Sync.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Josh confirmed the real estate team is underutilizing the platform and acknowledged SiteZeus aligns with their strategic push to find sites internally rather than relying on brokers.</li><li>Both sides agreed an executive-level call between Tracy and Sean is the right move to secure buy-in before the opt-out window closes.</li><li>SiteZeus's predictive model and site analytics were positioned as complementary to — not replaceable by — Placer.ai, which leadership is currently evaluating.</li><li>SOC 2 compliance is in progress and expected before end of year, which addresses a known concern from the customer's operations/acquisitions team.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Josh Stoeltzing)</strong></p>\n<ul><li>Reach out to Stephanie to get Tracy's availability for an executive call with Sean before July 15.</li><li>Work toward scheduling a platform re-demo for the real estate management team.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Flag Sean's calendar as soon as Josh provides Tracy's availability — time is tight given the July 15 opt-out notice deadline.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Agreed to pursue an executive call between Tracy (customer) and Sean (SiteZeus) prior to the July 15 opt-out notice deadline.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Executive call between Tracy and Sean needs to be scheduled before July 15 — the deadline to submit 30-day opt-out notice ahead of the August 15 contract opt-out date.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T20:19:38.035Z"
+        },
+        {
+          "call_id": "2928792846762283717",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Karen Garrett and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Karen Garrett",
+          "prospect_email": "karen.garrett@tierraencantada.com",
+          "email_to": [
+            "karen.garrett@tierraencantada.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Karen — 30 Minute Meeting - Aaron | SiteZeus  - Karen Garrett and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Karen</strong> (<a href=\"mailto:karen.garrett@tierraencantada.com\">karen.garrett@tierraencantada.com</a>).<br>\n<strong>Call:</strong> 30 Minute Meeting - Aaron | SiteZeus  - Karen Garrett and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Karen,</p>\n<p>Below is a summary of the action items discussed during 30 Minute Meeting - Aaron | SiteZeus  - Karen Garrett and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through merging three separate territory shapes in SiteZeus into one combined territory for franchisee Marie Millard, who is moving forward with an area development agreement covering both north and south territories.</li><li>Successfully created a merged 'Combined' shape saved in Marie's folder — gives Karen a single clean territory to reference for the ADA.</li><li>Identified that the current combined shape has some irregular edges; Karen wants to redraw cleaner boundaries using natural borders (river to the west, Highway 586 to the south) before finalizing.</li><li>Discussed exporting the final combined shape and dropping it into ChatGPT to generate a written boundary description — same workflow Robert used previously.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Karen Garrett)</strong></p>\n<ul><li>Redraw the combined territory shape with cleaner, logical borders (river on the west, Highway 586 to the south) and merge with the existing combined shape in Marie's folder.</li><li>Once the final shape is clean, export it from SiteZeus and run it through ChatGPT to generate a written boundary description for the area development agreement.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>All three existing territory shapes will be merged into one single 'Combined' territory shape for Marie Millard's ADA.</li><li>Territory boundaries should follow natural/road borders — river to the west, Highway 586 to the south — rather than the irregular drawn lines from the original shapes.</li><li>Export + ChatGPT is the agreed method for generating a verbal boundary description.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T20:19:49.415Z"
+        },
+        {
+          "call_id": "2695329264893682990",
+          "call_name": "SiteZeus <> Golftec Meeting",
+          "team": "sales",
+          "prospect_name": "Chad Covak",
+          "prospect_email": "ccovak@golftec.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Chad — SiteZeus <> Golftec Meeting",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Chad</strong> (<a href=\"mailto:ccovak@golftec.com\">ccovak@golftec.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Golftec Meeting<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Chad,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of expanding from 220 to 500+ corporate-owned U.S. locations and the reality that the obvious markets are largely spoken for. With site selection currently driven by broker relationships and internal tenure, the challenge ahead is identifying where those next several hundred locations should go — with confidence — before committing to leases.</p>\n<p>SiteZeus would build a model using your revenue or membership data alongside site characteristics like simulator bay count and co-tenancy, layered with psychographic and mobile data to pinpoint the specific customer profile that drives performance at your top locations. That gives you a proactive development roadmap — prioritized markets, not just reactive scoring when a broker brings a deal — while preserving the judgment you and the founder have built over decades as a final check.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly addresses your need to proactively identify and prioritize the next 250+ corporate locations rather than relying solely on broker-sourced opportunities.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Relevant to your stated belief that GOLFTEC can support 500 locations — this would help frame how to systematically identify untapped markets across the U.S.</li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a> — You asked about how SiteZeus has worked with niche service brands; client stories would show comparable use cases and real outcomes.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T20:20:00.895Z"
+        },
+        {
+          "call_id": "5354632382172545262",
+          "call_name": "SiteZeus <> BaseCamp Meeting",
+          "team": "sales",
+          "prospect_name": "Tyler Gordon",
+          "prospect_email": "tyler@bcfranchise.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus <> BaseCamp Meeting",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Tyler</strong> (<a href=\"mailto:tyler@bcfranchise.com\">tyler@bcfranchise.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; BaseCamp Meeting<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of building a confident, data-backed territory mapping framework for both brands — one that iterates on specific markets first before deploying across the U.S. You were clear that your first-party data (sales performance, customer zip codes from in-store purchases) should actively inform the analysis, not sit on the sideline, and I want to confirm that is exactly how our process works. Your proprietary data helps us understand variable thresholds at your best and worst sites, and your customer zip code data will directly shape how we define defensible protected territory radii rather than relying on third-party mobile data alone.</p>\n<p>On the timeline, you can expect a 45–60 day onboarding given the two brands, with weekly or biweekly check-ins and iterative market-level sanity checks built in throughout. I also want to confirm I'm happy to review a plain-language summary email outlining your understanding of what's included — just send it over and I'll make sure everything is accurate.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Tyler to send a plain-language bullet-point summary email outlining his understanding of scope, inclusions, and exclusions for Lucas to review and confirm</li><li>Tyler to complete internal evaluation and decision between providers within the next few days</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Directly relevant to the white space and territory mapping framework Tyler wants to build across both brands before a full U.S. deployment.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Tyler specifically asked how first-party customer data and mobile data work together to define trade areas and territory boundaries.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T20:20:11.963Z"
+        },
+        {
+          "call_id": "4318228851138168015",
+          "call_name": "SiteZeus Locate <> WoofGang",
+          "team": "sales",
+          "prospect_name": "James Varnado",
+          "prospect_email": "jd@woofgangbg.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for James — SiteZeus Locate <> WoofGang",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>James</strong> (<a href=\"mailto:jd@woofgangbg.com\">jd@woofgangbg.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; WoofGang<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi James,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>You shared that your team is moving away from Calibrate/Trailblazer and needs a replacement that can handle custom map layers (store locations, approved real estate, trade zones built around a 25K population threshold), demographic reporting with customer profiling, and a regularly refreshed data feed pulled from your Airtable CSVs — essentially a single source of truth for your real estate and development workflow.</p>\n<p>Based on what you described, SiteZeus can cover all of that — full GIS and mapping customization, demographic reporting, competitor visibility, and we can set up an automated API pull from your Airtable on whatever cadence works for your team. I also want to make sure we show you how our predictive model compares to what you've been using, since we take a different approach and I think it's worth seeing side by side. Happy to put together a tailored demo focused specifically on the layer management, data integration, and reporting workflows you walked me through.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Schedule a tailored demo focused on custom map layers, Airtable CSV integration, and demographic reporting</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly covers the site evaluation, demographic reporting, and location scoring workflows Matt described as core needs.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Matt specifically mentioned customer profiling (currently using Mosaic from Experian) and matching demographics to existing store performance.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Matt discussed reviewing cannibalization on a site-by-site basis given their protected trade zones and market saturation goals.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T20:20:22.137Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782237613805",
       "timestamp": "2026-06-23T18:00:13.805Z",
       "window_start": "2026-06-23T10:00:13.805Z",
@@ -659,5 +755,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-23T18:00:41.600Z"
+  "last_updated": "2026-06-23T20:20:22.138Z"
 }

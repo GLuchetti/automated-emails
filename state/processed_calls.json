@@ -271,7 +271,37 @@
       "team": "support",
       "call_name": "SZ | 30 minute call - casey kwiecinski and Alan May",
       "processedAt": "2026-06-23T18:00:41.599Z"
+    },
+    "6758966379849830982": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "Quick Quack | SZ Bi weekly Sync",
+      "processedAt": "2026-06-23T20:19:38.035Z"
+    },
+    "2928792846762283717": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Karen Garrett and Aaron Bergland",
+      "processedAt": "2026-06-23T20:19:49.415Z"
+    },
+    "2695329264893682990": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Golftec Meeting",
+      "processedAt": "2026-06-23T20:20:00.895Z"
+    },
+    "5354632382172545262": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> BaseCamp Meeting",
+      "processedAt": "2026-06-23T20:20:11.963Z"
+    },
+    "4318228851138168015": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> WoofGang",
+      "processedAt": "2026-06-23T20:20:22.137Z"
     }
   },
-  "last_updated": "2026-06-23T18:00:13.805Z"
+  "last_updated": "2026-06-23T20:19:25.834Z"
 }
