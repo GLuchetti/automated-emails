@@ -1,6 +1,49 @@
 {
   "runs": [
     {
+      "id": "run-1782251847330",
+      "timestamp": "2026-06-23T21:57:27.330Z",
+      "window_start": "2026-06-23T13:57:27.330Z",
+      "window_end": "2026-06-23T21:57:27.330Z",
+      "calls_processed": [
+        {
+          "call_id": "9006198884215510248",
+          "call_name": "SiteZeus <> Neighborly Meeting",
+          "team": "sales",
+          "prospect_name": "Brad Robertson",
+          "prospect_email": "brad.robertson@nbly.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Brad — SiteZeus <> Neighborly Meeting",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Brad</strong> (<a href=\"mailto:brad.robertson@nbly.com\">brad.robertson@nbly.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Neighborly Meeting<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Brad,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed how Neighborly's franchise development team has been working with us to bring more science to territory design and prioritization — moving beyond simple household counts toward a more nuanced understanding of what actually drives franchisee success by trade area. On the marketing side, you raised good questions about the granularity and sourcing of the psychographic data, and we walked through how Spatial AI's Persona Live dataset differs from traditional mosaics by grounding segments in actual mobile visitation, online behavior, and transaction data rather than self-reported surveys.</p>\n<p>The Mr. Rooter and Molly Maid customer data we've already ingested showed some clear differences between Ohio and Texas in terms of which segments are engaging — that kind of visibility could be useful as your team thinks about lead quality, churn patterns, and where certain brands resonate versus where they don't. Happy to dig deeper into any of those angles with you.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Directly relevant to the psychographic segmentation walkthrough we did with Mr. Rooter and Molly Maid customer data, including the Ohio vs. Texas segment comparison you saw on the call.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Covers how franchise systems use trade area and customer data to inform development decisions — aligned with how Neighborly's franchise dev team is currently using the platform.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T21:57:40.678Z"
+        },
+        {
+          "call_id": "565275334216904514",
+          "call_name": "SZ | Just Salad Check in",
+          "team": "support",
+          "prospect_name": "Andrew Marsallo",
+          "prospect_email": "amarsallo@justsalad.com",
+          "email_to": [
+            "amarsallo@justsalad.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Andrew — SZ | Just Salad Check in",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Andrew</strong> (<a href=\"mailto:amarsallo@justsalad.com\">amarsallo@justsalad.com</a>).<br>\n<strong>Call:</strong> SZ | Just Salad Check in<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Andrew,</p>\n<p>Below is a summary of the action items discussed during SZ | Just Salad Check in.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Andrew is deep into customer segmentation work using Mosaic data, linking it to mobile data and their regression model — solid momentum on the analytics side.</li><li>Walked through the new SiteZeus platform (app.sitezeus.com) including customizable site views, shareable reports, AI chat agent, and the scorecard builder — Andrew's reaction was positive.</li><li>Scorecard demo used Andrew's actual top segments (Near Urban Diverse, Young Urban Singles) as criteria — good validation that the tool maps to how Salad and Go already thinks about site evaluation.</li><li>Andrew flagged two bugs: scorecard not saving scores correctly, and difficulty selecting multiple stores in the cannibalization/impact tool — both noted for follow-up.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Investigate and resolve scorecard scoring not saving correctly after creation.</li><li>Investigate and resolve the dropdown UX issue when selecting multiple stores in the impact/cannibalization tool.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>SiteZeus will begin pushing all users off the legacy platform and fully onto the new platform around September — current phase is a soft rollout for early adopters.</li><li>Andrew confirmed he is already using the new platform and will continue on it going forward.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T21:57:48.913Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782245965834",
       "timestamp": "2026-06-23T20:19:25.834Z",
       "window_start": "2026-06-23T12:19:25.834Z",
@@ -755,5 +798,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-23T20:20:22.138Z"
+  "last_updated": "2026-06-23T21:57:48.914Z"
 }
