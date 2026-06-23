@@ -259,7 +259,19 @@
       "team": "sales",
       "call_name": "SiteZeus Discussion <> AVG",
       "processedAt": "2026-06-23T15:51:49.402Z"
+    },
+    "305612186675443265": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "curtis braden - SiteZeus Meeting with Lucas",
+      "processedAt": "2026-06-23T18:00:28.835Z"
+    },
+    "991900060819761749": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 30 minute call - casey kwiecinski and Alan May",
+      "processedAt": "2026-06-23T18:00:41.599Z"
     }
   },
-  "last_updated": "2026-06-23T15:51:26.527Z"
+  "last_updated": "2026-06-23T18:00:13.805Z"
 }

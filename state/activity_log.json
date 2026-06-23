@@ -1,6 +1,49 @@
 {
   "runs": [
     {
+      "id": "run-1782237613805",
+      "timestamp": "2026-06-23T18:00:13.805Z",
+      "window_start": "2026-06-23T10:00:13.805Z",
+      "window_end": "2026-06-23T18:00:13.805Z",
+      "calls_processed": [
+        {
+          "call_id": "305612186675443265",
+          "call_name": "curtis braden - SiteZeus Meeting with Lucas",
+          "team": "sales",
+          "prospect_name": "Donnie Oliver",
+          "prospect_email": "donnie.oliver@ufcgym.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Donnie — curtis braden - SiteZeus Meeting with Lucas",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Donnie</strong> (<a href=\"mailto:donnie.oliver@ufcgym.com\">donnie.oliver@ufcgym.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> curtis braden - SiteZeus Meeting with Lucas<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Donnie,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of mapping out the entire US and Canada into defined territories for both your big-box UFC GYM concept and the upcoming jiu-jitsu studio model — and how your current toolset requires more manual input than you'd like as you scale toward those next 100 locations.</p>\n<p>For the existing portfolio, our machine learning model can generate territory recommendations, white space analysis, and site scoring quickly — you mentioned San Antonio as a good example of a market you'd want fully gridded out. For the jiu-jitsu concept, since it's a newer model without a large performance history, I'd recommend we explore our emerging brand approach using proxy data from brands like Gracie Jiu-Jitsu to build trade area scorecards and territory recommendations. I'd love to get a full hour on the calendar to walk through Atlas in detail and show you exactly how this would look for UFC GYM.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Schedule a full one-hour demo of SiteZeus Atlas to walk through territory planning, white space analysis, and the emerging brand approach for the jiu-jitsu concept — no date/time confirmed on the call</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Curtis specifically called out mapping the entire US and Canada to pre-grid markets like San Antonio before franchisee conversations begin.</li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Ryan highlighted the move away from manual processes toward AI-driven site selection as the core reason UFC GYM is evaluating SiteZeus over their current toolset.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Lucas mentioned running a proof of concept before onboarding — sharing this sets expectations for what that process looks like.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Curtis attended a recent SiteZeus webinar and referenced territory planning as the feature that stood out most — this reinforces that topic with more depth.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T18:00:28.835Z"
+        },
+        {
+          "call_id": "991900060819761749",
+          "call_name": "SZ | 30 minute call - casey kwiecinski and Alan May",
+          "team": "support",
+          "prospect_name": "Casey",
+          "prospect_email": "caseykwiecinski@playabowls.com",
+          "email_to": [
+            "caseykwiecinski@playabowls.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Casey — SZ | 30 minute call - casey kwiecinski and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Casey</strong> (<a href=\"mailto:caseykwiecinski@playabowls.com\">caseykwiecinski@playabowls.com</a>).<br>\n<strong>Call:</strong> SZ | 30 minute call - casey kwiecinski and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Casey,</p>\n<p>Below is a summary of the action items discussed during SZ | 30 minute call - casey kwiecinski and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Casey got a full walkthrough of the reporting wizard in both the legacy platform and the new app.sitezeus.com front end.</li><li>Quick Demo Site Pack and Savvy Site Pack identified as the best fit for sharing area overviews with shop owners — clean data without sales estimates that could be misused.</li><li>Casey confirmed the PDF reports (live links or downloadable) are exactly what she's looking for in the short term.</li><li>Reports can be run on any pinned site — existing locations, consideration sites, or trade area seeds — which covers Casey's full use case.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Send Casey the call recording.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Casey)</strong></p>\n<ul><li>Set up heatmap favorites (median age, rent, home value, household income, commute time, etc.) to align with the data she wants surfaced in the Savvy Site Pack reports.</li><li>Try out the Nearest Layers report to evaluate whether competitor/layer data is meaningful enough to include in shop-level reporting.</li><li>Explore app.sitezeus.com — note it is still actively in development and subject to bugs.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Quick Demo Site Pack and Savvy Site Pack are the go-forward report types for sharing area overviews with shop owners.</li><li>Reports with sales estimates (Xustimate, Site Pack, Nearest Sites) will not be used for owner-facing reporting.</li><li>Legacy platform is the primary tool for now; transition to app.sitezeus.com will come later.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T18:00:41.599Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782229886527",
       "timestamp": "2026-06-23T15:51:26.527Z",
       "window_start": "2026-06-23T07:51:26.527Z",
@@ -616,5 +659,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-23T15:51:49.403Z"
+  "last_updated": "2026-06-23T18:00:41.600Z"
 }
