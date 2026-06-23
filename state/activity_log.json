@@ -1,6 +1,31 @@
 {
   "runs": [
     {
+      "id": "run-1782256493069",
+      "timestamp": "2026-06-23T23:14:53.069Z",
+      "window_start": "2026-06-23T15:14:53.069Z",
+      "window_end": "2026-06-23T23:14:53.069Z",
+      "calls_processed": [
+        {
+          "call_id": "7337187356796401048",
+          "call_name": "Meeting with Devin SiteZeus - Vincent Ginatta and Devin Kelly",
+          "team": "support",
+          "prospect_name": "Vincent Ginatta",
+          "prospect_email": "vincent@breadzeppelin.com",
+          "email_to": [
+            "vincent@breadzeppelin.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Vincent — Meeting with Devin SiteZeus - Vincent Ginatta and Devin Kelly",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Vincent</strong> (<a href=\"mailto:vincent@breadzeppelin.com\">vincent@breadzeppelin.com</a>).<br>\n<strong>Call:</strong> Meeting with Devin SiteZeus - Vincent Ginatta and Devin Kelly<br><br>\nReview below, edit as needed, then send from <strong>dkelly@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Vincent,</p>\n<p>Below is a summary of the action items discussed during Meeting with Devin SiteZeus - Vincent Ginatta and Devin Kelly.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Vincent walked through how Bread Zeppelin uses SiteZeus — consumer spending data and restaurant trend estimates are their highest-value features, and they've signed 4–5 deals informed by the platform.</li><li>Walked through the new Zeus AI interface together, including the impact analytics tool showing ~9.5% cannibalization impact from The Colony on one new site and ~6.7% on another.</li><li>Vincent is building an internal data warehouse and wants to pull SiteZeus data programmatically — API access is on the roadmap and would be a meaningful win for their workflow.</li><li>Mobile data accuracy and suite-level precision were discussed; Vincent has real questions about capture reliability for small-footprint, high-turnover locations like Frisco.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Devin Kelly)</strong></p>\n<ul><li>Confirm with Olivia: how often does restaurant trends data refresh, and is it auto-refreshed in the platform or does the customer need to request it?</li><li>Request mobile data for the Beltline site so Vincent can compare trade area overlap with Las Colinas.</li><li>Send Vincent the new platform URL (app.sitezeus.com) via email.</li><li>Follow up on API availability timeline and share any updates with Vincent.</li></ul>\n<p>Best,<br>Devin Kelly</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T23:15:05.276Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782251847330",
       "timestamp": "2026-06-23T21:57:27.330Z",
       "window_start": "2026-06-23T13:57:27.330Z",
@@ -798,5 +823,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-23T21:57:48.914Z"
+  "last_updated": "2026-06-23T23:15:05.278Z"
 }
