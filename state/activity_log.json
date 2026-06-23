@@ -1,6 +1,49 @@
 {
   "runs": [
     {
+      "id": "run-1782229886527",
+      "timestamp": "2026-06-23T15:51:26.527Z",
+      "window_start": "2026-06-23T07:51:26.527Z",
+      "window_end": "2026-06-23T15:51:26.527Z",
+      "calls_processed": [
+        {
+          "call_id": "7100183006288528790",
+          "call_name": "Meeting with Devin SiteZeus - Chris Jenkins and Devin Kelly",
+          "team": "support",
+          "prospect_name": "Chris Jenkins",
+          "prospect_email": "chris.jenkins@movementgyms.com",
+          "email_to": [
+            "chris.jenkins@movementgyms.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Chris — Meeting with Devin SiteZeus - Chris Jenkins and Devin Kelly",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Chris</strong> (<a href=\"mailto:chris.jenkins@movementgyms.com\">chris.jenkins@movementgyms.com</a>).<br>\n<strong>Call:</strong> Meeting with Devin SiteZeus - Chris Jenkins and Devin Kelly<br><br>\nReview below, edit as needed, then send from <strong>dkelly@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Chris,</p>\n<p>Below is a summary of the action items discussed during Meeting with Devin SiteZeus - Chris Jenkins and Devin Kelly.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked Chris through the new SiteZeus platform, including the scorecard builder — he confirmed the updated scorecard criteria (including Educated Urbanites) looks correct and aligns with the latest template.</li><li>Scorecard will live natively in the platform with full demographic breakdowns per site — no more exporting to Excel.</li><li>Discussed the value of building multiple scorecards (e.g., one tuned for urban markets, one for suburban) to address the known limitation where a single scoring model doesn't fit all gym types.</li><li>Chris is close to signing a lease near Portland, OR — that site is already in the platform from prior work on the old project.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Devin Kelly)</strong></p>\n<ul><li>Finish building the scorecard in the new platform with the correct metrics and weights — target end of day today.</li><li>Send Chris an email recap with the new platform login URL and the existing Excel scorecard template so he can validate the build.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Use 20-minute drive time (not mile radius) as the geography setting for scoring.</li><li>Start with one scorecard mirroring the updated Excel template, with the option to build additional scorecards for different market types afterward.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Devin to complete the scorecard build and send login details to Chris by end of day.</li></ul>\n<p>Best,<br>Devin Kelly</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T15:51:37.248Z"
+        },
+        {
+          "call_id": "3881634765092808826",
+          "call_name": "SiteZeus Discussion <> AVG",
+          "team": "sales",
+          "prospect_name": "Craig Niebur",
+          "prospect_email": "cniebur@americanveterinarygroup.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Craig — SiteZeus Discussion <> AVG",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Craig</strong> (<a href=\"mailto:cniebur@americanveterinarygroup.com\">cniebur@americanveterinarygroup.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Discussion &lt;&gt; AVG<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Craig,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your team's current site selection workflow with Buxton and the specific gaps you're running into — particularly around larger, more urban MSAs, demographic variability, and the absence of built-in AI to pull in additional data types and make deeper extrapolations from your operational data.</p>\n<p>Given that your Buxton contract runs through January, I'd like to put together a stripped-down, site-selection-focused proposal at an aggressive price point — essentially spreading a shorter commitment across a 12-month term — so you can run SiteZeus in parallel and build real laps of comparison before you're at a renewal decision. I'll work up the numbers and get something over to you that reflects exactly what we talked about: no marketing add-ons, just the core site selection capability. If it performs the way I expect it to, we'll have a straightforward conversation early next year about going all in.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Ian to draft a stripped-down, site-selection-only pricing proposal and send to Craig and Jim for review</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">SiteZeus Locate — Site Selection</a> — Directly addresses the core use case discussed — improving forecast accuracy in urban MSAs and demographically diverse markets where Buxton's current model is falling short.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — The parallel-run approach Ian proposed is essentially a live proof of concept alongside Buxton through January renewal.</li></ul>\n<p>Thanks,<br>Ian Walsh</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-23T15:51:49.402Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782165959076",
       "timestamp": "2026-06-22T22:05:59.076Z",
       "window_start": "2026-06-22T14:05:59.076Z",
@@ -573,5 +616,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-22T22:06:12.728Z"
+  "last_updated": "2026-06-23T15:51:49.403Z"
 }
