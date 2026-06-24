@@ -1,6 +1,39 @@
 {
   "runs": [
     {
+      "id": "run-1782324518760",
+      "timestamp": "2026-06-24T18:08:38.760Z",
+      "window_start": "2026-06-24T10:08:38.760Z",
+      "window_end": "2026-06-24T18:08:38.760Z",
+      "calls_processed": [
+        {
+          "call_id": "839883930028761937",
+          "call_name": "Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
+          "team": "support",
+          "prospect_name": "Zander Rhine",
+          "prospect_email": "zrhine@ruralking.com",
+          "email_to": [
+            "zrhine@ruralking.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Zander — Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Zander</strong> (<a href=\"mailto:zrhine@ruralking.com\">zrhine@ruralking.com</a>).<br>\n<strong>Call:</strong> Bi-Weekly Recuring Meeting: Rural King | SiteZeus<br><br>\nReview below, edit as needed, then send from <strong>sryan@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Zander,</p>\n<p>Below is a summary of the action items discussed during Bi-Weekly Recuring Meeting: Rural King | SiteZeus.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Zander confirmed SiteZeus impact study methodology aligns with how Rural King calculates cannibalization internally — good validation that we're on the same page.</li><li>Identified point 0.075 as the optimal cannibalization threshold for Rural King, minimizing global average error across all five store pair examples provided.</li><li>Walked Zander through the new SiteZeus front end (beta) — he responded positively, especially to the multi-panel workspace and customizable prompt/metric tiles.</li><li>Tapestry segmentation pricing question was raised and will be followed up via email.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Zander Rhine)</strong></p>\n<ul><li>Review the impact study analysis doc Sean is sending over — flag anything that looks off with the ground truth data or error results, then give a go/no-go to implement the 0.075 threshold in the platform.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Sean Ryan)</strong></p>\n<ul><li>Send Zander the full impact study analysis doc.</li><li>Send Zander the webinar recording covering the new front end.</li><li>Grant Zander access to the new front end beta so he can start exploring.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Send Zander pricing details for the Tapestry segmentation add-on.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Point 0.075 identified as the optimal cannibalization threshold for Rural King based on minimizing global average error across provided store pair examples.</li><li>Threshold will be made configurable in the platform via a pending release before being set for Rural King's project.</li></ul>\n<p>Best,<br>Sean Ryan</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-24T18:08:52.107Z"
+        },
+        {
+          "call_id": "5826747411570526610",
+          "call_name": "SiteZeus Locate <> Wings & Rings",
+          "team": "sales",
+          "status": "waiting",
+          "error": "Waiting on Gong transcript (2.9h since call) — will retry",
+          "timestamp": "2026-06-24T18:08:52.107Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782316960618",
       "timestamp": "2026-06-24T16:02:40.618Z",
       "window_start": "2026-06-24T08:02:40.618Z",
@@ -847,5 +880,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-24T16:02:43.662Z"
+  "last_updated": "2026-06-24T18:08:52.109Z"
 }
