@@ -1,6 +1,22 @@
 {
   "runs": [
     {
+      "id": "run-1782337610895",
+      "timestamp": "2026-06-24T21:46:50.895Z",
+      "window_start": "2026-06-24T13:46:50.895Z",
+      "window_end": "2026-06-24T21:46:50.895Z",
+      "calls_processed": [
+        {
+          "call_id": "5826747411570526610",
+          "call_name": "SiteZeus Locate <> Wings & Rings",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-24T21:46:52.126Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782331794509",
       "timestamp": "2026-06-24T20:09:54.509Z",
       "window_start": "2026-06-24T12:09:54.509Z",
@@ -913,5 +929,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-24T20:10:06.219Z"
+  "last_updated": "2026-06-24T21:46:52.128Z"
 }
