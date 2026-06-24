@@ -1,6 +1,30 @@
 {
   "runs": [
     {
+      "id": "run-1782316960618",
+      "timestamp": "2026-06-24T16:02:40.618Z",
+      "window_start": "2026-06-24T08:02:40.618Z",
+      "window_end": "2026-06-24T16:02:40.618Z",
+      "calls_processed": [
+        {
+          "call_id": "5704065888636763395",
+          "call_name": "15 Minute Meeting - Aaron | SiteZeus - RONI LAMBRECHT and Aaron Bergland",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-24T16:02:43.659Z"
+        },
+        {
+          "call_id": "5826747411570526610",
+          "call_name": "SiteZeus Locate <> Wings & Rings",
+          "team": "sales",
+          "status": "waiting",
+          "error": "Waiting on Gong transcript (0.8h since call) — will retry",
+          "timestamp": "2026-06-24T16:02:43.660Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782256493069",
       "timestamp": "2026-06-23T23:14:53.069Z",
       "window_start": "2026-06-23T15:14:53.069Z",
@@ -823,5 +847,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-23T23:15:05.278Z"
+  "last_updated": "2026-06-24T16:02:43.662Z"
 }
