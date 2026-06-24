@@ -1,68 +1,5 @@
 {
   "calls": {
-    "4363043437679942715": {
-      "status": "no_contact",
-      "team": "support",
-      "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
-      "processedAt": "2026-06-17T18:09:02.349Z"
-    },
-    "8934107884379299587": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
-      "processedAt": "2026-06-17T18:09:39.904Z"
-    },
-    "2702924297772586887": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Discussion <> CSL Plasma",
-      "processedAt": "2026-06-17T18:09:49.321Z"
-    },
-    "1567582440526623903": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Locate <> Legends",
-      "processedAt": "2026-06-17T18:10:14.413Z"
-    },
-    "7034743607773554787": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Introduction <> Ajay Kale",
-      "processedAt": "2026-06-17T18:10:23.908Z"
-    },
-    "2287194055141551045": {
-      "status": "skipped_untracked",
-      "call_name": "Pizza Hut - SZ | Weekly",
-      "processedAt": "2026-06-17T18:09:49.321Z"
-    },
-    "5416766811805114499": {
-      "status": "skipped_untracked",
-      "call_name": "SiteZeus | 30 Minutes - Trevor Brown and Sean Ryan",
-      "processedAt": "2026-06-17T18:10:23.908Z"
-    },
-    "1049832838890458528": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Demo <> Kiddie Academy",
-      "processedAt": "2026-06-17T18:11:07.483Z"
-    },
-    "2335130009533157028": {
-      "status": "skipped_untracked",
-      "call_name": "SiteZeus | 30 Minutes - Claire van Staden and Sean Ryan",
-      "processedAt": "2026-06-17T18:11:07.483Z"
-    },
-    "8362248912792284640": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "SZ | Craveworthy Weekly Sync",
-      "processedAt": "2026-06-17T18:08:50.878Z"
-    },
-    "8458015893943509536": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Locate <> Millies",
-      "processedAt": "2026-06-17T18:09:02.348Z"
-    },
     "3357718381464005470": {
       "status": "dashboard",
       "team": "sales",
@@ -299,7 +236,23 @@
       "team": "support",
       "call_name": "Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
       "processedAt": "2026-06-24T18:08:52.107Z"
+    },
+    "4745088856917966537": {
+      "status": "skipped_untracked",
+      "call_name": "DQ NEXT Reporting & Review",
+      "processedAt": "2026-06-24T20:09:56.647Z"
+    },
+    "5163993051744677498": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | 30 Minutes - Alex DeLoach and Sean Ryan",
+      "processedAt": "2026-06-24T20:09:56.647Z"
+    },
+    "1344732915236290756": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+      "processedAt": "2026-06-24T20:10:06.217Z"
     }
   },
-  "last_updated": "2026-06-24T18:08:38.760Z"
+  "last_updated": "2026-06-24T20:09:54.509Z"
 }

@@ -1,6 +1,39 @@
 {
   "runs": [
     {
+      "id": "run-1782331794509",
+      "timestamp": "2026-06-24T20:09:54.509Z",
+      "window_start": "2026-06-24T12:09:54.509Z",
+      "window_end": "2026-06-24T20:09:54.509Z",
+      "calls_processed": [
+        {
+          "call_id": "1344732915236290756",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Nick",
+          "prospect_email": "nick@iron24.com",
+          "email_to": [
+            "nick@iron24.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Nick — 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Nick</strong> (<a href=\"mailto:nick@iron24.com\">nick@iron24.com</a>).<br>\n<strong>Call:</strong> 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Nick,</p>\n<p>Below is a summary of the action items discussed during 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Customer data is uploaded and processing well — match rates are solid (398 families, 34 unmatched records) and the ultra-wealthy family segment is indexing strongly, especially in the Pittsburgh/Bethel Park market.</li><li>Ultra-wealthy families confirmed as a key segment to keep in the scorecard; white space analysis will assess each location individually.</li><li>Identified a data issue where fitness-only and fitness-and-recovery spend categories aren't populating correctly — likely tied to blank fields in the upload from the ABC billing system disconnect.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Nick)</strong></p>\n<ul><li>Create a stripped-down test upload using only the first five columns (no address, state, or zip) to see if removing blank fields resolves the spend category issue.</li><li>Send Aaron a screenshot of the spend category columns from the current Excel file.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron)</strong></p>\n<ul><li>Bring the spend category display issue to the internal team for review — specifically whether blank fields need to be filled with zeros.</li><li>Check upload instructions to confirm whether blank columns require placeholder values.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Ultra-wealthy families will remain in the scorecard based on strong indexing in the Pittsburgh market.</li><li>White space analysis will be done on a per-location basis rather than rolled up.</li><li>Fitness and fitness-and-recovery are the only spend categories that matter — all others can be ignored.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-24T20:10:06.217Z"
+        },
+        {
+          "call_id": "5826747411570526610",
+          "call_name": "SiteZeus Locate <> Wings & Rings",
+          "team": "sales",
+          "status": "waiting",
+          "error": "Waiting on Gong transcript (4.9h since call) — will retry",
+          "timestamp": "2026-06-24T20:10:06.217Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782324518760",
       "timestamp": "2026-06-24T18:08:38.760Z",
       "window_start": "2026-06-24T10:08:38.760Z",
@@ -880,5 +913,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-24T18:08:52.109Z"
+  "last_updated": "2026-06-24T20:10:06.219Z"
 }
