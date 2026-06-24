@@ -1,11 +1,5 @@
 {
   "calls": {
-    "5446044170591182014": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Model Review - SiteZeus | Parlor Doughnuts",
-      "processedAt": "2026-06-17T22:59:33.128Z"
-    },
     "6387876221681181721": {
       "status": "no_contact",
       "team": "support",
@@ -247,5 +241,5 @@
       "processedAt": "2026-06-24T21:46:52.126Z"
     }
   },
-  "last_updated": "2026-06-24T21:46:50.895Z"
+  "last_updated": "2026-06-24T23:06:37.137Z"
 }
