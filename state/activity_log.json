@@ -1,6 +1,88 @@
 {
   "runs": [
     {
+      "id": "run-1782415793936",
+      "timestamp": "2026-06-25T19:29:53.936Z",
+      "window_start": "2026-06-25T11:29:53.936Z",
+      "window_end": "2026-06-25T19:29:53.936Z",
+      "calls_processed": [
+        {
+          "call_id": "2230564480587710271",
+          "call_name": "SiteZeus <> Tilly's Co.",
+          "team": "sales",
+          "prospect_name": "Efren Medellin",
+          "prospect_email": "emedellin@tillys.com",
+          "rep_name": "Ayden Benton",
+          "rep_email": "abenton@sitezeus.com",
+          "email_to": [
+            "abenton@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Efren — SiteZeus <> Tilly's Co.",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Efren</strong> (<a href=\"mailto:emedellin@tillys.com\">emedellin@tillys.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Tilly's Co.<br><br>\nReview below, edit as needed, then send from <strong>abenton@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Efren,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed how Tilly's is shifting back toward deliberate new store growth — roughly four to five openings this year — after a period of closing underperforming locations. With a small internal team, a scrutinizing real estate committee, and a niche customer that doesn't map cleanly onto standard demographic profiles, every site decision carries real weight.</p>\n<p>What stood out to me was your point about two malls looking identical on paper but performing very differently — that's exactly the gap our machine learning and psychographic data layers are built to address. Rather than a regression model with manually assigned weights, SiteZeus builds a model specific to your portfolio to surface why certain locations outperform others. I'd love to put together a focused demo so you can see how that would look against Tilly's actual footprint.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Schedule a platform demo — no specific date confirmed on the call; Lucas to follow up with available times</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Efren described difficulty predicting off-mall volumes and distinguishing between two similar-looking mall locations — this speaks directly to how the machine learning model identifies nuanced performance drivers across a portfolio.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Efren emphasized that Tilly's serves a niche customer and that standard demographics aren't enough — psychographic and consumer data layers were specifically discussed as a way to differentiate viable sites.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Efren mentioned a state where Tilly's has only one store despite it being among their highest-profitability markets, making untapped market identification a clear near-term use case.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T19:30:08.494Z"
+        },
+        {
+          "call_id": "1928834310163982985",
+          "call_name": "SZ | 60 minute call - Madison Belfour and Alan May",
+          "team": "support",
+          "prospect_name": "Madison Belfour",
+          "prospect_email": "madison.belfour@tintworld.com",
+          "email_to": [
+            "madison.belfour@tintworld.com",
+            "christy.johnson@tintworld.com",
+            "lona.sausman@tintworld.com",
+            "addison.goldin@tintworld.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Madison — SZ | 60 minute call - Madison Belfour and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Madison</strong> (<a href=\"mailto:madison.belfour@tintworld.com\">madison.belfour@tintworld.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Madison Belfour and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Madison,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Madison Belfour and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Christy and Lona are new to SiteZeus — this was a foundational orientation call covering the predictive model, layer functionality, and competitor search tools.</li><li>Lona's Placer.ai background gave us a good baseline; she's now aware SiteZeus has comparable foot traffic data available as an add-on subscription.</li><li>Christy provided strong context: the team is focused on understanding customers, geographies, and market dynamics to support new store growth — SiteZeus Locate and Market are well-aligned to those goals.</li><li>Agreed that semi-annual model updates are the right cadence going forward, balancing accuracy with model stability.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Lona Sausman)</strong></p>\n<ul><li>Email Alan with any additional competitor or anchor brands to add as layers (up to 17 more slots available).</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Model updates will move to a semi-annual cadence rather than annual, with the next refresh targeting either September or early 2026 once full-year sales are finalized.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T19:30:16.961Z"
+        },
+        {
+          "call_id": "7651282691745982799",
+          "call_name": "SiteZeus Locate <> Piggly Wiggly",
+          "team": "sales",
+          "prospect_name": "misken@shopthepig.com",
+          "prospect_email": "misken@shopthepig.com",
+          "rep_name": "Ayden Benton",
+          "rep_email": "abenton@sitezeus.com",
+          "email_to": [
+            "abenton@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for misken@shopthepig.com — SiteZeus Locate <> Piggly Wiggly",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>misken@shopthepig.com</strong> (<a href=\"mailto:misken@shopthepig.com\">misken@shopthepig.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Piggly Wiggly<br><br>\nReview below, edit as needed, then send from <strong>abenton@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi misken@shopthepig.com,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed how many grocery retailers rely on gravity forecasting for site selection, which works at a surface level but falls short when store sizes are uniform — it simply can't account for the optimization needed to protect margin. As you're evaluating new locations, that gap can be costly: we shared how a former partner was doing $60M in buildouts but only generating $30M in annual revenue, with profit margins of just 1–2%, meaning a 15–30 year payback period.</p>\n<p>We ran a proof of concept with them that demonstrated which stores they should not open — and that's what drove their decision to move forward with our model alongside gravity forecasting. I'd love to show you something similar for Piggly Wiggly Super Markets when the timing is right.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Ayden will attempt to reschedule this meeting directly with you</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — We specifically discussed how a POC helped a grocery retailer validate which locations to avoid before committing to costly buildouts — directly relevant to Piggly Wiggly's evaluation process.</li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a> — The Wegmans use case came up on the call as a real example of grocery-specific results; a customer story could reinforce that proof point for your team.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T19:30:27.749Z"
+        },
+        {
+          "call_id": "266303777989248595",
+          "call_name": "SiteZeus <> Basecamp Meeting",
+          "team": "sales",
+          "prospect_name": "Tyler Gordon",
+          "prospect_email": "tyler@bcfranchise.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus <> Basecamp Meeting",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Tyler</strong> (<a href=\"mailto:tyler@bcfranchise.com\">tyler@bcfranchise.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Basecamp Meeting<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We covered the final contract updates, and it sounds like the revised PandaDoc reflects everything we aligned on — including the cannibalization analysis added as a line item. Once you've had a chance to print and review it, you should be in good shape to execute.</p>\n<p>On the payment side, I'll make sure both you and Craig Smith (CFO) are copied when the invoice goes out so nothing slips through the cracks. And as soon as we're executed, I'll loop in our onboarding team to get initial kickoff times over to you. Looking forward to getting BaseCamp Franchising up and running — and once this phase is settled, I'm excited to explore the lease data and more predictive capabilities with you.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Tyler to review the revised PandaDoc contract and execute (planned for this afternoon)</li><li>Lucas to ensure Tyler and CFO Craig Smith are both included on the invoice/payment communication</li><li>Lucas to coordinate with the onboarding team and send Tyler proposed kickoff dates upon contract execution</li><li>Future conversation to explore lease information and predictive solution (Zeus AI) once onboarding is underway</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — The cannibalization analysis was a specific ask Tyler confirmed is now included as a line item in the contract.</li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Tyler explicitly mentioned wanting to spend more time on the predictive solution as a next phase after onboarding.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T19:30:37.515Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782408619161",
       "timestamp": "2026-06-25T17:30:19.161Z",
       "window_start": "2026-06-25T09:30:19.161Z",
@@ -962,5 +1044,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-25T17:30:32.621Z"
+  "last_updated": "2026-06-25T19:30:37.516Z"
 }
