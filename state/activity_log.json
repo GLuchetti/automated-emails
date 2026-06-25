@@ -1,6 +1,51 @@
 {
   "runs": [
     {
+      "id": "run-1782422133370",
+      "timestamp": "2026-06-25T21:15:33.370Z",
+      "window_start": "2026-06-25T13:15:33.370Z",
+      "window_end": "2026-06-25T21:15:33.370Z",
+      "calls_processed": [
+        {
+          "call_id": "4805739296913335830",
+          "call_name": "SiteZeus <> Heirloom Hospitality Reconnect",
+          "team": "sales",
+          "prospect_name": "Jeremy Sasson",
+          "prospect_email": "jeremy@heirloomhospitality.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Jeremy — SiteZeus <> Heirloom Hospitality Reconnect",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Jeremy</strong> (<a href=\"mailto:jeremy@heirloomhospitality.com\">jeremy@heirloomhospitality.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Heirloom Hospitality Reconnect<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Jeremy,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of building out a clear white space for your brand and using data to guide your brokerage conversations — without having to be the one constantly digging for it. You were direct that if SiteZeus requires you to proactively pull insights rather than having them pushed to you, it won't fit how you operate right now.</p>\n<p>Here is where we landed: the white space build and your custom scorecard are set up once on our end, and the AI chat functionality lets you evaluate any site quickly with pre-built prompts — minimal lift on your side. The one gap you identified — having top-scoring listings pushed to you automatically as they hit the market — is something our team is actively working toward but does not exist today. I want to connect you with a reference who can speak to how they actually use the platform week to week, and I will also confirm a clearer timeline on that push-listings functionality from our product team.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Emma to connect Jeremy with a restaurant-brand reference (preferably a chief development officer or equivalent) who can speak to weekly platform usage and ROI</li><li>Emma to follow up with SiteZeus product team on timeline for push notifications tied to new real estate listings scored against a custom scorecard</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Jeremy will undergo an exhaustive one-time white space build — this guide directly supports understanding that process and what goes into it.</li><li><a href=\"https://sitezeus.com/customer-stories\" style=\"color:#1a73e8;\">Customer Stories</a> — Jeremy explicitly asked to speak with a reference client; a relevant customer story could support that conversation or serve as a bridge until a live reference is arranged.</li><li><a href=\"https://sitezeus.com/blog/restaurant-expansion-planning\" style=\"color:#1a73e8;\">Restaurant Expansion Planning</a> — Jeremy is actively mapping top markets for his first brand and thinking through a phased, data-informed growth strategy — this resource aligns directly with that stage.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T21:15:48.397Z"
+        },
+        {
+          "call_id": "5571780535071364515",
+          "call_name": "30 Minute Meeting - Aaron & Olivia | SiteZeus - Breck DeHart and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Sam",
+          "prospect_email": "samz@twocp.com",
+          "email_to": [
+            "samz@twocp.com",
+            "richard@twocppe.com",
+            "breck@twocppe.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Sam — 30 Minute Meeting - Aaron & Olivia | SiteZeus - Breck DeHart and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Sam</strong> (<a href=\"mailto:samz@twocp.com\">samz@twocp.com</a>).<br>\n<strong>Call:</strong> 30 Minute Meeting - Aaron &amp; Olivia | SiteZeus - Breck DeHart and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>obolton@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Sam,</p>\n<p>Below is a summary of the action items discussed during 30 Minute Meeting - Aaron &amp; Olivia | SiteZeus - Breck DeHart and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Richard successfully logged into Zeus AI and got a live walkthrough of the new platform — his reaction was genuinely enthusiastic.</li><li>Covered key new features: customizable workspaces, advanced site filtering/tagging, pin pop-up controls, halo/text label overlays, traffic visualization, Site Sonar saved runs, and scorecard functionality.</li><li>Confirmed Richard's workflow is compatible with the new platform — he rarely uses heat maps and has never used territories, so neither missing feature is a blocker for him.</li><li>Old platform will be deprecated before end of year; territory shape editing and full heat map are the two remaining gaps, with territory management prioritized for enterprise clients.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Richard)</strong></p>\n<ul><li>Watch the Zeus AI walkthrough webinar (link previously shared) when time allows.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Follow up on getting updated sales data submitted so the model can be rebuilt on the 2025 project — current version may stop working after the 18th.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Richard's team will transition fully to Zeus AI — no blockers identified given their current workflow.</li><li>Old SiteZeus platform will remain available for territory shape editing in the interim until that feature is live in Zeus AI.</li></ul>\n<p>Best,<br>Olivia Bolton</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T21:15:57.499Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782415793936",
       "timestamp": "2026-06-25T19:29:53.936Z",
       "window_start": "2026-06-25T11:29:53.936Z",
@@ -1044,5 +1089,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-25T19:30:37.516Z"
+  "last_updated": "2026-06-25T21:15:57.501Z"
 }
