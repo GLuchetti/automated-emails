@@ -1,6 +1,39 @@
 {
   "runs": [
     {
+      "id": "run-1782408619161",
+      "timestamp": "2026-06-25T17:30:19.161Z",
+      "window_start": "2026-06-25T09:30:19.161Z",
+      "window_end": "2026-06-25T17:30:19.161Z",
+      "calls_processed": [
+        {
+          "call_id": "836801667442002025",
+          "call_name": "SZ | 30 minute call - Haley Diaz and Alan May",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-25T17:30:22.055Z"
+        },
+        {
+          "call_id": "2147631158727653934",
+          "call_name": "SiteZeus - Aaron & Olivia - Sage  Kriss and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Sage Kriss",
+          "prospect_email": "skriss@parisbaguette.com",
+          "email_to": [
+            "skriss@parisbaguette.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Sage — SiteZeus - Aaron & Olivia - Sage  Kriss and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Sage</strong> (<a href=\"mailto:skriss@parisbaguette.com\">skriss@parisbaguette.com</a>).<br>\n<strong>Call:</strong> SiteZeus - Aaron &amp; Olivia - Sage  Kriss and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>obolton@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Sage,</p>\n<p>Below is a summary of the action items discussed during SiteZeus - Aaron &amp; Olivia - Sage  Kriss and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Sage confirmed her team relies heavily on territory/folder management daily — this is the #1 missing feature blocking full adoption of the new app.</li><li>Sage provided two strong product feedback items: driving distance/time between pins and an undo button for shape editing, both well-received by the SiteZeus team.</li><li>Confirmed the old and new platforms are currently synced — edits made in the old app will appear in the new one, so Sage can use both in tandem in the meantime.</li><li>Territory editing parity is now the clear development priority, with Olivia expecting it to land in a couple of weeks.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Re-send the Zeus AI webinar recording link and new app URL to Sage and the full team.</li><li>Include office hours info in that email and ask the team to watch the video before attending.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Olivia Bolton)</strong></p>\n<ul><li>Confirm Sage's territories are loading correctly in the new app and follow up.</li><li>Champion territory editing as the next development priority — confirm timeline of ~2 weeks with the product team.</li><li>Log Sage's feature requests: (1) driving distance/time between two pins with time-of-day controls, (2) undo button for shape actions, (3) clearer delete confirmation with a map preview of affected shapes.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Sage's team will continue using the old platform for territory editing until parity is reached in the new app.</li><li>Territory editing is confirmed as the top missing feature — heat maps are secondary.</li></ul>\n<p>Best,<br>Olivia Bolton</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-25T17:30:32.607Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782337610895",
       "timestamp": "2026-06-24T21:46:50.895Z",
       "window_start": "2026-06-24T13:46:50.895Z",
@@ -929,5 +962,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-24T21:46:52.128Z"
+  "last_updated": "2026-06-25T17:30:32.621Z"
 }

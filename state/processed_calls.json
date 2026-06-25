@@ -1,33 +1,5 @@
 {
   "calls": {
-    "6387876221681181721": {
-      "status": "no_contact",
-      "team": "support",
-      "call_name": "Daily Sync - SiteZeus | Fresh Kitchen",
-      "processedAt": "2026-06-18T16:38:54.971Z"
-    },
-    "2438852173087200753": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus <> Southpaw",
-      "processedAt": "2026-06-18T16:39:06.563Z"
-    },
-    "7746757143878303592": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
-      "processedAt": "2026-06-18T16:39:18.401Z"
-    },
-    "7961331500363284726": {
-      "status": "skipped_untracked",
-      "call_name": "Finance L10",
-      "processedAt": "2026-06-18T16:39:18.401Z"
-    },
-    "4143588753974995564": {
-      "status": "skipped_untracked",
-      "call_name": "SiteZeus | Minnie Bird - Development Timeline Review",
-      "processedAt": "2026-06-18T16:39:18.401Z"
-    },
     "5743255467593970072": {
       "status": "dashboard",
       "team": "support",
@@ -239,7 +211,24 @@
       "team": "sales",
       "call_name": "SiteZeus Locate <> Wings & Rings",
       "processedAt": "2026-06-24T21:46:52.126Z"
+    },
+    "1612110993169985273": {
+      "status": "skipped_untracked",
+      "call_name": "Finance L10",
+      "processedAt": "2026-06-25T17:30:22.054Z"
+    },
+    "836801667442002025": {
+      "status": "no_contact",
+      "team": "support",
+      "call_name": "SZ | 30 minute call - Haley Diaz and Alan May",
+      "processedAt": "2026-06-25T17:30:22.055Z"
+    },
+    "2147631158727653934": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SiteZeus - Aaron & Olivia - Sage  Kriss and Aaron Bergland",
+      "processedAt": "2026-06-25T17:30:32.607Z"
     }
   },
-  "last_updated": "2026-06-25T15:15:35.231Z"
+  "last_updated": "2026-06-25T17:30:19.161Z"
 }
