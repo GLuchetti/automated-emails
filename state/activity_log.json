@@ -1,6 +1,32 @@
 {
   "runs": [
     {
+      "id": "run-1782513971984",
+      "timestamp": "2026-06-26T22:46:11.984Z",
+      "window_start": "2026-06-26T14:46:11.984Z",
+      "window_end": "2026-06-26T22:46:11.984Z",
+      "calls_processed": [
+        {
+          "call_id": "3010292955010465128",
+          "call_name": "SiteZeus <> Neighborly Meeting - Updated Analysis",
+          "team": "sales",
+          "prospect_name": "Emily Gist",
+          "prospect_email": "emily.gist@nbly.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Emily — SiteZeus <> Neighborly Meeting - Updated Analysis",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Emily</strong> (<a href=\"mailto:emily.gist@nbly.com\">emily.gist@nbly.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Neighborly Meeting - Updated Analysis<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Emily,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We covered a lot of ground today working through the refined territory analysis — focusing on locations three years or older and excluding the lower-volume outliers — and how those adjustments brought the median territory performance up to around $1.4M. That cleanup should give the model a much cleaner signal heading into the full meeting with Mike.</p>\n<p>The Customer Insights piece felt like one of the more compelling angles, especially the finding that blue collar suburbs over-index consistently across both Ohio and Texas. Your question about whether that's being driven by one state versus the other was a great one, and the state-level split confirmed it holds in both markets. The conversation around emergency versus larger-scale jobs as a potential next layer of segmentation is worth keeping in mind as we sharpen the story for Mike.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Directly supports the customer segmentation analysis we walked through today, including the blue collar suburbs over-index finding across Ohio and Texas.</li></ul>\n<p>Thanks,<br>Sean Ryan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T22:46:23.704Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782503581176",
       "timestamp": "2026-06-26T19:53:01.176Z",
       "window_start": "2026-06-26T11:53:01.176Z",
@@ -1233,5 +1259,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-26T19:53:24.350Z"
+  "last_updated": "2026-06-26T22:46:23.706Z"
 }

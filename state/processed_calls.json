@@ -279,7 +279,13 @@
       "status": "skipped_untracked",
       "call_name": "30 Minute Meeting - Katherine Payne and Olivia Bolton",
       "processedAt": "2026-06-26T21:21:58.203Z"
+    },
+    "3010292955010465128": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Neighborly Meeting - Updated Analysis",
+      "processedAt": "2026-06-26T22:46:23.704Z"
     }
   },
-  "last_updated": "2026-06-26T21:21:55.564Z"
+  "last_updated": "2026-06-26T22:46:11.984Z"
 }
