@@ -1,6 +1,40 @@
 {
   "runs": [
     {
+      "id": "run-1782489362215",
+      "timestamp": "2026-06-26T15:56:02.215Z",
+      "window_start": "2026-06-26T07:56:02.215Z",
+      "window_end": "2026-06-26T15:56:02.215Z",
+      "calls_processed": [
+        {
+          "call_id": "7737663043983767767",
+          "call_name": "SiteZeus Kick-Off Call <> Batteries Plus",
+          "team": "sales",
+          "prospect_name": "Kris Larson",
+          "prospect_email": "klarson@batteriesplus.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kris — SiteZeus Kick-Off Call <> Batteries Plus",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Kris</strong> (<a href=\"mailto:klarson@batteriesplus.com\">klarson@batteriesplus.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Kick-Off Call &lt;&gt; Batteries Plus<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Kris,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>I want to make sure our rescheduled kickoff is seamless. I'll have Olivia confirmed and the updated invite out to you, Nico, and Jason well ahead of time. If anything changes on your end while you're out on the water next week, just let me know and we'll work around it.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Kickoff call rescheduled for the same day at 11:00 AM ET with the full team (Kris, Nico, Jason) and the correct SiteZeus team member included</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T15:56:11.475Z"
+        },
+        {
+          "call_id": "8346544881121386808",
+          "call_name": "Playa | SZ bi-weekly recurring",
+          "team": "support",
+          "status": "no_contact",
+          "error": "No external attendees found",
+          "timestamp": "2026-06-26T15:56:11.476Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782422133370",
       "timestamp": "2026-06-25T21:15:33.370Z",
       "window_start": "2026-06-25T13:15:33.370Z",
@@ -1089,5 +1123,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-25T21:15:57.501Z"
+  "last_updated": "2026-06-26T15:56:11.478Z"
 }
