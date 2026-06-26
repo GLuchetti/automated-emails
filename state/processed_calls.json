@@ -269,7 +269,17 @@
       "team": "support",
       "call_name": "SZ | Penn",
       "processedAt": "2026-06-26T19:53:24.347Z"
+    },
+    "4857363398771663632": {
+      "status": "skipped_untracked",
+      "call_name": "60 Minute Meeting - Quinn Northrup and Olivia Bolton",
+      "processedAt": "2026-06-26T21:21:58.203Z"
+    },
+    "6480109749973801629": {
+      "status": "skipped_untracked",
+      "call_name": "30 Minute Meeting - Katherine Payne and Olivia Bolton",
+      "processedAt": "2026-06-26T21:21:58.203Z"
     }
   },
-  "last_updated": "2026-06-26T19:53:01.176Z"
+  "last_updated": "2026-06-26T21:21:55.564Z"
 }
