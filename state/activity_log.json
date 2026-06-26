@@ -1,6 +1,49 @@
 {
   "runs": [
     {
+      "id": "run-1782503581176",
+      "timestamp": "2026-06-26T19:53:01.176Z",
+      "window_start": "2026-06-26T11:53:01.176Z",
+      "window_end": "2026-06-26T19:53:01.176Z",
+      "calls_processed": [
+        {
+          "call_id": "5243459492752674478",
+          "call_name": "SiteZeus Locate <> Stonegrove Roofing",
+          "team": "sales",
+          "prospect_name": "LC Nussbeck",
+          "prospect_email": "lc@stonegrovellc.com",
+          "rep_name": "Ayden Benton",
+          "rep_email": "abenton@sitezeus.com",
+          "email_to": [
+            "abenton@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for LC — SiteZeus Locate <> Stonegrove Roofing",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>LC</strong> (<a href=\"mailto:lc@stonegrovellc.com\">lc@stonegrovellc.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Stonegrove Roofing<br><br>\nReview below, edit as needed, then send from <strong>abenton@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi LC,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>You shared that Stonegrove is managing 14 partner companies across 29 locations, actively acquiring about one new company per month, and looking to both grow existing brands organically and identify white space for new acquisitions — particularly west of I-35 where you currently have very little presence.</p>\n<p>We talked through how SiteZeus can help at two levels: working with individual brands (like the two currently using Spotio) to rank markets and score territories based on correlating demographics and customer data from your Acculink CRM, and at the broader Stonegrove portfolio level to surface acquisition targets in underrepresented regions. I'll look forward to showing you and your team exactly how that works on the eighth.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Demo scheduled for Wednesday, July 8 at 11:00 AM ET — LC to invite additional team members or send their emails to Emma to be added to the invite</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — LC specifically called out green-fielding new locations and filling geographic gaps west of I-35, which maps directly to what a white space analysis would address.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — LC confirmed they have customer data in Acculink and Emma discussed using it to identify top customer segments and demographic correlations across their partner brands.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — A demo is the agreed next step, so sharing context on what to expect will help LC prepare and loop in the right team members.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T19:53:13.270Z"
+        },
+        {
+          "call_id": "8426572096207687458",
+          "call_name": "SZ | Penn",
+          "team": "support",
+          "prospect_name": "Brian Tran",
+          "prospect_email": "brian.tran@penn-station.com",
+          "email_to": [
+            "brian.tran@penn-station.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Brian — SZ | Penn",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Brian</strong> (<a href=\"mailto:brian.tran@penn-station.com\">brian.tran@penn-station.com</a>).<br>\n<strong>Call:</strong> SZ | Penn<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Brian,</p>\n<p>Below is a summary of the action items discussed during SZ | Penn.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Dataplore data quality concerns remain open — SiteZeus is actively investigating alternative vendors if Dataplore can't resolve the issues, including the Walmart/optical center geofence problem Sean raised directly with them.</li><li>Credit discussion is in motion — Alan is advocating internally and has it on the agenda with Liv immediately after this call.</li><li>Shopping center rollup layer (ranked by estimated foot traffic/location count) was demoed and Brian found it useful as a market-entry tool — Alan can export and send the Excel with no approvals needed.</li><li>Impact analysis discrepancy between old and new model (different sample sizes, outlier protection differences) was flagged — needs follow-up.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Raise credit/discount discussion with Liv in today's 1:1 and report back to Brian on where it stands.</li><li>Export the shopping center rollup Excel file and send to Brian, confirming the pull date.</li><li>Follow up with Dataplore status update once Sean receives their revised documentation on data integrity concerns.</li><li>Investigate and explain the sample size discrepancy (511 vs. 296) between old and new impact analysis models.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Brian wants to keep the credit conversation quiet on his end until Alan has a concrete answer from SiteZeus leadership — no action on Brian's side until then.</li><li>Shopping center rollup data will be shared with Brian as a test/exploratory resource, with the understanding that foot traffic figures should be taken with a grain of salt given known Dataplore concerns.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T19:53:24.347Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782496479786",
       "timestamp": "2026-06-26T17:54:39.786Z",
       "window_start": "2026-06-26T09:54:39.786Z",
@@ -1190,5 +1233,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-26T17:55:12.073Z"
+  "last_updated": "2026-06-26T19:53:24.350Z"
 }

@@ -257,7 +257,19 @@
       "status": "skipped_untracked",
       "call_name": "30 Minute Meeting - Hope Ndirangu and Olivia Bolton",
       "processedAt": "2026-06-26T17:55:12.071Z"
+    },
+    "5243459492752674478": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> Stonegrove Roofing",
+      "processedAt": "2026-06-26T19:53:13.270Z"
+    },
+    "8426572096207687458": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | Penn",
+      "processedAt": "2026-06-26T19:53:24.347Z"
     }
   },
-  "last_updated": "2026-06-26T17:54:39.786Z"
+  "last_updated": "2026-06-26T19:53:01.176Z"
 }
