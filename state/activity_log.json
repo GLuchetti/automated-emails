@@ -1,6 +1,73 @@
 {
   "runs": [
     {
+      "id": "run-1782496479786",
+      "timestamp": "2026-06-26T17:54:39.786Z",
+      "window_start": "2026-06-26T09:54:39.786Z",
+      "window_end": "2026-06-26T17:54:39.786Z",
+      "calls_processed": [
+        {
+          "call_id": "1575830424195618781",
+          "call_name": "Bi-Weekly Recuring Meeting: Dave & Buster's | SiteZeus",
+          "team": "support",
+          "prospect_name": "Keith Blackmon",
+          "prospect_email": "keith.blackmon@daveandbusters.com",
+          "email_to": [
+            "keith.blackmon@daveandbusters.com",
+            "jennifer.rasmussen@daveandbusters.com",
+            "scott.douglass@daveandbusters.com",
+            "anvit.raju@daveandbusters.com",
+            "parker.turner@daveandbusters.com",
+            "les.lehner@daveandbusters.com",
+            "hank.gregor@daveandbusters.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Keith — Bi-Weekly Recuring Meeting: Dave & Buster's | SiteZeus",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Keith</strong> (<a href=\"mailto:keith.blackmon@daveandbusters.com\">keith.blackmon@daveandbusters.com</a>).<br>\n<strong>Call:</strong> Bi-Weekly Recuring Meeting: Dave &amp; Buster's | SiteZeus<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Keith,</p>\n<p>Below is a summary of the action items discussed during Bi-Weekly Recuring Meeting: Dave &amp; Buster's | SiteZeus.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked Keith and Jen through the new Sales Impact tool in Zeus AI — both got a clear picture of how cannibalization analysis works and how it differs from the old 10-mile cap (now up to 50 miles).</li><li>Jen confirmed she understands the mobile data logic driving the impact estimates and how to export widgets for slide decks.</li><li>Aligned on the transition plan: both platforms run in parallel at least through September, giving the D&amp;B team time to get comfortable before the old Locate platform sunsets.</li><li>Keith flagged the King of Prussia / Plymouth Meeting scenario as a real near-term use case — good signal that the team is ready to start applying the tool to live decisions.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Send Jen and Keith access link to Zeus AI plus the introduction training video today.</li><li>Complete trade area seed build for D&amp;B white space (in progress, expected done within the week).</li><li>Schedule a dedicated 30-minute Zeus AI training session for the full team once Parker and Doug are available.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Both the current Locate platform and the new Zeus AI platform will run in parallel until at least September to allow a smooth transition.</li><li>A standalone 30-minute Zeus AI training will be scheduled for the full D&amp;B team in addition to general training hours.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Dedicated Zeus AI onboarding training to be scheduled once Parker and Doug are back — Aaron to coordinate timing after sending today's access links.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T17:54:51.632Z"
+        },
+        {
+          "call_id": "1701438304781499366",
+          "call_name": "SiteZeus Kick-Off Call <> Batteries Plus",
+          "team": "sales",
+          "prospect_name": "Nelwood",
+          "prospect_email": "nelwood@batteriesplus.com",
+          "rep_name": "Devin Kelly",
+          "rep_email": "dkelly@sitezeus.com",
+          "email_to": [
+            "dkelly@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Nelwood — SiteZeus Kick-Off Call <> Batteries Plus",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Nelwood</strong> (<a href=\"mailto:nelwood@batteriesplus.com\">nelwood@batteriesplus.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Kick-Off Call &lt;&gt; Batteries Plus<br><br>\nReview below, edit as needed, then send from <strong>dkelly@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Nelwood,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of getting fully implemented within 60 days before your current mapping access expires in August, and making sure Nico and Chris become the internal subject matter experts before rolling the platform out to the franchising team. We also noted Jason's board meeting at the end of July as a milestone worth preparing for — even a single slide showcasing the platform's capabilities would be a great early win.</p>\n<p>To keep things moving, I'll get implementation kicked off and send over our training webinar as a starting point so we can focus our live sessions on your actual workflows — particularly around territory management and the three-stage territory process (available, proposed, development). Once Devin is back from vacation, we'll reconnect to make sure everything is running smoothly for your team.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Olivia to lead implementation and schedule admin training session with Nico and Chris</li><li>Olivia to send the comprehensive training webinar recording to the team</li><li>Prepare at least one board meeting slide on SiteZeus for Jason's end-of-July board meeting</li><li>Reconnect with Devin after his vacation to hand off ongoing support</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Chris and Nico want to enable the franchising team (Joe and Victor) to use the platform independently, and this supports that broader franchise development context.</li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell — Franchise CRM</a> — The team uses a three-stage territory workflow (available, proposed, development) that maps closely to territory disposition and franchise pipeline management.</li></ul>\n<p>Thanks,<br>Olivia Bolton</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T17:55:01.652Z"
+        },
+        {
+          "call_id": "3884053774349235432",
+          "call_name": "SiteZeus <> UFC Gym Platform Demonstration",
+          "team": "sales",
+          "prospect_name": "Donnie Oliver",
+          "prospect_email": "donnie.oliver@ufcgym.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Donnie — SiteZeus <> UFC Gym Platform Demonstration",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Donnie</strong> (<a href=\"mailto:donnie.oliver@ufcgym.com\">donnie.oliver@ufcgym.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; UFC Gym Platform Demonstration<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Donnie,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your team's goal of building a more efficient, in-house site selection process as UFC GYM continues expanding both its full-facility hub locations and jiu-jitsu spoke concepts. You shared that having clear, defensible data to support real estate committee decisions and franchisee conversations is a priority — and that understanding what's driving performance differences across the portfolio would be valuable.</p>\n<p>SiteZeus can help on both fronts. We'd build your model around your three membership tiers, bringing in gym-level attributes like square footage and class offerings alongside our broader data sets to identify what's actually moving the needle by market type. The cannibalization analysis and white space scoring we walked through would give your team a repeatable process for evaluating new sites with confidence. I'll plan to send over a few relevant resources below as a reference point from today's walkthrough.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — We spent significant time discussing how SiteZeus's machine learning approach differs from traditional regression modeling and how it would identify drivers specific to UFC GYM's membership tiers and market types.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — You were shown the cannibalization analysis during the platform walkthrough, and understanding impact on existing locations was called out as a key part of the evaluation process.</li><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — White space scoring and seed point ranking were walked through as a core part of how UFC GYM could prioritize and sequence new market entry.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-06-26T17:55:12.071Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782489362215",
       "timestamp": "2026-06-26T15:56:02.215Z",
       "window_start": "2026-06-26T07:56:02.215Z",
@@ -1123,5 +1190,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-26T15:56:11.478Z"
+  "last_updated": "2026-06-26T17:55:12.073Z"
 }
