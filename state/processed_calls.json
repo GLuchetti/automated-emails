@@ -1,23 +1,5 @@
 {
   "calls": {
-    "5346526480954004977": {
-      "status": "no_contact",
-      "team": "sales",
-      "call_name": "SiteZeus Demo <> The Dirty Rabbit Group",
-      "processedAt": "2026-06-22T19:48:52.597Z"
-    },
-    "4232671524616482282": {
-      "status": "no_contact",
-      "team": "support",
-      "call_name": "Bi-Weekly Recuring Meeting: Parlor Doughnuts | SiteZeus | DeMao Retail",
-      "processedAt": "2026-06-22T19:48:52.597Z"
-    },
-    "6280703274386959844": {
-      "status": "no_contact",
-      "team": "sales",
-      "call_name": "SiteZeus Proposal Review <> Central Pro Supply",
-      "processedAt": "2026-06-22T19:48:52.597Z"
-    },
     "2261854876592015543": {
       "status": "dashboard",
       "team": "sales",
@@ -309,7 +291,42 @@
       "team": "support",
       "call_name": "Bi-Weekly Recuring Meeting: SiteZeus | Parlor Doughnuts",
       "processedAt": "2026-06-29T19:05:55.074Z"
+    },
+    "8979292623884882239": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Discussion <> Kinsky",
+      "processedAt": "2026-06-29T20:57:02.519Z"
+    },
+    "5878274664002508146": {
+      "status": "skipped_untracked",
+      "call_name": "Safegraph-SiteZeus",
+      "processedAt": "2026-06-29T20:57:02.519Z"
+    },
+    "684980245276887403": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Discussion <> MerionHP",
+      "processedAt": "2026-06-29T20:57:13.350Z"
+    },
+    "3361731820050360237": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Condado Tacos",
+      "processedAt": "2026-06-29T20:57:24.584Z"
+    },
+    "2965247822558769803": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 60 minute call - Roee Levy and Alan May",
+      "processedAt": "2026-06-29T20:57:34.094Z"
+    },
+    "4783082978377630557": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland",
+      "processedAt": "2026-06-29T20:57:58.088Z"
     }
   },
-  "last_updated": "2026-06-29T19:05:36.603Z"
+  "last_updated": "2026-06-29T20:56:50.894Z"
 }

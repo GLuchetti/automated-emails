@@ -1,6 +1,103 @@
 {
   "runs": [
     {
+      "id": "run-1782766610894",
+      "timestamp": "2026-06-29T20:56:50.894Z",
+      "window_start": "2026-06-29T12:56:50.894Z",
+      "window_end": "2026-06-29T20:56:50.894Z",
+      "calls_processed": [
+        {
+          "call_id": "8979292623884882239",
+          "call_name": "SiteZeus Discussion <> Kinsky",
+          "team": "sales",
+          "prospect_name": "Barbara Taylor",
+          "prospect_email": "barb@thekrinskyco.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Barbara — SiteZeus Discussion <> Kinsky",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Barbara</strong> (<a href=\"mailto:barb@thekrinskyco.com\">barb@thekrinskyco.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Discussion &lt;&gt; Kinsky<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Barbara,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your client — a healthcare brand with roughly 45 locations — who has experienced inconsistent performance across sites and is looking to better understand what's actually driving success (or underperformance) before expanding further. You mentioned they have solid customer data around age, gender, and lifetime visits, which is exactly the kind of input that makes our analysis more precise.</p>\n<p>As we touched on, we'd work directly with the brand to run demographic correlations against their existing locations, layer in their customer data to identify top segments, and then use that to surface where they have the highest probability of success in new markets. I'll send over an example white space analysis deck so you and Meg can get a clearer picture of what that output looks like — that may be a helpful artifact to share with your client as well.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Emma to send over an example white space analysis PowerPoint for Barbara and Meg to review</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Emma specifically mentioned sending a white space analysis example during the call to show Barbara and Meg what the expansion prioritization output looks like.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Barbara noted her client has customer data on age, gender, and lifetime visits — this resource ties directly to how SiteZeus segments and activates that data to identify top customer profiles.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T20:57:02.519Z"
+        },
+        {
+          "call_id": "684980245276887403",
+          "call_name": "SiteZeus Discussion <> MerionHP",
+          "team": "sales",
+          "prospect_name": "Jason Badyrka",
+          "prospect_email": "jbadyrka@merionhp.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Jason — SiteZeus Discussion <> MerionHP",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Jason</strong> (<a href=\"mailto:jbadyrka@merionhp.com\">jbadyrka@merionhp.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Discussion &lt;&gt; MerionHP<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Jason,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of growing Merion Health Partners from 8 to 40–50 AFC locations, with a near-term focus on acquiring multi-unit tranches of clinics and potentially expanding into Delaware County. The core challenge is that you don't currently have an interactive tool to visualize your protected territories, map competitor locations, and analyze patient origin data — and the Calibrate work happening at the corporate level likely won't surface in a usable way for your team.</p>\n<p>Based on that, a SiteZeus base platform covering mapping, competitor plotting, and customer spotting seems like the right starting point, with white space analysis available on an à la carte basis as specific acquisition targets or new counties come into play. I'll put together a quick overview of what that would look like so we can keep the conversation moving.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Will to send a proposed scope and pricing for a base platform covering mapping, competitor layers, and customer spotting</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Jason specifically asked about white space analysis as an à la carte add-on to identify void opportunities within target counties for de novo or acquisition growth.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Jason wants to upload patient address data to understand trade areas and identify where each clinic's population is coming from to inform next-site decisions.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — Jason is a franchisee operating under an ADA and scaling toward multi-unit growth, making franchise-specific expansion content directly relevant.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T20:57:13.350Z"
+        },
+        {
+          "call_id": "3361731820050360237",
+          "call_name": "SiteZeus <> Condado Tacos",
+          "team": "sales",
+          "prospect_name": "Keith Willis",
+          "prospect_email": "keith.willis@condadotacos.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Keith — SiteZeus <> Condado Tacos",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Keith</strong> (<a href=\"mailto:keith.willis@condadotacos.com\">keith.willis@condadotacos.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Condado Tacos<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Keith,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed Condado's current footprint of 53 locations across 10 states and your near-term plan of three to five openings, with a bigger development ramp planned for 2027–2028. You shared that your biggest challenge right now is understanding how your catering platform affects cannibalization across locations — since catering revenue doesn't follow a traditional trade area radius — and that getting timely support from your current vendor has been a consistent frustration.</p>\n<p>SiteZeus's impact analysis can look at cannibalization across multiple stores simultaneously, and because it's built on mobile data, it can account for non-traditional trade area behavior like your catering footprint. Our five-minute support response time and dedicated implementation team would also be a direct improvement over what you're experiencing today. The proof of concept at $5,000 (credited toward year one) would let you see a version of your model with Condado's actual data before committing fully.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Full platform demo to be scheduled — Keith to confirm availability</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Keith specifically called out cannibalization from Condado's catering platform as the biggest open question in their current model.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Emma walked through the $5,000 POC option on the call as a logical next step for Keith to evaluate SiteZeus with Condado's own data.</li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Keith asked directly about AI integration in the predictive model, and Emma explained the machine learning process and 36-hour model build time.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T20:57:24.584Z"
+        },
+        {
+          "call_id": "2965247822558769803",
+          "call_name": "SZ | 60 minute call - Roee Levy and Alan May",
+          "team": "support",
+          "prospect_name": "Roee Levy",
+          "prospect_email": "roee@vesselkitchen.com",
+          "email_to": [
+            "roee@vesselkitchen.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Roee — SZ | 60 minute call - Roee Levy and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Roee</strong> (<a href=\"mailto:roee@vesselkitchen.com\">roee@vesselkitchen.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Roee Levy and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Roee,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Roee Levy and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through the new platform together — Roee now understands how to toggle layers, customize his site panel view, and where scores will appear once the scorecard is built.</li><li>Agreed to separate the white space score (demographics-based) from the manual site survey inputs rather than combining them into one scorecard.</li><li>Impact V2 cannibalization model reviewed — Roee can now run multi-location impact analysis up to 50 miles, a clear upgrade from what he was using before.</li><li>Roee set his custom panel view as default, so the platform experience will be consistent going forward once the scorecard is in place.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Build Roee's white space scorecard in the new platform before Thursday's training session (no specific date given, but Thursday is the hard deadline).</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Roee will continue using the legacy front end for scorecards until Alan builds the new one in the platform — no manual rebuild by Roee.</li><li>The white space score (demographic/psychographic) will be kept separate from the manual site survey inputs rather than combined into a single scorecard.</li><li>Manual site survey fields (zero-to-five scores) will not be incorporated into the platform scorecard at this time due to input complexity.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Roee has a platform training session this Thursday — Alan's goal is to have the scorecard built and ready before that call.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T20:57:34.094Z"
+        },
+        {
+          "call_id": "4783082978377630557",
+          "call_name": "SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Tyler Azzarelli",
+          "prospect_email": "tylera@cicciorg.com",
+          "email_to": [
+            "tylera@cicciorg.com",
+            "tyler.mcrae@srsre.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Tyler — SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Tyler</strong> (<a href=\"mailto:tylera@cicciorg.com\">tylera@cicciorg.com</a>).<br>\n<strong>Call:</strong> SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Below is a summary of the action items discussed during SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through the completed scorecard (50% demographics, 50% Persona Live geosocial) and confirmed the model logic and weighting make sense for the brand.</li><li>Reviewed national white space by state — Texas, Florida, Ohio, North Carolina, and New Jersey stood out as strong expansion targets at the 95+ score tier.</li><li>Drilled into Atlanta and Tampa markets; Atlanta north of downtown looks particularly strong, with a realistic 8–10 viable locations when applying a 15-minute drive time filter.</li><li>Confirmed that this scorecard covers demographics only — competitive density, site visibility, rent, and labor costs are separate analyses still to be layered in.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Process the white space data to produce a more actionable market-level unit estimate (beyond raw seed counts) so Tyler's team can size opportunities more realistically.</li><li>Get Tyler's team scheduled and trained on the new SiteZeus platform.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T20:57:58.088Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782759936603",
       "timestamp": "2026-06-29T19:05:36.603Z",
       "window_start": "2026-06-29T11:05:36.603Z",
@@ -1321,5 +1418,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-29T19:05:55.076Z"
+  "last_updated": "2026-06-29T20:57:58.090Z"
 }
