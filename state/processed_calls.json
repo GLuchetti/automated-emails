@@ -1,16 +1,5 @@
 {
   "calls": {
-    "2261854876592015543": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Demo <> Driven Brands",
-      "processedAt": "2026-06-22T22:06:12.726Z"
-    },
-    "1262503839374891347": {
-      "status": "skipped_untracked",
-      "call_name": "SiteZeus | 30 Minutes - Scott Shapiro and Sean Ryan",
-      "processedAt": "2026-06-22T22:06:12.726Z"
-    },
     "7100183006288528790": {
       "status": "dashboard",
       "team": "support",
@@ -326,7 +315,13 @@
       "team": "support",
       "call_name": "SiteZeus | Whitespace Review - Aaron - Tyler Azzarelli  and Aaron Bergland",
       "processedAt": "2026-06-29T20:57:58.088Z"
+    },
+    "3605397815342910041": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 60 minute call - Catalina Salamon and Alan May",
+      "processedAt": "2026-06-29T22:15:32.021Z"
     }
   },
-  "last_updated": "2026-06-29T20:56:50.894Z"
+  "last_updated": "2026-06-29T22:15:19.967Z"
 }

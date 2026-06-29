@@ -1,6 +1,31 @@
 {
   "runs": [
     {
+      "id": "run-1782771319967",
+      "timestamp": "2026-06-29T22:15:19.967Z",
+      "window_start": "2026-06-29T14:15:19.967Z",
+      "window_end": "2026-06-29T22:15:19.967Z",
+      "calls_processed": [
+        {
+          "call_id": "3605397815342910041",
+          "call_name": "SZ | 60 minute call - Catalina Salamon and Alan May",
+          "team": "support",
+          "prospect_name": "Catalina Salamon",
+          "prospect_email": "catalina.v.salamon@sherwin.com",
+          "email_to": [
+            "catalina.v.salamon@sherwin.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Catalina — SZ | 60 minute call - Catalina Salamon and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Catalina</strong> (<a href=\"mailto:catalina.v.salamon@sherwin.com\">catalina.v.salamon@sherwin.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Catalina Salamon and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Catalina,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Catalina Salamon and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Canada sales model is live at 83% accuracy — metrics are solid across the board (24% MAPE, R² of 0.52), and comparable to the US model given the smaller portfolio size.</li><li>Model outliers are minimal — only one site above 70% inaccuracy, with a handful in the 60s, which is acceptable for a Canada build.</li><li>Layers carried over from the US project include Benjamin Moore, Ace Hardware, PPG, Home Depot, and Paintshop — Catalina can flag any Canada-specific additions needed.</li><li>A platform update pushed this morning changed how performance buckets are calculated, so some comparison metrics need clarification before the full recap is shared.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Check with data science on whether R² is calculated differently in SiteZeus vs. a standard regression model, and what the appropriate benchmark is for Canada models specifically.</li><li>Get clarity from the founder on the new performance bucket methodology (top/high/average/below average/needs improvement) and how percentages are now calculated.</li><li>Hold off on sending the full model recap to Catalina until the bucket and R² questions are resolved.</li><li>Build the gallons version of the Canada model once the sales model is approved.</li><li>Send Catalina a full attribute list for the Canada project.</li><li>Send screenshots of the side-by-side model comparison metrics.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T22:15:32.021Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782766610894",
       "timestamp": "2026-06-29T20:56:50.894Z",
       "window_start": "2026-06-29T12:56:50.894Z",
@@ -1418,5 +1443,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-29T20:57:58.090Z"
+  "last_updated": "2026-06-29T22:15:32.023Z"
 }
