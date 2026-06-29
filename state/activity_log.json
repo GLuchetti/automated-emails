@@ -1,6 +1,68 @@
 {
   "runs": [
     {
+      "id": "run-1782759936603",
+      "timestamp": "2026-06-29T19:05:36.603Z",
+      "window_start": "2026-06-29T11:05:36.603Z",
+      "window_end": "2026-06-29T19:05:36.603Z",
+      "calls_processed": [
+        {
+          "call_id": "858912029050130232",
+          "call_name": "SiteZeus Discussion <> Quality Oil",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-29T19:05:39.123Z"
+        },
+        {
+          "call_id": "5972678729275541940",
+          "call_name": "SiteZeus <> Neko Health",
+          "team": "sales",
+          "prospect_name": "Cindy Gecaj",
+          "prospect_email": "cindy.gecaj@nekohealth.com",
+          "rep_name": "Jorge Hermez",
+          "rep_email": "jhermez@sitezeus.com",
+          "email_to": [
+            "jhermez@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Cindy — SiteZeus <> Neko Health",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Cindy</strong> (<a href=\"mailto:cindy.gecaj@nekohealth.com\">cindy.gecaj@nekohealth.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Neko Health<br><br>\nReview below, edit as needed, then send from <strong>jhermez@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Cindy,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We walked through your technical requirements one by one and it sounds like most items — API support, data export, webhooks, and user management — are workable given that only a small team will be using the platform. The one open item is SCIM-based user provisioning, which Quan mentioned looping in Nadia on your side to clarify before we need a firm answer from us.</p>\n<p>I'll have a proposal ready to walk through at our meeting tomorrow, and I'll also connect with Jorge and Kyle to pull together some screenshots of the updated platform interface so your team has something to reference internally when discussing SiteZeus.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Proposal review call scheduled for tomorrow at 11:45 AM ET</li><li>Emma to send proposal ahead of tomorrow's call</li><li>Emma to coordinate with Jorge and Kyle to send platform UI screenshots/overview</li><li>Quan and Cindy to follow up internally with Nadia regarding SCIM-based user provisioning question</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Quan specifically asked for a visual reference of the platform dashboard to help the team distinguish SiteZeus internally during discussions.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T19:05:47.800Z"
+        },
+        {
+          "call_id": "4824152009489244642",
+          "call_name": "SiteZeus Reconnect <> Central Pro Supply",
+          "team": "sales",
+          "status": "no_contact",
+          "error": "No external prospect found",
+          "timestamp": "2026-06-29T19:05:47.801Z"
+        },
+        {
+          "call_id": "7716727254522507176",
+          "call_name": "Bi-Weekly Recuring Meeting: SiteZeus | Parlor Doughnuts",
+          "team": "support",
+          "prospect_name": "DeMao Del",
+          "prospect_email": "del@demaoretail.com",
+          "email_to": [
+            "del@demaoretail.com",
+            "luke@franchiseperformancegroup.com",
+            "krissy@demaoretail.com",
+            "real-estate@parlordoughnuts.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for DeMao — Bi-Weekly Recuring Meeting: SiteZeus | Parlor Doughnuts",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>DeMao</strong> (<a href=\"mailto:del@demaoretail.com\">del@demaoretail.com</a>).<br>\n<strong>Call:</strong> Bi-Weekly Recuring Meeting: SiteZeus | Parlor Doughnuts<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi DeMao,</p>\n<p>Below is a summary of the action items discussed during Bi-Weekly Recuring Meeting: SiteZeus | Parlor Doughnuts.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Call was brief — DeMao and Krissy were heads-down prepping for a 2pm presentation, so we kept it short</li><li>Walked DeMao through running a quick demo site pack report in SiteZeus — he's comfortable adding consideration sites and now knows how to pull and download reports</li><li>DeMao is enthusiastic about the platform and excited to hear the new AI is more intuitive and self-explanatory</li><li>Agreed to reschedule a proper training session for Thursday at 3:30pm with both DeMao and Krissy</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Send calendar invite to DeMao and Krissy for Thursday at 3:30pm for a full training session</li><li>Share the pre-built report templates (quick demo site pack) with the Parlor Doughnuts team</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Reschedule full training to Thursday at 3:30pm when both DeMao and Krissy are available</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Full platform training with DeMao and Krissy scheduled for Thursday at 3:30pm.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-29T19:05:55.074Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782513971984",
       "timestamp": "2026-06-26T22:46:11.984Z",
       "window_start": "2026-06-26T14:46:11.984Z",
@@ -1259,5 +1321,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-26T22:46:23.706Z"
+  "last_updated": "2026-06-29T19:05:55.076Z"
 }
