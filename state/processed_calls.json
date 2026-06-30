@@ -1,17 +1,5 @@
 {
   "calls": {
-    "7100183006288528790": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Meeting with Devin SiteZeus - Chris Jenkins and Devin Kelly",
-      "processedAt": "2026-06-23T15:51:37.248Z"
-    },
-    "3881634765092808826": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Discussion <> AVG",
-      "processedAt": "2026-06-23T15:51:49.402Z"
-    },
     "305612186675443265": {
       "status": "dashboard",
       "team": "sales",
@@ -321,7 +309,18 @@
       "team": "support",
       "call_name": "SZ | 60 minute call - Catalina Salamon and Alan May",
       "processedAt": "2026-06-29T22:15:32.021Z"
+    },
+    "5755143085217829136": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Proposal Review <> Neko Health",
+      "processedAt": "2026-06-30T17:16:58.731Z"
+    },
+    "7066299780965952009": {
+      "status": "skipped_untracked",
+      "call_name": "Pizza Hut - SZ | Weekly",
+      "processedAt": "2026-06-30T17:16:58.731Z"
     }
   },
-  "last_updated": "2026-06-30T15:12:28.909Z"
+  "last_updated": "2026-06-30T17:16:46.305Z"
 }

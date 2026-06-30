@@ -1,6 +1,32 @@
 {
   "runs": [
     {
+      "id": "run-1782839806305",
+      "timestamp": "2026-06-30T17:16:46.305Z",
+      "window_start": "2026-06-30T09:16:46.305Z",
+      "window_end": "2026-06-30T17:16:46.305Z",
+      "calls_processed": [
+        {
+          "call_id": "5755143085217829136",
+          "call_name": "SiteZeus Proposal Review <> Neko Health",
+          "team": "sales",
+          "prospect_name": "Kwan Ng",
+          "prospect_email": "kwan.ng@nekohealth.com",
+          "rep_name": "Emma Keeney",
+          "rep_email": "ekeeney@sitezeus.com",
+          "email_to": [
+            "ekeeney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Kwan — SiteZeus Proposal Review <> Neko Health",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Kwan</strong> (<a href=\"mailto:kwan.ng@nekohealth.com\">kwan.ng@nekohealth.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Proposal Review &lt;&gt; Neko Health<br><br>\nReview below, edit as needed, then send from <strong>ekeeney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Kwan,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed Neko Health's early-stage expansion planning and how SiteZeus can help you identify the right markets and sites using a white space analysis built specifically around your brand — pulling in comparable companies like Whoop, Equinox, and Aura to model your ideal customer profile.</p>\n<p>As promised, I'm sending over the updated proposal with the foot traffic data broken out as a separate line item so you can evaluate whether it's relevant at this stage, along with a one-pager on what that data set includes, the platform screenshots from today's deck, and the recording from our original demo. Please note I'm out of office through the weekend — I'll follow up when I'm back Monday.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Emma to send updated proposal with foot traffic data broken out as a separate line item</li><li>Emma to send a one-pager detailing what the foot traffic data set includes</li><li>Emma to resend the original demo call recording</li><li>Emma to follow up when back in office on Monday</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — The white space analysis — built around Neko Health's top customer segments and comparable brands — is the core deliverable you'd be getting from SiteZeus Locate.</li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Kwan specifically called out the AI functionality as a differentiator; this resource supports that conversation.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — We walked through the credit card spend and customer segmentation data using Whoop as an example, which is central to how the white space analysis would be built for Neko Health.</li></ul>\n<p>Thanks,<br>Emma Keeney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-30T17:16:58.731Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782771319967",
       "timestamp": "2026-06-29T22:15:19.967Z",
       "window_start": "2026-06-29T14:15:19.967Z",
@@ -1443,5 +1469,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-29T22:15:32.023Z"
+  "last_updated": "2026-06-30T17:16:58.733Z"
 }
