@@ -1,17 +1,5 @@
 {
   "calls": {
-    "305612186675443265": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "curtis braden - SiteZeus Meeting with Lucas",
-      "processedAt": "2026-06-23T18:00:28.835Z"
-    },
-    "991900060819761749": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "SZ | 30 minute call - casey kwiecinski and Alan May",
-      "processedAt": "2026-06-23T18:00:41.599Z"
-    },
     "6758966379849830982": {
       "status": "dashboard",
       "team": "support",
@@ -320,7 +308,25 @@
       "status": "skipped_untracked",
       "call_name": "Pizza Hut - SZ | Weekly",
       "processedAt": "2026-06-30T17:16:58.731Z"
+    },
+    "3579562698727557800": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 30 minute call - Catalina Salamon and Alan May",
+      "processedAt": "2026-06-30T19:19:49.260Z"
+    },
+    "1409769157703523420": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+      "processedAt": "2026-06-30T19:19:59.901Z"
+    },
+    "2406893926986802503": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "Meeting with Devin SiteZeus - Julie Price and Devin Kelly",
+      "processedAt": "2026-06-30T19:20:10.525Z"
     }
   },
-  "last_updated": "2026-06-30T17:16:46.305Z"
+  "last_updated": "2026-06-30T19:19:37.184Z"
 }

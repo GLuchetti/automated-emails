@@ -1,6 +1,67 @@
 {
   "runs": [
     {
+      "id": "run-1782847177184",
+      "timestamp": "2026-06-30T19:19:37.184Z",
+      "window_start": "2026-06-30T11:19:37.184Z",
+      "window_end": "2026-06-30T19:19:37.184Z",
+      "calls_processed": [
+        {
+          "call_id": "3579562698727557800",
+          "call_name": "SZ | 30 minute call - Catalina Salamon and Alan May",
+          "team": "support",
+          "prospect_name": "Catalina Salamon",
+          "prospect_email": "catalina.v.salamon@sherwin.com",
+          "email_to": [
+            "catalina.v.salamon@sherwin.com",
+            "reza.fletcher@sherwin.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Catalina — SZ | 30 minute call - Catalina Salamon and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Catalina</strong> (<a href=\"mailto:catalina.v.salamon@sherwin.com\">catalina.v.salamon@sherwin.com</a>).<br>\n<strong>Call:</strong> SZ | 30 minute call - Catalina Salamon and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Catalina,</p>\n<p>Below is a summary of the action items discussed during SZ | 30 minute call - Catalina Salamon and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Rez is actively using the platform and encouraging his team to self-explore before asking questions — good adoption momentum.</li><li>Rez stumbled into the V2 platform via an in-app prompt; confirmed he shouldn't have access yet due to contract/legal redlining on AI tools, but his reaction to the AI site analysis was genuinely enthusiastic.</li><li>A known authentication/timeout bug causing errors on Closure Impact and other features has been resolved platform-wide — likely explains the issues Rez hit during his staff meeting demo.</li><li>SiteZeus goal is to migrate all customers to the new platform before end of year, with a big push starting in September.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Alan May)</strong></p>\n<ul><li>Close the in-app link/prompt that allowed access to the V2 platform outside of contract scope.</li><li>Confirm Closure Impact is fully enabled and functioning correctly in Rez's account.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Catalina Salamon)</strong></p>\n<ul><li>Push internally to resolve legal redlining on AI tools so the team can get access to the full V2 platform without SiteZeus needing to build a stripped-down version.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>SiteZeus will not build a V2 version without AI tooling unless legal redlining cannot be resolved — they'll wait to see how the contract discussion plays out before doing that work.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-30T19:19:49.260Z"
+        },
+        {
+          "call_id": "1409769157703523420",
+          "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Matt",
+          "prospect_email": "matt@iron24.com",
+          "email_to": [
+            "matt@iron24.com",
+            "nick@iron24.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Matt — 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Matt</strong> (<a href=\"mailto:matt@iron24.com\">matt@iron24.com</a>).<br>\n<strong>Call:</strong> 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Matt,</p>\n<p>Below is a summary of the action items discussed during 30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Membership data gaps were filled in live — Matt provided active member counts and fitness/recovery breakdowns for Newport Richey, Pearland Silver Lake, and Westside Plaza.</li><li>Scorecard benchmarking is progressing well — Aaron walked through psychographic outliers (e.g., Conroe's Melting Pot profile explaining low recovery upgrades) to sharpen variable weighting.</li><li>Kilgore's all-inclusive recovery model was flagged as a data anomaly to address when Iron XXIV moves to a predictive model — not a blocker for current forecasting work.</li><li>Matt confirmed a strategic shift in site selection is underway, with different business models being considered by market (e.g., premium recovery in downtown Chattanooga vs. lower-format in Calhoun, GA).</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Matt)</strong></p>\n<ul><li>Send open dates for all locations so SiteZeus can account for ramp-up periods in the benchmarking.</li><li>Send fitness-only vs. fitness+recovery membership breakouts for remaining locations.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Nick)</strong></p>\n<ul><li>Confirm which membership data files were missing from the zip sent to Aaron and resend any gaps.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Kilgore's all-recovery membership structure will be noted as a known data anomaly but will not be adjusted for the current forecasting scorecard — it will be revisited if/when Iron XXIV upgrades to a predictive model.</li><li>Canadian locations are excluded from the current dataset and analysis.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-30T19:19:59.901Z"
+        },
+        {
+          "call_id": "2406893926986802503",
+          "call_name": "Meeting with Devin SiteZeus - Julie Price and Devin Kelly",
+          "team": "support",
+          "prospect_name": "Julie Price",
+          "prospect_email": "julie@eatminniebird.com",
+          "email_to": [
+            "julie@eatminniebird.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Julie — Meeting with Devin SiteZeus - Julie Price and Devin Kelly",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Julie</strong> (<a href=\"mailto:julie@eatminniebird.com\">julie@eatminniebird.com</a>).<br>\n<strong>Call:</strong> Meeting with Devin SiteZeus - Julie Price and Devin Kelly<br><br>\nReview below, edit as needed, then send from <strong>obolton@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Julie,</p>\n<p>Below is a summary of the action items discussed during Meeting with Devin SiteZeus - Julie Price and Devin Kelly.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Scorecard bug (disappearing scorecards) was identified and a fix was deployed live during the call — new scorecards created going forward should persist correctly.</li><li>Olivia walked Julie through a new scorecard improvement that supports combined/custom variables, enabling more complex formulas like daytime density calculations.</li><li>Julie confirmed she wants the white space and scorecard work done right over done fast — she's aligned on using this as a baseline tool, not gospel, and plans to layer in franchisee local knowledge.</li><li>Team agreed on the option to build two scorecard versions: one averaged across all three locations and one benchmarked against Schaumburg specifically.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Olivia Bolton)</strong></p>\n<ul><li>Send Julie the full scorecard research document by end of day Tuesday.</li><li>Recreate the scorecards in the platform based on the research document.</li><li>Check in with Julie on Thursday to collect feedback.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Julie Price)</strong></p>\n<ul><li>Review the research document (high level) when received — flag anything that doesn't make sense.</li><li>Spend Wednesday/Thursday testing the recreated scorecards and note any changes needed to benchmarks or weighting.</li><li>Circulate the research document to co-founders Franklin and David for their input.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Two scorecard versions will be built: one based on the full three-location portfolio average and one benchmarked solely against Schaumburg.</li><li>White space run will proceed after the scorecard is reviewed, tested, and finalized — accuracy takes priority over speed.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Olivia will check in with Julie on Thursday to review feedback on the research document and scorecards.</li></ul>\n<p>Best,<br>Olivia Bolton</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-06-30T19:20:10.525Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782839806305",
       "timestamp": "2026-06-30T17:16:46.305Z",
       "window_start": "2026-06-30T09:16:46.305Z",
@@ -1469,5 +1530,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-30T17:16:58.733Z"
+  "last_updated": "2026-06-30T19:20:10.527Z"
 }
