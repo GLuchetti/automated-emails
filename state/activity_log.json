@@ -1,6 +1,32 @@
 {
   "runs": [
     {
+      "id": "run-1782854082382",
+      "timestamp": "2026-06-30T21:14:42.382Z",
+      "window_start": "2026-06-30T13:14:42.382Z",
+      "window_end": "2026-06-30T21:14:42.382Z",
+      "calls_processed": [
+        {
+          "call_id": "6182388199597994692",
+          "call_name": "SiteZeus <> BaseCamp Introduction & Kickoff",
+          "team": "sales",
+          "prospect_name": "Tyler Gordon",
+          "prospect_email": "tyler@bcfranchise.com",
+          "rep_name": "Aaron Bergland",
+          "rep_email": "abergland@sitezeus.com",
+          "email_to": [
+            "abergland@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus <> BaseCamp Introduction & Kickoff",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Tyler</strong> (<a href=\"mailto:tyler@bcfranchise.com\">tyler@bcfranchise.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; BaseCamp Introduction &amp; Kickoff<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your goal of building a scalable, data-driven territory mapping framework across the U.S. for both Uptown Cheapskate and Kid to Kid. Right now, your team is manually applying population thresholds and co-tenancy checks (TJ Maxx, Ross, Burlington, etc.) to define development areas — a process that works but doesn't scale as you approach the next 2,000 locations.</p>\n<p>Our team will work with you to systematize that criteria into a consistent model, helping you define territory shapes (not just circles), rank locations within a market by viability, and account for the cascading shifts that happen when a franchisee signs a lease and the protected area recenters. With the Fourth of July holiday approaching, I want to make sure we align on priorities quickly so we can hit the ground running on implementation.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Basecamp to send over existing territory data and current criteria documentation so Aaron can begin laying the groundwork for analysis</li><li>Follow-up meeting to be scheduled to outline implementation priorities and next steps post-holiday</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Directly relevant to your goal of mapping untapped territory capacity across the U.S. for both brands beyond your current 300 locations.</li><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Allison specifically called out cannibalization prevention and the territory reshuffling that occurs when a lease is signed — this addresses that exact challenge.</li><li><a href=\"https://sitezeus.com/products/franchise-crm\" style=\"color:#1a73e8;\">SiteZeus Sell — Franchise CRM</a> — Ties to how development areas and protected areas are managed through the franchise sales and signing process Tyler described.</li></ul>\n<p>Thanks,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-06-30T21:14:56.245Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782847177184",
       "timestamp": "2026-06-30T19:19:37.184Z",
       "window_start": "2026-06-30T11:19:37.184Z",
@@ -1530,5 +1556,5 @@
       ]
     }
   ],
-  "last_updated": "2026-06-30T19:20:10.527Z"
+  "last_updated": "2026-06-30T21:14:56.248Z"
 }
