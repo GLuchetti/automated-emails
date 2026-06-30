@@ -1,11 +1,5 @@
 {
   "calls": {
-    "7337187356796401048": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Meeting with Devin SiteZeus - Vincent Ginatta and Devin Kelly",
-      "processedAt": "2026-06-23T23:15:05.276Z"
-    },
     "5704065888636763395": {
       "status": "no_contact",
       "team": "support",
@@ -292,5 +286,5 @@
       "processedAt": "2026-06-30T21:14:56.245Z"
     }
   },
-  "last_updated": "2026-06-30T22:43:12.220Z"
+  "last_updated": "2026-06-30T23:52:56.485Z"
 }
