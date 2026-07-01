@@ -1,6 +1,66 @@
 {
   "runs": [
     {
+      "id": "run-1782943558528",
+      "timestamp": "2026-07-01T22:05:58.528Z",
+      "window_start": "2026-07-01T14:05:58.528Z",
+      "window_end": "2026-07-01T22:05:58.528Z",
+      "calls_processed": [
+        {
+          "call_id": "8146049603126614996",
+          "call_name": "SZ | 60 minute call - Coleman Welch and Alan May",
+          "team": "support",
+          "prospect_name": "Coleman Welch",
+          "prospect_email": "cwelch@321zips.com",
+          "email_to": [
+            "cwelch@321zips.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Coleman — SZ | 60 minute call - Coleman Welch and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Coleman</strong> (<a href=\"mailto:cwelch@321zips.com\">cwelch@321zips.com</a>).<br>\n<strong>Call:</strong> SZ | 60 minute call - Coleman Welch and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Coleman,</p>\n<p>Below is a summary of the action items discussed during SZ | 60 minute call - Coleman Welch and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Identified and fixed the duplicate pin on Franklin Blvd that was breaking Coleman's attribute export report — reports should now run cleanly.</li><li>Coleman confirmed the board-level attribute overview is complete and got a thumbs-up from CEO Mike, so that deliverable is closed out.</li><li>Walked through the demo comparison workflow for the Innsbruck/Glen Allen site relocation — confirmed which metrics Jerry's team uses (pop, households, MHI, white collar, pop growth, traffic, competitors) and where they live in the platform.</li><li>Agreed to defer the full new-platform reporting orientation to a separate call early next week when Coleman has more bandwidth.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Coleman Welch)</strong></p>\n<ul><li>Schedule a new-platform reporting orientation call with Alan for early next week.</li><li>Confirm the correct existing site address and franchisee details for the Innsbruck relocation comparison before running the final demo report.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>New-platform reporting walkthrough will be handled on a separate call early next week, not during this session.</li><li>Proceed with the Innsbruck/Glen Allen site as the working assumption for the demo comparison, with data integrity cleanup to follow separately.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Coleman to schedule a new-platform reporting orientation call with Alan for early next week.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-07-01T22:06:09.206Z"
+        },
+        {
+          "call_id": "4650141314702043415",
+          "call_name": "SiteZeus | Model Review - Aaron - Jonathan Gregory and Aaron Bergland",
+          "team": "support",
+          "prospect_name": "Jgregory",
+          "prospect_email": "jgregory@galacapitalpartners.com",
+          "email_to": [
+            "jgregory@galacapitalpartners.com",
+            "jdang@galacapitalpartners.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Jgregory — SiteZeus | Model Review - Aaron - Jonathan Gregory and Aaron Bergland",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Jgregory</strong> (<a href=\"mailto:jgregory@galacapitalpartners.com\">jgregory@galacapitalpartners.com</a>).<br>\n<strong>Call:</strong> SiteZeus | Model Review - Aaron - Jonathan Gregory and Aaron Bergland<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Jgregory,</p>\n<p>Below is a summary of the action items discussed during SiteZeus | Model Review - Aaron - Jonathan Gregory and Aaron Bergland.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Reviewed both the Rusty's and Dunn Brothers models — both sitting at 82% synergy score with solid overall forecast accuracy.</li><li>Identified key outliers in each model (NE Minneapolis and Gilbert for Rusty's; Hopkins and Cedar Rapids for Dunn Brothers) with operational context provided by Jonathan.</li><li>Cedar Rapids flagged as a serious concern — down 26% YoY and tracking toward ~$250K LTM, likely a candidate for closure conversation.</li><li>Aligned on next step: share model output files with the Gala team so ops can weigh in on outliers before any model refinements.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Share Rusty's and Dunn Brothers model output files with Jonathan and John so they can gather operational feedback on outlier locations.</li><li>Schedule a follow-up call to walk through Zeus AI (new platform) and provide a deeper dive into AI-driven analysis capabilities.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Jgregory / Dang John)</strong></p>\n<ul><li>Collect operational feedback from franchise/ops teams on all outlier locations for both Rusty's and Dunn Brothers and share back with Aaron.</li><li>Consider providing additional variables (e.g., manager tenure, store size/capacity for Dunn Brothers) ahead of the next model rebuild.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Current SiteZeus platform will become legacy — team will transition to Zeus AI; a dedicated walkthrough will be scheduled for the next call.</li><li>Non-traditional Dunn Brothers locations (hospitals, mall walkways) will continue to be excluded from sales projections in the model.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>Follow-up call to be scheduled for a Zeus AI platform walkthrough once Aaron shares the model output files.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-07-01T22:06:20.413Z"
+        },
+        {
+          "call_id": "8261951251348845646",
+          "call_name": "SZ | 30 minute call - Ryan Feldman and Alan May",
+          "team": "support",
+          "prospect_name": "Ryan Feldman",
+          "prospect_email": "rfeldman@justsalad.com",
+          "email_to": [
+            "rfeldman@justsalad.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Ryan — SZ | 30 minute call - Ryan Feldman and Alan May",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Ryan</strong> (<a href=\"mailto:rfeldman@justsalad.com\">rfeldman@justsalad.com</a>).<br>\n<strong>Call:</strong> SZ | 30 minute call - Ryan Feldman and Alan May<br><br>\nReview below, edit as needed, then send from <strong>amay@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Ryan,</p>\n<p>Below is a summary of the action items discussed during SZ | 30 minute call - Ryan Feldman and Alan May.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked Ryan through the full market segmentation workflow in SiteZeus Market — from selecting store groups to reading customer percentages against the DMA base.</li><li>Clarified why DMA-level comparison can be misleading and showed how a custom radius (e.g., 3-mile) gives a more accurate market penetration picture for suburban sites like Jericho Turnpike.</li><li>Demonstrated how to use the heat map and custom draw tools in SiteZeus Locate to evaluate new development areas and identify zip codes that match core customer segments.</li><li>Agreed on a practical three-step framework: classify stores (suburban/urban) → roll up segment data by group → validate with CSV export to confirm market penetration aligns with performance.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Ryan Feldman)</strong></p>\n<ul><li>Identify and classify existing stores into suburban vs. urban groupings so segment roll-ups can be run by category.</li><li>Review the previously exported CSV to begin comparing household counts against totals for market penetration analysis.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Custom radius analysis (not DMA) is the recommended benchmark for market penetration at the site level.</li><li>The three-step process (classify stores → roll up segments → validate with CSV) is the agreed approach for Ryan's market segmentation work.</li></ul>\n<p>Best,<br>Alan May</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-07-01T22:06:29.364Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782930705594",
       "timestamp": "2026-07-01T18:31:45.594Z",
       "window_start": "2026-07-01T10:31:45.594Z",
@@ -1599,5 +1659,5 @@
       ]
     }
   ],
-  "last_updated": "2026-07-01T18:32:08.880Z"
+  "last_updated": "2026-07-01T22:06:29.367Z"
 }

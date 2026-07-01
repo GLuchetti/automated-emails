@@ -1,16 +1,5 @@
 {
   "calls": {
-    "7502351653344796531": {
-      "status": "skipped_untracked",
-      "call_name": "Pizza Hut - SZ | Weekly",
-      "processedAt": "2026-06-24T21:46:52.125Z"
-    },
-    "5826747411570526610": {
-      "status": "no_contact",
-      "team": "sales",
-      "call_name": "SiteZeus Locate <> Wings & Rings",
-      "processedAt": "2026-06-24T21:46:52.126Z"
-    },
     "1612110993169985273": {
       "status": "skipped_untracked",
       "call_name": "Finance L10",
@@ -258,7 +247,25 @@
       "team": "sales",
       "call_name": "SiteZeus <> Golftec Meeting",
       "processedAt": "2026-07-01T18:32:08.877Z"
+    },
+    "8146049603126614996": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 60 minute call - Coleman Welch and Alan May",
+      "processedAt": "2026-07-01T22:06:09.206Z"
+    },
+    "4650141314702043415": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SiteZeus | Model Review - Aaron - Jonathan Gregory and Aaron Bergland",
+      "processedAt": "2026-07-01T22:06:20.413Z"
+    },
+    "8261951251348845646": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 30 minute call - Ryan Feldman and Alan May",
+      "processedAt": "2026-07-01T22:06:29.364Z"
     }
   },
-  "last_updated": "2026-07-01T20:29:31.754Z"
+  "last_updated": "2026-07-01T22:05:58.528Z"
 }
