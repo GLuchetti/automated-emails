@@ -265,7 +265,13 @@
       "team": "support",
       "call_name": "SZ | 30 minute call - Ryan Feldman and Alan May",
       "processedAt": "2026-07-01T22:06:29.364Z"
+    },
+    "1887477486973579406": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "PFS-SiteZeus Monthly Sync",
+      "processedAt": "2026-07-01T23:44:05.812Z"
     }
   },
-  "last_updated": "2026-07-01T22:05:58.528Z"
+  "last_updated": "2026-07-01T23:43:52.034Z"
 }

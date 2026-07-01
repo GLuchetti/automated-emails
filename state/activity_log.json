@@ -1,6 +1,35 @@
 {
   "runs": [
     {
+      "id": "run-1782949432034",
+      "timestamp": "2026-07-01T23:43:52.034Z",
+      "window_start": "2026-07-01T15:43:52.034Z",
+      "window_end": "2026-07-01T23:43:52.034Z",
+      "calls_processed": [
+        {
+          "call_id": "1887477486973579406",
+          "call_name": "PFS-SiteZeus Monthly Sync",
+          "team": "support",
+          "prospect_name": "Anthony Pierce",
+          "prospect_email": "anthony.pierce@pfsbrands.com",
+          "email_to": [
+            "anthony.pierce@pfsbrands.com",
+            "jenna.macklin@pfsbrands.com",
+            "lindsey.hammen@pfsbrands.com",
+            "lauren.purcell@pfsbrands.com",
+            "justin.murphy@pfsbrands.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Anthony — PFS-SiteZeus Monthly Sync",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Anthony</strong> (<a href=\"mailto:anthony.pierce@pfsbrands.com\">anthony.pierce@pfsbrands.com</a>).<br>\n<strong>Call:</strong> PFS-SiteZeus Monthly Sync<br><br>\nReview below, edit as needed, then send from <strong>obolton@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Anthony,</p>\n<p>Below is a summary of the action items discussed during PFS-SiteZeus Monthly Sync.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Walked through territory management in depth — renaming folders, editing polygons, and changing colors per rep are all supported and editable as territories shift.</li><li>Confirmed that both the radius-circle approach and drawn polygons are viable; team leaning toward polygons for broader regional views and circles for store-level analysis.</li><li>Olivia joined to give a Zeus AI overview at the end of the call, keeping Anthony on track to finalize his presentation before the July 14–17 summit.</li><li>Carlos's territory will stay labeled under his name for now until a replacement is hired, at which point the folder and shapes can be renamed without disrupting the setup.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Anthony Pierce)</strong></p>\n<ul><li>Have Lauren Purcell dig into Champs-only data via Zeus AI when she returns from vacation.</li><li>Assign Jenna or Lauren to own polygon drawing and color-scheme management for rep territories as turnover occurs.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Anthony Pierce)</strong></p>\n<ul><li>Finalize SiteZeus talking points for the July 14–17 summit presentation to franchisees and field teams.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Olivia Bolton)</strong></p>\n<ul><li>Schedule a one-on-one Zeus AI deep-dive with Anthony before July 14 so he can lock in his presentation.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Send Olivia a calendar invite to formalize the one-on-one session with Anthony.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>Zeus AI territory integration is still ~2 weeks out minimum; team will proceed with territory training now and provide feedback while it's still being built.</li><li>Anthony will do Zeus AI training one-on-one with Olivia rather than waiting to align the full team's schedules.</li></ul>\n<p><strong>Next Milestone</strong></p>\n<ul><li>One-on-one Zeus AI session between Anthony and Olivia to be scheduled for the week of July 7, ahead of the July 14–17 summit.</li></ul>\n<p>Best,<br>Olivia Bolton</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-07-01T23:44:05.812Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782943558528",
       "timestamp": "2026-07-01T22:05:58.528Z",
       "window_start": "2026-07-01T14:05:58.528Z",
@@ -1659,5 +1688,5 @@
       ]
     }
   ],
-  "last_updated": "2026-07-01T22:06:29.367Z"
+  "last_updated": "2026-07-01T23:44:05.814Z"
 }
