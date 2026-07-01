@@ -1,21 +1,5 @@
 {
   "calls": {
-    "4745088856917966537": {
-      "status": "skipped_untracked",
-      "call_name": "DQ NEXT Reporting & Review",
-      "processedAt": "2026-06-24T20:09:56.647Z"
-    },
-    "5163993051744677498": {
-      "status": "skipped_untracked",
-      "call_name": "SiteZeus | 30 Minutes - Alex DeLoach and Sean Ryan",
-      "processedAt": "2026-06-24T20:09:56.647Z"
-    },
-    "1344732915236290756": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "30 Minute Meeting - Aaron | SiteZeus  - Nick Good and Aaron Bergland",
-      "processedAt": "2026-06-24T20:10:06.217Z"
-    },
     "7502351653344796531": {
       "status": "skipped_untracked",
       "call_name": "Pizza Hut - SZ | Weekly",
@@ -276,5 +260,5 @@
       "processedAt": "2026-07-01T18:32:08.877Z"
     }
   },
-  "last_updated": "2026-07-01T18:31:45.594Z"
+  "last_updated": "2026-07-01T20:29:31.754Z"
 }
