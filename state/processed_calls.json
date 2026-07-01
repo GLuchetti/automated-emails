@@ -1,11 +1,5 @@
 {
   "calls": {
-    "839883930028761937": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "Bi-Weekly Recuring Meeting: Rural King | SiteZeus",
-      "processedAt": "2026-06-24T18:08:52.107Z"
-    },
     "4745088856917966537": {
       "status": "skipped_untracked",
       "call_name": "DQ NEXT Reporting & Review",
@@ -268,7 +262,19 @@
       "status": "skipped_untracked",
       "call_name": "Jason-Sean",
       "processedAt": "2026-06-30T21:14:56.245Z"
+    },
+    "20763654843050393": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "SZ | 60 minute call - Margie Anderson and Alan May",
+      "processedAt": "2026-07-01T18:31:57.967Z"
+    },
+    "488623178162738040": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Golftec Meeting",
+      "processedAt": "2026-07-01T18:32:08.877Z"
     }
   },
-  "last_updated": "2026-07-01T16:31:43.568Z"
+  "last_updated": "2026-07-01T18:31:45.594Z"
 }
