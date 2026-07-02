@@ -1,6 +1,31 @@
 {
   "runs": [
     {
+      "id": "run-1783009177199",
+      "timestamp": "2026-07-02T16:19:37.199Z",
+      "window_start": "2026-07-02T08:19:37.199Z",
+      "window_end": "2026-07-02T16:19:37.199Z",
+      "calls_processed": [
+        {
+          "call_id": "9169992674536044720",
+          "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
+          "team": "support",
+          "prospect_name": "Karen Garrett",
+          "prospect_email": "karen.garrett@tierraencantada.com",
+          "email_to": [
+            "karen.garrett@tierraencantada.com"
+          ],
+          "email_cc": [
+            "support@sitezeus.com"
+          ],
+          "email_subject": "[REVIEW & SEND] Support follow-up for Karen — Karen & Aaron | SiteZeus Training - Recurring",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft support follow-up for <strong>Karen</strong> (<a href=\"mailto:karen.garrett@tierraencantada.com\">karen.garrett@tierraencantada.com</a>).<br>\n<strong>Call:</strong> Karen &amp; Aaron | SiteZeus Training - Recurring<br><br>\nReview below, edit as needed, then send from <strong>abergland@sitezeus.com</strong>.<br>\n<em>Do not reply — generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Karen,</p>\n<p>Below is a summary of the action items discussed during Karen &amp; Aaron | SiteZeus Training - Recurring.</p>\n<p><strong>Quick Call Review</strong></p>\n<ul><li>Answered Karen's core question: territory shapes can be renamed (e.g., by franchisee name) and will display on hover in the franchise territories folder.</li><li>Aaron shared a rebuilt territory project (70K–100K population, no overlap) for Karen to review before any transition from the current working project.</li><li>Identified two missing territories in the rebuilt project — Scott Plains area and Freehold — that need analyst investigation before the new project can replace the current one.</li><li>Confirmed Kristen and Luisa are evaluating the existing scorecard weighting and will reach back out if changes are needed — no updates yet.</li></ul>\n<p><strong>Action Items</strong></p>\n<p style=\"margin:8px 0 2px;\"><strong>SiteZeus Team (Aaron Bergland)</strong></p>\n<ul><li>Flag the missing Scott Plains territory to the analyst and investigate why it was dropped in the rebuilt project.</li><li>Investigate why Freehold (scored ~90, previously 116K population) is missing from the rebuilt project — determine if it needs to be resized rather than removed.</li><li>Hold off on migrating the rebuilt territory project into Karen's main working project until the above issues are resolved and Karen has had a chance to review.</li></ul>\n<p style=\"margin:8px 0 2px;\"><strong>Customer Team (Karen Garrett)</strong></p>\n<ul><li>Connect with Luisa before making any changes to Mari's territory folder, as Luisa is actively cleaning up those shapes.</li></ul>\n<p><strong>Key Decisions</strong></p>\n<ul><li>The rebuilt territory project will remain separate from Karen's current working project until missing territories are resolved and Karen approves the transition.</li><li>Territory shapes should be renamed by franchisee name and copied into the main franchise territories folder once finalized.</li></ul>\n<p>Best,<br>Aaron Bergland</p>\n</div>\n</div>\n",
+          "status": "dashboard",
+          "timestamp": "2026-07-02T16:19:50.907Z"
+        }
+      ]
+    },
+    {
       "id": "run-1782949432034",
       "timestamp": "2026-07-01T23:43:52.034Z",
       "window_start": "2026-07-01T15:43:52.034Z",
@@ -1688,5 +1713,5 @@
       ]
     }
   ],
-  "last_updated": "2026-07-01T23:44:05.814Z"
+  "last_updated": "2026-07-02T16:19:50.910Z"
 }

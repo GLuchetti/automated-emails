@@ -271,7 +271,18 @@
       "team": "support",
       "call_name": "PFS-SiteZeus Monthly Sync",
       "processedAt": "2026-07-01T23:44:05.812Z"
+    },
+    "9169992674536044720": {
+      "status": "dashboard",
+      "team": "support",
+      "call_name": "Karen & Aaron | SiteZeus Training - Recurring",
+      "processedAt": "2026-07-02T16:19:50.907Z"
+    },
+    "8525064784315550174": {
+      "status": "skipped_untracked",
+      "call_name": "Finance L-10 | SiteZeus Glye",
+      "processedAt": "2026-07-02T16:19:50.907Z"
     }
   },
-  "last_updated": "2026-07-02T14:20:42.178Z"
+  "last_updated": "2026-07-02T16:19:37.199Z"
 }
