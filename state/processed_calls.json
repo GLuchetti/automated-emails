@@ -1,22 +1,5 @@
 {
   "calls": {
-    "1612110993169985273": {
-      "status": "skipped_untracked",
-      "call_name": "Finance L10",
-      "processedAt": "2026-06-25T17:30:22.054Z"
-    },
-    "836801667442002025": {
-      "status": "no_contact",
-      "team": "support",
-      "call_name": "SZ | 30 minute call - Haley Diaz and Alan May",
-      "processedAt": "2026-06-25T17:30:22.055Z"
-    },
-    "2147631158727653934": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "SiteZeus - Aaron & Olivia - Sage  Kriss and Aaron Bergland",
-      "processedAt": "2026-06-25T17:30:32.607Z"
-    },
     "2230564480587710271": {
       "status": "dashboard",
       "team": "sales",
@@ -282,7 +265,12 @@
       "status": "skipped_untracked",
       "call_name": "Finance L-10 | SiteZeus Glye",
       "processedAt": "2026-07-02T16:19:50.907Z"
+    },
+    "3984351236460048499": {
+      "status": "skipped_untracked",
+      "call_name": "SiteZeus | Hibu - NY Butcher Shoppe Lead Submission",
+      "processedAt": "2026-07-02T18:14:36.349Z"
     }
   },
-  "last_updated": "2026-07-02T16:19:37.199Z"
+  "last_updated": "2026-07-02T18:14:34.091Z"
 }
