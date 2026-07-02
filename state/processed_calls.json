@@ -1,29 +1,5 @@
 {
   "calls": {
-    "2230564480587710271": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus <> Tilly's Co.",
-      "processedAt": "2026-06-25T19:30:08.494Z"
-    },
-    "1928834310163982985": {
-      "status": "dashboard",
-      "team": "support",
-      "call_name": "SZ | 60 minute call - Madison Belfour and Alan May",
-      "processedAt": "2026-06-25T19:30:16.961Z"
-    },
-    "7651282691745982799": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus Locate <> Piggly Wiggly",
-      "processedAt": "2026-06-25T19:30:27.749Z"
-    },
-    "266303777989248595": {
-      "status": "dashboard",
-      "team": "sales",
-      "call_name": "SiteZeus <> Basecamp Meeting",
-      "processedAt": "2026-06-25T19:30:37.515Z"
-    },
     "4805739296913335830": {
       "status": "dashboard",
       "team": "sales",
@@ -270,7 +246,25 @@
       "status": "skipped_untracked",
       "call_name": "SiteZeus | Hibu - NY Butcher Shoppe Lead Submission",
       "processedAt": "2026-07-02T18:14:36.349Z"
+    },
+    "4009312816194423682": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus <> Cooper's Hawk Winery & Restaurants",
+      "processedAt": "2026-07-02T19:56:31.454Z"
+    },
+    "7398487400710417440": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> Milan Laser",
+      "processedAt": "2026-07-02T19:56:43.077Z"
+    },
+    "4578022308411722646": {
+      "status": "dashboard",
+      "team": "sales",
+      "call_name": "SiteZeus Locate <> Twin Peaks",
+      "processedAt": "2026-07-02T19:56:53.931Z"
     }
   },
-  "last_updated": "2026-07-02T18:14:34.091Z"
+  "last_updated": "2026-07-02T19:56:18.409Z"
 }

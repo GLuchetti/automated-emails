@@ -1,6 +1,68 @@
 {
   "runs": [
     {
+      "id": "run-1783022178409",
+      "timestamp": "2026-07-02T19:56:18.409Z",
+      "window_start": "2026-07-02T11:56:18.409Z",
+      "window_end": "2026-07-02T19:56:18.409Z",
+      "calls_processed": [
+        {
+          "call_id": "4009312816194423682",
+          "call_name": "SiteZeus <> Cooper's Hawk Winery & Restaurants",
+          "team": "sales",
+          "prospect_name": "Tyler DeLucia",
+          "prospect_email": "tdelucia@chwinery.com",
+          "rep_name": "Ayden Benton",
+          "rep_email": "abenton@sitezeus.com",
+          "email_to": [
+            "abenton@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Tyler — SiteZeus <> Cooper's Hawk Winery & Restaurants",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Tyler</strong> (<a href=\"mailto:tdelucia@chwinery.com\">tdelucia@chwinery.com</a>).<br>\n<strong>Segment:</strong> Enterprise &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus &lt;&gt; Cooper's Hawk Winery &amp; Restaurants<br><br>\nReview below, edit as needed, then send from <strong>abenton@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Tyler,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed your team's need for a more confident cannibalization model — specifically one that can account for wine club member loyalty, store age as a weighting factor, and the difference between your clean and muddy market scenarios (like isolated Florida openings vs. the rapid Chicago cluster). You also mentioned wanting a parallel view of net four walls transfer alongside wine club member transfer.</p>\n<p>Our rebuilt Impact Analysis tool (V2) is designed to address exactly this — it can incorporate your wine club first-party data, extend trade area distances up to 30 miles, and be tuned against your pre/post opening history to better reflect how Cooper's Hawk members actually behave versus a typical restaurant guest. I'd love to put together a proof of concept using one of your clean scenarios so we can show you a real output before any broader commitment.</p>\n<p><strong>Next Steps</strong></p>\n<ul><li>Lucas to follow up with a proposed proof of concept structure using one of Cooper's Hawk's clean cannibalization scenarios</li></ul>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Directly covers the cannibalization and transfer analysis Tyler described, including wine club member overlap and proximity-based impact modeling.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Tyler referenced never having done a POC with SiteZeus — this supports the next step of validating the cannibalization model on a clean scenario before any full replacement decision.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "Enterprise",
+          "status": "dashboard",
+          "timestamp": "2026-07-02T19:56:31.454Z"
+        },
+        {
+          "call_id": "7398487400710417440",
+          "call_name": "SiteZeus Locate <> Milan Laser",
+          "team": "sales",
+          "prospect_name": "Justin Kelly",
+          "prospect_email": "justin.kelly@milanlaser.com",
+          "rep_name": "Will Morgan",
+          "rep_email": "wmorgan@sitezeus.com",
+          "email_to": [
+            "wmorgan@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Justin — SiteZeus Locate <> Milan Laser",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Justin</strong> (<a href=\"mailto:justin.kelly@milanlaser.com\">justin.kelly@milanlaser.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Milan Laser<br><br>\nReview below, edit as needed, then send from <strong>wmorgan@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Justin,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed where Milan Laser stands today — happy with Buxton, under contract through early 2029, and intentionally moderating your opening pace while you stabilize top-line sales before ramping growth back up in the coming years. Given that timeline, I wanted to make sure you had us on your radar for when the evaluation window opens.</p>\n<p>A couple of things that came up that I think are worth revisiting closer to that time: your team's current approach to segmentation (trusting Buxton's Experian-based outputs without diving deep into which profiles actually drive performance) and the cannibalization sensitivity you're navigating as you plan future clinic placement. Both are areas where our methodology and how we train models on a brand's specific customer trade patterns tend to show a meaningful difference. Happy to keep the conversation light until the timing makes more sense on your end.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/cannibalization-analysis\" style=\"color:#1a73e8;\">Sales Impact &amp; Cannibalization</a> — Justin specifically mentioned cannibalization as an active concern when planning new clinic locations, including the challenge of staying outside a five-mile radius of existing clinics.</li><li><a href=\"https://sitezeus.com/products/customer-insights-platform\" style=\"color:#1a73e8;\">Customer Insights — Market Intelligence</a> — Justin acknowledged his team doesn't dive deep into which Experian segments actually perform best — this speaks directly to that gap.</li><li><a href=\"https://sitezeus.com/schedule-a-demo\" style=\"color:#1a73e8;\">Proof of Concept / Demo</a> — Will introduced the 36-hour POC as a low-risk way to evaluate SiteZeus when the contract timing eventually allows for it.</li></ul>\n<p>Thanks,<br>Will Morgan</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-07-02T19:56:43.077Z"
+        },
+        {
+          "call_id": "4578022308411722646",
+          "call_name": "SiteZeus Locate <> Twin Peaks",
+          "team": "sales",
+          "prospect_name": "Paul Stevens",
+          "prospect_email": "paul.stevens@tprest.com",
+          "rep_name": "Lucas Boney",
+          "rep_email": "lboney@sitezeus.com",
+          "email_to": [
+            "lboney@sitezeus.com"
+          ],
+          "email_cc": [],
+          "email_subject": "[REVIEW & SEND] Follow-up draft for Paul — SiteZeus Locate <> Twin Peaks",
+          "email_html": "\n<div style=\"font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333;max-width:680px;\">\n<div style=\"background:#fff8e1;padding:14px 18px;border-left:5px solid #f9a825;margin-bottom:20px;border-radius:3px;\">\n<strong>ACTION REQUIRED — Review &amp; Send</strong><br><br>\nDraft follow-up for <strong>Paul</strong> (<a href=\"mailto:paul.stevens@tprest.com\">paul.stevens@tprest.com</a>).<br>\n<strong>Segment:</strong> SMB / Emerging &nbsp;|&nbsp; <strong>Call:</strong> SiteZeus Locate &lt;&gt; Twin Peaks<br><br>\nReview below, edit as needed, then send from <strong>lboney@sitezeus.com</strong>.<br>\n<em>Do not reply to this message — it was generated automatically.</em>\n</div>\n<hr style=\"border:none;border-top:1px solid #ddd;margin:0 0 20px 0;\">\n<p style=\"color:#888;font-size:12px;margin-bottom:4px;\">Suggested subject: <strong>Great connecting — SiteZeus resources &amp; next steps</strong></p>\n<div style=\"border:1px solid #e0e0e0;padding:20px;border-radius:4px;background:#fafafa;\">\n<p>Hi Paul,</p>\n<p>Thank you for hopping on the call today.</p>\n<p>We discussed Twin Peaks' renewed momentum following the recent ownership transition, with roughly 90 committed stores in the pipeline and a broader goal of accelerating both corporate and franchise development. You're currently using Calibrate (eSite) alongside broker relationships with CBRE and JLL to validate sites and fill competitive data gaps — a multi-source process that SiteZeus is built to consolidate.</p>\n<p>Where we'd differ from Calibrate is in the depth of the model: rather than a fixed set of proxy variables, our machine learning approach analyzes 600–700 signals and accounts for regional variation across your portfolio — so what's driving volume in one market isn't assumed to apply everywhere. Everything from competitive data to demographics to white space analysis lives in one platform, and you'd have a dedicated support analyst alongside your team throughout. I'd love to get a more tailored look at your pipeline and show you how this maps to Twin Peaks specifically.</p>\n<p><strong>Relevant Resources</strong></p>\n<ul><li><a href=\"https://sitezeus.com/blog/white-space-analysis\" style=\"color:#1a73e8;\">White Space Analysis Guide</a> — Ray specifically mentioned identifying where to focus efforts across the 90 committed pipeline stores and finding white canvas areas for new operators.</li><li><a href=\"https://sitezeus.com/products/site-selection-software\" style=\"color:#1a73e8;\">Zeus AI — Predictive Intelligence</a> — Lucas walked through how SiteZeus's machine learning model differs from Calibrate's regression approach, which was a key point of interest on the call.</li><li><a href=\"https://sitezeus.com/webinars\" style=\"color:#1a73e8;\">Franchise Growth Webinar</a> — The call centered on re-engaging existing area development agreement holders and recruiting new franchise groups — directly relevant to franchise development strategy.</li></ul>\n<p>Thanks,<br>Lucas Boney</p>\n</div>\n</div>\n",
+          "segment": "SMB",
+          "status": "dashboard",
+          "timestamp": "2026-07-02T19:56:53.931Z"
+        }
+      ]
+    },
+    {
       "id": "run-1783009177199",
       "timestamp": "2026-07-02T16:19:37.199Z",
       "window_start": "2026-07-02T08:19:37.199Z",
@@ -1713,5 +1775,5 @@
       ]
     }
   ],
-  "last_updated": "2026-07-02T16:19:50.910Z"
+  "last_updated": "2026-07-02T19:56:53.933Z"
 }
